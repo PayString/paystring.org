@@ -1,11 +1,11 @@
-import Layout from '../components/Layout';
+import Layout from '../components/Layout'
 
-export default function Index() {
+const Index: React.FC = () => {
   return (
-    <div>
-      <Layout>
-        <p>Hello Next.js</p>
-      </Layout>
-    </div>
-  );
+    <Layout>
+      <h1 className="text-5xl font-bold text-green-300">Hello world!</h1>
+    </Layout>
+  )
 }
+
+export default Index

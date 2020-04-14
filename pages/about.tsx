@@ -1,11 +1,11 @@
-import Layout from '../components/Layout';
+import Layout from '../components/Layout'
 
-export default function About() {
+const About: React.FC = () => {
   return (
-    <div>
-      <Layout>
-        <p>This is the about page</p>
-      </Layout>
-    </div>
-  );
+    <Layout>
+      <p>This is the about page</p>
+    </Layout>
+  )
 }
+
+export default About

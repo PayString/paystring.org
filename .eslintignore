@@ -1,0 +1,8 @@
+# Do not lint generated files.
+.next
+
+# Don't ever lint node_modules
+node_modules
+
+# Ignore Reference Typings
+next-env.d.ts

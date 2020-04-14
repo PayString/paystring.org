@@ -1,18 +1,16 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-const linkStyle = {
-  marginRight: 15
-};
+const Header: React.FC = () => {
+  return (
+    <div>
+      <Link href="/">
+        <a className="mr-3">Home</a>
+      </Link>
+      <Link href="/about">
+        <a className="mr-3">About</a>
+      </Link>
+    </div>
+  )
+}
 
-const Header = () => (
-  <div>
-    <Link href="/">
-      <a style={linkStyle}>Home</a>
-    </Link>
-    <Link href="/about">
-      <a style={linkStyle}>About</a>
-    </Link>
-  </div>
-);
-
-export default Header;
+export default Header
