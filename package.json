@@ -1,0 +1,28 @@
+{
+  "name": "payid.org",
+  "version": "0.0.1",
+  "description": "Marketing Website for PayID",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xpring-eng/payid.org.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xpring-eng/payid.org/issues"
+  },
+  "homepage": "https://github.com/xpring-eng/payid.org#readme",
+  "dependencies": {
+    "next": "^9.3.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.11.1",
+    "@types/react": "^16.9.34",
+    "typescript": "^3.8.3"
+  }
+}
