@@ -3,11 +3,24 @@ import React from 'react'
 
 import Bio from '../components/bio'
 import Layout from '../components/layout'
-import SEO from '../components/seo'
 
-interface Props {
+interface IndexProps {
   data: {
-    allMarkdownRemark: any
+    allMarkdownRemark: {
+      edges: {
+        node: {
+          excerpt: string
+          fields: {
+            slug: string
+          }
+          frontmatter: {
+            date: string
+            title?: string
+            description?: string
+          }
+        }
+      }[]
+    }
     site: {
       siteMetadata: {
         title: string
@@ -16,15 +29,16 @@ interface Props {
   }
 }
 
-const BlogIndex = ({ data }: Props): any => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+const Index: React.FC<IndexProps> = (
+  props: React.PropsWithChildren<IndexProps>,
+) => {
+  const siteTitle = props.data.site.siteMetadata.title
+  const posts = props.data.allMarkdownRemark.edges
 
   return (
-    <Layout location={window.location} title={siteTitle}>
-      <SEO title="All posts" />
+    <Layout title={siteTitle}>
       <Bio />
-      {posts.map(({ node }: any) => {
+      {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
           <div key={node.fields.slug}>
@@ -44,7 +58,7 @@ const BlogIndex = ({ data }: Props): any => {
   )
 }
 
-export default BlogIndex
+export default Index
 
 export const pageQuery = graphql`
   query {

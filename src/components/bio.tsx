@@ -1,16 +1,24 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import { useStaticQuery, graphql } from 'gatsby'
-import Image from 'gatsby-image'
+import Image, { FixedObject } from 'gatsby-image'
 import React from 'react'
 
-const Bio = (): any => {
-  const data = useStaticQuery(graphql`
+interface BioData {
+  site: {
+    siteMetadata: {
+      social: {
+        twitter: string
+      }
+    }
+  }
+  avatar: {
+    childImageSharp: {
+      fixed: FixedObject
+    }
+  }
+}
+
+const Bio: React.FC = () => {
+  const data = useStaticQuery<BioData>(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
@@ -21,10 +29,6 @@ const Bio = (): any => {
       }
       site {
         siteMetadata {
-          author {
-            name
-            summary
-          }
           social {
             twitter
           }
@@ -33,15 +37,15 @@ const Bio = (): any => {
     }
   `)
 
-  const { author, social } = data.site.siteMetadata
+  const { social } = data.site.siteMetadata
   return (
     <div className="flex">
-      <Image fixed={data.avatar.childImageSharp.fixed} alt={author.name} />
+      <Image fixed={data.avatar.childImageSharp.fixed} />
       <p>
-        Written by <strong>{author.name}</strong> {author.summary}
+        Written by <strong>Ripple</strong> Ripple is cool
         {` `}
         <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
+          You should follow us on Twitter
         </a>
       </p>
     </div>

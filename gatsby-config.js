@@ -1,10 +1,6 @@
 module.exports = {
   siteMetadata: {
     title: `PayID`,
-    author: {
-      name: `Ripple Person`,
-      summary: `who lives and works in San Francisco building useful things.`,
-    },
     description: `A marketing site demonstrating what PayID can do.`,
     siteUrl: `https://payid.org/`,
     social: {
@@ -63,7 +59,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        // trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-148411216-6`,
       },
     },
     `gatsby-transformer-sharp`,
