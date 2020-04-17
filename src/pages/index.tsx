@@ -3,6 +3,7 @@ import React from 'react'
 
 import Bio from '../components/bio'
 import Layout from '../components/layout'
+import { FrontMatter } from '../utils/types'
 
 interface IndexProps {
   data: {
@@ -13,11 +14,7 @@ interface IndexProps {
           fields: {
             slug: string
           }
-          frontmatter: {
-            date: string
-            title?: string
-            description?: string
-          }
+          frontmatter: FrontMatter
         }
       }[]
     }
@@ -29,9 +26,7 @@ interface IndexProps {
   }
 }
 
-const Index: React.FC<IndexProps> = (
-  props: React.PropsWithChildren<IndexProps>,
-) => {
+const Index: React.FC<IndexProps> = (props: IndexProps) => {
   const siteTitle = props.data.site.siteMetadata.title
   const posts = props.data.allMarkdownRemark.edges
 
@@ -47,6 +42,7 @@ const Index: React.FC<IndexProps> = (
             </h3>
             <small>{node.frontmatter.date}</small>
             <p
+              className="markdown"
               dangerouslySetInnerHTML={{
                 __html: node.frontmatter.description || node.excerpt,
               }}

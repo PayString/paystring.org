@@ -6,6 +6,7 @@ import SEO from './seo'
 
 interface LayoutProps {
   title: string
+  description?: string
 }
 
 const Layout: React.FC<LayoutProps> = (
@@ -15,7 +16,7 @@ const Layout: React.FC<LayoutProps> = (
     <>
       <Nav />
       <main>
-        <SEO title={props.title} />
+        <SEO title={props.title} description={props.description} />
         {props.children}
       </main>
       <Footer />

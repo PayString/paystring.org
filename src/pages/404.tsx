@@ -12,8 +12,9 @@ interface NotFoundPageProps {
     }
   }
 }
+
 const NotFoundPage: React.FC<NotFoundPageProps> = (
-  props: React.PropsWithChildren<NotFoundPageProps>,
+  props: NotFoundPageProps,
 ) => {
   return (
     <Layout title={props.data.site.siteMetadata.title}>

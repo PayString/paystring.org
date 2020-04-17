@@ -27,4 +27,5 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
+  "css.validate": false, // Make sure to install the recommended extensions for StyleLint
 }
