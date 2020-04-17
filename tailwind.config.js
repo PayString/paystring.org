@@ -2,7 +2,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: [
-        'Eina01',
+        'Lato',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',
