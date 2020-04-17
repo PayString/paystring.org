@@ -1,0 +1,73 @@
+{
+  "name": "payid.org",
+  "version": "0.0.1",
+  "description": "Marketing Website for PayID",
+  "homepage": "https://github.com/xpring-eng/payid.org#readme",
+  "dependencies": {
+    "gatsby": "^2.20.12",
+    "gatsby-image": "^2.3.1",
+    "gatsby-plugin-feed": "^2.4.1",
+    "gatsby-plugin-google-analytics": "^2.2.2",
+    "gatsby-plugin-manifest": "^2.3.3",
+    "gatsby-plugin-offline": "^3.1.2",
+    "gatsby-plugin-postcss": "^2.2.2",
+    "gatsby-plugin-react-helmet": "^3.2.1",
+    "gatsby-plugin-sharp": "^2.5.3",
+    "gatsby-plugin-typescript": "^2.3.2",
+    "gatsby-remark-copy-linked-files": "^2.2.1",
+    "gatsby-remark-images": "^3.2.1",
+    "gatsby-remark-prismjs": "^3.4.1",
+    "gatsby-remark-responsive-iframe": "^2.3.1",
+    "gatsby-remark-smartypants": "^2.2.1",
+    "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-transformer-remark": "^2.7.1",
+    "gatsby-transformer-sharp": "^2.4.3",
+    "prismjs": "^1.19.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "typeface-lato": "0.0.75"
+  },
+  "devDependencies": {
+    "@types/node": "^13.11.1",
+    "@types/react": "^16.9.34",
+    "@types/react-helmet": "^5.0.15",
+    "@typescript-eslint/eslint-plugin": "^2.28.0",
+    "autoprefixer": "^9.7.5",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-airbnb-typescript": "^7.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "prettier": "^2.0.2",
+    "stylelint": "^13.2.1",
+    "stylelint-config-standard": "^20.0.0",
+    "tailwindcss": "^1.2.0",
+    "typescript": "^3.8.3"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx && stylelint css/**/*.css",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix && stylelint css/**/*.css --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xpring-eng/payid.org.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xpring-eng/payid.org/issues"
+  }
+}
