@@ -1,23 +1,10 @@
-import { graphql } from 'gatsby'
 import React from 'react'
 
 import Layout from '../components/layout'
 
-interface NotFoundPageProps {
-  data: {
-    site: {
-      siteMetadata: {
-        title: string
-      }
-    }
-  }
-}
-
-const NotFoundPage: React.FC<NotFoundPageProps> = (
-  props: NotFoundPageProps,
-) => {
+const NotFoundPage: React.FC = () => {
   return (
-    <Layout title={props.data.site.siteMetadata.title}>
+    <Layout title="404">
       <h1>Not Found</h1>
       <p>You just hit a route that doesn&apos;t exist... the sadness.</p>
     </Layout>
@@ -25,13 +12,3 @@ const NotFoundPage: React.FC<NotFoundPageProps> = (
 }
 
 export default NotFoundPage
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
