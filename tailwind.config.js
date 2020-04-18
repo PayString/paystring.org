@@ -28,6 +28,13 @@ module.exports = {
     },
     extend: {
       colors: {
+        bright: {
+          100: '#F5F9FC',
+        },
+        dark: {
+          100: '#304659',
+          200: '#3B5266',
+        },
         green: {
           50: '#F5FDFA',
           100: '#CFF4E8',
@@ -53,6 +60,8 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    margin: ['responsive', 'last'],
+  },
   plugins: [],
 }
