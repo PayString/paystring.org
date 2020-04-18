@@ -13,14 +13,14 @@ const Layout: React.FC<LayoutProps> = (
   props: React.PropsWithChildren<LayoutProps>,
 ) => {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Nav />
-      <main>
+      <main className="flex flex-col flex-grow">
         <SEO title={props.title} description={props.description} />
         {props.children}
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 

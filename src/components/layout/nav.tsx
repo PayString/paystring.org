@@ -4,7 +4,7 @@ import React from 'react'
 import Button from '../common/button'
 
 const Nav: React.FC = () => {
-  const pages = [
+  const links = [
     {
       text: 'Learn',
       location: '/learn',
@@ -25,15 +25,15 @@ const Nav: React.FC = () => {
         PayID
       </Link>
       <div>
-        {pages.map((page) => {
+        {links.map((link) => {
           return (
-            // TODO (@Stormtv) hover state bar
+            // TODO (@Stormtv) hover state / active state
             <Link
-              key={page.text}
-              to={page.location}
-              className="mr-20 hover:text-dark-100 last:mr-0"
+              key={link.text}
+              to={link.location}
+              className="inline-block mr-20 hover:text-dark-100 last:mr-0"
             >
-              {page.text}
+              {link.text}
             </Link>
           )
         })}
