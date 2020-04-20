@@ -16,7 +16,8 @@ const Layout: React.FC<LayoutProps> = (
     <div className="flex flex-col min-h-screen">
       <Nav />
       <main className="flex flex-col flex-grow">
-        <SEO title={props.title} description={props.description} />
+        {/* TODO change lang attribute once we have internationalization */}
+        <SEO title={props.title} description={props.description} lang="en" />
         {props.children}
       </main>
       <Footer />
