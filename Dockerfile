@@ -6,7 +6,7 @@ RUN npm install --cache .npm --no-audit --prefer-offline -g gatsby-cli
 RUN npm install --cache .npm --no-audit --prefer-offline --prefix ./payidorg
 RUN (cd payidorg/; gatsby build;)
 
-WORKDIR payidorg
+WORKDIR /payidorg
 
 EXPOSE 9000
 
