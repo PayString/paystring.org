@@ -1,0 +1,78 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Name }}
+spec:
+  type: NodePort
+  selector:
+    app: {{ .Release.Name }}
+  ports:
+  - protocol: TCP
+    port: 9000
+    targetPort: 9000
+    name: public
+---
+apiVersion: networking.gke.io/v1beta1
+kind: ManagedCertificate
+metadata:
+  name: {{ .Release.Name }}-certificate
+  namespace: {{ .Release.Name }}
+spec:
+  domains:
+    - {{ .Values.releaseEnv }}.{{ .Values.publicdomain }}
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Release.Name }}-ingress
+  namespace: {{ .Release.Name }}
+  annotations:
+    networking.gke.io/managed-certificates: {{ .Release.Name }}-certificate
+    external-dns.alpha.kubernetes.io/hostname: {{ .Values.releaseEnv }}.{{ .Values.publicdomain }}
+spec:
+  backend:
+    serviceName: {{ .Release.Name }}
+    servicePort: 9000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      containers:
+      - image: {{ .Values.releaseImage }}
+        livenessProbe:
+          httpGet:
+              path: /
+              port: 9000
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+              path: /
+              port: 9000
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        name: {{ .Release.Name }}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 9000
+          name: public
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1000Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
