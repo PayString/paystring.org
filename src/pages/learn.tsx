@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from '../components/layout'
 
-const Index: React.FC = () => {
+const Learn: React.FC = () => {
   return (
     <Layout title="Learn">
       <div className="flex items-center justify-center flex-grow text-3xl">
@@ -12,4 +12,4 @@ const Index: React.FC = () => {
   )
 }
 
-export default Index
+export default Learn
