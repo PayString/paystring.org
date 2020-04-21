@@ -1,4 +1,5 @@
 # CI for PayID.org
+#
 
 stages:
   - publish
