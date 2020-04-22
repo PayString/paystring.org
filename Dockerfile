@@ -8,6 +8,5 @@ RUN (cd payidorg/; gatsby build;)
 
 WORKDIR /payidorg
 
-EXPOSE 9000
-
-CMD ["gatsby", "serve", "-H", "0.0.0.0"]
+FROM nginx:1.17-alpine
+COPY --from=0 /payidorg/public /usr/share/nginx/html
