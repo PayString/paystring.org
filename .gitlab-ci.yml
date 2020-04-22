@@ -1,0 +1,60 @@
+# CI for PayID.org
+#
+
+stages:
+  - publish
+  - deploy
+
+variables:
+  GCR_PROJECT_ID: xpring-dev-sandbox
+  GCLOUD_PROJECT_ID: xpring-dev-sandbox
+  CLUSTER_NAME: poc1-cluster
+  CLUSTER_REGION: us-central1
+  RELEASE_NAME: payidorg
+  RELEASE_ENV: dev
+
+include:
+  - project: 'xpring/xpring-ci-templates'
+    file: '/templates/build_for_gcr.yml'
+
+# Build a docker image and push it to the GCR associated with $GCLOUD_PROJECT_ID
+publish:
+  stage: publish
+  extends: .publish
+  variables:
+    GCLOUD_PROJECT_ID: $GCR_PROJECT_ID
+
+# This is a template that is used below. It does not do anything by itself
+.deploy_payidorg:
+  extends: .deploy
+  needs: ["publish"]
+  when: manual
+  script:
+    - export IMAGE_UID="$(cat image_uid.meta.txt)"
+    - kubectl create namespace ${RELEASE_NAME}-${RELEASE_ENV} || true
+    - helm upgrade --install --namespace ${RELEASE_NAME}-${RELEASE_ENV}
+        --set releaseEnv=$RELEASE_ENV
+        --set releaseImage="gcr.io/$GCR_PROJECT_ID/$CI_PROJECT_NAME:$IMAGE_UID"
+        ${RELEASE_NAME}-${RELEASE_ENV} ./charts
+
+deploy to dev:
+  stage: deploy
+  extends: .deploy_payidorg
+  variables:
+    RELEASE_ENV: dev
+
+deploy to stage:
+  stage: deploy
+  extends: .deploy_payidorg
+  variables:
+    RELEASE_ENV: stg
+
+# Prod is being deployed to a different GCP project and cluster
+deploy to prod:
+  stage: deploy
+  extends: .deploy_payidorg
+  variables:
+    RELEASE_ENV: prod
+    GCLOUD_PROJECT_ID: xpring-testnet
+    CLUSTER_NAME: xpring-testnet-cluster01
+    CLUSTER_REGION: us-central1
