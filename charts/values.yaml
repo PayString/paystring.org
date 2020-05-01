@@ -1,2 +1,5 @@
 replicas: 2
 publicdomain: payidorg.xpring.dev.
+proxyng:
+  install: true
+  releaseImage: gcr.io/xpring-dev-sandbox/xpring_nginx:latest

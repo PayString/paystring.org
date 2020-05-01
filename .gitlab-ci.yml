@@ -31,10 +31,15 @@ publish:
   when: manual
   script:
     - export IMAGE_UID="$(cat image_uid.meta.txt)"
+    - mkdir dependency_charts
+    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.in.xpring.tech/xpring/xpring_nginx.git dependency_charts/xpring_nginx
+    - helm dep update ./charts
     - kubectl create namespace ${RELEASE_NAME}-${RELEASE_ENV} || true
     - helm upgrade --install --namespace ${RELEASE_NAME}-${RELEASE_ENV}
         --set releaseEnv=$RELEASE_ENV
         --set releaseImage="gcr.io/$GCR_PROJECT_ID/$CI_PROJECT_NAME:$IMAGE_UID"
+        --set proxyng.domainName="${RELEASE_ENV}.payidorg.xpring.dev"
+        --set proxyng.proxiedService="http://${RELEASE_NAME}-${RELEASE_ENV}:80"
         ${RELEASE_NAME}-${RELEASE_ENV} ./charts
 
 deploy to dev:
