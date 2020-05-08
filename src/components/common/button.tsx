@@ -9,7 +9,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   const { label, ...buttonProps } = props
   const buttonClass =
-    'flex items-center justify-center px-10 py-3 text-sm font-bold text-bright-100 bg-dark-100 focus:outline-none focus:bg-dark-200 hover:bg-dark-200'
+    'flex items-center justify-center px-10 py-3 text-sm font-bold text-gray-100 bg-orange-1-500 focus:outline-none focus:bg-orange-1-600 hover:bg-orange-1-600'
 
   if (props.to) {
     return (

@@ -20,8 +20,8 @@ const Nav: React.FC = () => {
   ]
 
   return (
-    <nav className="flex items-center justify-between mx-12 my-8 text-dark-200">
-      <Link to="/" className="text-3xl hover:text-dark-100">
+    <nav className="flex items-center justify-between mx-12 my-8 text-gray-800">
+      <Link to="/" className="text-3xl hover:text-gray-1000">
         PayID
       </Link>
       <div>
@@ -31,7 +31,7 @@ const Nav: React.FC = () => {
             <Link
               key={link.text}
               to={link.location}
-              className="inline-block mr-20 hover:text-dark-100 last:mr-0"
+              className="inline-block mr-20 hover:text-gray-1000 last:mr-0"
             >
               {link.text}
             </Link>

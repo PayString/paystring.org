@@ -1,5 +1,5 @@
 // custom typefaces
-import 'typeface-lato'
+import 'typeface-inter'
 import './src/css/tailwind.css'
 import 'prismjs/themes/prism.css'
 import './src/css/markdown.css'
