@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable @typescript-eslint/no-var-requires */
+const tailwindGradients = require('tailwindcss-gradients')
+
 module.exports = {
   theme: {
     fontFamily: {
@@ -103,7 +107,7 @@ module.exports = {
         100: '#E7CCFF',
         200: '#CF99FF',
         300: '#B766FF',
-        400: '#9F33FF',
+        400: '#9F34FF', // Note 400 is undefined for purple so we just default to 500 when 400 is used.
         500: '#9F34FF',
         600: '#8700FF',
         700: '#6C00CC',
@@ -128,9 +132,15 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
     },
+    linearGradientColors: (theme) => {
+      return {
+        orange: [theme('colors.orange-2.600'), theme('colors.orange-1.600')],
+        purple: [theme('colors.purple.300'), theme('colors.purple.700')],
+      }
+    },
   },
   variants: {
     margin: ['responsive', 'last'],
   },
-  plugins: [],
+  plugins: [tailwindGradients],
 }

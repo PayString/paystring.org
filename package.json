@@ -4,6 +4,7 @@
   "description": "Marketing Website for PayID",
   "homepage": "https://github.com/xpring-eng/payid.org#readme",
   "dependencies": {
+    "classnames": "^2.2.6",
     "gatsby": "^2.20.12",
     "gatsby-image": "^2.3.1",
     "gatsby-plugin-feed": "^2.4.1",
@@ -27,9 +28,11 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "tailwindcss-gradients": "^3.0.0",
     "typeface-inter": "^3.12.0"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.10",
     "@types/node": "^13.11.1",
     "@types/react": "^16.9.34",
     "@types/react-helmet": "^5.0.15",

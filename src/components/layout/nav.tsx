@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 
-import Button from '../common/button'
+import Button, { ButtonTheme } from '../common/button'
 
 const Nav: React.FC = () => {
   const links = [
@@ -38,7 +38,7 @@ const Nav: React.FC = () => {
           )
         })}
       </div>
-      <Button to="/contact" label="Contact Us" />
+      <Button theme={ButtonTheme.orange} to="/contact" label="Contact Us" />
     </nav>
   )
 }

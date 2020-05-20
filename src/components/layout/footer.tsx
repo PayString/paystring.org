@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 
-import Button from '../common/button'
+import Button, { ButtonTheme } from '../common/button'
 
 const Footer: React.FC = () => {
   const links = [
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
           Have Questions? Reach out to us anytime. We&apos;re here to help.
         </h2>
         <div className="ml-20">
-          <Button to="/contact" label="Contact Us" />
+          <Button theme={ButtonTheme.orange} to="/contact" label="Contact Us" />
         </div>
       </div>
       <div className="flex items-center text-gray-800">
