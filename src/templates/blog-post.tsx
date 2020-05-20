@@ -1,7 +1,7 @@
 import { Link, graphql } from 'gatsby'
 import React from 'react'
 
-import Bio from '../components/bio'
+import Bio from '../components/blog/bio'
 import Layout from '../components/layout'
 import { FrontMatter } from '../utils/types'
 
