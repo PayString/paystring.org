@@ -4,7 +4,7 @@ module.exports = {
     description: `A marketing site demonstrating what PayID can do.`,
     siteUrl: `https://payid.org/`,
     social: {
-      twitter: `Ripple`,
+      twitter: `xpringdev`,
     },
   },
   plugins: [
