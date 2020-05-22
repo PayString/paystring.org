@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 
-import Button, { ButtonTheme } from '../common/button'
+import Button from '../common/button'
 
 const Nav: React.FC = () => {
   const links = [
@@ -21,7 +21,7 @@ const Nav: React.FC = () => {
 
   return (
     <nav className="flex items-center justify-between mx-12 my-8 text-gray-800">
-      <Link to="/" className="text-3xl hover:text-gray-1000">
+      <Link to="/" className="text-3xl hover:text-gray-900">
         PayID
       </Link>
       <div>
@@ -31,14 +31,14 @@ const Nav: React.FC = () => {
             <Link
               key={link.text}
               to={link.location}
-              className="inline-block mr-20 hover:text-gray-1000 last:mr-0"
+              className="inline-block mr-20 hover:text-gray-900 last:mr-0"
             >
               {link.text}
             </Link>
           )
         })}
       </div>
-      <Button theme={ButtonTheme.orange} to="/contact" label="Contact Us" />
+      <Button to="/contact" label="Contact Us" />
     </nav>
   )
 }
