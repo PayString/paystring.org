@@ -20,9 +20,11 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
     ...buttonProps
   } = props
 
+  // TODO (@Stormtv) add hover / focus gradient for primary variant once design has finished
+
   const buttonClass = classnames(
     props.className, // Class Overrides
-    'flex items-center justify-center font-bold focus:outline-none rounded', // Classes for all Buttons
+    'inline-block font-bold focus:outline-none rounded whitespace-no-wrap', // Classes for all Buttons
     {
       [`text-white bg-gradient-br-${theme}`]:
         variant === 'primary' && !props.disabled,
@@ -46,14 +48,14 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   if (props.to && !props.disabled) {
     return (
       <Link to={props.to} className={buttonClass}>
-        <span className="flex-shrink-0">{label}</span>
+        {label}
       </Link>
     )
   }
 
   return (
     <button {...buttonProps} className={buttonClass}>
-      <span className="flex-shrink-0">{label}</span>
+      {label}
     </button>
   )
 }

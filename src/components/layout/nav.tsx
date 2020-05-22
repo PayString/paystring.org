@@ -20,8 +20,8 @@ const Nav: React.FC = () => {
   ]
 
   return (
-    <nav className="flex items-center justify-between mx-12 my-8 text-gray-800">
-      <Link to="/" className="text-3xl hover:text-gray-900">
+    <nav className="flex items-center justify-between py-4 text-white bg-blue-dark-900 px-18">
+      <Link to="/" className="text-2xl">
         PayID
       </Link>
       <div>
@@ -31,14 +31,15 @@ const Nav: React.FC = () => {
             <Link
               key={link.text}
               to={link.location}
-              className="inline-block mr-20 hover:text-gray-900 last:mr-0"
+              className="inline-block mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+              activeClassName="border-b-2 border-orange-500"
             >
               {link.text}
             </Link>
           )
         })}
+        <Button to="/contact" label="Contact Us" className="inline-block" />
       </div>
-      <Button to="/contact" label="Contact Us" />
     </nav>
   )
 }
