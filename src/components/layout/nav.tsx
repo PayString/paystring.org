@@ -27,7 +27,7 @@ const Nav: React.FC = () => {
   return (
     <nav className="flex items-center justify-between py-4 text-white bg-blue-dark-900 px-18">
       <Link to="/">
-        <Logo className="w-32" />
+        <Logo />
       </Link>
       <div>
         {links.map((link) => {
