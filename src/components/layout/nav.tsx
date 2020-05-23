@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 
+import Logo from '../../../content/assets/logo.svg'
 import Button from '../common/button'
 
 const Nav: React.FC = () => {
@@ -25,8 +26,8 @@ const Nav: React.FC = () => {
 
   return (
     <nav className="flex items-center justify-between py-4 text-white bg-blue-dark-900 px-18">
-      <Link to="/" className="text-2xl">
-        PayID
+      <Link to="/">
+        <Logo className="w-32" />
       </Link>
       <div>
         {links.map((link) => {
