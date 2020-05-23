@@ -6,16 +6,20 @@ import Button from '../common/button'
 const Nav: React.FC = () => {
   const links = [
     {
-      text: 'Learn',
-      location: '/learn',
+      text: 'Vision',
+      location: '/vision',
     },
     {
-      text: 'For Partners',
-      location: '/partners',
-    },
-    {
-      text: 'For Developers',
+      text: 'Developers',
       location: '/developers',
+    },
+    {
+      text: 'Compliance',
+      location: '/compliance',
+    },
+    {
+      text: 'FAQ',
+      location: '/faq',
     },
   ]
 

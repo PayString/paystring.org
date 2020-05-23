@@ -2,14 +2,14 @@ import React from 'react'
 
 import Layout from '../components/layout'
 
-const Learn: React.FC = () => {
+const Vision: React.FC = () => {
   return (
-    <Layout title="Learn">
+    <Layout title="Vision">
       <div className="flex items-center justify-center flex-grow text-3xl">
-        Learn TODO
+        Vision TODO
       </div>
     </Layout>
   )
 }
 
-export default Learn
+export default Vision

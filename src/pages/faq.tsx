@@ -2,14 +2,14 @@ import React from 'react'
 
 import Layout from '../components/layout'
 
-const Partners: React.FC = () => {
+const FAQ: React.FC = () => {
   return (
-    <Layout title="Partners">
+    <Layout title="FAQ">
       <div className="flex items-center justify-center flex-grow text-3xl">
-        Partners TODO
+        FAQ TODO
       </div>
     </Layout>
   )
 }
 
-export default Partners
+export default FAQ
