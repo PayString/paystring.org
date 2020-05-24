@@ -28,6 +28,7 @@ const Nav: React.FC = () => {
     <nav className="flex items-center justify-between py-4 text-white bg-blue-dark-900 px-18">
       <Link to="/">
         <Logo />
+        <span className="sr-only">Home</span>
       </Link>
       <div>
         {links.map((link) => {

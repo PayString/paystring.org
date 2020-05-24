@@ -28,6 +28,7 @@ const Footer: React.FC = () => {
       <div className="flex items-center">
         <Link to="/">
           <Logo />
+          <span className="sr-only">Home</span>
         </Link>
         <div className="ml-18">
           {links.map((link) => {
