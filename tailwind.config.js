@@ -3,6 +3,7 @@
 const tailwindGradients = require('tailwindcss-gradients')
 
 module.exports = {
+  purge: ['./src/**/*.tsx', './src/**/*.css'],
   theme: {
     fontFamily: {
       sans: [
