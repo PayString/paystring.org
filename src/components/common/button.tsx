@@ -24,7 +24,7 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   // TODO (@Stormtv) add hover / focus gradient for primary variant once design has finished
   const classes: ClassValue[] = [
     props.className,
-    'inline-block font-bold focus:outline-none rounded whitespace-no-wrap border',
+    'inline-block font-bold focus:outline-none rounded whitespace-no-wrap',
   ]
 
   // Disables the cursor for disabled buttons
@@ -67,6 +67,9 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   }
 
   if (variant === 'secondary') {
+    // Add border for secondary variant
+    classes.push('border')
+
     // If disabled secondary border is gray
     if (props.disabled) {
       classes.push('border-gray-200')
@@ -79,9 +82,6 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
         'border-blue-500': theme === 'blue',
       })
     }
-  } else {
-    // Sets the border color to transparent for the primary and ghost variants
-    classes.push('border-transparent')
   }
 
   // Adds styles for the large size of buttons
