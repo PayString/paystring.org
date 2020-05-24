@@ -32,7 +32,6 @@ const Nav: React.FC = () => {
       <div>
         {links.map((link) => {
           return (
-            // TODO (@Stormtv) hover state / active state
             <Link
               key={link.text}
               to={link.location}
