@@ -98,7 +98,11 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 
   if (props.to && !props.disabled) {
     return (
-      <Link to={props.to} className={classnames(classes)}>
+      <Link
+        to={props.to}
+        role={buttonProps.role}
+        className={classnames(classes)}
+      >
         {label}
       </Link>
     )
