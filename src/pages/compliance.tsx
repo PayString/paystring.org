@@ -19,6 +19,7 @@ const Compliance: React.FC = () => {
       <Wave
         background="gray"
         wave="blue"
+        direction="rtl"
         className="flex items-center justify-center flex-grow text-3xl"
       >
         Synergy with Other Proposals
@@ -26,6 +27,7 @@ const Compliance: React.FC = () => {
       <Wave
         background="blue"
         wave="gray"
+        direction="rtl"
         className="flex items-center justify-center flex-grow text-3xl"
       >
         How Travel Rule Works with PayID
