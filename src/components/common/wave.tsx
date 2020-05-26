@@ -1,7 +1,8 @@
 import classNames from 'classnames'
 import React from 'react'
+import '../../css/wave.css'
 
-import WaveVector from './WaveVector'
+import WaveVector from './waveVector'
 
 interface WaveProps {
   background?: 'white' | 'gray' | 'blue' | 'orange'
@@ -17,17 +18,22 @@ const Wave: React.FC<WaveProps> = (
   const { wave = 'white', background = 'blue', direction = 'ltr' } = props
 
   // Figure out the background color and text colors based on given background prop
-  const waveClasses = classNames({
+  const waveClasses = classNames('wave', {
     'bg-white text-blue-dark-900': background === 'white',
     'bg-gray-50 text-blue-dark-900': background === 'gray',
     'bg-blue-dark-900 text-white': background === 'blue',
     'bg-orange-500 text-white': background === 'orange',
   })
 
+  const contentClasses = classNames(
+    'wave-content min-h-22 z-10 px-6 py-4 relative',
+    props.className,
+  )
+
   return (
     <div className={waveClasses}>
-      <div className={props.className}>{props.children}</div>
-      <WaveVector theme={wave} direction={direction} />
+      <div className={contentClasses}>{props.children}</div>
+      <WaveVector wave={wave} background={background} direction={direction} />
     </div>
   )
 }

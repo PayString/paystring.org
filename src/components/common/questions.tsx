@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Wave from '../common/wave'
+import Wave from './wave'
 
 const Questions: React.FC = () => {
   return (

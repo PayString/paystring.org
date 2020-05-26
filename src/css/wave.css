@@ -1,0 +1,47 @@
+.wave:not(:first-child) {
+  margin-top: calc(100vw * 0.613333333 / 5.4 * -1);
+}
+
+.wave-vector {
+  margin-top: calc(100vw * 0.613333333 / 5.4 * -1);
+}
+
+@media (min-width: 576px) {
+  .wave:not(:first-child) {
+    margin-top: calc(100vw * 0.613333333 / 9.5 * -1);
+  }
+
+  .wave-vector {
+    margin-top: calc(100vw * 0.613333333 / 9.5 * -1);
+  }
+}
+
+@media (min-width: 768px) {
+  .wave:not(:first-child) {
+    margin-top: calc(100vw * 0.613333333 / 9.5 * -1);
+  }
+
+  .wave-vector {
+    margin-top: calc(100vw * 0.613333333 / 9.5 * -1);
+  }
+}
+
+@media (min-width: 992px) {
+  .wave:not(:first-child) {
+    margin-top: calc(100vw * 0.613333333 / 9.5 * -1);
+  }
+
+  .wave-vector {
+    margin-top: calc(100vw * 0.613333333 / 9.5 * -1);
+  }
+}
+
+@media (min-width: 1200px) {
+  .wave:not(:first-child) {
+    margin-top: calc(100vw * 0.613333333 / 9.5 * -1);
+  }
+
+  .wave-vector {
+    margin-top: calc(100vw * 0.613333333 / 9.5 * -1);
+  }
+}

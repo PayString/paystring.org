@@ -41,7 +41,7 @@ const Nav: React.FC = () => {
   }, [])
 
   return (
-    <nav className="fixed top-0 w-screen px-6 py-4 text-white bg-blue-dark-900 lg:px-18">
+    <nav className="fixed top-0 z-20 w-screen px-6 py-4 text-white bg-blue-dark-900 lg:px-18">
       <div className="flex items-center justify-between">
         <Link to="/">
           <Logo />
