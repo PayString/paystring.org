@@ -1,58 +1,24 @@
 import React from 'react'
 
-import Wave from '../components/common/wave'
+import Learn from '../components/common/learn'
+import Questions from '../components/common/questions'
 import Layout from '../components/layout'
+import Benefits from '../components/pages/compliance/benefits'
+import Extensions from '../components/pages/compliance/extensions'
+import Introduction from '../components/pages/compliance/introduction'
+import Synergy from '../components/pages/compliance/synergy'
+import Walkthrough from '../components/pages/compliance/walkthrough'
 
 const Compliance: React.FC = () => {
   return (
     <Layout title="Compliance">
-      <Wave className="flex items-center justify-center flex-grow text-3xl">
-        Travel Rule Compliance
-      </Wave>
-      <Wave
-        background="white"
-        wave="gray"
-        className="flex items-center justify-center flex-grow text-3xl"
-      >
-        Benefits of Using PayID for Travel Rule
-      </Wave>
-      <Wave
-        background="gray"
-        wave="blue"
-        direction="rtl"
-        className="flex items-center justify-center flex-grow text-3xl"
-      >
-        Synergy with Other Proposals
-      </Wave>
-      <Wave
-        background="blue"
-        wave="gray"
-        direction="rtl"
-        className="flex items-center justify-center flex-grow text-3xl"
-      >
-        How Travel Rule Works with PayID
-      </Wave>
-      <Wave
-        background="gray"
-        wave="white"
-        className="flex items-center justify-center flex-grow text-3xl"
-      >
-        Other Extensions for PayID
-      </Wave>
-      <Wave
-        background="white"
-        wave="orange"
-        className="flex items-center justify-center flex-grow text-3xl"
-      >
-        Learn More
-      </Wave>
-      <Wave
-        background="orange"
-        wave="blue"
-        className="flex items-center justify-center flex-grow text-3xl"
-      >
-        Have Questions
-      </Wave>
+      <Introduction />
+      <Benefits />
+      <Synergy />
+      <Walkthrough />
+      <Extensions />
+      <Learn />
+      <Questions />
     </Layout>
   )
 }
