@@ -2,7 +2,7 @@ import React from 'react'
 
 import Footer from './layout/footer'
 import Nav from './layout/nav'
-import SEO from './seo'
+import SEO from './layout/seo'
 
 interface LayoutProps {
   title: string
