@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
 
-import WaveVector from './waveVector'
+import WaveVector from './wave-vector'
 
 interface WaveProps {
   background?: 'white' | 'gray' | 'blue' | 'orange'
