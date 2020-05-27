@@ -7,7 +7,7 @@ const Benefits: React.FC = () => {
     <Wave
       background="white"
       wave="gray"
-      className="flex items-center justify-center flex-grow text-3xl"
+      className="flex justify-center flex-grow text-3xl"
     >
       Benefits of Using PayID for Travel Rule
     </Wave>

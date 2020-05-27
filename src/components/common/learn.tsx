@@ -7,7 +7,7 @@ const Learn: React.FC = () => {
     <Wave
       background="white"
       wave="orange"
-      className="flex items-center justify-center flex-grow text-3xl"
+      className="flex justify-center flex-grow text-3xl"
     >
       Learn More
     </Wave>

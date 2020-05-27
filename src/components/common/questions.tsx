@@ -7,7 +7,7 @@ const Questions: React.FC = () => {
     <Wave
       background="orange"
       wave="blue"
-      className="flex items-center justify-center flex-grow text-3xl"
+      className="flex justify-center flex-grow text-3xl"
     >
       Have Questions
     </Wave>

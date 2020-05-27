@@ -6,20 +6,15 @@ import WaveVectorRTL from '../../../content/assets/WaveRTL.svg'
 
 interface WaveVectorProps {
   direction: 'ltr' | 'rtl'
-  background: 'white' | 'gray' | 'blue' | 'orange'
   wave: 'white' | 'gray' | 'blue' | 'orange'
 }
 
 const WaveVector: React.FC<WaveVectorProps> = (props) => {
-  const classes = classNames('relative', {
+  const classes = classNames('bg-transparent', {
     'text-white': props.wave === 'white',
     'text-gray-50': props.wave === 'gray',
     'text-blue-dark-900': props.wave === 'blue',
     'text-orange-500': props.wave === 'orange',
-    'bg-white': props.background === 'white',
-    'bg-gray-50': props.background === 'gray',
-    'bg-blue-dark-900': props.background === 'blue',
-    'bg-orange-500': props.background === 'orange',
   })
 
   return (

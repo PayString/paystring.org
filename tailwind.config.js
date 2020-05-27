@@ -211,9 +211,6 @@ module.exports = {
       }
     },
     extend: {
-      minHeight: {
-        '22': '5.5rem',
-      },
       spacing: {
         '12.5': '3.125rem',
         '18': '4.5rem',
