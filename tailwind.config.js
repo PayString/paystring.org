@@ -199,14 +199,30 @@ module.exports = {
           theme('colors.orange-dark.500'),
           theme('colors.orange-light.500'),
         ],
+        'orange-dark': [
+          theme('colors.orange-dark.600'),
+          theme('colors.orange-light.600'),
+        ],
         blue: [theme('colors.blue-dark.500'), theme('colors.blue-light.500')],
+        'blue-dark': [
+          theme('colors.blue-dark.600'),
+          theme('colors.blue-light.600'),
+        ],
         green: [
           theme('colors.green-dark.500'),
           theme('colors.green-light.500'),
         ],
+        'green-dark': [
+          theme('colors.green-dark.600'),
+          theme('colors.green-light.600'),
+        ],
         purple: [
           theme('colors.purple-dark.500'),
           theme('colors.purple-light.500'),
+        ],
+        'purple-dark': [
+          theme('colors.purple-dark.600'),
+          theme('colors.purple-light.600'),
         ],
       }
     },
@@ -224,6 +240,7 @@ module.exports = {
   },
   variants: {
     margin: ['responsive', 'last'],
+    linearGradients: ['responsive', 'hover', 'focus'],
   },
   plugins: [tailwindGradients],
 }

@@ -21,7 +21,6 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
     ...buttonProps
   } = props
 
-  // TODO (@Stormtv) add hover / focus gradient for primary variant once design has finished
   const classes: ClassValue[] = [
     props.className,
     'inline-block font-bold focus:outline-none rounded whitespace-no-wrap',
@@ -37,10 +36,14 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
     // Set Background Gradients when the button is not disabled
     if (!props.disabled) {
       classes.push({
-        'bg-gradient-br-orange': theme === 'orange',
-        'bg-gradient-br-purple': theme === 'purple',
-        'bg-gradient-br-green': theme === 'green',
-        'bg-gradient-br-blue': theme === 'blue',
+        'bg-gradient-r-orange hover:bg-gradient-r-orange-dark focus:bg-gradient-r-orange-dark':
+          theme === 'orange',
+        'bg-gradient-r-purple hover:bg-gradient-r-purple-dark focus:bg-gradient-r-purple-dark':
+          theme === 'purple',
+        'bg-gradient-r-green hover:bg-gradient-r-green-dark focus:bg-gradient-r-green-dark':
+          theme === 'green',
+        'bg-gradient-r-blue hover:bg-gradient-r-blue-dark focus:bg-gradient-r-blue-dark':
+          theme === 'blue',
       })
     } else {
       // When disabled background is gray-200
