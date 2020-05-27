@@ -7,7 +7,7 @@ const Extensions: React.FC = () => {
     <Wave
       background="gray"
       wave="white"
-      className="flex items-center justify-center flex-grow text-3xl"
+      className="flex justify-center flex-grow text-3xl"
     >
       Other Extensions for PayID
     </Wave>

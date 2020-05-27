@@ -8,7 +8,7 @@ const Walkthrough: React.FC = () => {
       background="blue"
       wave="gray"
       direction="rtl"
-      className="flex items-center justify-center flex-grow text-3xl"
+      className="flex justify-center flex-grow text-3xl"
     >
       How Travel Rule Works with PayID
     </Wave>

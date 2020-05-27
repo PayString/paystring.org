@@ -8,7 +8,7 @@ const Synergy: React.FC = () => {
       background="gray"
       wave="blue"
       direction="rtl"
-      className="flex items-center justify-center flex-grow text-3xl"
+      className="flex justify-center flex-grow text-3xl"
     >
       Synergy with Other Proposals
     </Wave>
