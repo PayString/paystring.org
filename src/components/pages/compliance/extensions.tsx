@@ -9,34 +9,35 @@ import IconUtilities from '../../../../content/assets/compliance/extensions/util
 import Wave from '../../common/wave'
 
 const Extensions: React.FC = () => {
+  const iconClasses = 'h-12.5 sm:h-14 mb-5 sm:mb-10'
   const sectionCopy = [
     {
-      icon: <IconCharity className="h-12.5 sm:h-14 mb-5 sm:mb-10" />,
+      icon: <IconCharity className={iconClasses} />,
       title: 'Charity',
       description: 'Simpler to donate money to your favorite organizations.',
     },
     {
-      icon: <IconP2P className="h-12.5 sm:h-14 mb-5 sm:mb-10" />,
+      icon: <IconP2P className={iconClasses} />,
       title: 'P2P Payments',
       description: 'Simpler to pay back your friends and family.',
     },
     {
-      icon: <IconUtilities className="h-12.5 sm:h-14 mb-5 sm:mb-10" />,
+      icon: <IconUtilities className={iconClasses} />,
       title: 'Utilities and Rent',
       description: 'Simpler to pay your bills.',
     },
     {
-      icon: <IconGettingPaid className="h-12.5 sm:h-14 mb-5 sm:mb-10" />,
+      icon: <IconGettingPaid className={iconClasses} />,
       title: 'Getting Paid',
       description: 'Simpler to earn a living.',
     },
     {
-      icon: <IconCommerce className="h-12.5 sm:h-14 mb-5 sm:mb-10" />,
+      icon: <IconCommerce className={iconClasses} />,
       title: 'Commerce',
       description: 'Simpler to get the things you need.',
     },
     {
-      icon: <IconInvoicing className="h-12.5 sm:h-14 mb-5 sm:mb-10" />,
+      icon: <IconInvoicing className={iconClasses} />,
       title: 'Invoicing',
       description: 'Simpler for your business to get paid for what it makes.',
     },
