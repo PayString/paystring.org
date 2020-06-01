@@ -11,32 +11,32 @@ import Wave from '../../common/wave'
 const Extensions: React.FC = () => {
   const sectionCopy = [
     {
-      icon: <IconCharity className="h-12.5 sm:h-14" />,
+      icon: <IconCharity className="h-12.5 sm:h-14 mb-5 sm:mb-10" />,
       title: 'Charity',
       description: 'Simpler to donate money to your favorite organizations.',
     },
     {
-      icon: <IconP2P className="h-12.5 sm:h-14" />,
+      icon: <IconP2P className="h-12.5 sm:h-14 mb-5 sm:mb-10" />,
       title: 'P2P Payments',
       description: 'Simpler to pay back your friends and family.',
     },
     {
-      icon: <IconUtilities className="h-12.5 sm:h-14" />,
+      icon: <IconUtilities className="h-12.5 sm:h-14 mb-5 sm:mb-10" />,
       title: 'Utilities and Rent',
       description: 'Simpler to pay your bills.',
     },
     {
-      icon: <IconGettingPaid className="h-12.5 sm:h-14" />,
+      icon: <IconGettingPaid className="h-12.5 sm:h-14 mb-5 sm:mb-10" />,
       title: 'Getting Paid',
       description: 'Simpler to earn a living.',
     },
     {
-      icon: <IconCommerce className="h-12.5 sm:h-14" />,
+      icon: <IconCommerce className="h-12.5 sm:h-14 mb-5 sm:mb-10" />,
       title: 'Commerce',
       description: 'Simpler to get the things you need.',
     },
     {
-      icon: <IconInvoicing className="h-12.5 sm:h-14" />,
+      icon: <IconInvoicing className="h-12.5 sm:h-14 mb-5 sm:mb-10" />,
       title: 'Invoicing',
       description: 'Simpler for your business to get paid for what it makes.',
     },
@@ -53,7 +53,7 @@ const Extensions: React.FC = () => {
         {sectionCopy.map((copy) => {
           return (
             <div key={copy.title} className="flex-grow">
-              <div className="mb-5 sm:mb-10">{copy.icon}</div>
+              {copy.icon}
               <h3 className="text-2xl font-bold sm:text-3xl">{copy.title}</h3>
               <p className="mt-4 sm:text-xl">{copy.description}</p>
             </div>
