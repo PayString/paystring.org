@@ -6,7 +6,7 @@ import Layout from '../components/layout'
 import Introduction from '../components/pages/company/introduction'
 import Members from '../components/pages/company/members'
 
-const Compliance: React.FC = () => {
+const Company: React.FC = () => {
   return (
     <Layout title="Company">
       <Introduction />
@@ -17,4 +17,4 @@ const Compliance: React.FC = () => {
   )
 }
 
-export default Compliance
+export default Company
