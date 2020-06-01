@@ -2,12 +2,16 @@ import React from 'react'
 
 import Wave from './wave'
 
-const Learn: React.FC = () => {
+interface LearnProps {
+  background?: 'white' | 'gray' | 'blue' | 'orange'
+}
+
+const Learn: React.FC<LearnProps> = (props) => {
   return (
     <Wave
-      background="white"
+      background={props.background}
       wave="orange"
-      className="flex justify-center flex-grow text-3xl"
+      className="flex justify-center flex-grow text-3xl text-center"
     >
       Learn More
     </Wave>

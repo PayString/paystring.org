@@ -14,6 +14,10 @@ const Footer: React.FC = () => {
       location: '/developers',
     },
     {
+      text: 'Company',
+      location: '/company',
+    },
+    {
       text: 'Compliance',
       location: '/compliance',
     },
