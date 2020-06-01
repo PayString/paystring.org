@@ -49,7 +49,7 @@ const Extensions: React.FC = () => {
           Other Extensions for PayID
         </h2>
       </div>
-      <div className="flex grid flex-wrap grid-cols-1 px-0 gap-15 sm:gap-30 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 sm-px-29">
+      <div className="flex grid flex-wrap grid-cols-1 px-0 gap-15 sm:gap-30 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 sm:px-29">
         {sectionCopy.map((copy) => {
           return (
             <div key={copy.title} className="flex-grow">
