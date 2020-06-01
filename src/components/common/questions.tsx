@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Button from './button'
 import Wave from './wave'
 
 const Questions: React.FC = () => {
@@ -9,7 +10,13 @@ const Questions: React.FC = () => {
       wave="blue"
       className="flex justify-center flex-grow text-3xl"
     >
-      Have Questions
+      <div>
+        <h2 className="text-center">
+          Have Questions? <br></br>Reach out to us anytime.
+          <br></br>
+          <Button to="/contact" label="Contact Us" variant="ghost" />
+        </h2>
+      </div>
     </Wave>
   )
 }
