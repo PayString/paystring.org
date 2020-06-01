@@ -50,10 +50,10 @@ const Extensions: React.FC = () => {
           Other Extensions for PayID
         </h2>
       </div>
-      <div className="flex grid flex-wrap grid-cols-1 px-0 gap-15 sm:gap-30 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 sm:px-29">
+      <div className="grid grid-cols-1 px-0 gap-15 sm:gap-30 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 sm:px-29">
         {sectionCopy.map((copy) => {
           return (
-            <div key={copy.title} className="flex-grow">
+            <div key={copy.title}>
               {copy.icon}
               <h3 className="text-2xl font-bold sm:text-3xl">{copy.title}</h3>
               <p className="mt-4 sm:text-xl">{copy.description}</p>
