@@ -40,14 +40,26 @@ const Footer: React.FC = () => {
         </Link>
         <div className="hidden ml-18 md:block">
           {links.map((link) => {
+            if (link.text !== 'Docs') {
+              return (
+                <Link
+                  key={link.text}
+                  to={link.location}
+                  className="inline-block mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+                >
+                  {link.text}
+                </Link>
+              )
+            }
+
             return (
-              <Link
+              <a
                 key={link.text}
-                to={link.location}
+                href={link.location}
                 className="inline-block mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
               >
                 {link.text}
-              </Link>
+              </a>
             )
           })}
         </div>
