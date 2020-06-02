@@ -44,7 +44,12 @@ const Extensions: React.FC = () => {
   ]
 
   return (
-    <Wave background="gray" wave="white">
+    <Wave
+      background="gray"
+      wave="white"
+      waveVectorClassName="lg:-mt-48"
+      className="lg:-mt-74"
+    >
       <div className="flex justify-center">
         <h2 className="max-w-md mb-12 text-3xl font-bold sm:text-5xl sm:text-center sm:mb-52">
           Other Extensions for PayID

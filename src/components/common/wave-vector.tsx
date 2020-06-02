@@ -7,6 +7,7 @@ import WaveVectorRTL from '../../../content/assets/WaveRTL.svg'
 interface WaveVectorProps {
   direction: 'ltr' | 'rtl'
   wave: 'white' | 'gray' | 'blue' | 'orange'
+  className?: string
 }
 
 const WaveVector: React.FC<WaveVectorProps> = (props) => {
@@ -18,7 +19,7 @@ const WaveVector: React.FC<WaveVectorProps> = (props) => {
   })
 
   return (
-    <div className="wave-vector">
+    <div className={props.className}>
       {props.direction === 'ltr' && <WaveVectorLTR className={classes} />}
       {props.direction === 'rtl' && <WaveVectorRTL className={classes} />}
     </div>
