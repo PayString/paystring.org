@@ -10,12 +10,15 @@ const Questions: React.FC = () => {
       wave="blue"
       className="flex justify-center flex-grow text-3xl"
     >
-      <div>
-        <h2 className="text-center">
-          Have Questions? <br></br>Reach out to us anytime.
-          <br></br>
-          <Button to="/contact" label="Contact Us" variant="ghost" />
-        </h2>
+      <div className="font-bold text-center sm:text-5xl">
+        <div>Have Questions?</div>
+        <div>Reach out to us anytime.</div>
+        <Button
+          to="/contact"
+          label="Contact Us"
+          variant="ghost"
+          className="w-full mt-5 sm:w-auto"
+        />
       </div>
     </Wave>
   )
