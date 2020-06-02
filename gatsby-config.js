@@ -70,6 +70,12 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-heap',
+      options: {
+        appId: 'YOUR-APP-ID', // TODO add APP ID once data team gives it to us.
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-feed',
