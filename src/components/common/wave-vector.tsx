@@ -19,7 +19,7 @@ const WaveVector: React.FC<WaveVectorProps> = (props) => {
   })
 
   return (
-    <div className={props.className}>
+    <div className={classNames('wave-vector', props.className)}>
       {props.direction === 'ltr' && <WaveVectorLTR className={classes} />}
       {props.direction === 'rtl' && <WaveVectorRTL className={classes} />}
     </div>

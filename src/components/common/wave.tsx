@@ -18,14 +18,17 @@ const Wave: React.FC<WaveProps> = (
   const { wave = 'white', background = 'blue', direction = 'ltr' } = props
 
   // Figure out the background color and text colors based on given background prop
-  const waveClasses = classNames({
+  const waveClasses = classNames('wave', {
     'bg-white text-blue-dark-900': background === 'white',
     'bg-gray-50 text-blue-dark-900': background === 'gray',
     'bg-blue-dark-900 text-white': background === 'blue',
     'bg-orange-500 text-white': background === 'orange',
   })
 
-  const contentClasses = classNames('px-6 xl:-mt-74', props.className)
+  const contentClasses = classNames(
+    'wave-content px-6 xl:-mt-74',
+    props.className,
+  )
 
   return (
     <div className={waveClasses}>
