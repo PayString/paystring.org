@@ -59,7 +59,7 @@ const Learn: React.FC<LearnProps> = (props) => {
                 target="_blank"
                 rel="noreferrer"
                 key={learnable.title}
-                className="transition duration-500 ease-in-out transform rounded-xl bg-blue-dark-900 focus:shadow-2xl hover:shadow-2xl focus:scale-105 hover:scale-105 learnable"
+                className="transition duration-500 ease-in-out transform rounded-xl bg-blue-dark-900 focus:shadow-2xl hover:shadow-2xl focus:scale-105 hover:scale-105 focus:outline-none learnable"
                 style={learnable.bgStyle}
               >
                 <h3 className="relative z-10 text-2xl font-bold text-white mx-13 md:text-3xl mt-29 md:mt-36">

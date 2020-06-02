@@ -10,8 +10,8 @@ const Footer: React.FC = () => {
       location: '/vision',
     },
     {
-      text: 'Developers',
-      location: '/developers',
+      text: 'Docs',
+      location: 'https://docs.payid.org',
     },
     {
       text: 'Company',
@@ -24,6 +24,10 @@ const Footer: React.FC = () => {
     {
       text: 'FAQ',
       location: '/faq',
+    },
+    {
+      text: 'Contact',
+      location: '/contact',
     },
   ]
 
@@ -48,16 +52,28 @@ const Footer: React.FC = () => {
           })}
         </div>
       </div>
-      <div className="grid grid-flow-col grid-rows-2 row-gap-8 col-gap-4 mt-12 md:hidden">
+      <div className="grid grid-flow-col grid-rows-3 row-gap-8 col-gap-4 mt-12 md:hidden">
         {links.map((link) => {
+          if (link.text !== 'Docs') {
+            return (
+              <Link
+                key={link.text}
+                to={link.location}
+                className="focus:text-orange-500 hover:text-orange-500"
+              >
+                {link.text}
+              </Link>
+            )
+          }
+
           return (
-            <Link
+            <a
               key={link.text}
-              to={link.location}
+              href={link.location}
               className="focus:text-orange-500 hover:text-orange-500"
             >
               {link.text}
-            </Link>
+            </a>
           )
         })}
       </div>
