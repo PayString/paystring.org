@@ -57,7 +57,7 @@ const Nav: React.FC = () => {
               <Link
                 key={link.text}
                 to={link.location}
-                className="inline-block mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+                className="inline-block mr-14 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
                 activeClassName="border-b-2 border-orange-500"
                 partiallyActive
               >
