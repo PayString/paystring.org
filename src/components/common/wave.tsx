@@ -7,7 +7,7 @@ interface WaveProps {
   background?: 'white' | 'gray' | 'blue' | 'orange'
   wave?: 'white' | 'gray' | 'blue' | 'orange'
   direction?: 'ltr' | 'rtl'
-  waveVectorClassName?: string
+  waveVectorClassName: string
   className?: string
 }
 
@@ -26,7 +26,7 @@ const Wave: React.FC<WaveProps> = (
   })
 
   const contentClasses = classNames(
-    'wave-content px-6 xl:-mt-74',
+    'wave-content px-6 xl:-mt-74 lg:-mt-56 md:-mt-40 sm:-mt-30 sm:mb-0 mb-13',
     props.className,
   )
 

@@ -44,7 +44,11 @@ const Learn: React.FC<LearnProps> = (props) => {
   ]
 
   return (
-    <Wave background={props.background} wave="orange">
+    <Wave
+      background={props.background}
+      wave="orange"
+      waveVectorClassName="xl:-mt-18 lg:-mt-40 md:-mt-25 sm:-mt-20"
+    >
       <div className="flex sm:justify-center">
         <h2 className="text-3xl font-bold mb-14 sm:text-5xl sm:text-center sm:mb-25">
           Learn More

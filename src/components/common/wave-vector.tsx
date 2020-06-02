@@ -7,7 +7,7 @@ import WaveVectorRTL from '../../../content/assets/WaveRTL.svg'
 interface WaveVectorProps {
   direction: 'ltr' | 'rtl'
   wave: 'white' | 'gray' | 'blue' | 'orange'
-  className?: string
+  className: string
 }
 
 const WaveVector: React.FC<WaveVectorProps> = (props) => {
