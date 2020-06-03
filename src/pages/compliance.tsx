@@ -17,7 +17,7 @@ const Compliance: React.FC = () => {
       <Synergy />
       <Walkthrough />
       <Extensions />
-      <Learn />
+      <Learn background="white" />
       <Questions />
     </Layout>
   )

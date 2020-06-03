@@ -229,18 +229,25 @@ module.exports = {
     extend: {
       spacing: {
         '12.5': '3.125rem',
+        '13': '3.25rem',
         '14': '3.5rem',
         '15': '3.75rem',
+        '17': '4.25rem',
         '18': '4.5rem',
         '22': '5.5rem',
+        '25': '6.25rem',
         '28': '7rem',
         '29': '7.25rem',
         '30': '7.5rem',
+        '36': '9rem',
         '52': '13rem',
       },
       lineHeight: {
         tightest: 1.15,
         tighter: 1.2,
+      },
+      borderRadius: {
+        xl: '0.75rem',
       },
     },
   },
