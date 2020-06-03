@@ -13,8 +13,12 @@ const Nav: React.FC = () => {
       location: '/vision',
     },
     {
-      text: 'Developers',
-      location: '/developers',
+      text: 'Docs',
+      location: 'https://docs.payid.org',
+    },
+    {
+      text: 'Company',
+      location: '/company',
     },
     {
       text: 'Compliance',
@@ -49,16 +53,28 @@ const Nav: React.FC = () => {
         </Link>
         <div className="hidden lg:block">
           {links.map((link) => {
+            if (link.text !== 'Docs') {
+              return (
+                <Link
+                  key={link.text}
+                  to={link.location}
+                  className="inline-block mr-14 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+                  activeClassName="border-b-2 border-orange-500"
+                  partiallyActive
+                >
+                  {link.text}
+                </Link>
+              )
+            }
+
             return (
-              <Link
+              <a
                 key={link.text}
-                to={link.location}
-                className="inline-block mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
-                activeClassName="border-b-2 border-orange-500"
-                partiallyActive
+                href={link.location}
+                className="inline-block mr-14 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
               >
                 {link.text}
-              </Link>
+              </a>
             )
           })}
           <Button to="/contact" label="Contact Us" className="inline-block" />
@@ -80,17 +96,31 @@ const Nav: React.FC = () => {
       {expanded && (
         <ul role="menu" aria-label="navigation" className="pt-4 mb-6 lg:hidden">
           {links.map((link) => {
+            if (link.text !== 'Docs') {
+              return (
+                <li role="none" key={link.text} className="mb-6">
+                  <Link
+                    role="menuitem"
+                    to={link.location}
+                    className="focus:text-orange-500 hover:text-orange-500"
+                    activeClassName="border-b-2 border-orange-500"
+                    partiallyActive
+                  >
+                    {link.text}
+                  </Link>
+                </li>
+              )
+            }
+
             return (
               <li role="none" key={link.text} className="mb-6">
-                <Link
+                <a
                   role="menuitem"
-                  to={link.location}
+                  href={link.location}
                   className="focus:text-orange-500 hover:text-orange-500"
-                  activeClassName="border-b-2 border-orange-500"
-                  partiallyActive
                 >
                   {link.text}
-                </Link>
+                </a>
               </li>
             )
           })}

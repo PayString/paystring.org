@@ -1,0 +1,13 @@
+/* Design is weird */
+
+.learnable {
+  width: 236px;
+  height: 370px;
+}
+
+@media (min-width: 768px) {
+  .learnable {
+    width: 295px;
+    height: 461px;
+  }
+}
