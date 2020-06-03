@@ -19,11 +19,11 @@ const Wave: React.FC<WaveProps> = (
     wave = 'white',
     background = 'blue',
     direction = 'ltr',
-    spacing = 'sm',
+    spacing = 'md',
   } = props
 
   let waveVectorClasses = ''
-  if (spacing === 'sm') {
+  if (spacing === 'xs') {
     waveVectorClasses = 'xl:-mt-18 lg:-mt-40 md:-mt-25 sm:-mt-20'
   } else if (spacing === 'md') {
     waveVectorClasses = 'xl:-mt-52 lg:-mt-40 md:-mt-36 sm:-mt-25'
