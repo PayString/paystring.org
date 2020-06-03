@@ -7,7 +7,7 @@ interface WaveProps {
   background?: 'white' | 'gray' | 'blue' | 'orange'
   wave?: 'white' | 'gray' | 'blue' | 'orange'
   direction?: 'ltr' | 'rtl'
-  waveVectorClassName: string
+  spacing?: 'xs' | 'md'
   className?: string
 }
 
@@ -15,7 +15,17 @@ const Wave: React.FC<WaveProps> = (
   props: React.PropsWithChildren<WaveProps>,
 ) => {
   // Parse props and set defaults
-  const { wave = 'white', background = 'blue', direction = 'ltr' } = props
+  const {
+    wave = 'white',
+    background = 'blue',
+    direction = 'ltr',
+    spacing = 'sm',
+  } = props
+
+  let waveVectorClasses = 'xl:-mt-52 lg:-mt-40 md:-mt-36 sm:-mt-25'
+  if (spacing === 'sm') {
+    waveVectorClasses = 'xl:-mt-18 lg:-mt-40 md:-mt-25 sm:-mt-20'
+  }
 
   // Figure out the background color and text colors based on given background prop
   const waveClasses = classNames('wave', {
@@ -25,10 +35,7 @@ const Wave: React.FC<WaveProps> = (
     'bg-orange-500 text-white': background === 'orange',
   })
 
-  const contentClasses = classNames(
-    'wave-content px-6 xl:-mt-74 lg:-mt-56 md:-mt-40 sm:-mt-30 sm:mb-0 mb-13',
-    props.className,
-  )
+  const contentClasses = classNames('wave-content', props.className)
 
   return (
     <div className={waveClasses}>
@@ -36,7 +43,7 @@ const Wave: React.FC<WaveProps> = (
       <WaveVector
         wave={wave}
         direction={direction}
-        className={props.waveVectorClassName}
+        className={waveVectorClasses}
       />
     </div>
   )
