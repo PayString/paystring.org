@@ -242,9 +242,6 @@ module.exports = {
         tightest: 1.15,
         tighter: 1.2,
       },
-      margin: {
-        '28': '7rem',
-      },
     },
   },
   variants: {

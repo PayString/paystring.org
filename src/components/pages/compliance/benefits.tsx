@@ -28,7 +28,7 @@ const Benefits: React.FC = () => {
   return (
     <Wave background="white" wave="gray">
       <div className="flex justify-center">
-        <h2 className="max-w-2xl mb-12 text-3xl font-bold sm:text-5xl sm:text-center sm:mb-28">
+        <h2 className="max-w-2xl mb-16 text-3xl font-bold sm:text-5xl sm:text-center sm:mb-28">
           Benefits of Using PayID for Travel Rule
         </h2>
       </div>
@@ -36,10 +36,8 @@ const Benefits: React.FC = () => {
         {sectionCopy.map((copy) => {
           return (
             <div key={copy.title}>
-              <h3 className="text-2xl font-semibold sm:font-bold sm:text-3xl">
-                {copy.title}
-              </h3>
-              <p className="mt-4 sm:text-xl">{copy.description}</p>
+              <h3 className="text-2xl font-bold sm:text-3xl">{copy.title}</h3>
+              <p className="mt-3 sm:mt-4 sm:text-xl">{copy.description}</p>
             </div>
           )
         })}
