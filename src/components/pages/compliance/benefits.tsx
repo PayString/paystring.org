@@ -28,11 +28,11 @@ const Benefits: React.FC = () => {
   return (
     <Wave background="white" wave="gray">
       <div className="flex justify-center">
-        <h2 className="max-w-xl mb-12 text-3xl font-bold sm:text-5xl sm:text-center sm:mb-28">
+        <h2 className="max-w-2xl mb-12 text-3xl font-bold sm:text-5xl sm:text-center sm:mb-28">
           Benefits of Using PayID for Travel Rule
         </h2>
       </div>
-      <div className="grid grid-cols-1 px-0 gap-15 sm:gap-30 md:grid-cols-2 sm:px-29">
+      <div className="grid grid-cols-1 px-0 gap-15 sm:row-gap-28 sm:col-gap-20 md:grid-cols-2 sm:px-29">
         {sectionCopy.map((copy) => {
           return (
             <div key={copy.title}>
