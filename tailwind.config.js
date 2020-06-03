@@ -247,6 +247,9 @@ module.exports = {
         tightest: 1.15,
         tighter: 1.2,
       },
+      fontSize: {
+        h1: '4.5rem',
+      },
       borderRadius: {
         xl: '0.75rem',
       },

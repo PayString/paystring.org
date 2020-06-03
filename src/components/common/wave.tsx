@@ -7,7 +7,7 @@ interface WaveProps {
   background?: 'white' | 'gray' | 'blue' | 'orange'
   wave?: 'white' | 'gray' | 'blue' | 'orange'
   direction?: 'ltr' | 'rtl'
-  spacing?: 'xs' | 'md' | 'none'
+  spacing?: 'xs' | 'sm' | 'md' | 'none'
   className?: string
 }
 
@@ -25,6 +25,8 @@ const Wave: React.FC<WaveProps> = (
   let waveVectorClasses = ''
   if (spacing === 'xs') {
     waveVectorClasses = 'xl:-mt-18 lg:-mt-40 md:-mt-25 sm:-mt-20'
+  } else if (spacing === 'sm') {
+    waveVectorClasses = 'xl:-mt-30 lg:-mt-40 md:-mt-30 sm:-mt-22'
   } else if (spacing === 'md') {
     waveVectorClasses = 'xl:-mt-52 lg:-mt-40 md:-mt-36 sm:-mt-25'
   }
