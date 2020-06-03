@@ -7,7 +7,7 @@ interface WaveProps {
   background?: 'white' | 'gray' | 'blue' | 'orange'
   wave?: 'white' | 'gray' | 'blue' | 'orange'
   direction?: 'ltr' | 'rtl'
-  spacing?: 'xs' | 'md'
+  spacing?: 'xs' | 'md' | 'none'
   className?: string
 }
 
@@ -22,9 +22,11 @@ const Wave: React.FC<WaveProps> = (
     spacing = 'sm',
   } = props
 
-  let waveVectorClasses = 'xl:-mt-52 lg:-mt-40 md:-mt-36 sm:-mt-25'
+  let waveVectorClasses = ''
   if (spacing === 'sm') {
     waveVectorClasses = 'xl:-mt-18 lg:-mt-40 md:-mt-25 sm:-mt-20'
+  } else if (spacing === 'md') {
+    waveVectorClasses = 'xl:-mt-52 lg:-mt-40 md:-mt-36 sm:-mt-25'
   }
 
   // Figure out the background color and text colors based on given background prop
