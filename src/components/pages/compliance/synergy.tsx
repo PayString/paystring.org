@@ -27,7 +27,7 @@ const Synergy: React.FC = () => {
       <h2 className="max-w-md mb-6 text-3xl font-bold sm:text-5xl sm:mb-10 sm:mx-29">
         Synergy with Other Proposals
       </h2>
-      <div className="grid grid-cols-1 gap-8 px-0 sm:text-xl md:grid-cols-2 sm:px-29">
+      <div className="grid grid-cols-1 gap-8 px-0 sm:gap-20 sm:text-xl md:grid-cols-2 sm:px-29">
         <div>
           <p className="mb-8">
             PayID purposefully does not prescribe a particular approach to
