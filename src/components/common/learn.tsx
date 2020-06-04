@@ -11,7 +11,7 @@ const Learn: React.FC<LearnProps> = (props) => {
   const learnables = [
     {
       bgStyle: {
-        backgroundImage: `url(/assets/learn/developers.svg)`,
+        backgroundImage: 'url(/assets/learn/developers.svg)',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
       },
@@ -19,7 +19,7 @@ const Learn: React.FC<LearnProps> = (props) => {
     },
     {
       bgStyle: {
-        backgroundImage: `url(/assets/learn/whitepaper.svg)`,
+        backgroundImage: 'url(/assets/learn/whitepaper.svg)',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
       },
@@ -27,7 +27,7 @@ const Learn: React.FC<LearnProps> = (props) => {
     },
     {
       bgStyle: {
-        backgroundImage: `url(/assets/learn/security.svg)`,
+        backgroundImage: 'url(/assets/learn/security.svg)',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
       },
@@ -35,7 +35,7 @@ const Learn: React.FC<LearnProps> = (props) => {
     },
     {
       bgStyle: {
-        backgroundImage: `url(/assets/learn/travel-rule.svg)`,
+        backgroundImage: 'url(/assets/learn/travel-rule.svg)',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
       },

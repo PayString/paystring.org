@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React from 'react'
+import React, { CSSProperties } from 'react'
 
 import WaveVector from './wave-vector'
 
@@ -9,6 +9,7 @@ interface WaveProps {
   direction?: 'ltr' | 'rtl'
   spacing?: 'xs' | 'sm' | 'md' | 'none'
   className?: string
+  style?: CSSProperties
 }
 
 const Wave: React.FC<WaveProps> = (
@@ -42,7 +43,7 @@ const Wave: React.FC<WaveProps> = (
   const contentClasses = classNames('wave-content', props.className)
 
   return (
-    <div className={waveClasses}>
+    <div className={waveClasses} style={props.style}>
       <div className={contentClasses}>{props.children}</div>
       <WaveVector
         wave={wave}
