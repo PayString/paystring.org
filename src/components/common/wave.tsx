@@ -7,7 +7,7 @@ interface WaveProps {
   background?: 'white' | 'gray' | 'blue' | 'orange'
   wave?: 'white' | 'gray' | 'blue' | 'orange'
   direction?: 'ltr' | 'rtl'
-  spacing?: 'xs' | 'sm' | 'md' | 'none'
+  spacing?: 'xs' | 'md' | 'none'
   className?: string
 }
 
