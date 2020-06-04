@@ -5,8 +5,8 @@ import Wave from '../../common/wave'
 const Introduction: React.FC = () => {
   return (
     <Wave spacing="sm">
-      <div className="px-0 pt-16 sm:pt-40 sm:flex sm:px-29">
-        <div className="sm:flex sm:flex-col sm:mr-12">
+      <div className="pt-16 lg:pt-40 lg:flex">
+        <div className="lg:flex lg:flex-col lg:mr-12">
           <h1 className="mb-10 text-3xl font-bold sm:mb-16 sm:text-h1 sm:leading-tighter">
             Travel Rule Compliance
           </h1>
@@ -17,8 +17,8 @@ const Introduction: React.FC = () => {
           </div>
         </div>
         <div>
-          <ul className="sm:list-disc sm:list-outside">
-            <li className="mt-8 sm:mt-0">
+          <ul className="lg:list-disc lg:list-outside">
+            <li className="mt-8 lg:mt-0">
               Travel rule is a regulatory requirement for money services to
               exchange and retain information on senders and recievers of
               transactions.
