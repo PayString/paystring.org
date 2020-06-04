@@ -241,6 +241,7 @@ module.exports = {
         '30': '7.5rem',
         '36': '9rem',
         '52': '13rem',
+        '74': '18.5rem',
       },
       lineHeight: {
         tightest: 1.15,
