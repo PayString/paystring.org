@@ -9,7 +9,7 @@
 /* Wave Content for negative spacing */
 .wave-content {
   @apply mb-13;
-  @apply px-6;
+  @apply mx-6;
 }
 
 @media (min-width: 640px) {
@@ -17,25 +17,29 @@
     @apply mb-0;
   }
 
-  .wave:not(:first-of-type) > .wave-content {
+  .wave:not(:first-of-type) > div > .wave-content {
     @apply -mt-30;
   }
 }
 
 @media (min-width: 768px) {
-  .wave:not(:first-of-type) > .wave-content {
+  .wave:not(:first-of-type) > div > .wave-content {
     @apply -mt-40;
   }
 }
 
 @media (min-width: 1024px) {
-  .wave:not(:first-of-type) > .wave-content {
+  .wave-content {
+    @apply mx-35;
+  }
+
+  .wave:not(:first-of-type) > div > .wave-content {
     @apply -mt-56;
   }
 }
 
 @media (min-width: 1280px) {
-  .wave:not(:first-of-type) > .wave-content {
+  .wave:not(:first-of-type) > div > .wave-content {
     @apply -mt-74;
   }
 }

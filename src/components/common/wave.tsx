@@ -39,11 +39,13 @@ const Wave: React.FC<WaveProps> = (
     'bg-orange-500 text-white': background === 'orange',
   })
 
-  const contentClasses = classNames('wave-content', props.className)
+  const contentClasses = classNames('wave-content container', props.className)
 
   return (
     <div className={waveClasses}>
-      <div className={contentClasses}>{props.children}</div>
+      <div className="flex justify-center">
+        <div className={contentClasses}>{props.children}</div>
+      </div>
       <WaveVector
         wave={wave}
         direction={direction}
