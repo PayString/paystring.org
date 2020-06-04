@@ -24,14 +24,12 @@ const Synergy: React.FC = () => {
 
   return (
     <Wave background="gray" wave="blue" direction="rtl">
-      <div className="flex ">
-        <h2 className="max-w-md mb-6 text-3xl font-bold sm:text-5xl sm:mb-10 sm:mx-29">
-          Synergy with Other Proposals
-        </h2>
-      </div>
-      <div className="grid grid-cols-1 px-0 sm:text-xl md:grid-cols-2 gap-15 sm:px-29">
+      <h2 className="max-w-md mb-6 text-3xl font-bold sm:text-5xl sm:mb-10 sm:mx-29">
+        Synergy with Other Proposals
+      </h2>
+      <div className="grid grid-cols-1 gap-8 px-0 sm:text-xl md:grid-cols-2 sm:px-29">
         <div>
-          <p className="mb-5 ">
+          <p className="mb-8">
             PayID purposefully does not prescribe a particular approach to
             compliance. Companies can choose to institute any suitable
             compliance policy with PayID.
@@ -43,7 +41,7 @@ const Synergy: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 px-0 gap-15 sm:gap-30">
+        <div className="grid grid-cols-1 gap-8 px-0 sm:gap-20">
           {sectionCopy.map((copy) => {
             return (
               <div key={copy.title}>
