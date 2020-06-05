@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 
 const Contact: React.FC = () => {
   return (
-    <Layout title="Contact">
+    <Layout title="Contact" fixedNav>
       <div className="flex items-center justify-center flex-grow text-3xl">
         Contact TODO
       </div>

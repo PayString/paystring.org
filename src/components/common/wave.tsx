@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React from 'react'
+import React, { CSSProperties } from 'react'
 
 import WaveVector from './wave-vector'
 
@@ -7,8 +7,10 @@ interface WaveProps {
   background?: 'white' | 'gray' | 'blue' | 'orange'
   wave?: 'white' | 'gray' | 'blue' | 'orange'
   direction?: 'ltr' | 'rtl'
-  spacing?: 'xs' | 'md' | 'none'
+  spacing?: 'md' | 'lg'
   className?: string
+  style?: CSSProperties
+  'no-gutter'?: boolean
 }
 
 const Wave: React.FC<WaveProps> = (
@@ -23,10 +25,10 @@ const Wave: React.FC<WaveProps> = (
   } = props
 
   let waveVectorClasses = ''
-  if (spacing === 'xs') {
-    waveVectorClasses = 'xl:-mt-18 lg:-mt-40 md:-mt-25 sm:-mt-20'
-  } else if (spacing === 'md') {
-    waveVectorClasses = 'xl:-mt-52 lg:-mt-40 md:-mt-36 sm:-mt-25'
+  if (spacing === 'md') {
+    waveVectorClasses = 'xl:-mt-52 lg:-mt-40 md:-mt-14 sm:-mt-10'
+  } else if (spacing === 'lg') {
+    waveVectorClasses = 'xl:-mt-74 lg:-mt-52 md:-mt-36 sm:-mt-28'
   }
 
   // Figure out the background color and text colors based on given background prop
@@ -37,11 +39,19 @@ const Wave: React.FC<WaveProps> = (
     'bg-orange-500 text-white': background === 'orange',
   })
 
-  const contentClasses = classNames('wave-content', props.className)
+  const contentClasses = classNames(
+    'wave-content container',
+    {
+      'lg:px-17': !props['no-gutter'],
+    },
+    props.className,
+  )
 
   return (
-    <div className={waveClasses}>
-      <div className={contentClasses}>{props.children}</div>
+    <div className={waveClasses} style={props.style}>
+      <div className="flex justify-center px-6 lg:px-18">
+        <div className={contentClasses}>{props.children}</div>
+      </div>
       <WaveVector
         wave={wave}
         direction={direction}

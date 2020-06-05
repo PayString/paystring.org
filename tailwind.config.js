@@ -239,8 +239,10 @@ module.exports = {
         '28': '7rem',
         '29': '7.25rem',
         '30': '7.5rem',
+        '35': '8.75rem',
         '36': '9rem',
         '52': '13rem',
+        '70': '17.5rem',
         '74': '18.5rem',
       },
       boxShadow: {
@@ -249,6 +251,9 @@ module.exports = {
       lineHeight: {
         tightest: 1.15,
         tighter: 1.2,
+      },
+      fontSize: {
+        h1: '4.5rem',
       },
       borderRadius: {
         xl: '0.75rem',

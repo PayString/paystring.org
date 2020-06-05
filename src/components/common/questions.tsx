@@ -5,7 +5,7 @@ import Wave from './wave'
 
 const Questions: React.FC = () => {
   return (
-    <Wave background="orange" wave="blue">
+    <Wave background="orange" wave="blue" spacing="lg">
       <div className="text-3xl font-bold text-center sm:text-5xl">
         <div>Have Questions?</div>
         <div>Reach out to us anytime.</div>

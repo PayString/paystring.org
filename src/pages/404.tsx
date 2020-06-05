@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 
 const NotFoundPage: React.FC = () => {
   return (
-    <Layout title="404">
+    <Layout title="404" fixedNav>
       <h1>Not Found</h1>
       <p>You just hit a route that doesn&apos;t exist... the sadness.</p>
     </Layout>
