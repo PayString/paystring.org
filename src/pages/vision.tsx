@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 
 const Vision: React.FC = () => {
   return (
-    <Layout title="Vision">
+    <Layout title="Vision" fixedNav>
       <div className="flex items-center justify-center flex-grow text-3xl">
         Vision TODO
       </div>
