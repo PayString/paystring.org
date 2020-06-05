@@ -10,22 +10,25 @@ interface ScrollInformation {
 
 const useScroll = (): ScrollInformation => {
   const [scroll, setScroll] = useState<ScrollInformation>({
-    x: window.scrollX,
-    y: window.scrollY,
+    x: typeof window !== 'undefined' ? window.scrollX : 0,
+    y: typeof window !== 'undefined' ? window.scrollY : 0,
     direction: undefined,
   })
 
   const getDirection = (prev: ScrollInformation): ScrollDirection => {
-    if (prev.y === window.scrollY) return prev.direction
-    return prev.y > window.scrollY ? 'up' : 'down'
+    if (typeof window === 'undefined') return prev.direction
+    if (prev.y === window.scrollY ?? 0) return prev.direction
+    return prev.y > window.scrollY ?? 0 ? 'up' : 'down'
   }
 
   const listener = (): void => {
-    setScroll((prev) => ({
-      x: window.scrollX,
-      y: window.scrollY,
-      direction: getDirection(prev),
-    }))
+    if (typeof window !== 'undefined') {
+      setScroll((prev) => ({
+        x: window.scrollX ?? 0,
+        y: window.scrollY ?? 0,
+        direction: getDirection(prev),
+      }))
+    }
   }
 
   useEffect(() => {
