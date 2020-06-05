@@ -3,3 +3,7 @@ proxyng:
   install: true
   releaseImage: gcr.io/xpring-dev-sandbox/xpring_nginx:latest
   setHostHeader: true
+  gzip:
+    enabled: true
+  cache:
+    enabled: true
