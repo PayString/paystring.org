@@ -28,7 +28,7 @@ const Benefits: React.FC = () => {
   return (
     <Wave background="white" wave="gray">
       <div className="flex justify-center">
-        <h2 className="max-w-2xl mb-16 text-3xl font-bold sm:text-5xl sm:text-center sm:mb-28">
+        <h2 className="max-w-2xl text-3xl font-bold mb-14 sm:text-5xl sm:text-center md:mb-28">
           Benefits of Using PayID for Travel Rule
         </h2>
       </div>

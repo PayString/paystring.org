@@ -12,6 +12,16 @@
   @apply mx-6;
 }
 
+.learnable {
+  width: 236px;
+  height: 370px;
+}
+
+.learnable-title {
+  @apply text-2xl;
+  @apply mt-29;
+}
+
 @media (min-width: 640px) {
   .wave-content {
     @apply mb-0;
@@ -25,6 +35,16 @@
 @media (min-width: 768px) {
   .wave:not(:first-of-type) > div > .wave-content {
     @apply -mt-40;
+  }
+
+  .learnable-title {
+    @apply text-3xl;
+    @apply mt-36;
+  }
+
+  .learnable {
+    width: 295px;
+    height: 461px;
   }
 }
 
@@ -41,5 +61,27 @@
 @media (min-width: 1280px) {
   .wave:not(:first-of-type) > div > .wave-content {
     @apply -mt-74;
+  }
+
+  .learnable {
+    width: 236px;
+    height: 370px;
+  }
+
+  .learnable-title {
+    @apply text-2xl;
+    @apply mt-29;
+  }
+}
+
+@media (min-width: 1550px) {
+  .learnable {
+    width: 295px;
+    height: 461px;
+  }
+
+  .learnable-title {
+    @apply text-3xl;
+    @apply mt-36;
   }
 }

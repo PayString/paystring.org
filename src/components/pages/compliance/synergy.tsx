@@ -23,8 +23,8 @@ const Synergy: React.FC = () => {
   ]
 
   return (
-    <Wave background="gray" wave="blue" direction="rtl">
-      <h2 className="max-w-md mb-6 text-3xl font-bold sm:text-5xl sm:mb-10">
+    <Wave background="gray" wave="blue" direction="rtl" spacing="lg">
+      <h2 className="max-w-2xl mb-6 text-3xl font-bold text-left sm:text-5xl sm:mb-10 sm:text-center md:text-left">
         Synergy with Other Proposals
       </h2>
       <div className="grid grid-cols-1 gap-8 sm:gap-20 sm:text-xl md:grid-cols-2">

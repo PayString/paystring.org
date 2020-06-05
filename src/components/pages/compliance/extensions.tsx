@@ -9,7 +9,7 @@ import IconUtilities from '../../../../content/assets/compliance/extensions/util
 import Wave from '../../common/wave'
 
 const Extensions: React.FC = () => {
-  const iconClasses = 'h-12.5 sm:h-14 mb-5 sm:mb-10'
+  const iconClasses = 'h-12.5 sm:h-14 mb-5 md:mb-10'
   const sectionCopy = [
     {
       icon: <IconCharity className={iconClasses} />,
@@ -46,11 +46,11 @@ const Extensions: React.FC = () => {
   return (
     <Wave background="gray" wave="white">
       <div className="flex justify-center">
-        <h2 className="max-w-md mb-12 text-3xl font-bold sm:text-5xl sm:text-center sm:mb-52">
+        <h2 className="max-w-md text-3xl font-bold mb-14 sm:text-5xl sm:text-center md:mb-25">
           Other Extensions for PayID
         </h2>
       </div>
-      <div className="grid grid-cols-1 gap-15 sm:gap-30 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-15 md:gap-30 md:grid-cols-2 lg:grid-cols-3">
         {sectionCopy.map((copy) => {
           return (
             <div key={copy.title}>
