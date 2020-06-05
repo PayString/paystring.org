@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Wave from './wave'
-import '../../css/learn.css'
 
 interface LearnProps {
   background?: 'white' | 'gray' | 'blue' | 'orange'
@@ -44,9 +43,9 @@ const Learn: React.FC<LearnProps> = (props) => {
   ]
 
   return (
-    <Wave background={props.background} wave="orange" spacing="xs">
+    <Wave background={props.background} wave="orange" no-gutter>
       <div className="flex sm:justify-center">
-        <h2 className="text-3xl font-bold mb-14 sm:text-5xl sm:text-center sm:mb-25">
+        <h2 className="text-3xl font-bold mb-14 sm:text-5xl sm:text-center md:mb-25">
           Learn More
         </h2>
       </div>
@@ -62,7 +61,7 @@ const Learn: React.FC<LearnProps> = (props) => {
                 className="transition duration-500 ease-in-out transform rounded-xl bg-blue-dark-900 focus:shadow-2xl hover:shadow-2xl focus:scale-105 hover:scale-105 focus:outline-none learnable"
                 style={learnable.bgStyle}
               >
-                <h3 className="relative z-10 text-2xl font-bold text-white mx-13 md:text-3xl mt-29 md:mt-36">
+                <h3 className="font-bold text-white learnable-title mx-13">
                   {learnable.title}
                 </h3>
               </a>
