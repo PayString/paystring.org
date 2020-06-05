@@ -12,7 +12,7 @@ const Introduction: React.FC = () => {
 
   return (
     <Wave style={bgImgStyle}>
-      <div className="pt-16 lg:pt-40 lg:flex">
+      <div className="pt-16 lg:pt-70 lg:flex">
         <div className="lg:flex lg:flex-col lg:mr-12">
           <h1 className="mb-10 text-3xl font-bold sm:mb-16 sm:text-h1 sm:leading-tighter">
             Travel Rule Compliance

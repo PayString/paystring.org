@@ -38,6 +38,16 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
   const [expanded, setExpanded] = useState<boolean>(false)
   const { y, direction } = useScroll()
 
+  const shouldBeFixed = (): boolean => {
+    if (typeof window === 'undefined' || props.fixed || expanded) return true
+    return !!(
+      direction &&
+      direction === 'up' &&
+      ((window.outerHeight >= 1024 && y >= 48) ||
+        (window.outerHeight < 1024 && y >= 0))
+    )
+  }
+
   const closeExpandedMenu = useCallback((event) => {
     if (event.keyCode === 27) setExpanded(false)
   }, [])
@@ -55,14 +65,8 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
       className={classNames(
         'top-0 w-full text-white flex justify-center px-6 lg:px-18',
         {
-          'fixed bg-blue-dark-900 z-10':
-            props.fixed ||
-            expanded ||
-            (direction && direction === 'up' && y > 0),
-          'absolute bg-transparent':
-            !props.fixed &&
-            !expanded &&
-            (!direction || direction === 'down' || y <= 0),
+          'fixed bg-blue-dark-900 z-10': shouldBeFixed(),
+          'absolute bg-transparent lg:mt-12': !shouldBeFixed(),
         },
       )}
     >

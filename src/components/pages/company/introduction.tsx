@@ -5,7 +5,7 @@ import Wave from '../../common/wave'
 const Introduction: React.FC = () => {
   return (
     <Wave className="flex justify-center flex-grow text-3xl text-center">
-      <div className="pt-16 lg:pt-40">Who Uses PayID</div>
+      <div className="pt-16 lg:pt-70">Who Uses PayID</div>
     </Wave>
   )
 }
