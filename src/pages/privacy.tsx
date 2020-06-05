@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 
 const Privacy: React.FC = () => {
   return (
-    <Layout title="Privacy">
+    <Layout title="Privacy" fixedNav>
       <div className="flex items-center justify-center flex-grow text-3xl">
         Privacy TODO
       </div>
