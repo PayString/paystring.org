@@ -39,9 +39,11 @@ publish:
     - kubectl create namespace ${RELEASE_NAME}-${RELEASE_ENV} || true
     - helm upgrade --install --namespace ${RELEASE_NAME}-${RELEASE_ENV}
         --set releaseEnv=$RELEASE_ENV
+        --set replicas=$REPLICAS
         --set releaseImage="gcr.io/$GCR_PROJECT_ID/$CI_PROJECT_NAME:$IMAGE_UID"
         --set proxyng.domainName="${FULL_DNS_NAME}"
         --set proxyng.proxiedService="http://${RELEASE_NAME}-${RELEASE_ENV}:80"
+        --set proxyng.replicaCount=$PROXY_REPLICAS
         --set proxyng.install=$INSTALL_XPRING_PROXY
         ${RELEASE_NAME}-${RELEASE_ENV} ./charts
 
@@ -52,6 +54,8 @@ deploy to dev:
     RELEASE_ENV: dev
     FULL_DNS_NAME: dev.payid.org
     INSTALL_XPRING_PROXY: "true"
+    REPLICAS: 1
+    PROXY_REPLICAS: 1
 
 deploy to stage:
   stage: deploy
@@ -59,6 +63,8 @@ deploy to stage:
   variables:
     RELEASE_ENV: stage
     FULL_DNS_NAME: stage.payid.org
+    REPLICAS: 2
+    PROXY_REPLICAS: 2
 
 # Prod is being deployed to a different GCP project and cluster
 deploy to prod:
@@ -70,3 +76,5 @@ deploy to prod:
     CLUSTER_NAME: xpring-testnet-cluster01
     CLUSTER_REGION: us-central1
     FULL_DNS_NAME: payid.org
+    REPLICAS: 4
+    PROXY_REPLICAS: 4
