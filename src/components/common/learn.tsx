@@ -43,7 +43,7 @@ const Learn: React.FC<LearnProps> = (props) => {
   ]
 
   return (
-    <Wave background={props.background} wave="orange">
+    <Wave background={props.background} wave="orange" no-gutter>
       <div className="flex sm:justify-center">
         <h2 className="text-3xl font-bold mb-14 sm:text-5xl sm:text-center md:mb-25">
           Learn More
@@ -61,7 +61,7 @@ const Learn: React.FC<LearnProps> = (props) => {
                 className="transition duration-500 ease-in-out transform rounded-xl bg-blue-dark-900 focus:shadow-2xl hover:shadow-2xl focus:scale-105 hover:scale-105 focus:outline-none learnable"
                 style={learnable.bgStyle}
               >
-                <h3 className="relative z-10 font-bold text-white learnable-title mx-13">
+                <h3 className="font-bold text-white learnable-title mx-13">
                   {learnable.title}
                 </h3>
               </a>

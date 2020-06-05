@@ -10,6 +10,7 @@ interface WaveProps {
   spacing?: 'md' | 'lg'
   className?: string
   style?: CSSProperties
+  'no-gutter'?: boolean
 }
 
 const Wave: React.FC<WaveProps> = (
@@ -38,11 +39,17 @@ const Wave: React.FC<WaveProps> = (
     'bg-orange-500 text-white': background === 'orange',
   })
 
-  const contentClasses = classNames('wave-content container', props.className)
+  const contentClasses = classNames(
+    'wave-content container',
+    {
+      'lg:px-17': !props['no-gutter'],
+    },
+    props.className,
+  )
 
   return (
     <div className={waveClasses} style={props.style}>
-      <div className="flex justify-center">
+      <div className="flex justify-center px-6 lg:px-18">
         <div className={contentClasses}>{props.children}</div>
       </div>
       <WaveVector

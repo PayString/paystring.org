@@ -15,11 +15,16 @@ const useScroll = (): ScrollInformation => {
     direction: undefined,
   })
 
+  const getDirection = (prev: ScrollInformation): ScrollDirection => {
+    if (prev.y === window.scrollY) return prev.direction
+    return prev.y > window.scrollY ? 'up' : 'down'
+  }
+
   const listener = (): void => {
     setScroll((prev) => ({
       x: window.scrollX,
       y: window.scrollY,
-      direction: prev.y > window.scrollY ? 'up' : 'down',
+      direction: getDirection(prev),
     }))
   }
 

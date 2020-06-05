@@ -9,7 +9,10 @@
 /* Wave Content for negative spacing */
 .wave-content {
   @apply mb-13;
-  @apply mx-6;
+}
+
+.wave:first-of-type > div > .wave-content {
+  margin-top: 4.625rem;
 }
 
 .learnable {
@@ -49,12 +52,12 @@
 }
 
 @media (min-width: 1024px) {
-  .wave-content {
-    @apply mx-35;
-  }
-
   .wave:not(:first-of-type) > div > .wave-content {
     @apply -mt-56;
+  }
+
+  .wave:first-of-type > div > .wave-content {
+    @apply mt-0;
   }
 }
 

@@ -52,16 +52,21 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
 
   return (
     <nav
-      className={classNames('top-0 w-full text-white', {
-        'fixed bg-blue-dark-900':
-          props.fixed || expanded || (direction && direction === 'up' && y > 0),
-        'absolute bg-transparent':
-          !props.fixed &&
-          !expanded &&
-          (!direction || direction === 'down' || y <= 0),
-      })}
+      className={classNames(
+        'top-0 w-full text-white flex justify-center px-6 lg:px-18',
+        {
+          'fixed bg-blue-dark-900 z-10':
+            props.fixed ||
+            expanded ||
+            (direction && direction === 'up' && y > 0),
+          'absolute bg-transparent':
+            !props.fixed &&
+            !expanded &&
+            (!direction || direction === 'down' || y <= 0),
+        },
+      )}
     >
-      <div className="container px-6 py-4 mx-auto lg:px-18">
+      <div className="container py-4">
         <div className="flex items-center justify-between">
           <Link to="/">
             <Logo />
