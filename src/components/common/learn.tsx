@@ -4,6 +4,7 @@ import Wave from './wave'
 
 interface LearnProps {
   background?: 'white' | 'gray' | 'blue' | 'orange'
+  direction?: 'ltr' | 'rtl'
 }
 
 const Learn: React.FC<LearnProps> = (props) => {
@@ -43,7 +44,12 @@ const Learn: React.FC<LearnProps> = (props) => {
   ]
 
   return (
-    <Wave background={props.background} wave="orange" no-gutter>
+    <Wave
+      background={props.background}
+      direction={props.direction}
+      wave="orange"
+      no-gutter
+    >
       <div className="flex sm:justify-center">
         <h2 className="text-3xl font-bold mb-14 sm:text-5xl sm:text-center md:mb-25">
           Learn More
