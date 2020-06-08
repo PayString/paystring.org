@@ -169,10 +169,13 @@ const Members: React.FC = () => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 row-gap-16 px-0 text-center sm:row-gap-24 col-gap-28 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="flex flex-wrap justify-around px-0 -mt-16 text-center">
         {sectionCopy.map((copy) => {
           return (
-            <div key={copy.title} className="flex flex-col">
+            <div
+              key={copy.title}
+              className="flex flex-col w-full mt-16 sm:w-1/2 md:w-1/3 lg:w-1/4 px-28 sm:mb-24"
+            >
               {
                 <copy.icon className="self-center rounded-full shadow-logo h-30 w-30" />
               }
