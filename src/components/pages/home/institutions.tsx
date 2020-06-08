@@ -1,33 +1,33 @@
 import React from 'react'
 
-// import LogoGoPay from '../../../../content/assets/company/members/logos/gopay.svg'
-// import LogoBrave from '../../../../content/assets/company/members/logos/brave.svg'
-// import LogoBlockchainDotCom from '../../../../content/assets/company/members/logos/blockchain.svg'
-// import LogoRipple from '../../../../content/assets/company/members/logos/ripple.svg'
-// import LogoFlutterwave from '../../../../content/assets/company/members/logos/flutterwave.svg'
+import LogoBlockchainDotCom from '../../../../content/assets/company/members/logos/blockchain.svg'
+import LogoBrave from '../../../../content/assets/company/members/logos/brave.svg'
+import LogoFlutterwave from '../../../../content/assets/company/members/logos/flutterwave.svg'
+import LogoGoPay from '../../../../content/assets/company/members/logos/gopay.svg'
+import LogoRipple from '../../../../content/assets/company/members/logos/ripple.svg'
 import Button from '../../common/button'
 import Wave from '../../common/wave'
 
 const Institutions: React.FC = () => {
   const sectionCopy = [
     {
-      // icon: LogoGoPay,
+      icon: LogoGoPay,
       title: 'GoPay',
     },
     {
-      // icon: LogoBlockchainDotCom,
+      icon: LogoBlockchainDotCom,
       title: 'Blockchain.com',
     },
     {
-      // icon: LogoBrave,
+      icon: LogoBrave,
       title: 'Brave',
     },
     {
-      // icon: LogoRipple,
+      icon: LogoRipple,
       title: 'Ripple',
     },
     {
-      // icon: LogoFlutterwave,
+      icon: LogoFlutterwave,
       title: 'Flutterwave',
     },
   ]
@@ -37,25 +37,28 @@ const Institutions: React.FC = () => {
       background="gray"
       wave="white"
       direction="rtl"
-      className="text-center "
+      className="text-center"
     >
-      <div className="justify-center text-left mb-19 md:mb-25 md:text-center">
-        <h2 className="max-w-4xl mx-auto mb-8 text-3xl font-bold sm:text-5xl">
+      <div className="justify-center mb-3 text-left md:text-center md:mb-0">
+        <h2 className="max-w-4xl mx-auto mb-12 text-3xl font-bold sm:text-5xl">
           Supported by Leading Institutions
         </h2>
-        <p className="max-w-xl mx-auto text-xl text-blue-dark-900">
+        <p className="max-w-xl mx-auto text-xl">
           Be a part of a community of financial and tech organizations dedicated
           to improving the payment experience.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 row-gap-16 px-0 text-center sm:row-gap-24 col-gap-28 sm:grid-cols-2 md:grid-cols-3">
+      <div className="flex flex-col flex-wrap justify-center max-w-4xl mx-auto text-center md:flex-row">
         {sectionCopy.map((copy) => {
           return (
-            <div key={copy.title} className="flex flex-col">
-              {/* {
+            <div
+              key={copy.title}
+              className="flex flex-col mt-16 mb-0 sm:m-8 md:mb-0 md:mt-25 md:m-16"
+            >
+              {
                 <copy.icon className="self-center rounded-full shadow-logo h-30 w-30" />
-              } */}
+              }
               <h3 className="self-center mt-8 text-2xl font-bold">
                 {copy.title}
               </h3>
@@ -71,3 +74,7 @@ const Institutions: React.FC = () => {
 }
 
 export default Institutions
+
+{
+  /* <div className="grid max-w-4xl grid-cols-1 row-gap-16 px-0 mx-auto text-center sm:row-gap-24 col-gap-28 sm:grid-cols-1 md:grid-cols-3"> */
+}
