@@ -33,28 +33,23 @@ const Institutions: React.FC = () => {
   ]
 
   return (
-    <Wave
-      background="gray"
-      wave="white"
-      direction="rtl"
-      className="text-center"
-    >
-      <div className="justify-center mb-3 text-left md:text-center md:mb-0">
-        <h2 className="max-w-4xl mx-auto mb-12 text-3xl font-bold sm:text-5xl">
+    <Wave background="gray" wave="white" direction="rtl">
+      <div className="flex flex-col text-left md:items-center md:text-center">
+        <h2 className="mb-6 text-3xl font-bold md:mb-12 sm:text-5xl">
           Supported by Leading Institutions
         </h2>
-        <p className="max-w-xl mx-auto text-xl">
+        <p className="max-w-xl mb-16 sm:text-xl sm:mb-24">
           Be a part of a community of financial and tech organizations dedicated
           to improving the payment experience.
         </p>
       </div>
 
-      <div className="flex flex-col flex-wrap justify-center max-w-4xl mx-auto text-center md:flex-row">
+      <div className="flex flex-wrap justify-center -mt-16 text-center sm:-mt-24 -mx-7">
         {sectionCopy.map((copy) => {
           return (
             <div
               key={copy.title}
-              className="flex flex-col mt-16 mb-0 sm:m-8 md:mb-0 md:mt-25 md:m-16"
+              className="flex flex-col w-full mt-16 sm:w-1/2 md:w-1/3 sm:mt-24"
             >
               {
                 <copy.icon className="self-center rounded-full shadow-logo h-30 w-30" />
@@ -66,15 +61,11 @@ const Institutions: React.FC = () => {
           )
         })}
       </div>
-      <div>
-        <Button to="/company" label="See More" className="inline-block mt-28" />
+      <div className="flex justify-center mt-16 sm:mt-24">
+        <Button to="/company" label="See More" />
       </div>
     </Wave>
   )
 }
 
 export default Institutions
-
-{
-  /* <div className="grid max-w-4xl grid-cols-1 row-gap-16 px-0 mx-auto text-center sm:row-gap-24 col-gap-28 sm:grid-cols-1 md:grid-cols-3"> */
-}
