@@ -86,7 +86,7 @@ const Walkthrough: React.FC = () => {
               <div key={i + 1}>
                 {i + 1 === currentStep ? (
                   <div className="max-w-2xl mb-16">
-                    <h3 className="mb-8 text-2xl font-bold sm:text-3xl ">
+                    <h3 className="mb-8 text-2xl font-bold sm:text-3xl">
                       {copy.title}
                     </h3>
                   </div>
@@ -101,7 +101,7 @@ const Walkthrough: React.FC = () => {
               return (
                 <div key={i}>
                   <button
-                    className="flex items-center justify-center mr-4 text-gray-200 hover:text-orange-500 active:text-orange-500 focus:outline-none"
+                    className="flex items-center justify-center mr-4 text-gray-200 hover:text-orange-500 focus:outline-none"
                     onClick={(): void => setCurrentStep(i + 1)}
                   >
                     <span className="">Step {i + 1}</span>
