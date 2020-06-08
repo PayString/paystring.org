@@ -4,8 +4,8 @@ import React, { CSSProperties } from 'react'
 import WaveVector from './wave-vector'
 
 interface WaveProps {
-  background?: 'white' | 'gray' | 'blue' | 'orange'
-  wave?: 'white' | 'gray' | 'blue' | 'orange'
+  background?: 'white' | 'gray' | 'blue' | 'orange' | 'light-blue'
+  wave?: 'white' | 'gray' | 'blue' | 'orange' | 'light-blue'
   direction?: 'ltr' | 'rtl'
   spacing?: 'md' | 'lg'
   className?: string
@@ -37,6 +37,7 @@ const Wave: React.FC<WaveProps> = (
     'bg-gray-50 text-blue-dark-900': background === 'gray',
     'bg-blue-dark-900 text-white': background === 'blue',
     'bg-orange-500 text-white': background === 'orange',
+    'bg-blue-dark-800 text-white': background === 'light-blue',
   })
 
   const contentClasses = classNames(
