@@ -3,9 +3,18 @@ import React from 'react'
 import Button from './button'
 import Wave from './wave'
 
-const Questions: React.FC = () => {
+interface QuestionsProps {
+  direction?: 'ltr' | 'rtl'
+}
+
+const Questions: React.FC<QuestionsProps> = (props) => {
   return (
-    <Wave background="orange" wave="blue" spacing="lg">
+    <Wave
+      background="orange"
+      direction={props.direction}
+      wave="blue"
+      spacing="lg"
+    >
       <div className="text-3xl font-bold text-center sm:text-5xl">
         <div>Have Questions?</div>
         <div>Reach out to us anytime.</div>
