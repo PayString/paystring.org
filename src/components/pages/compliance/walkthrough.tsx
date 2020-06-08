@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import React, { useState } from 'react'
 
 import Arrow from '../../../../content/assets/compliance/walkthrough/arrow.svg'
@@ -68,9 +67,9 @@ const Walkthrough: React.FC = () => {
                 <h3 className="my-8 text-3xl font-bold sm:text-2xl">
                   {copy.title}
                 </h3>
-                {copy.description.map((d, i) => {
+                {copy.description.map((d, n) => {
                   return (
-                    <p className="mb-6 white" key={i}>
+                    <p className="mb-6 white" key={n}>
                       {d}
                     </p>
                   )
@@ -97,7 +96,7 @@ const Walkthrough: React.FC = () => {
             )
           })}
           <div className="flex justify-between my-16">
-            {sectionCopy.map((copy, i) => {
+            {sectionCopy.map((_copy, i) => {
               return (
                 <div key={i}>
                   <button
@@ -120,9 +119,9 @@ const Walkthrough: React.FC = () => {
               <div key={i + 1}>
                 {i + 1 === currentStep ? (
                   <div className="max-w-2xl">
-                    {copy.description.map((d, i) => {
+                    {copy.description.map((d, n) => {
                       return (
-                        <p className="mb-6 text-xl white" key={i}>
+                        <p className="mb-6 text-xl white" key={n}>
                           {d}
                         </p>
                       )
