@@ -228,6 +228,7 @@ module.exports = {
     },
     extend: {
       spacing: {
+        '7': '1.75rem',
         '12.5': '3.125rem',
         '13': '3.25rem',
         '14': '3.5rem',
@@ -244,6 +245,9 @@ module.exports = {
         '52': '13rem',
         '70': '17.5rem',
         '74': '18.5rem',
+      },
+      boxShadow: {
+        logo: '0px 24px 48px rgba(0, 0, 0, 0.08)',
       },
       lineHeight: {
         tightest: 1.15,
