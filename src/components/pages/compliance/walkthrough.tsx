@@ -6,20 +6,6 @@ import GraphMobile from '../../../../content/assets/compliance/walkthrough/graph
 import GraphWeb from '../../../../content/assets/compliance/walkthrough/graph-web.svg'
 import Wave from '../../common/wave'
 
-// interface StepProps {
-//     color: 'text-gray-200' | 'text-orange-500';
-//     isActive?: boolean;
-//     className: string;
-//     onClick: () => setShowText(!showText);
-//   }
-
-// const Step: React.FC<StepProps> = (props) => {
-//   const classes = classNames('flex items-center justify-center ', {
-//     'text-gray-200': props.isActive === false,
-//     'text-orange-500': props.isActive === true,
-//   })
-// }
-
 const Walkthrough: React.FC = () => {
   const [currentStep, setCurrentStep] = useState<number>(1)
 
@@ -72,14 +58,14 @@ const Walkthrough: React.FC = () => {
         How Travel Rules works with PayID
       </h2>
       <GraphWeb className="hidden max-w-full my-28 md:block" />
-      <GraphMobile className="max-w-full my-20 sm:block md:hidden" />
+      <GraphMobile className="block max-w-full my-20 md:hidden" />
       <div className="flex justify-center flex-grow text-left">
         <div className="grid grid-cols-1 gap-10 px-0 sm:block md:hidden">
           {sectionCopy.map((copy, i) => {
             return (
               <div key={i + 1}>
                 <p className="text-gray-200">Step {i + 1}</p>
-                <h3 className="my-8 text-2xl font-bold sm:text-3xl">
+                <h3 className="my-8 text-3xl font-bold sm:text-2xl">
                   {copy.title}
                 </h3>
                 {copy.description.map((d, i) => {
@@ -115,11 +101,15 @@ const Walkthrough: React.FC = () => {
               return (
                 <div key={i}>
                   <button
-                    className="flex items-center justify-center mr-4 text-gray-200"
+                    className="flex items-center justify-center mr-4 text-gray-200 hover:text-orange-500 active:text-orange-500 focus:outline-none"
                     onClick={(): void => setCurrentStep(i + 1)}
                   >
                     <span className="">Step {i + 1}</span>
-                    <Arrow className="inline-block h-2 ml-6 fill-current" />
+                    {i + 1 < 6 ? (
+                      <Arrow className="inline-block h-2 ml-6 fill-current" />
+                    ) : (
+                      <div className="hidden"></div>
+                    )}
                   </button>
                 </div>
               )
