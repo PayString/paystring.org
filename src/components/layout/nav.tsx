@@ -44,7 +44,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
       direction &&
       direction === 'up' &&
       ((window.outerHeight >= 1024 && y >= 48) ||
-        (window.outerHeight < 1024 && y >= 0))
+        (window.outerHeight < 1024 && y > 0))
     )
   }
 
