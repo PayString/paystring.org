@@ -245,6 +245,9 @@ module.exports = {
         '70': '17.5rem',
         '74': '18.5rem',
       },
+      boxShadow: {
+        logo: '0px 24px 48px rgba(0, 0, 0, 0.08)',
+      },
       lineHeight: {
         tightest: 1.15,
         tighter: 1.2,
