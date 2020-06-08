@@ -23,7 +23,7 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 
   const classes: ClassValue[] = [
     props.className,
-    'inline-block font-bold focus:outline-none rounded whitespace-no-wrap',
+    'inline-block font-bold focus:outline-none rounded whitespace-no-wrap text-center',
   ]
 
   // Disables the cursor for disabled buttons
