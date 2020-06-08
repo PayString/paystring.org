@@ -7,6 +7,7 @@ const Institutions: React.FC = () => {
     <Wave
       background="gray"
       wave="white"
+      direction="rtl"
       className="flex justify-center flex-grow text-3xl text-center"
     >
       Supported by Leading Institutions
