@@ -1,4 +1,3 @@
-// import { checkPropTypes } from 'prop-types'
 import React from 'react'
 
 import Wave from './wave'
@@ -13,64 +12,48 @@ const Learn: React.FC<LearnProps> = (props) => {
     {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/developers.svg)',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
       },
       title: 'Getting Started for Developers',
     },
     {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/whitepaper.svg)',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
       },
       title: 'PayID Technical Whitepaper',
     },
     {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/api-reference.svg)',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
       },
       title: 'API Reference',
     },
     {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/standards.svg)',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
       },
       title: 'PayID Standards',
     },
     {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/security.svg)',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
       },
       title: 'Security and Privacy',
     },
     {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/travel-rule.svg)',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
       },
       title: 'Travel Rule and Compliance',
     },
     {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/checkout.svg)',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
       },
       title: 'Checkout',
     },
     {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/xpring-sdk.svg)',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
       },
       title: 'Xpring SDK for PayID',
     },
@@ -101,7 +84,7 @@ const Learn: React.FC<LearnProps> = (props) => {
                 target="_blank"
                 rel="noreferrer"
                 key={learnable.title}
-                className="transition duration-500 ease-in-out transform rounded-xl bg-blue-dark-900 focus:shadow-2xl hover:shadow-2xl focus:scale-105 hover:scale-105 focus:outline-none learnable"
+                className="transition duration-500 ease-in-out transform bg-no-repeat bg-cover rounded-xl bg-blue-dark-900 focus:shadow-2xl hover:shadow-2xl focus:scale-105 hover:scale-105 focus:outline-none learnable"
                 style={learnable.bgStyle}
               >
                 <h3 className="font-bold text-white learnable-title mx-13">
