@@ -9,6 +9,7 @@ interface WaveProps {
   direction?: 'ltr' | 'rtl'
   spacing?: 'sm' | 'md' | 'lg'
   className?: string
+  waveClassNames?: string
   style?: CSSProperties
   'no-gutter'?: boolean
 }
@@ -34,7 +35,7 @@ const Wave: React.FC<WaveProps> = (
   }
 
   // Figure out the background color and text colors based on given background prop
-  const waveClasses = classNames('wave', {
+  const waveClasses = classNames(props.waveClassNames, 'wave', {
     'bg-white text-blue-dark-900': background === 'white',
     'bg-gray-50 text-blue-dark-900': background === 'gray',
     'bg-blue-dark-900 text-white': background === 'blue',

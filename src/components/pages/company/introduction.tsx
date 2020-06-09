@@ -6,13 +6,12 @@ import Wave from '../../common/wave'
 const Introduction: React.FC = () => {
   const bgImgStyle = {
     backgroundImage: 'url(/assets/company/background.svg)',
-    backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center top',
   }
 
   return (
-    <Wave style={bgImgStyle} spacing="sm">
+    <Wave style={bgImgStyle} spacing="sm" waveClassNames="bg-cover">
       <div className="max-w-xl pt-16 lg:pt-70">
         <h1 className="text-3xl font-bold sm:mb-10 mb-7 sm:text-h1 sm:leading-tighter">
           Who uses PayID
