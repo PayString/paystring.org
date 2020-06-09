@@ -15,7 +15,7 @@ const Index: React.FC = () => {
       <JoinUs />
       <Integrate />
       <Institutions />
-      <Learn background="white" direction="rtl" page="home" />
+      <Learn background="white" direction="rtl" />
       <Questions direction="rtl" />
     </Layout>
   )

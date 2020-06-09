@@ -6,112 +6,75 @@ import Wave from './wave'
 interface LearnProps {
   background?: 'white' | 'gray' | 'blue' | 'orange'
   direction?: 'ltr' | 'rtl'
-  page?: 'home' | 'compliance'
 }
 
 const Learn: React.FC<LearnProps> = (props) => {
-  const learnables =
-    props.page === 'home'
-      ? [
-          {
-            bgStyle: {
-              backgroundImage: 'url(/assets/learn/developers.svg)',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-            },
-            title: 'Getting Started for Developers',
-          },
-          {
-            bgStyle: {
-              backgroundImage: 'url(/assets/learn/whitepaper.svg)',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-            },
-            title: 'PayID Technical Whitepaper',
-          },
-          {
-            bgStyle: {
-              backgroundImage: 'url(/assets/learn/api-reference.svg)',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-            },
-            title: 'API Reference',
-          },
-          {
-            bgStyle: {
-              backgroundImage: 'url(/assets/learn/standards.svg)',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-            },
-            title: 'PayID Standards',
-          },
-          {
-            bgStyle: {
-              backgroundImage: 'url(/assets/learn/security.svg)',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-            },
-            title: 'Security and Privacy',
-          },
-          {
-            bgStyle: {
-              backgroundImage: 'url(/assets/learn/travel-rule.svg)',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-            },
-            title: 'Travel Rule and Compliance',
-          },
-          {
-            bgStyle: {
-              backgroundImage: 'url(/assets/learn/checkout.svg)',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-            },
-            title: 'Checkout',
-          },
-          {
-            bgStyle: {
-              backgroundImage: 'url(/assets/learn/xpring-sdk.svg)',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-            },
-            title: 'Xpring SDK for PayID',
-          },
-        ]
-      : [
-          {
-            bgStyle: {
-              backgroundImage: 'url(/assets/learn/developers.svg)',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-            },
-            title: 'Getting Started for Developers',
-          },
-          {
-            bgStyle: {
-              backgroundImage: 'url(/assets/learn/whitepaper.svg)',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-            },
-            title: 'PayID Technical Whitepaper',
-          },
-          {
-            bgStyle: {
-              backgroundImage: 'url(/assets/learn/security.svg)',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-            },
-            title: 'Security and Privacy',
-          },
-          {
-            bgStyle: {
-              backgroundImage: 'url(/assets/learn/travel-rule.svg)',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-            },
-            title: 'Travel Rule and Compliance',
-          },
-        ]
+  const learnables = [
+    {
+      bgStyle: {
+        backgroundImage: 'url(/assets/learn/developers.svg)',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      },
+      title: 'Getting Started for Developers',
+    },
+    {
+      bgStyle: {
+        backgroundImage: 'url(/assets/learn/whitepaper.svg)',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      },
+      title: 'PayID Technical Whitepaper',
+    },
+    {
+      bgStyle: {
+        backgroundImage: 'url(/assets/learn/api-reference.svg)',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      },
+      title: 'API Reference',
+    },
+    {
+      bgStyle: {
+        backgroundImage: 'url(/assets/learn/standards.svg)',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      },
+      title: 'PayID Standards',
+    },
+    {
+      bgStyle: {
+        backgroundImage: 'url(/assets/learn/security.svg)',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      },
+      title: 'Security and Privacy',
+    },
+    {
+      bgStyle: {
+        backgroundImage: 'url(/assets/learn/travel-rule.svg)',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      },
+      title: 'Travel Rule and Compliance',
+    },
+    {
+      bgStyle: {
+        backgroundImage: 'url(/assets/learn/checkout.svg)',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      },
+      title: 'Checkout',
+    },
+    {
+      bgStyle: {
+        backgroundImage: 'url(/assets/learn/xpring-sdk.svg)',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      },
+      title: 'Xpring SDK for PayID',
+    },
+  ]
 
   return (
     <Wave
@@ -124,12 +87,10 @@ const Learn: React.FC<LearnProps> = (props) => {
         <h2 className="text-3xl font-bold sm:text-5xl sm:text-center ">
           Learn More
         </h2>
-        {props.page === 'home' && (
-          <p className="max-w-xl mt-8 text-xl sm:text-center">
-            Discover everything you need to know about the free, open source
-            PayID protocol
-          </p>
-        )}
+        <p className="max-w-xl mt-6 text-xl sm:mt-8 sm:text-center">
+          Discover everything you need to know about the free, open source PayID
+          protocol
+        </p>
       </div>
       <div className="flex justify-center">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-4">
