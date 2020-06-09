@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import React, { useState } from 'react'
 
 import Arrow from '../../../../content/assets/compliance/walkthrough/arrow.svg'
@@ -6,36 +7,36 @@ import GraphWeb from '../../../../content/assets/compliance/walkthrough/graph-we
 import Wave from '../../common/wave'
 
 const Walkthrough: React.FC = () => {
-  const [currentStep, setCurrentStep] = useState<number>(1)
+  const [currentStep, setCurrentStep] = useState<number>(0)
 
   const sectionCopy = [
     {
       title: 'Initiate Transaction',
-      description: [
+      descriptions: [
         'The originating user, Alice, instructs her custodial wallet, VASP A, to send a transaction to the beneficiary user, Bob, to his PayID, bob$vaspb.com, provided by his custodial wallet VASP B.',
       ],
     },
     {
       title: 'Kick off PayID Handshake',
-      description: [
+      descriptions: [
         'VASP A initiates a secure HTTP connection with VASP B through the PayID URL. This kicks off the PayID handshake that determines whether Travel Rule applies to this transaction.',
       ],
     },
     {
       title: 'Counterparty Indentification',
-      description: [
+      descriptions: [
         'VASP B sends a secure response affirming that Travel Rule applies based on their compliance requirements and the transaction data.',
       ],
     },
     {
       title: 'Exchange Travel Rule Payload',
-      description: [
+      descriptions: [
         'VASP A sends a signed Travel Rule data payload to the VASP B. This payload can conform to FinCEN, FATF, or other regulatory standards.',
       ],
     },
     {
       title: 'Beneficiary Institution Reviews Payload',
-      description: [
+      descriptions: [
         'VASP B reviews the Payload and sends either:',
         'Authorization to proceed with the transaction, including the PayID to address mapping on the desired network and (optionally) a proof-of-control signature; or',
         'Rejection for the proposed transaction (digitally signed receipt).',
@@ -44,7 +45,7 @@ const Walkthrough: React.FC = () => {
     },
     {
       title: 'Transaction Execution and Receipt',
-      description: [
+      descriptions: [
         'If the VASP A receives an authorization, it executes the transaction and sends a proof-of-payment message to VASP B.',
         'Otherwise, VASP A drops the transaction.',
       ],
@@ -52,84 +53,62 @@ const Walkthrough: React.FC = () => {
   ]
 
   return (
-    <Wave background="blue" wave="gray" direction="rtl" className="max-w-6xl">
-      <h2 className="max-w-xl mx-auto mb-6 text-3xl font-bold text-left sm:text-5xl sm:mb-10 sm:text-center">
-        How Travel Rules works with PayID
-      </h2>
-      <GraphWeb className="hidden max-w-full my-28 md:block" />
-      <GraphMobile className="block max-w-full my-20 md:hidden" />
-      <div className="flex justify-center flex-grow text-left">
-        <div className="grid grid-cols-1 gap-10 px-0 sm:block md:hidden">
-          {sectionCopy.map((copy, i) => {
+    <Wave background="blue" wave="gray" direction="rtl">
+      <div className="flex flex-col items-center">
+        <h2 className="max-w-xl text-3xl font-bold mb-14 sm:text-5xl sm:text-center md:mb-25">
+          How Travel Rules works with PayID
+        </h2>
+        <GraphWeb className="hidden max-w-5xl mb-25 md:block" />
+        <GraphMobile className="block mb-14 md:hidden" />
+
+        {/* Desktop Steps */}
+        <div className="hidden w-full max-w-2xl md:block">
+          <h3 className="text-3xl font-bold">
+            {sectionCopy[currentStep].title}
+          </h3>
+          <div className="flex my-10">
+            {sectionCopy.map((_copy, i) => {
+              return (
+                <button
+                  key={i}
+                  className={classNames(
+                    'py-4 mr-6 hover:text-orange-500 focus:text-orange-500 focus:outline-none',
+                    {
+                      'text-orange-500': i === currentStep,
+                      'text-gray-300': i !== currentStep,
+                    },
+                  )}
+                  onClick={(): void => setCurrentStep(i)}
+                >
+                  Step {i + 1}
+                  {i !== 5 && <Arrow className="inline-block h-2 ml-6" />}
+                </button>
+              )
+            })}
+          </div>
+          {sectionCopy[currentStep].descriptions.map((description) => {
             return (
-              <div key={i + 1}>
-                <p className="text-gray-200">Step {i + 1}</p>
-                <h3 className="my-8 text-3xl font-bold sm:text-2xl">
-                  {copy.title}
-                </h3>
-                {copy.description.map((d, n) => {
-                  return (
-                    <p className="mb-6 white" key={n}>
-                      {d}
-                    </p>
-                  )
-                })}
-              </div>
+              <p className="mb-6 text-xl text-white" key={description}>
+                {description}
+              </p>
             )
           })}
         </div>
 
-        <div className="grid hidden grid-cols-1 gap-8 px-0 md:block">
+        {/* Mobile Steps */}
+        <div className="w-full max-w-2xl md:hidden">
           {sectionCopy.map((copy, i) => {
             return (
-              <div key={i + 1}>
-                {i + 1 === currentStep ? (
-                  <div className="max-w-2xl mb-16">
-                    <h3 className="mb-8 text-2xl font-bold sm:text-3xl">
-                      {copy.title}
-                    </h3>
-                  </div>
-                ) : (
-                  <div className="hidden"></div>
-                )}
-              </div>
-            )
-          })}
-          <div className="flex justify-between my-16">
-            {sectionCopy.map((_copy, i) => {
-              return (
-                <div key={i}>
-                  <button
-                    className="flex items-center justify-center mr-4 text-gray-200 hover:text-orange-500 focus:outline-none"
-                    onClick={(): void => setCurrentStep(i + 1)}
-                  >
-                    <span className="">Step {i + 1}</span>
-                    {i + 1 < 6 ? (
-                      <Arrow className="inline-block h-2 ml-6 fill-current" />
-                    ) : (
-                      <div className="hidden"></div>
-                    )}
-                  </button>
-                </div>
-              )
-            })}
-          </div>
-          {sectionCopy.map((copy, i) => {
-            return (
-              <div key={i + 1}>
-                {i + 1 === currentStep ? (
-                  <div className="max-w-2xl">
-                    {copy.description.map((d, n) => {
-                      return (
-                        <p className="mb-6 text-xl white" key={n}>
-                          {d}
-                        </p>
-                      )
-                    })}
-                  </div>
-                ) : (
-                  <div className="hidden"></div>
-                )}
+              <div key={i} className="mb-14">
+                <p className="mb-8 text-gray-200">Step {i + 1}</p>
+                <h3 className="my-8 text-2xl font-bold">{copy.title}</h3>
+                {copy.descriptions.map((description) => {
+                  return (
+                    <p className="mb-6 text-white" key={description}>
+                      {description}
+                    </p>
+                  )
+                })}
               </div>
             )
           })}
