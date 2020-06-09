@@ -48,7 +48,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
     )
   }
 
-  const closeExpandedMenu = useCallback((event) => {
+  const closeExpandedMenu = useCallback((event: KeyboardEvent) => {
     if (event.keyCode === 27) setExpanded(false)
   }, [])
 
