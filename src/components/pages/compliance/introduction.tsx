@@ -5,13 +5,12 @@ import Wave from '../../common/wave'
 const Introduction: React.FC = () => {
   const bgImgStyle = {
     backgroundImage: 'url(/assets/compliance/background.svg)',
-    backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center top',
   }
 
   return (
-    <Wave style={bgImgStyle} spacing="sm">
+    <Wave style={bgImgStyle} spacing="sm" waveClassNames="bg-auto xl:bg-cover">
       <div className="pt-16 lg:pt-70 lg:flex">
         <div className="lg:flex lg:flex-col lg:mr-12">
           <h1 className="mb-10 text-3xl font-bold sm:mb-16 sm:text-h1 sm:leading-tighter">

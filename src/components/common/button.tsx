@@ -49,24 +49,19 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
       // When disabled background is gray-200
       classes.push('bg-gray-200')
     }
+  } else if (props.disabled) {
+    // Text color is gray 200 when not on primary and the button is disabled
+    classes.push('text-gray-200')
   } else {
-    // Ghost and Secondary button variants use a background of white
-    classes.push('bg-white')
-
-    if (props.disabled) {
-      // Text color is gray 200 when not on primary and the button is disabled
-      classes.push('text-gray-200')
-    } else {
-      // Sets the text colors for each theme when not disabled and not the primary variant
-      classes.push({
-        'text-orange-500 hover:bg-orange-50 focus:bg-orange-50':
-          theme === 'orange',
-        'text-purple-500 hover:bg-purple-50 focus:bg-purple-50':
-          theme === 'purple',
-        'text-green-500 hover:bg-green-50 focus:bg-green-50': theme === 'green',
-        'text-blue-500 hover:bg-blue-50 focus:bg-blue-50': theme === 'blue',
-      })
-    }
+    // Sets the text colors for each theme when not disabled and not the primary variant
+    classes.push({
+      'text-orange-500 hover:bg-orange-50 focus:bg-orange-50':
+        theme === 'orange',
+      'text-purple-500 hover:bg-purple-50 focus:bg-purple-50':
+        theme === 'purple',
+      'text-green-500 hover:bg-green-50 focus:bg-green-50': theme === 'green',
+      'text-blue-500 hover:bg-blue-50 focus:bg-blue-50': theme === 'blue',
+    })
   }
 
   if (variant === 'secondary') {
@@ -85,6 +80,11 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
         'border-blue-500': theme === 'blue',
       })
     }
+  }
+
+  if (variant === 'ghost') {
+    // Ghost button variants use a background of white
+    classes.push('bg-white')
   }
 
   // Adds styles for the large size of buttons
