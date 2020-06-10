@@ -28,6 +28,8 @@ spec:
     spec:
       containers:
       - image: {{ .Values.releaseImage }}
+        command: ["nginx"]
+        args: ["-g", "daemon off;"]
         livenessProbe:
           httpGet:
               path: /
