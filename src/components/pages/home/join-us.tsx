@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Button from '../../common/button'
 import Wave from '../../common/wave'
 
 const JoinUs: React.FC = () => {
@@ -7,10 +8,17 @@ const JoinUs: React.FC = () => {
     <Wave
       background="light-blue"
       wave="white"
-      className="flex justify-center flex-grow text-3xl text-center"
+      className="flex items-center justify-center"
     >
-      Join the first PayID developer virtual event. June 25th 2020 and be part
-      of the future of payments.
+      <div className="flex flex-col max-w-5xl text-2xl font-bold md:text-center md:text-4xl">
+        <div>Join the first PayID developer virtual event.</div>
+        <div className="mt-12 md:mt-0">
+          June 25th 2020 and be part of the future of payments.
+        </div>
+        <div className="mt-12 md:mt-16">
+          <Button to="/contact" label="Join Us" />
+        </div>
+      </div>
     </Wave>
   )
 }

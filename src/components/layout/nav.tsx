@@ -4,6 +4,7 @@ import React, { useState, useCallback, useEffect } from 'react'
 
 import Hamburger from '../../../content/assets/hamburger.svg'
 import Logo from '../../../content/assets/logo.svg'
+import getDocsLocation from '../../utils/config'
 import useScroll from '../../utils/useScroll'
 import Button from '../common/button'
 
@@ -19,7 +20,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
     },
     {
       text: 'Docs',
-      location: 'https://docs.payid.org',
+      location: getDocsLocation(),
     },
     {
       text: 'Company',

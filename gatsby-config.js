@@ -1,3 +1,16 @@
+require('dotenv/config')
+
+const getSentryDSN = () => {
+  switch (process.env.GATSBY_RELEASE_ENV) {
+    case 'stage':
+      return 'https://817154d079314c89a0d8ebb739d3c9d5@o262339.ingest.sentry.io/5271862'
+    case 'prod':
+      return 'https://a59430ace1cf483782ac81c9594b503d@o262339.ingest.sentry.io/5271920'
+    default:
+      return null
+  }
+}
+
 module.exports = {
   siteMetadata: {
     title: 'PayID',
@@ -74,6 +87,14 @@ module.exports = {
       resolve: 'gatsby-plugin-heap',
       options: {
         appId: 'YOUR-APP-ID', // TODO add APP ID once data team gives it to us.
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn: getSentryDSN(),
+        environment: process.env.GATSBY_RELEASE_ENV,
+        enabled: getSentryDSN() !== null,
       },
     },
     'gatsby-transformer-sharp',

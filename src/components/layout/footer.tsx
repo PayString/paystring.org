@@ -2,6 +2,7 @@ import { Link } from 'gatsby'
 import React from 'react'
 
 import Logo from '../../../content/assets/logo.svg'
+import getDocsLocation from '../../utils/config'
 
 const Footer: React.FC = () => {
   const links = [
@@ -11,7 +12,7 @@ const Footer: React.FC = () => {
     },
     {
       text: 'Docs',
-      location: 'https://docs.payid.org',
+      location: getDocsLocation(),
     },
     {
       text: 'Company',
