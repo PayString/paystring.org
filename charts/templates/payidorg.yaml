@@ -4,7 +4,7 @@ metadata:
   name: {{ .Release.Name }}-secret
 type: Opaque
 data:
-  GATSBY_RELEASE_ENV: {{ if .Values.releaseEnv }}{{ .Values.releaseEnv | b64enc }}{{ end }}
+  GATSBY_RELEASE_ENV: {{ .Values.releaseEnv | b64enc }}
 ---
 apiVersion: v1
 kind: Service
