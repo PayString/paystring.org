@@ -1,12 +1,13 @@
 import React from 'react'
 
-import IconCharity from '../../../../content/assets/compliance/extensions/charity.svg'
-import IconCommerce from '../../../../content/assets/compliance/extensions/commerce.svg'
-import IconGettingPaid from '../../../../content/assets/compliance/extensions/getting-paid.svg'
-import IconInvoicing from '../../../../content/assets/compliance/extensions/invoicing.svg'
-import IconP2P from '../../../../content/assets/compliance/extensions/p2p.svg'
-import IconUtilities from '../../../../content/assets/compliance/extensions/utilities.svg'
-import Wave from '../../common/wave'
+import IconCharity from '../../../content/assets/common/extensions/charity.svg'
+import IconCommerce from '../../../content/assets/common/extensions/commerce.svg'
+import IconGettingPaid from '../../../content/assets/common/extensions/getting-paid.svg'
+import IconInvoicing from '../../../content/assets/common/extensions/invoicing.svg'
+import IconP2P from '../../../content/assets/common/extensions/p2p.svg'
+import IconUtilities from '../../../content/assets/common/extensions/utilities.svg'
+
+import Wave from './wave'
 
 const Extensions: React.FC = () => {
   const iconClasses = 'h-12.5 sm:h-14 mb-5 md:mb-10'
@@ -46,7 +47,7 @@ const Extensions: React.FC = () => {
   return (
     <Wave background="gray" wave="white">
       <div className="flex justify-center">
-        <h2 className="max-w-md text-3xl font-bold mb-14 sm:text-5xl sm:text-center md:mb-25">
+        <h2 className="max-w-2xl text-3xl font-bold mb-14 sm:text-5xl sm:text-center md:mb-25">
           Other Extensions for PayID
         </h2>
       </div>

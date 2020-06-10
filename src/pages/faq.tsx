@@ -1,13 +1,16 @@
 import React from 'react'
 
+import Learn from '../components/common/learn'
+import Questions from '../components/common/questions'
 import Layout from '../components/layout'
+import Introduction from '../components/pages/faq/introduction'
 
 const FAQ: React.FC = () => {
   return (
-    <Layout title="FAQ" fixedNav>
-      <div className="flex items-center justify-center flex-grow text-3xl">
-        FAQ TODO
-      </div>
+    <Layout title="FAQ">
+      <Introduction />
+      <Learn background="white" />
+      <Questions />
     </Layout>
   )
 }
