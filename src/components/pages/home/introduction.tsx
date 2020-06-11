@@ -68,9 +68,9 @@ const Introduction: React.FC = () => {
           <Button to="/contact" label="Start Building" className="mr-6" />
           <Button to="/contact" variant="secondary" label="Find Out More" />
         </div>
-        <Identifier className="hidden mt-45 lg:block" />
+        <Identifier className="hidden mt-36 lg:block" />
         <MobileIdentifier className="max-w-xs mt-24 lg:hidden" />
-        <div className="grid grid-cols-1 gap-16 mt-24 lg:mt-45 lg:gap-28 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-16 mt-24 lg:mt-36 lg:gap-28 lg:grid-cols-3">
           {sectionCopy.map((copy) => {
             return (
               <div key={copy.title} className="max-w-sm sm:max-w-lg">
