@@ -34,12 +34,16 @@ spec:
       labels:
         app: {{ .Release.Name }}
     spec:
+      volumes:
+      - name: {{ .Release.Name }}-secret
+        secret:
+          secretName: {{ .Release.Name }}-secret
       containers:
       - image: {{ .Values.releaseImage }}
-        volumes:
-          - name: {{ $fullAppName }}-pgpass
-            secret:
-              secretName: {{ $fullAppName }}-postgres-secret
+        volumeMounts:
+        - name: {{ .Release.Name }}-secret
+          mountPath: "/etc/nginx/env"
+          readOnly: true
         livenessProbe:
           httpGet:
               path: /
