@@ -1,3 +1,4 @@
+releaseEnv: dev
 replicas: 2
 proxyng:
   install: true

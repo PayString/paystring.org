@@ -1,4 +1,12 @@
 apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ .Release.Name }}-secret
+type: Opaque
+data:
+  GATSBY_RELEASE_ENV: {{ .Values.releaseEnv | b64enc }}
+---
+apiVersion: v1
 kind: Service
 metadata:
   name: {{ .Release.Name }}
@@ -45,6 +53,9 @@ spec:
           initialDelaySeconds: 10
           periodSeconds: 10
         name: {{ .Release.Name }}
+        envFrom:
+        - secretRef:
+            name: {{ .Release.Name }}-secret
         imagePullPolicy: Always
         ports:
         - containerPort: 80
