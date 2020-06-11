@@ -25,6 +25,13 @@
   @apply mt-29;
 }
 
+.faq-bg {
+  background-image: url('/assets/faq/background.svg');
+  background-position: center top -13rem;
+
+  @apply bg-no-repeat;
+}
+
 @media (min-width: 640px) {
   .wave-content {
     @apply mb-0;
@@ -58,6 +65,12 @@
 
   .wave:first-of-type > div > .wave-content {
     @apply mt-0;
+  }
+
+  .faq-bg {
+    background-position: center top;
+
+    @apply bg-cover;
   }
 }
 
