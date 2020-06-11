@@ -22,7 +22,6 @@ include:
 # Build a docker image and push it to the GCR associated with $GCLOUD_PROJECT_ID
 .publish_payid:
   stage: publish
-  when: manual
   extends: .publish
   image: gcr.io/xpring-dev-sandbox/xpring_util_image:0.0.4
   variables:
@@ -46,11 +45,13 @@ publish dev image:
     RELEASE_ENV: dev
 
 publish stage image:
+  when: manual
   extends: .publish_payid
   variables:
     RELEASE_ENV: stage
 
 publish prod image:
+  when: manual
   extends: .publish_payid
   variables:
     RELEASE_ENV: prod
