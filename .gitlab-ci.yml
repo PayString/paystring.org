@@ -20,11 +20,45 @@ include:
     file: '/templates/build_for_gcr.yml'
 
 # Build a docker image and push it to the GCR associated with $GCLOUD_PROJECT_ID
-publish:
+.publish_payid:
   stage: publish
+  when: manual
   extends: .publish
+  image: gcr.io/xpring-dev-sandbox/xpring_util_image:0.0.4
   variables:
     GCLOUD_PROJECT_ID: $GCR_PROJECT_ID
+  script:
+    - export GOOGLE_APPLICATION_CREDENTIALS=/tmp/kaniko-secret.json
+    - echo $GCP_SA > $GOOGLE_APPLICATION_CREDENTIALS
+    - export IMAGE_UID=$(echo -n "$(date +%s)-${CI_COMMIT_SHORT_SHA}-${CI_MERGE_REQUEST_TARGET_BRANCH_NAME}" | tr -d ' ')
+    - /usr/local/bin/executor --cache=true --dockerfile Dockerfile
+      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:latest
+      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$CI_COMMIT_SHORT_SHA
+      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$RELEASE_ENV
+      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$CI_MERGE_REQUEST_TARGET_BRANCH_NAME
+      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$(date +%s)
+      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$IMAGE_UID
+    - echo -n "$IMAGE_UID" > image_uid.meta.txt
+
+publish dev image:
+  extends: .publish_payid
+  variables:
+    RELEASE_ENV: dev
+
+publish stage image:
+  extends: .publish_payid
+  variables:
+    RELEASE_ENV: stg
+
+publish prod image:
+  extends: .publish_payid
+  variables:
+    RELEASE_ENV: prod
+
+publish travel image:
+  extends: .publish_payid
+  variables:
+    RELEASE_ENV: travel
 
 # This is a template that is used below. It does not do anything by itself
 .deploy_payidorg:
