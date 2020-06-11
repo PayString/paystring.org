@@ -11,7 +11,7 @@ variables:
   CLUSTER_NAME: poc1-cluster
   CLUSTER_REGION: us-central1
   RELEASE_NAME: payidorg
-  RELEASE_ENV: dev
+  GATSBY_RELEASE_ENV: dev
   CICD_ICON: https://i.imgur.com/nxYui1j.png
   INSTALL_XPRING_PROXY: "false"
 
@@ -33,7 +33,7 @@ include:
     - /usr/local/bin/executor --cache=true --context . --dockerfile Dockerfile
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:latest
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$CI_COMMIT_SHORT_SHA
-      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$RELEASE_ENV
+      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$GATSBY_RELEASE_ENV
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$CI_MERGE_REQUEST_TARGET_BRANCH_NAME
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$(date +%s)
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$IMAGE_UID
@@ -42,19 +42,19 @@ include:
 publish dev image:
   extends: .publish_payid
   variables:
-    RELEASE_ENV: dev
+    GATSBY_RELEASE_ENV: dev
 
 publish stage image:
   when: manual
   extends: .publish_payid
   variables:
-    RELEASE_ENV: stage
+    GATSBY_RELEASE_ENV: stage
 
 publish prod image:
   when: manual
   extends: .publish_payid
   variables:
-    RELEASE_ENV: prod
+    GATSBY_RELEASE_ENV: prod
 
 # This is a template that is used below. It does not do anything by itself
 .deploy_payidorg:
@@ -65,22 +65,22 @@ publish prod image:
     - mkdir dependency_charts
     - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.in.xpring.tech/xpring/xpring_nginx.git dependency_charts/xpring_nginx
     - helm dep update ./charts
-    - kubectl create namespace ${RELEASE_NAME}-${RELEASE_ENV} || true
-    - helm upgrade --install --namespace ${RELEASE_NAME}-${RELEASE_ENV}
-        --set releaseEnv=$RELEASE_ENV
+    - kubectl create namespace ${RELEASE_NAME}-${GATSBY_RELEASE_ENV} || true
+    - helm upgrade --install --namespace ${RELEASE_NAME}-${GATSBY_RELEASE_ENV}
+        --set releaseEnv=$GATSBY_RELEASE_ENV
         --set replicas=$REPLICAS
         --set releaseImage="gcr.io/$GCR_PROJECT_ID/$CI_PROJECT_NAME:$IMAGE_UID"
         --set proxyng.domainName="${FULL_DNS_NAME}"
-        --set proxyng.proxiedService="http://${RELEASE_NAME}-${RELEASE_ENV}:80"
+        --set proxyng.proxiedService="http://${RELEASE_NAME}-${GATSBY_RELEASE_ENV}:80"
         --set proxyng.replicaCount=$PROXY_REPLICAS
         --set proxyng.install=$INSTALL_XPRING_PROXY
-        ${RELEASE_NAME}-${RELEASE_ENV} ./charts
+        ${RELEASE_NAME}-${GATSBY_RELEASE_ENV} ./charts
 
 deploy to dev:
   stage: deploy
   extends: .deploy_payidorg
   variables:
-    RELEASE_ENV: dev
+    GATSBY_RELEASE_ENV: dev
     FULL_DNS_NAME: dev.payid.org
     INSTALL_XPRING_PROXY: "true"
     REPLICAS: 1
@@ -90,7 +90,7 @@ deploy to stage:
   stage: deploy
   extends: .deploy_payidorg
   variables:
-    RELEASE_ENV: stage
+    GATSBY_RELEASE_ENV: stage
     FULL_DNS_NAME: stage.payid.org
     REPLICAS: 2
     PROXY_REPLICAS: 2
@@ -100,7 +100,7 @@ deploy to prod:
   stage: deploy
   extends: .deploy_payidorg
   variables:
-    RELEASE_ENV: prod
+    GATSBY_RELEASE_ENV: prod
     GCLOUD_PROJECT_ID: xpring-testnet
     CLUSTER_NAME: xpring-testnet-cluster01
     CLUSTER_REGION: us-central1
