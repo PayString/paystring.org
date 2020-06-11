@@ -48,7 +48,7 @@ publish dev image:
 publish stage image:
   extends: .publish_payid
   variables:
-    RELEASE_ENV: stg
+    RELEASE_ENV: stage
 
 publish prod image:
   extends: .publish_payid
