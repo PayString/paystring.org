@@ -55,11 +55,6 @@ publish prod image:
   variables:
     RELEASE_ENV: prod
 
-publish travel image:
-  extends: .publish_payid
-  variables:
-    RELEASE_ENV: travel
-
 # This is a template that is used below. It does not do anything by itself
 .deploy_payidorg:
   extends: .deploy
