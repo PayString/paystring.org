@@ -1,12 +1,4 @@
 apiVersion: v1
-kind: Secret
-metadata:
-  name: {{ .Release.Name }}-secret
-type: Opaque
-data:
-  GATSBY_RELEASE_ENV: {{ .Values.releaseEnv | b64enc }}
----
-apiVersion: v1
 kind: Service
 metadata:
   name: {{ .Release.Name }}
@@ -34,16 +26,8 @@ spec:
       labels:
         app: {{ .Release.Name }}
     spec:
-      volumes:
-      - name: {{ .Release.Name }}-secret
-        secret:
-          secretName: {{ .Release.Name }}-secret
       containers:
       - image: {{ .Values.releaseImage }}
-        volumeMounts:
-        - name: {{ .Release.Name }}-secret
-          mountPath: "/etc/nginx/env"
-          readOnly: true
         livenessProbe:
           httpGet:
               path: /
@@ -57,9 +41,6 @@ spec:
           initialDelaySeconds: 10
           periodSeconds: 10
         name: {{ .Release.Name }}
-        envFrom:
-        - secretRef:
-            name: {{ .Release.Name }}-secret
         imagePullPolicy: Always
         ports:
         - containerPort: 80
