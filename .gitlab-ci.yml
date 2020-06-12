@@ -28,7 +28,6 @@ publish dev image:
   script:
     - export GOOGLE_APPLICATION_CREDENTIALS=/tmp/kaniko-secret.json
     - echo $GCP_SA > $GOOGLE_APPLICATION_CREDENTIALS
-    - echo "$RELEASE_ENV"
     - export IMAGE_UID=$(echo -n "$(date +%s)-${CI_COMMIT_SHORT_SHA}-${CI_MERGE_REQUEST_TARGET_BRANCH_NAME}" | tr -d ' ')
     - /usr/local/bin/executor --cache=true --context . --dockerfile Dockerfile
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:latest
@@ -78,7 +77,6 @@ deploy to dev:
   script:
     - export GOOGLE_APPLICATION_CREDENTIALS=/tmp/kaniko-secret.json
     - echo $GCP_SA > $GOOGLE_APPLICATION_CREDENTIALS
-    - echo "$RELEASE_ENV"
     - export IMAGE_UID=$(echo -n "$(date +%s)-${CI_COMMIT_SHORT_SHA}-${CI_MERGE_REQUEST_TARGET_BRANCH_NAME}" | tr -d ' ')
     - /usr/local/bin/executor --cache=true --context . --dockerfile Dockerfile
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:latest
