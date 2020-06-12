@@ -20,8 +20,9 @@ include:
     file: '/templates/build_for_gcr.yml'
 
 publish dev image:
-  image: gcr.io/xpring-dev-sandbox/xpring_util_image:0.0.4
   stage: publish
+  extends: .publish
+  image: gcr.io/xpring-dev-sandbox/xpring_util_image:0.0.4
   variables:
     GCLOUD_PROJECT_ID: $GCR_PROJECT_ID
     RELEASE_ENV: dev
@@ -41,6 +42,7 @@ publish dev image:
 
 deploy to dev:
   stage: deploy
+  extends: .deploy
   needs: ["publish dev image"]
   when: manual
   variables:
@@ -69,6 +71,9 @@ deploy to dev:
 # Build a docker image and push it to the GCR associated with $GCLOUD_PROJECT_ID and then deploys
 .publish_deploy_payidorg:
   stage: deploy
+  extends:
+    - .publish
+    - .deploy
   when: manual
   image: gcr.io/xpring-dev-sandbox/xpring_util_image:0.0.4
   needs: ["publish dev image"]
@@ -86,6 +91,8 @@ deploy to dev:
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$(date +%s)
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$IMAGE_UID
       --build-arg GATSBY_RELEASE_ENV=$RELEASE_ENV
+    - echo -n "$IMAGE_UID" > image_uid.meta.txt
+    - export IMAGE_UID="$(cat image_uid.meta.txt)"
     - mkdir dependency_charts
     - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.in.xpring.tech/xpring/xpring_nginx.git dependency_charts/xpring_nginx
     - helm dep update ./charts
