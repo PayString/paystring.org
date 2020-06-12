@@ -21,6 +21,7 @@ include:
 
 # Build a docker image and push it to the GCR associated with $GCLOUD_PROJECT_ID
 .publish_payid:
+  stage: publish
   extends: .publish
   image: gcr.io/xpring-dev-sandbox/xpring_util_image:0.0.4
   variables:
@@ -40,13 +41,25 @@ include:
     - echo -n "$IMAGE_UID" > image_uid.meta.txt
 
 publish dev image:
-  stage: publish
   extends: .publish_payid
   variables:
     RELEASE_ENV: dev
 
+publish stage image:
+  when: manual
+  extends: .publish_payid
+  variables:
+    RELEASE_ENV: stage
+
+publish prod image:
+  when: manual
+  extends: .publish_payid
+  variables:
+    RELEASE_ENV: prod
+
 # This is a template that is used below. It does not do anything by itself
 .deploy_payidorg:
+  stage: deploy
   extends: .deploy
   when: manual
   script:
@@ -66,7 +79,6 @@ publish dev image:
         ${RELEASE_NAME}-${RELEASE_ENV} ./charts
 
 deploy to dev:
-  stage: deploy
   extends: .deploy_payidorg
   needs: ["publish dev image"]
   variables:
@@ -77,11 +89,7 @@ deploy to dev:
     PROXY_REPLICAS: 1
 
 deploy to stage:
-  stage: deploy
-  needs: ["publish dev image"]
-  extends:
-    - .publish_payid
-    - .deploy_payidorg
+  extends: .deploy_payidorg
   variables:
     RELEASE_ENV: stage
     FULL_DNS_NAME: stage.payid.org
@@ -91,11 +99,7 @@ deploy to stage:
 
 # Prod is being deployed to a different GCP project and cluster
 deploy to prod:
-  stage: deploy
-  needs: ["publish dev image"]
-  extends:
-    - .publish_payid
-    - .deploy_payidorg
+  extends: .deploy_payidorg
   variables:
     RELEASE_ENV: prod
     GCLOUD_PROJECT_ID: xpring-testnet
