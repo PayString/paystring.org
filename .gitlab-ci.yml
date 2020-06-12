@@ -2,7 +2,6 @@
 #
 
 stages:
-  - build
   - publish
   - deploy
 
@@ -40,7 +39,7 @@ include:
     - echo -n "$IMAGE_UID" > image_uid.meta.txt
 
 publish dev image:
-  stage: build
+  stage: publish
   extends: .publish_payid
   variables:
     GATSBY_RELEASE_ENV: dev
@@ -53,8 +52,8 @@ publish stage image:
     GATSBY_RELEASE_ENV: stage
 
 publish prod image:
-  when: manual
   stage: publish
+  when: manual
   extends: .publish_payid
   variables:
     GATSBY_RELEASE_ENV: prod
