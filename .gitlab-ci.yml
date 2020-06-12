@@ -11,7 +11,7 @@ variables:
   CLUSTER_NAME: poc1-cluster
   CLUSTER_REGION: us-central1
   RELEASE_NAME: payidorg
-  GATSBY_RELEASE_ENV: dev
+  RELEASE_ENV: dev
   CICD_ICON: https://i.imgur.com/nxYui1j.png
   INSTALL_XPRING_PROXY: "false"
 
@@ -24,19 +24,20 @@ publish dev image:
   stage: publish
   variables:
     GCLOUD_PROJECT_ID: $GCR_PROJECT_ID
-    GATSBY_RELEASE_ENV: dev
+    RELEASE_ENV: dev
   script:
     - export GOOGLE_APPLICATION_CREDENTIALS=/tmp/kaniko-secret.json
     - echo $GCP_SA > $GOOGLE_APPLICATION_CREDENTIALS
-    - echo "$GATSBY_RELEASE_ENV"
+    - echo "$RELEASE_ENV"
     - export IMAGE_UID=$(echo -n "$(date +%s)-${CI_COMMIT_SHORT_SHA}-${CI_MERGE_REQUEST_TARGET_BRANCH_NAME}" | tr -d ' ')
     - /usr/local/bin/executor --cache=true --context . --dockerfile Dockerfile
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:latest
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$CI_COMMIT_SHORT_SHA
-      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$GATSBY_RELEASE_ENV
+      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$RELEASE_ENV
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$CI_MERGE_REQUEST_TARGET_BRANCH_NAME
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$(date +%s)
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$IMAGE_UID
+      --build-arg GATSBY_RELEASE_ENV=$RELEASE_ENV
     - echo -n "$IMAGE_UID" > image_uid.meta.txt
 
 deploy to dev:
@@ -44,7 +45,7 @@ deploy to dev:
   needs: ["publish dev image"]
   when: manual
   variables:
-    GATSBY_RELEASE_ENV: dev
+    RELEASE_ENV: dev
     FULL_DNS_NAME: dev.payid.org
     INSTALL_XPRING_PROXY: "true"
     REPLICAS: 1
@@ -54,16 +55,16 @@ deploy to dev:
     - mkdir dependency_charts
     - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.in.xpring.tech/xpring/xpring_nginx.git dependency_charts/xpring_nginx
     - helm dep update ./charts
-    - kubectl create namespace ${RELEASE_NAME}-${GATSBY_RELEASE_ENV} || true
-    - helm upgrade --install --namespace ${RELEASE_NAME}-${GATSBY_RELEASE_ENV}
-        --set releaseEnv=$GATSBY_RELEASE_ENV
+    - kubectl create namespace ${RELEASE_NAME}-${RELEASE_ENV} || true
+    - helm upgrade --install --namespace ${RELEASE_NAME}-${RELEASE_ENV}
+        --set releaseEnv=$RELEASE_ENV
         --set replicas=$REPLICAS
         --set releaseImage="gcr.io/$GCR_PROJECT_ID/$CI_PROJECT_NAME:$IMAGE_UID"
         --set proxyng.domainName="${FULL_DNS_NAME}"
-        --set proxyng.proxiedService="http://${RELEASE_NAME}-${GATSBY_RELEASE_ENV}:80"
+        --set proxyng.proxiedService="http://${RELEASE_NAME}-${RELEASE_ENV}:80"
         --set proxyng.replicaCount=$PROXY_REPLICAS
         --set proxyng.install=$INSTALL_XPRING_PROXY
-        ${RELEASE_NAME}-${GATSBY_RELEASE_ENV} ./charts
+        ${RELEASE_NAME}-${RELEASE_ENV} ./charts
 
 # This is a template that is used below. It does not do anything by itself
 # Build a docker image and push it to the GCR associated with $GCLOUD_PROJECT_ID and then deploys
@@ -77,33 +78,34 @@ deploy to dev:
   script:
     - export GOOGLE_APPLICATION_CREDENTIALS=/tmp/kaniko-secret.json
     - echo $GCP_SA > $GOOGLE_APPLICATION_CREDENTIALS
-    - echo "$GATSBY_RELEASE_ENV"
+    - echo "$RELEASE_ENV"
     - export IMAGE_UID=$(echo -n "$(date +%s)-${CI_COMMIT_SHORT_SHA}-${CI_MERGE_REQUEST_TARGET_BRANCH_NAME}" | tr -d ' ')
     - /usr/local/bin/executor --cache=true --context . --dockerfile Dockerfile
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:latest
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$CI_COMMIT_SHORT_SHA
-      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$GATSBY_RELEASE_ENV
+      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$RELEASE_ENV
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$CI_MERGE_REQUEST_TARGET_BRANCH_NAME
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$(date +%s)
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$IMAGE_UID
+      --build-arg GATSBY_RELEASE_ENV=$RELEASE_ENV
     - mkdir dependency_charts
     - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.in.xpring.tech/xpring/xpring_nginx.git dependency_charts/xpring_nginx
     - helm dep update ./charts
-    - kubectl create namespace ${RELEASE_NAME}-${GATSBY_RELEASE_ENV} || true
-    - helm upgrade --install --namespace ${RELEASE_NAME}-${GATSBY_RELEASE_ENV}
-        --set releaseEnv=$GATSBY_RELEASE_ENV
+    - kubectl create namespace ${RELEASE_NAME}-${RELEASE_ENV} || true
+    - helm upgrade --install --namespace ${RELEASE_NAME}-${RELEASE_ENV}
+        --set releaseEnv=$RELEASE_ENV
         --set replicas=$REPLICAS
         --set releaseImage="gcr.io/$GCR_PROJECT_ID/$CI_PROJECT_NAME:$IMAGE_UID"
         --set proxyng.domainName="${FULL_DNS_NAME}"
-        --set proxyng.proxiedService="http://${RELEASE_NAME}-${GATSBY_RELEASE_ENV}:80"
+        --set proxyng.proxiedService="http://${RELEASE_NAME}-${RELEASE_ENV}:80"
         --set proxyng.replicaCount=$PROXY_REPLICAS
         --set proxyng.install=$INSTALL_XPRING_PROXY
-        ${RELEASE_NAME}-${GATSBY_RELEASE_ENV} ./charts
+        ${RELEASE_NAME}-${RELEASE_ENV} ./charts
 
 deploy to stage:
   extends: .publish_deploy_payidorg
   variables:
-    GATSBY_RELEASE_ENV: stage
+    RELEASE_ENV: stage
     FULL_DNS_NAME: stage.payid.org
     REPLICAS: 2
     PROXY_REPLICAS: 2
@@ -112,7 +114,7 @@ deploy to stage:
 deploy to prod:
   extends: .publish_deploy_payidorg
   variables:
-    GATSBY_RELEASE_ENV: prod
+    RELEASE_ENV: prod
     GCLOUD_PROJECT_ID: xpring-testnet
     CLUSTER_NAME: xpring-testnet-cluster01
     CLUSTER_REGION: us-central1
