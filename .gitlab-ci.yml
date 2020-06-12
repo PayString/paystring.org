@@ -85,6 +85,7 @@ deploy to stage:
   variables:
     RELEASE_ENV: stage
     FULL_DNS_NAME: stage.payid.org
+    INSTALL_XPRING_PROXY: "true"
     REPLICAS: 2
     PROXY_REPLICAS: 2
 
