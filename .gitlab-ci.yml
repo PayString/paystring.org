@@ -47,12 +47,14 @@ publish dev image:
 
 publish stage image:
   when: manual
+  allow_failure: true
   extends: .publish_payid
   variables:
     GATSBY_RELEASE_ENV: stage
 
 publish prod image:
   when: manual
+  allow_failure: true
   extends: .publish_payid
   variables:
     GATSBY_RELEASE_ENV: prod
