@@ -19,11 +19,12 @@ include:
   - project: 'xpring/xpring-ci-templates'
     file: '/templates/build_for_gcr.yml'
 
-# Build a docker image and push it to the GCR associated with $GCLOUD_PROJECT_ID
-.publish_payid:
+publish dev image:
   image: gcr.io/xpring-dev-sandbox/xpring_util_image:0.0.4
+  stage: publish
   variables:
     GCLOUD_PROJECT_ID: $GCR_PROJECT_ID
+    GATSBY_RELEASE_ENV: dev
   script:
     - export GOOGLE_APPLICATION_CREDENTIALS=/tmp/kaniko-secret.json
     - echo $GCP_SA > $GOOGLE_APPLICATION_CREDENTIALS
@@ -38,30 +39,16 @@ include:
       --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$IMAGE_UID
     - echo -n "$IMAGE_UID" > image_uid.meta.txt
 
-publish dev image:
-  stage: publish
-  extends: .publish_payid
+deploy to dev:
+  stage: deploy
+  needs: ["publish dev image"]
+  when: manual
   variables:
     GATSBY_RELEASE_ENV: dev
-
-publish stage image:
-  stage: publish
-  when: manual
-  extends: .publish_payid
-  variables:
-    GATSBY_RELEASE_ENV: stage
-
-publish prod image:
-  stage: publish
-  when: manual
-  extends: .publish_payid
-  variables:
-    GATSBY_RELEASE_ENV: prod
-
-# This is a template that is used below. It does not do anything by itself
-.deploy_payidorg:
-  stage: deploy
-  when: manual
+    FULL_DNS_NAME: dev.payid.org
+    INSTALL_XPRING_PROXY: "true"
+    REPLICAS: 1
+    PROXY_REPLICAS: 1
   script:
     - export IMAGE_UID="$(cat image_uid.meta.txt)"
     - mkdir dependency_charts
@@ -78,18 +65,43 @@ publish prod image:
         --set proxyng.install=$INSTALL_XPRING_PROXY
         ${RELEASE_NAME}-${GATSBY_RELEASE_ENV} ./charts
 
-deploy to dev:
+# This is a template that is used below. It does not do anything by itself
+# Build a docker image and push it to the GCR associated with $GCLOUD_PROJECT_ID and then deploys
+.publish_deploy_payidorg:
+  stage: deploy
+  when: manual
+  image: gcr.io/xpring-dev-sandbox/xpring_util_image:0.0.4
   needs: ["publish dev image"]
-  extends: .deploy_payidorg
   variables:
-    GATSBY_RELEASE_ENV: dev
-    FULL_DNS_NAME: dev.payid.org
-    INSTALL_XPRING_PROXY: "true"
-    REPLICAS: 1
-    PROXY_REPLICAS: 1
+    GCLOUD_PROJECT_ID: $GCR_PROJECT_ID
+  script:
+    - export GOOGLE_APPLICATION_CREDENTIALS=/tmp/kaniko-secret.json
+    - echo $GCP_SA > $GOOGLE_APPLICATION_CREDENTIALS
+    - echo "$GATSBY_RELEASE_ENV"
+    - export IMAGE_UID=$(echo -n "$(date +%s)-${CI_COMMIT_SHORT_SHA}-${CI_MERGE_REQUEST_TARGET_BRANCH_NAME}" | tr -d ' ')
+    - /usr/local/bin/executor --cache=true --context . --dockerfile Dockerfile
+      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:latest
+      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$CI_COMMIT_SHORT_SHA
+      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$GATSBY_RELEASE_ENV
+      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$CI_MERGE_REQUEST_TARGET_BRANCH_NAME
+      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$(date +%s)
+      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$IMAGE_UID
+    - mkdir dependency_charts
+    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.in.xpring.tech/xpring/xpring_nginx.git dependency_charts/xpring_nginx
+    - helm dep update ./charts
+    - kubectl create namespace ${RELEASE_NAME}-${GATSBY_RELEASE_ENV} || true
+    - helm upgrade --install --namespace ${RELEASE_NAME}-${GATSBY_RELEASE_ENV}
+        --set releaseEnv=$GATSBY_RELEASE_ENV
+        --set replicas=$REPLICAS
+        --set releaseImage="gcr.io/$GCR_PROJECT_ID/$CI_PROJECT_NAME:$IMAGE_UID"
+        --set proxyng.domainName="${FULL_DNS_NAME}"
+        --set proxyng.proxiedService="http://${RELEASE_NAME}-${GATSBY_RELEASE_ENV}:80"
+        --set proxyng.replicaCount=$PROXY_REPLICAS
+        --set proxyng.install=$INSTALL_XPRING_PROXY
+        ${RELEASE_NAME}-${GATSBY_RELEASE_ENV} ./charts
 
 deploy to stage:
-  extends: .deploy_payidorg
+  extends: .publish_deploy_payidorg
   variables:
     GATSBY_RELEASE_ENV: stage
     FULL_DNS_NAME: stage.payid.org
@@ -98,7 +110,7 @@ deploy to stage:
 
 # Prod is being deployed to a different GCP project and cluster
 deploy to prod:
-  extends: .deploy_payidorg
+  extends: .publish_deploy_payidorg
   variables:
     GATSBY_RELEASE_ENV: prod
     GCLOUD_PROJECT_ID: xpring-testnet
