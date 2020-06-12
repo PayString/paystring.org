@@ -89,7 +89,6 @@ deploy to dev:
     PROXY_REPLICAS: 1
 
 deploy to stage:
-  needs: ["publish stage image"]
   extends: .deploy_payidorg
   variables:
     GATSBY_RELEASE_ENV: stage
@@ -99,7 +98,6 @@ deploy to stage:
 
 # Prod is being deployed to a different GCP project and cluster
 deploy to prod:
-  needs: ["publish prod image"]
   extends: .deploy_payidorg
   variables:
     GATSBY_RELEASE_ENV: prod
