@@ -1,6 +1,8 @@
 require('dotenv/config')
 
 const getSentryDSN = () => {
+  console.log(process.env)
+  console.log(process.env.GATSBY_RELEASE_ENV)
   switch (process.env.GATSBY_RELEASE_ENV) {
     case 'stage':
       return 'https://817154d079314c89a0d8ebb739d3c9d5@o262339.ingest.sentry.io/5271862'
