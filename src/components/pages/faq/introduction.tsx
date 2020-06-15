@@ -135,7 +135,7 @@ const Introduction: React.FC = () => {
             )
           })}
         </div>
-        <div className="max-w-lg">
+        <div className="max-w-md">
           {sectionCopy.map((a, i) => {
             return (
               <div className="mb-20 sm:mb-40" key={i}>
