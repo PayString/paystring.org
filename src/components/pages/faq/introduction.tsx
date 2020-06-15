@@ -25,8 +25,22 @@ const Introduction: React.FC = () => {
         },
         {
           title: 'Who uses PayID?',
-          description:
-            'PayID works across jurisdictions — without a patchwork of central regisAny business that sends and receives money can use PayID to give each of their customers a simple and universal ID that works across any payment network and makes payments faster and easier. PayID is an open and free standard, so anyone can build implementations and extensions on top of PayID.',
+          description: (
+            <>
+              PayID works across jurisdictions — without a patchwork of central
+              registration. Any business that sends and receives money can use
+              PayID to give each of their customers a simple and universal ID
+              that works across any payment network and makes payments faster
+              and easier. PayID is an open and free standard, so anyone can
+              build implementations and extensions on top of PayID.
+              <a
+                href="/company"
+                className="block mt-6 text-orange-500 underline"
+              >
+                See companies that use PayID
+              </a>
+            </>
+          ),
         },
         {
           title:
@@ -82,7 +96,7 @@ const Introduction: React.FC = () => {
       </div>
       <div className="flex mt-20 sm:mt-30">
         <div className="sticky top-0 hidden w-72 md:mr-32 sm:-ml-0 sm:mr-8 lg:-ml-16 sm:block">
-          {sectionCopy.map((c, i) => {
+          {sectionCopy.map((a, i) => {
             return (
               <div className="mb-6" key={i}>
                 <button
@@ -94,7 +108,7 @@ const Introduction: React.FC = () => {
                   )}
                   onClick={(): void => setCollapse(i)}
                 >
-                  {c.topic}
+                  {a.topic}
                   <Arrow
                     className={classNames('h-2 ml-4 transform inline-block', {
                       'rotate-90': i === collapse,
@@ -104,14 +118,14 @@ const Introduction: React.FC = () => {
                 </button>
                 {i === collapse && (
                   <div className="block mt-2 ml-4">
-                    {c.copy.map((t, x) => {
+                    {a.copy.map((b, x) => {
                       return (
                         <a
                           key={x}
                           className="block mb-2 text-xs font-semibold hover:text-orange-500"
-                          href={`#${t.title}`}
+                          href={`#${b.title}`}
                         >
-                          {t.title}
+                          {b.title}
                         </a>
                       )
                     })}
