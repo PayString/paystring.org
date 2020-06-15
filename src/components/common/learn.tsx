@@ -1,5 +1,7 @@
 import React from 'react'
 
+import getDocsLocation from '../../utils/config'
+
 import Wave from './wave'
 
 interface LearnProps {
@@ -14,48 +16,58 @@ const Learn: React.FC<LearnProps> = (props) => {
         backgroundImage: 'url(/assets/learn/developers.svg)',
       },
       title: 'Getting Started for Developers',
+      link: `${getDocsLocation()}/docs/getting-started`,
     },
     {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/whitepaper.svg)',
       },
       title: 'PayID Technical Whitepaper',
+      link:
+        'https://github.com/payid-org/payid/blob/master/docs/payid_whitepaper.pdf',
     },
     {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/api-reference.svg)',
       },
       title: 'API Reference',
+      link: 'https://api.payid.org/?version=latest',
     },
     {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/standards.svg)',
       },
       title: 'PayID Standards',
+      link: 'https://github.com/payid-org/rfcs',
     },
     {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/security.svg)',
       },
       title: 'Security and Privacy',
+      link:
+        'https://github.com/payid-org/rfcs/blob/master/dist/spec/verifiable-payid-protocol.txt',
     },
     {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/travel-rule.svg)',
       },
       title: 'Travel Rule and Compliance',
+      link: 'https://trisa.io/',
     },
     {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/checkout.svg)',
       },
-      title: 'Checkout',
+      title: 'PayID Test Wallet',
+      link: 'https://xpring.io/portal/wallet/xrp/testnet',
     },
     {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/xpring-sdk.svg)',
       },
       title: 'Xpring SDK for PayID',
+      link: 'https://github.com/xpring-eng/Xpring-SDK',
     },
   ]
 
@@ -80,7 +92,7 @@ const Learn: React.FC<LearnProps> = (props) => {
           {learnables.map((learnable) => {
             return (
               <a
-                href="https://google.com" // TODO (@Stormtv) add proper links
+                href={learnable.link}
                 target="_blank"
                 rel="noreferrer"
                 key={learnable.title}
