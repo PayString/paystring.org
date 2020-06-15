@@ -5,20 +5,7 @@ import Arrow from '../../../../content/assets/compliance/walkthrough/arrow.svg'
 import Wave from '../../common/wave'
 
 const Introduction: React.FC = () => {
-  // const scrollToRef = (e: string) => window.scrollTo(0, e.current.offsetTop)
-
-  // const scrollToRef = (ref: string) =>
-  //   window.scrollTo(0, { ref }.current.offsetTop)
-  // const [collapse, setCollapse] = useState<boolean>(false)
-
   const [collapse, setCollapse] = useState<number>(0)
-  // const [icon, setIcon] = useState('down')
-  // const toggle = () => {
-  // setCollapse(!collapse)
-  // setIcon((state) => {
-  //   return state === 'down' ? 'right' : 'down'
-  // })
-  // }
 
   const bgImgStyle = {
     backgroundImage: 'url(/assets/faq/background.svg)',
