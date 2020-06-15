@@ -1,10 +1,10 @@
 import React from 'react'
 
-import LogoBlockchainDotCom from '../../../../content/assets/company/members/logos/blockchain.svg'
-import LogoBrave from '../../../../content/assets/company/members/logos/brave.svg'
-import LogoFlutterwave from '../../../../content/assets/company/members/logos/flutterwave.svg'
-import LogoGoPay from '../../../../content/assets/company/members/logos/gopay.svg'
-import LogoRipple from '../../../../content/assets/company/members/logos/ripple.svg'
+import LogoBlockchainDotCom from '../../../../content/assets/companies/members/logos/blockchain.svg'
+import LogoBrave from '../../../../content/assets/companies/members/logos/brave.svg'
+import LogoFlutterwave from '../../../../content/assets/companies/members/logos/flutterwave.svg'
+import LogoGoPay from '../../../../content/assets/companies/members/logos/gopay.svg'
+import LogoRipple from '../../../../content/assets/companies/members/logos/ripple.svg'
 import Button from '../../common/button'
 import Wave from '../../common/wave'
 
@@ -62,7 +62,7 @@ const Institutions: React.FC = () => {
         })}
       </div>
       <div className="flex justify-center mt-16 sm:mt-24">
-        <Button to="/company" label="See More" />
+        <Button to="/companies" label="See More" />
       </div>
     </Wave>
   )

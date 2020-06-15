@@ -5,7 +5,7 @@ import Wave from '../../common/wave'
 
 const Introduction: React.FC = () => {
   const bgImgStyle = {
-    backgroundImage: 'url(/assets/company/background.svg)',
+    backgroundImage: 'url(/assets/companies/background.svg)',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center top',
   }
