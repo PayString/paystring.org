@@ -110,7 +110,6 @@ const Introduction: React.FC = () => {
                           key={x}
                           className="block mb-2 text-xs font-semibold hover:text-orange-500"
                           href={`#${t.title}`}
-                          // onClick={(): void => scrollToRef(`"#${t.title}"`)}
                         >
                           {t.title}
                         </a>
