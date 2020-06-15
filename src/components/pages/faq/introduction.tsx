@@ -7,13 +7,6 @@ import Wave from '../../common/wave'
 const Introduction: React.FC = () => {
   const [collapse, setCollapse] = useState<number>(0)
 
-  const bgImgStyle = {
-    backgroundImage: 'url(/assets/faq/background.svg)',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center top',
-  }
-
   const sectionCopy = [
     {
       topic: 'The Basics',
