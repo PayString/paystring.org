@@ -11,6 +11,17 @@ const getSentryDSN = () => {
   }
 }
 
+const getHeapAppID = () => {
+  switch (process.env.GATSBY_RELEASE_ENV) {
+    case 'stage':
+      return '3411953951'
+    case 'prod':
+      return '3069043076'
+    default:
+      return null
+  }
+}
+
 module.exports = {
   siteMetadata: {
     title: 'PayID',
@@ -86,7 +97,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-heap',
       options: {
-        appId: 'YOUR-APP-ID', // TODO add APP ID once data team gives it to us.
+        appId: getHeapAppID(),
       },
     },
     {

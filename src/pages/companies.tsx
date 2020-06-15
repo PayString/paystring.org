@@ -3,12 +3,12 @@ import React from 'react'
 import Learn from '../components/common/learn'
 import Questions from '../components/common/questions'
 import Layout from '../components/layout'
-import Introduction from '../components/pages/company/introduction'
-import Members from '../components/pages/company/members'
+import Introduction from '../components/pages/companies/introduction'
+import Members from '../components/pages/companies/members'
 
-const Company: React.FC = () => {
+const Companies: React.FC = () => {
   return (
-    <Layout title="Company">
+    <Layout title="Companies">
       <Introduction />
       <Members />
       <Learn background="gray" />
@@ -17,4 +17,4 @@ const Company: React.FC = () => {
   )
 }
 
-export default Company
+export default Companies

@@ -15,8 +15,8 @@ const Footer: React.FC = () => {
       location: getDocsLocation(),
     },
     {
-      text: 'Company',
-      location: '/company',
+      text: 'Companies',
+      location: '/companies',
     },
     {
       text: 'Compliance',

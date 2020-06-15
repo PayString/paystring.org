@@ -88,7 +88,7 @@ const Introduction: React.FC = () => {
   ]
 
   return (
-    <Wave style={bgImgStyle} spacing="sm">
+    <Wave spacing="sm" waveClassNames="faq-bg">
       <div className="max-w-4xl pt-16 lg:pt-70">
         <h1 className="text-4xl font-bold sm:text-3xl sm:mb-10 mb-7 sm:text-h1 sm:leading-tighter">
           Frequently Asked Questions
