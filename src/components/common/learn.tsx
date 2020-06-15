@@ -92,7 +92,7 @@ const Learn: React.FC<LearnProps> = (props) => {
           {learnables.map((learnable) => {
             return (
               <a
-                href={learnable.link} // TODO (@Stormtv) add proper links
+                href={learnable.link}
                 target="_blank"
                 rel="noreferrer"
                 key={learnable.title}
