@@ -260,6 +260,9 @@ module.exports = {
       borderRadius: {
         xl: '0.75rem',
       },
+      width: {
+        '72': '18rem',
+      },
     },
   },
   variants: {

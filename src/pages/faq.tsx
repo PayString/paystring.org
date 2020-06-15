@@ -3,6 +3,7 @@ import React from 'react'
 import Learn from '../components/common/learn'
 import Questions from '../components/common/questions'
 import Layout from '../components/layout'
+import FAQs from '../components/pages/faq/faqs'
 import Introduction from '../components/pages/faq/introduction'
 
 const FAQ: React.FC = () => {
