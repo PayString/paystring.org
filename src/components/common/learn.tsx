@@ -1,5 +1,7 @@
 import React from 'react'
 
+import getDocsLocation from '../../utils/config'
+
 import Wave from './wave'
 
 interface LearnProps {
@@ -14,7 +16,7 @@ const Learn: React.FC<LearnProps> = (props) => {
         backgroundImage: 'url(/assets/learn/developers.svg)',
       },
       title: 'Getting Started for Developers',
-      link: 'https://docs.payid.org/docs/getting-started',
+      link: `${getDocsLocation()}/docs/getting-started`,
     },
     {
       bgStyle: {
