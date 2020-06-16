@@ -1,29 +1,18 @@
 import classNames from 'classnames'
+import { Link } from 'gatsby'
 import React, { useState } from 'react'
 
 import Arrow from '../../../../content/assets/compliance/walkthrough/arrow.svg'
 import Wave from '../../common/wave'
 
 const Introduction: React.FC = () => {
-  const [collapse, setCollapse] = useState<number>(0)
-  const [active, setLeftQuestion] = useState<number>(-1)
+  const [expanded, setExpanded] = useState<number>(0)
+  const [active, setLeftQuestion] = useState<number>()
 
-  const setActive = (n: number, s: string) => {
-    setLeftQuestion(n)
-    const targetID = document.getElementById(s.slice(1))
-
-    if (targetID !== null) {
-      // document
-      //   .getElementsByClassName('question')
-      //   .classList.remove('text-orange-500')
-      targetID.classList.add('text-orange-500')
-    }
-  }
-
-  const sectionCopy = [
+  const sections = [
     {
       topic: 'The Basics',
-      copy: [
+      contents: [
         {
           title: 'What is PayID?',
           description:
@@ -39,12 +28,12 @@ const Introduction: React.FC = () => {
               that works across any payment network and makes payments faster
               and easier. PayID is an open and free standard, so anyone can
               build implementations and extensions on top of PayID.
-              <a
-                href="/company"
+              <Link
+                to="/companies"
                 className="block mt-6 text-orange-500 underline"
               >
                 See companies that use PayID
-              </a>
+              </Link>
             </>
           ),
         },
@@ -68,7 +57,7 @@ const Introduction: React.FC = () => {
     },
     {
       topic: 'Development',
-      copy: [
+      contents: [
         {
           title: 'What does PayID implementation involve?',
           description:
@@ -102,45 +91,43 @@ const Introduction: React.FC = () => {
       </div>
       <div className="flex mt-20 sm:mt-30">
         <div className="hidden sm:w-56 md:w-72 md:mr-32 sm:-ml-0 sm:mr-8 lg:-ml-16 sm:block">
-          <div className="sticky top-20 ">
-            {sectionCopy.map((a, i) => {
+          <div className="sticky top-20">
+            {sections.map((section, i) => {
               return (
                 <div className="mb-6" key={i}>
                   <button
                     className={classNames(
                       'text-xs font-semibold hover:text-orange-500 focus:outline-none align-middle',
                       {
-                        'text-orange-500': i === collapse,
+                        'text-orange-500': i === expanded,
                       },
                     )}
-                    onClick={(): void => setCollapse(i)}
+                    onClick={(): void => setExpanded(i)}
                   >
-                    {a.topic}
+                    {section.topic}
                     <Arrow
                       className={classNames('h-2 ml-4 transform inline-block', {
-                        'rotate-90': i === collapse,
-                        '-rotate-90': i !== collapse,
+                        'rotate-90': i === expanded,
+                        '-rotate-90': i !== expanded,
                       })}
                     />
                   </button>
-                  {i === collapse && (
+                  {i === expanded && (
                     <div className="block mt-2 ml-4">
-                      {a.copy.map((b, x) => {
+                      {section.contents.map((content, n) => {
                         return (
                           <a
-                            key={i * 5 + x}
+                            key={n}
                             className={classNames(
                               'block mb-2 text-xs font-semibold hover:text-orange-500',
                               {
-                                'text-orange-500': i * 5 + x === active,
+                                'text-orange-500': n === active,
                               },
                             )}
-                            href={`#${b.title}`}
-                            onClick={(): void =>
-                              setActive(i * 5 + x, `#${b.title}`)
-                            }
+                            href={`#${content.title}`}
+                            onClick={(): void => setLeftQuestion(n)}
                           >
-                            {b.title}
+                            {content.title}
                           </a>
                         )
                       })}
@@ -152,23 +139,23 @@ const Introduction: React.FC = () => {
           </div>
         </div>
         <div className="w-full md:max-w-md">
-          {sectionCopy.map((a, i) => {
+          {sections.map((section, i) => {
             return (
               <div className="mb-20 sm:mb-40" key={i}>
                 <h2 className="mb-10 text-3xl font-bold sm:text-5xl sm:mb-14">
-                  {a.topic}
+                  {section.topic}
                 </h2>
-                {a.copy.map((b, x) => {
+                {section.contents.map((content, n) => {
                   return (
-                    <div key={x} className="">
+                    <div key={n} className="">
                       <h3
                         className="pt-10 text-2xl font-bold sm:pt-12 sm:text-3xl question"
-                        id={b.title}
+                        id={content.title}
                       >
-                        {b.title}
+                        {content.title}
                       </h3>
                       <p className="mt-4 text-base sm:text-xl">
-                        {b.description}
+                        {content.description}
                       </p>
                     </div>
                   )
