@@ -261,16 +261,10 @@ module.exports = {
       borderRadius: {
         xl: '0.75rem',
       },
-      width: {
-        '72': '18rem',
-      },
-      inset: {
-        '20': '5rem',
-      },
     },
   },
   variants: {
-    margin: ['responsive', 'last'],
+    margin: ['responsive', 'last', 'first'],
     linearGradients: ['responsive', 'hover', 'focus'],
   },
   plugins: [tailwindGradients],

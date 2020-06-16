@@ -30,7 +30,7 @@ const Introduction: React.FC = () => {
               build implementations and extensions on top of PayID.
               <Link
                 to="/companies"
-                className="block mt-6 text-orange-500 underline"
+                className="block mt-6 text-orange-500 focus:underline hover:underline"
               >
                 See companies that use PayID
               </Link>
@@ -99,31 +99,36 @@ const Introduction: React.FC = () => {
                 <div className="mb-6" key={sectionIndex}>
                   <button
                     className={classNames(
-                      'text-xs font-semibold hover:text-orange-500 focus:outline-none align-middle',
+                      'text-xs font-bold hover:text-orange-500 focus:outline-none align-middle',
                       {
-                        'text-orange-500': sectionIndex === expanded,
+                        'text-orange-500': expanded === sectionIndex,
+                        'text-gray-200': expanded !== sectionIndex,
                       },
                     )}
-                    onClick={(): void => setExpanded(sectionIndex)}
+                    onClick={(): void => {
+                      setExpanded(sectionIndex)
+                      setLeftQuestion(undefined)
+                    }}
                   >
                     {section.topic}
                     <Arrow
                       className={classNames('h-2 ml-4 transform inline-block', {
-                        'rotate-90': sectionIndex === expanded,
-                        '-rotate-90': sectionIndex !== expanded,
+                        'rotate-90': expanded === sectionIndex,
+                        '-rotate-90': expanded !== sectionIndex,
                       })}
                     />
                   </button>
-                  {sectionIndex === expanded && (
+                  {expanded === sectionIndex && (
                     <div className="block mt-2 ml-4">
                       {section.contents.map((content, contentIndex) => {
                         return (
                           <a
                             key={contentIndex}
                             className={classNames(
-                              'block mb-2 text-xs font-semibold hover:text-orange-500',
+                              'block mb-2 text-xs font-bold hover:text-orange-500',
                               {
                                 'text-orange-500': contentIndex === active,
+                                'text-gray-200': contentIndex !== active,
                               },
                             )}
                             href={`#${content.title}`}
@@ -145,22 +150,20 @@ const Introduction: React.FC = () => {
         <div className="w-full md:max-w-md">
           {sections.map((section, sectionIndex) => {
             return (
-              <div className="mb-20 sm:mb-40" key={sectionIndex}>
-                <h2 className="mb-10 text-3xl font-bold sm:text-5xl sm:mb-14">
+              <div className="mt-20 sm:mt-30 first:mt-0" key={sectionIndex}>
+                <h2 className="mb-10 text-3xl font-bold sm:text-4xl sm:mb-14">
                   {section.topic}
                 </h2>
                 {section.contents.map((content, contentIndex) => {
                   return (
                     <div key={contentIndex}>
                       <h3
-                        className="pt-10 text-2xl font-bold sm:pt-12 sm:text-3xl question"
+                        className="mt-10 text-2xl font-bold sm:mt-12"
                         id={content.title}
                       >
                         {content.title}
                       </h3>
-                      <p className="mt-4 text-base sm:text-xl">
-                        {content.description}
-                      </p>
+                      <p className="mt-4">{content.description}</p>
                     </div>
                   )
                 })}
