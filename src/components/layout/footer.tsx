@@ -27,12 +27,12 @@ const Footer: React.FC = () => {
       location: '/faq',
     },
     {
-      text: 'Contact',
-      location: '/contact',
+      text: 'Press Release',
+      location: 'https://www.dropbox.com/home/PayID%20Press%20Kit',
     },
     {
-      text: 'Press Kit',
-      location: 'https://www.dropbox.com/home/PayID%20Press%20Kit',
+      text: 'Contact Us',
+      location: '/contact',
     },
   ]
 

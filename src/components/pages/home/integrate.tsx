@@ -1,13 +1,14 @@
 import classNames from 'classnames'
 import React, { useState } from 'react'
 
+import getDocsLocation from '../../../utils/config'
 import Button from '../../common/button'
 import Wave from '../../common/wave'
 
 const Integrate: React.FC = () => {
   const [active, setActive] = useState<number>(0)
 
-  const panels = ['cURL', 'Xpring SDK']
+  const panels = ['cURL', 'Javascript']
 
   return (
     <Wave background="white" wave="gray">
@@ -36,18 +37,18 @@ const Integrate: React.FC = () => {
           </div>
           <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
             <div className="flex w-full p-4">
-              <div className="px-4 py-6 rounded bg-blue-dark-700">
+              <div className="px-4 py-6 text-center rounded bg-blue-dark-700">
                 <p>1</p>
                 <p>2</p>
               </div>
               <div className="px-8 py-6 whitespace-no-wrap">
-                <p>
+                <span className="block">
                   <span className="text-blue-dark-300">git</span> clone
                   git@github.com:xpring-eng/payid.git
-                </p>
-                <p>
+                </span>
+                <span className="block">
                   <span className="text-orange-300">cd</span> payid
-                </p>
+                </span>
               </div>
             </div>
           </div>
@@ -56,16 +57,17 @@ const Integrate: React.FC = () => {
           </div>
           <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
             <div className="flex w-full p-4">
-              <div className="px-4 py-6 rounded bg-blue-dark-700">
+              <div className="px-4 py-6 text-center rounded bg-blue-dark-700">
                 <p>1</p>
               </div>
               <div className="px-8 py-6 whitespace-no-wrap">
-                <p>./demo/run_payid_demo.sh</p>
+                <span className="block">./demo/run_payid_demo.sh</span>
               </div>
             </div>
           </div>
-          {/* TODO ADD LINK HERE */}
-          <Button label="Read More" className="mt-10 md:mt-16" />
+          <a href={`${getDocsLocation()}/docs/getting-started`}>
+            <Button label="Read More" className="mt-10 md:mt-16" />
+          </a>
         </div>
         <div className="w-full overflow-hidden">
           <h3 className="text-2xl font-bold">Send Money</h3>
@@ -88,26 +90,130 @@ const Integrate: React.FC = () => {
               )
             })}
           </div>
-          {panels[active] === 'Xpring SDK' && (
-            <div className="mt-6 md:mt-8">
-              <Button variant="secondary" label="Javascript" size="xs" />
-              <Button
-                variant="secondary"
-                label="Swift"
-                className="ml-2"
-                size="xs"
-              />
-              <Button
-                variant="secondary"
-                label="Java"
-                className="ml-2"
-                size="xs"
-              />
+          {panels[active] === 'cURL' && (
+            <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
+              <div className="flex w-full p-4">
+                <div className="px-4 py-6 text-center rounded bg-blue-dark-700">
+                  <p>1</p>
+                  <p>2</p>
+                  <p>3</p>
+                </div>
+                <div className="px-8 py-6 whitespace-no-wrap">
+                  <span className="block">
+                    curl --location --request GET{' '}
+                    <span className="text-green-300">
+                      &apos;https://xpring.money/stormtv&apos;
+                    </span>{' '}
+                    \
+                  </span>
+                  <span className="block">
+                    --header{' '}
+                    <span className="text-green-300">
+                      &apos;Accept: application/xrpl-testnet+json,
+                      application/btc-mainnet+json&apos;
+                    </span>{' '}
+                    \
+                  </span>
+                  <span className="block">
+                    --header{' '}
+                    <span className="text-green-300">
+                      &apos;PayID-Version: 1.0&apos;
+                    </span>
+                  </span>
+                </div>
+              </div>
             </div>
           )}
-          <div className="w-full h-64 mt-6 rounded bg-blue-dark-800 md:mt-8" />
-          {/* TODO ADD LINK HERE */}
-          <Button label="Run" className="mt-10 md:mt-16" />
+          {panels[active] === 'Javascript' && (
+            <>
+              <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
+                <div className="flex w-full p-4">
+                  <div className="px-4 py-6 text-center rounded bg-blue-dark-700">
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                    <p>4</p>
+                    <p>5</p>
+                    <p>6</p>
+                    <p>7</p>
+                    <p>8</p>
+                    <p>9</p>
+                    <p>10</p>
+                    <p>11</p>
+                    <p>12</p>
+                  </div>
+                  <div className="px-8 py-6 whitespace-no-wrap">
+                    <span className="block">
+                      <span className="text-blue-dark-300">const</span>{' '}
+                      <span className="text-blue-300">axios</span> =
+                      <span className="text-green-200"> require</span>(
+                      <span className="text-orange-300">&apos;axios&apos;</span>
+                      )
+                    </span>
+                    <span className="block">
+                      <span className="text-blue-dark-300">const</span>{' '}
+                      <span className="text-blue-300">response</span> ={' '}
+                      <span className="text-purple-200">await</span>
+                      <span className="text-blue-light-300"> axios</span>.
+                      <span className="text-green-200">get</span>(
+                    </span>
+                    <span className="block">
+                      &nbsp;&nbsp;
+                      <span className="text-orange-300">
+                        &apos;https://xpring.money/stormtv&apos;
+                      </span>
+                      ,
+                    </span>
+                    <span className="block">&nbsp;&nbsp;&#123;</span>
+                    <span className="block">
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      <span className="text-blue-light-300">headers:</span>{' '}
+                      &#123;
+                    </span>
+                    <span className="block">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <span className="text-blue-light-300">Accept:</span>
+                    </span>
+                    <span className="block">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <span className="text-orange-300">
+                        &apos;application/xrpl-mainnet+json,
+                        application/btc-mainnet+json&apos;
+                      </span>
+                      ,
+                    </span>
+                    <span className="block">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <span className="text-orange-300">
+                        &apos;PayID-Version&apos;
+                      </span>
+                      :<span className="text-orange-300">&apos;1.0&apos;</span>,
+                    </span>
+                    <span className="block">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&#125;,
+                    </span>
+                    <span className="block">&nbsp;&nbsp;&#125;,</span>
+                    <span className="block">)</span>
+                    <span className="block">
+                      <span className="text-blue-dark-300">const</span>{' '}
+                      <span className="text-blue-300">addresses</span> =
+                      <span className="text-blue-light-300">
+                        {' '}
+                        response.data.addresses
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://runkit.com/stormtv/payid-javascript"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button label="Try It" className="mt-10 md:mt-16" />
+              </a>
+            </>
+          )}
         </div>
       </div>
     </Wave>
