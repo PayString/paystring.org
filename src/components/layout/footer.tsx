@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
     },
     {
       text: 'Docs',
-      location: getDocsLocation(),
+      location: `${getDocsLocation()}/docs/getting-started`,
     },
     {
       text: 'Companies',

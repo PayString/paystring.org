@@ -5,6 +5,7 @@ import MobileIdentifier from '../../../../content/assets/home/introduction/ident
 import Identifier from '../../../../content/assets/home/introduction/identifier.svg'
 import OpenSource from '../../../../content/assets/home/introduction/open-source.svg'
 import TechStack from '../../../../content/assets/home/introduction/tech-stack.svg'
+import getDocsLocation from '../../../utils/config'
 import Button from '../../common/button'
 import Wave from '../../common/wave'
 
@@ -51,12 +52,12 @@ const Introduction: React.FC = () => {
           A more intuitive way for your users to send and receive payments
         </p>
         <div className="hidden md:flex">
-          <Button
-            to="/contact"
-            size="lg"
-            label="Start Building"
+          <a
+            href={`${getDocsLocation()}/docs/getting-started`}
             className="mr-8"
-          />
+          >
+            <Button size="lg" label="Start Building" />
+          </a>
           <Button
             to="/contact"
             size="lg"
@@ -65,7 +66,12 @@ const Introduction: React.FC = () => {
           />
         </div>
         <div className="md:hidden">
-          <Button to="/contact" label="Start Building" className="mr-6" />
+          <a
+            href={`${getDocsLocation()}/docs/getting-started`}
+            className="mr-6"
+          >
+            <Button label="Start Building" />
+          </a>
           <Button to="/contact" variant="secondary" label="Find Out More" />
         </div>
         <Identifier className="hidden mt-36 lg:block" />
