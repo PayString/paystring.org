@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const tailwindGradients = require('tailwindcss-gradients')
@@ -260,6 +262,9 @@ module.exports = {
       },
       borderRadius: {
         xl: '0.75rem',
+      },
+      inset: {
+        '20': '5rem',
       },
     },
   },
