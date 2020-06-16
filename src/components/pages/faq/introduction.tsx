@@ -6,6 +6,16 @@ import Wave from '../../common/wave'
 
 const Introduction: React.FC = () => {
   const [collapse, setCollapse] = useState<number>(0)
+  const [active, setLeftQuestion] = useState<number>(-1)
+
+  const setActive = (e: number, g: string) => {
+    setLeftQuestion(e)
+    const targetID = document.getElementById(g.slice(1))
+
+    if (targetID !== null) {
+      targetID.classList.add('text-orange-500')
+    }
+  }
 
   const sectionCopy = [
     {
@@ -88,45 +98,55 @@ const Introduction: React.FC = () => {
         </h1>
       </div>
       <div className="flex mt-20 sm:mt-30">
-        <div className="sticky top-0 hidden w-72 md:mr-32 sm:-ml-0 sm:mr-8 lg:-ml-16 sm:block">
-          {sectionCopy.map((a, i) => {
-            return (
-              <div className="mb-6" key={i}>
-                <button
-                  className={classNames(
-                    'text-xs font-semibold hover:text-orange-500 focus:outline-none align-middle',
-                    {
-                      'text-orange-500': i === collapse,
-                    },
+        <div>
+          <div className="sticky hidden top-20 w-72 md:mr-32 sm:-ml-0 sm:mr-8 lg:-ml-16 sm:block">
+            {sectionCopy.map((a, i) => {
+              return (
+                <div className="mb-6" key={i}>
+                  <button
+                    className={classNames(
+                      'text-xs font-semibold hover:text-orange-500 focus:outline-none align-middle',
+                      {
+                        'text-orange-500': i === collapse,
+                      },
+                    )}
+                    onClick={(): void => setCollapse(i)}
+                  >
+                    {a.topic}
+                    <Arrow
+                      className={classNames('h-2 ml-4 transform inline-block', {
+                        'rotate-90': i === collapse,
+                        '-rotate-90': i !== collapse,
+                      })}
+                    />
+                  </button>
+                  {i === collapse && (
+                    <div className="block mt-2 ml-4">
+                      {a.copy.map((b, x) => {
+                        return (
+                          <a
+                            key={i * 5 + x}
+                            className={classNames(
+                              'block mb-2 text-xs font-semibold hover:text-orange-500',
+                              {
+                                'text-orange-500': i * 5 + x === active,
+                              },
+                            )}
+                            href={`#${b.title}`}
+                            onClick={(): void =>
+                              setActive(i * 5 + x, `#${b.title}`)
+                            }
+                          >
+                            {b.title}
+                          </a>
+                        )
+                      })}
+                    </div>
                   )}
-                  onClick={(): void => setCollapse(i)}
-                >
-                  {a.topic}
-                  <Arrow
-                    className={classNames('h-2 ml-4 transform inline-block', {
-                      'rotate-90': i === collapse,
-                      '-rotate-90': i !== collapse,
-                    })}
-                  />
-                </button>
-                {i === collapse && (
-                  <div className="block mt-2 ml-4">
-                    {a.copy.map((b, x) => {
-                      return (
-                        <a
-                          key={x}
-                          className="block mb-2 text-xs font-semibold hover:text-orange-500"
-                          href={`#${b.title}`}
-                        >
-                          {b.title}
-                        </a>
-                      )
-                    })}
-                  </div>
-                )}
-              </div>
-            )
-          })}
+                </div>
+              )
+            })}
+          </div>
         </div>
         <div className="max-w-md">
           {sectionCopy.map((a, i) => {
@@ -137,9 +157,9 @@ const Introduction: React.FC = () => {
                 </h2>
                 {a.copy.map((b, x) => {
                   return (
-                    <div key={x} className="mb-10 sm:mb-12">
+                    <div key={x} className="">
                       <h3
-                        className="text-2xl font-bold sm:text-3xl"
+                        className="pt-10 text-2xl font-bold sm:pt-12 sm:text-3xl question"
                         id={b.title}
                       >
                         {b.title}

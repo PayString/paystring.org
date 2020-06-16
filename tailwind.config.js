@@ -263,6 +263,9 @@ module.exports = {
       width: {
         '72': '18rem',
       },
+      inset: {
+        '20': '5rem',
+      },
     },
   },
   variants: {
