@@ -89,43 +89,45 @@ const Introduction: React.FC = () => {
           Frequently Asked Questions
         </h1>
       </div>
+
+      {/* Left Nav */}
       <div className="flex mt-20 sm:mt-30">
         <div className="hidden sm:w-56 md:w-72 md:mr-32 sm:-ml-0 sm:mr-8 lg:-ml-16 sm:block">
           <div className="sticky top-20">
-            {sections.map((section, i) => {
+            {sections.map((section, sectionIndex) => {
               return (
-                <div className="mb-6" key={i}>
+                <div className="mb-6" key={sectionIndex}>
                   <button
                     className={classNames(
                       'text-xs font-semibold hover:text-orange-500 focus:outline-none align-middle',
                       {
-                        'text-orange-500': i === expanded,
+                        'text-orange-500': sectionIndex === expanded,
                       },
                     )}
-                    onClick={(): void => setExpanded(i)}
+                    onClick={(): void => setExpanded(sectionIndex)}
                   >
                     {section.topic}
                     <Arrow
                       className={classNames('h-2 ml-4 transform inline-block', {
-                        'rotate-90': i === expanded,
-                        '-rotate-90': i !== expanded,
+                        'rotate-90': sectionIndex === expanded,
+                        '-rotate-90': sectionIndex !== expanded,
                       })}
                     />
                   </button>
-                  {i === expanded && (
+                  {sectionIndex === expanded && (
                     <div className="block mt-2 ml-4">
-                      {section.contents.map((content, n) => {
+                      {section.contents.map((content, contentIndex) => {
                         return (
                           <a
-                            key={n}
+                            key={contentIndex}
                             className={classNames(
                               'block mb-2 text-xs font-semibold hover:text-orange-500',
                               {
-                                'text-orange-500': n === active,
+                                'text-orange-500': contentIndex === active,
                               },
                             )}
                             href={`#${content.title}`}
-                            onClick={(): void => setLeftQuestion(n)}
+                            onClick={(): void => setLeftQuestion(contentIndex)}
                           >
                             {content.title}
                           </a>
@@ -138,16 +140,18 @@ const Introduction: React.FC = () => {
             })}
           </div>
         </div>
+
+        {/* Content */}
         <div className="w-full md:max-w-md">
-          {sections.map((section, i) => {
+          {sections.map((section, sectionIndex) => {
             return (
-              <div className="mb-20 sm:mb-40" key={i}>
+              <div className="mb-20 sm:mb-40" key={sectionIndex}>
                 <h2 className="mb-10 text-3xl font-bold sm:text-5xl sm:mb-14">
                   {section.topic}
                 </h2>
-                {section.contents.map((content, n) => {
+                {section.contents.map((content, contentIndex) => {
                   return (
-                    <div key={n} className="">
+                    <div key={contentIndex}>
                       <h3
                         className="pt-10 text-2xl font-bold sm:pt-12 sm:text-3xl question"
                         id={content.title}
