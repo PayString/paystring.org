@@ -26,7 +26,7 @@ const Integrate: React.FC = () => {
 
       {/* Examples */}
       <div className="md:flex">
-        <div className="w-full mb-16 md:mb-0 md:mr-20">
+        <div className="w-full mb-16 overflow-hidden md:mb-0 md:mr-20">
           <h3 className="text-2xl font-bold">Receive Money</h3>
           <p className="mt-4">
             Setup a PayID server to provide yours users PayIDs
@@ -34,15 +34,40 @@ const Integrate: React.FC = () => {
           <div className="mt-10 md:mt-16">
             <p className="font-medium">Clone Repo</p>
           </div>
-          <div className="w-full mt-6 rounded bg-blue-dark-800 h-30 md:mt-8" />
+          <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
+            <div className="flex w-full p-4">
+              <div className="px-4 py-6 rounded bg-blue-dark-700">
+                <p>1</p>
+                <p>2</p>
+              </div>
+              <div className="px-8 py-6 whitespace-no-wrap">
+                <p>
+                  <span className="text-blue-dark-300">git</span> clone
+                  git@github.com:xpring-eng/payid.git
+                </p>
+                <p>
+                  <span className="text-orange-300">cd</span> payid
+                </p>
+              </div>
+            </div>
+          </div>
           <div className="mt-10 md:mt-16">
             <p className="font-medium">Run Script</p>
           </div>
-          <div className="w-full mt-6 rounded bg-blue-dark-800 h-25 md:mt-8" />
+          <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
+            <div className="flex w-full p-4">
+              <div className="px-4 py-6 rounded bg-blue-dark-700">
+                <p>1</p>
+              </div>
+              <div className="px-8 py-6 whitespace-no-wrap">
+                <p>./demo/run_payid_demo.sh</p>
+              </div>
+            </div>
+          </div>
           {/* TODO ADD LINK HERE */}
           <Button label="Read More" className="mt-10 md:mt-16" />
         </div>
-        <div className="w-full">
+        <div className="w-full overflow-hidden">
           <h3 className="text-2xl font-bold">Send Money</h3>
           <p className="mt-4">Enable your users to send to PayIDs</p>
           <div className="mt-10 md:mt-16">
