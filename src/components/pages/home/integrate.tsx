@@ -6,9 +6,8 @@ import Button from '../../common/button'
 import Wave from '../../common/wave'
 
 const Integrate: React.FC = () => {
-  const [active, setActive] = useState<number>(0)
-
   const panels = ['cURL', 'Javascript']
+  const [activePanel, setActivePanel] = useState<string>('cURL')
 
   return (
     <Wave background="white" wave="gray">
@@ -77,12 +76,12 @@ const Integrate: React.FC = () => {
               return (
                 <button
                   key={panelIndex}
-                  onClick={(): void => setActive(panelIndex)}
-                  disabled={active === panelIndex}
+                  onClick={(): void => setActivePanel(panel)}
+                  disabled={panel === activePanel}
                   className={classNames('mr-8 font-medium focus:outline-none', {
-                    'border-b-2 border-orange-500': active === panelIndex,
+                    'border-b-2 border-orange-500': activePanel === panel,
                     'text-gray-500 hover:text-orange-500 focus:text-orange-500':
-                      active !== panelIndex,
+                      activePanel !== panel,
                   })}
                 >
                   {panel}
@@ -90,7 +89,7 @@ const Integrate: React.FC = () => {
               )
             })}
           </div>
-          {panels[active] === 'cURL' && (
+          {activePanel === 'cURL' && (
             <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
               <div className="flex w-full p-4">
                 <div className="px-4 py-6 text-center rounded bg-blue-dark-700">
@@ -124,7 +123,7 @@ const Integrate: React.FC = () => {
               </div>
             </div>
           )}
-          {panels[active] === 'Javascript' && (
+          {activePanel === 'Javascript' && (
             <>
               <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
                 <div className="flex w-full p-4">
