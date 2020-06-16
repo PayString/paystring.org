@@ -90,21 +90,22 @@ const Introduction: React.FC = () => {
         </h1>
       </div>
 
-      {/* Left Nav */}
       <div className="flex mt-20 sm:mt-30">
-        <div className="hidden sm:w-56 md:w-72 md:mr-32 sm:-ml-0 sm:mr-8 lg:-ml-16 sm:block">
+        {/* Left Nav */}
+        <div className="hidden mr-8 sm:block sm:w-56 md:w-72 md:mr-32 lg:-ml-16">
           <div className="sticky top-20">
             {sections.map((section, sectionIndex) => {
               return (
                 <div className="mb-6" key={sectionIndex}>
                   <button
                     className={classNames(
-                      'text-xs font-bold hover:text-orange-500 focus:outline-none align-middle',
+                      'text-xs font-bold hover:text-orange-500 focus:text-orange-500 focus:outline-none align-middle',
                       {
                         'text-orange-500': expanded === sectionIndex,
                         'text-gray-200': expanded !== sectionIndex,
                       },
                     )}
+                    disabled={expanded === sectionIndex}
                     onClick={(): void => {
                       setExpanded(sectionIndex)
                       setLeftQuestion(undefined)
@@ -112,10 +113,13 @@ const Introduction: React.FC = () => {
                   >
                     {section.topic}
                     <Arrow
-                      className={classNames('h-2 ml-4 transform inline-block', {
-                        'rotate-90': expanded === sectionIndex,
-                        '-rotate-90': expanded !== sectionIndex,
-                      })}
+                      className={classNames(
+                        'h-2 ml-4 duration-500 transform inline-block',
+                        {
+                          'rotate-90': expanded === sectionIndex,
+                          '-rotate-90': expanded !== sectionIndex,
+                        },
+                      )}
                     />
                   </button>
                   {expanded === sectionIndex && (
@@ -125,7 +129,7 @@ const Introduction: React.FC = () => {
                           <a
                             key={contentIndex}
                             className={classNames(
-                              'block mb-2 text-xs font-bold hover:text-orange-500',
+                              'block mb-2 text-xs font-bold hover:text-orange-500 focus:text-orange-500 outline-none',
                               {
                                 'text-orange-500': contentIndex === active,
                                 'text-gray-200': contentIndex !== active,
