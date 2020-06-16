@@ -16,7 +16,13 @@ const JoinUs: React.FC = () => {
           June 25th 2020 and be part of the future of payments.
         </div>
         <div className="mt-12 md:mt-16">
-          <Button to="/contact" label="Join Us" />
+          <a
+            href="https://ripple.com/lp/payid-dev-conference"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button label="Join Us" />
+          </a>
         </div>
       </div>
     </Wave>
