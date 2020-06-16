@@ -8,11 +8,14 @@ const Introduction: React.FC = () => {
   const [collapse, setCollapse] = useState<number>(0)
   const [active, setLeftQuestion] = useState<number>(-1)
 
-  const setActive = (e: number, g: string) => {
-    setLeftQuestion(e)
-    const targetID = document.getElementById(g.slice(1))
+  const setActive = (n: number, s: string) => {
+    setLeftQuestion(n)
+    const targetID = document.getElementById(s.slice(1))
 
     if (targetID !== null) {
+      // document
+      //   .getElementsByClassName('question')
+      //   .classList.remove('text-orange-500')
       targetID.classList.add('text-orange-500')
     }
   }
@@ -98,8 +101,8 @@ const Introduction: React.FC = () => {
         </h1>
       </div>
       <div className="flex mt-20 sm:mt-30">
-        <div>
-          <div className="sticky hidden top-20 w-72 md:mr-32 sm:-ml-0 sm:mr-8 lg:-ml-16 sm:block">
+        <div className="hidden sm:w-56 md:w-72 md:mr-32 sm:-ml-0 sm:mr-8 lg:-ml-16 sm:block">
+          <div className="sticky top-20 ">
             {sectionCopy.map((a, i) => {
               return (
                 <div className="mb-6" key={i}>
@@ -148,7 +151,7 @@ const Introduction: React.FC = () => {
             })}
           </div>
         </div>
-        <div className="max-w-md">
+        <div className="w-full md:max-w-md">
           {sectionCopy.map((a, i) => {
             return (
               <div className="mb-20 sm:mb-40" key={i}>
