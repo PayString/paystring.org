@@ -40,11 +40,13 @@ const Footer: React.FC = () => {
     <footer className="flex justify-center px-6 text-white bg-blue-dark-900 lg:px-18">
       <div className="container py-4">
         <div className="flex flex-col xl:items-center xl:flex-row">
-          <Link to="/">
-            <Logo />
-            <span className="sr-only">Home</span>
-          </Link>
-          <div className="grid grid-flow-col grid-rows-4 row-gap-8 col-gap-4 mt-12 xl:mt-0 sm:grid-rows-2 lg:grid-rows-1 lg:col-gap-18 xl:ml-18">
+          <div className="h-10.5">
+            <Link to="/" className="inline-block">
+              <Logo />
+              <span className="sr-only">Home</span>
+            </Link>
+          </div>
+          <div className="grid grid-flow-col grid-rows-4 row-gap-8 col-gap-4 mt-12 md:mt-10 xl:mt-0 sm:grid-rows-2 lg:grid-rows-1 lg:col-gap-18 xl:ml-18">
             {links.map((link) => {
               if (link.text !== 'Docs') {
                 return (

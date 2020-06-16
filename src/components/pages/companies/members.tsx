@@ -169,22 +169,24 @@ const Members: React.FC = () => {
         </h2>
       </div>
 
-      <div className="flex flex-wrap justify-around -mt-16 text-center sm:-mt-24 -mx-7">
-        {sectionCopy.map((copy) => {
-          return (
-            <div
-              key={copy.title}
-              className="flex flex-col w-full mt-16 sm:w-1/2 md:w-1/3 lg:w-1/4 sm:mt-24"
-            >
-              {
-                <copy.icon className="self-center rounded-full shadow-logo h-30 w-30" />
-              }
-              <h3 className="self-center mt-8 text-2xl font-bold">
-                {copy.title}
-              </h3>
-            </div>
-          )
-        })}
+      <div className="overflow-hidden">
+        <div className="flex flex-wrap justify-around -mt-16 text-center sm:-mt-24 -mx-7">
+          {sectionCopy.map((copy) => {
+            return (
+              <div
+                key={copy.title}
+                className="flex flex-col w-full mt-16 sm:w-1/2 md:w-1/3 lg:w-1/4 sm:mt-24"
+              >
+                {
+                  <copy.icon className="self-center rounded-full shadow-logo h-30 w-30" />
+                }
+                <h3 className="self-center mt-8 text-2xl font-bold">
+                  {copy.title}
+                </h3>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </Wave>
   )
