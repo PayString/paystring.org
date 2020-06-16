@@ -28,7 +28,7 @@
 .vision-bg {
   background-image: url('/assets/vision/background.svg');
   background-position: center top;
-  background-size: cover;
+
   @apply bg-no-repeat;
 }
 
