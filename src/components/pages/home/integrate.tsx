@@ -26,7 +26,7 @@ const Integrate: React.FC = () => {
 
       {/* Examples */}
       <div className="md:flex">
-        <div className="w-full md:mr-20">
+        <div className="w-full mb-16 md:mb-0 md:mr-20">
           <h3 className="text-2xl font-bold">Receive Money</h3>
           <p className="mt-4">
             Setup a PayID server to provide yours users PayIDs
