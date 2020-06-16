@@ -43,7 +43,7 @@ const Introduction: React.FC = () => {
   ]
 
   return (
-    <Wave waveClassNames="vision-bg" spacing="sm">
+    <Wave waveClassNames="vision-bg" spacing="sm" wave="gray">
       <div className="max-w-4xl pt-16 lg:pt-70">
         <h1 className="text-4xl font-bold sm:mb-10 mb-7 sm:text-h1 sm:leading-tighter">
           Vision
