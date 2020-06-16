@@ -1,4 +1,3 @@
-import { Link } from 'gatsby'
 import React from 'react'
 
 import Wave from '../../common/wave'
@@ -23,21 +22,7 @@ const Introduction: React.FC = () => {
       title: 'PayID is the Universal Payment Identifier',
       descriptions: [
         'PayID creates a common protocol that allows for interoperability between payment networks. PayID is a free and open standard, allowing for truly organic growth where no single company can control or set the terms for joining. This solution is built around people, replacing complex account numbers with simple names that are easy to understand, remember and even type.',
-        <>
-          Backed by{' '}
-          <Link to="/companies" className="font-bold underline">
-            industry leaders
-          </Link>{' '}
-          from technology and finance, PayID is just the beginning of the open
-          global payment network. It works across any payment network or
-          currency—be it fiat or digital. A payment network that unites everyone
-          around the globe is incredibly valuable for every participant. An open
-          network built on open standards and open source enables innovation and
-          growth for everyone. Just like the creation and widespread adoption of
-          the internet and mobile phones, PayID drives payments forward,
-          simplifying global payments for all and bringing us one step closer to
-          a world where money moves as easily as information.
-        </>,
+        'Backed by industry leaders from technology and finance, PayID is just the beginning of the open global payment network. It works across any payment network or currency—be it fiat or digital. A payment network that unites everyone around the globe is incredibly valuable for every participant. An open network built on open standards and open source enables innovation and growth for everyone. Just like the creation and widespread adoption of the internet and mobile phones, PayID drives payments forward, simplifying global payments for all and bringing us one step closer to a world where money moves as easily as information.',
       ],
     },
   ]
@@ -52,13 +37,13 @@ const Introduction: React.FC = () => {
       <div className="w-full m-auto md:max-w-md">
         {sectionCopy.map((copy, i) => {
           return (
-            <div key={i} className="mt-20 sm:mt-40">
-              <h2 className="mb-10 text-3xl font-bold sm:text-5xl sm:mb-14">
+            <div key={i} className="mt-20 sm:mt-30">
+              <h2 className="mb-10 text-3xl font-bold sm:text-4xl sm:mb-14">
                 {copy.title}
               </h2>
               {copy.descriptions.map((description, index) => {
                 return (
-                  <p className="mt-8 text-base sm:text-xl" key={index}>
+                  <p className="mt-8" key={index}>
                     {description}
                   </p>
                 )
