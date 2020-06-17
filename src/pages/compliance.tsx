@@ -11,7 +11,7 @@ import Walkthrough from '../components/pages/compliance/walkthrough'
 
 const Compliance: React.FC = () => {
   return (
-    <Layout title="Compliance">
+    <Layout path="compliance" title="Compliance">
       <Introduction />
       <Benefits />
       <Synergy />

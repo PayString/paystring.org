@@ -8,7 +8,7 @@ import Introduction from '../components/pages/vision/introduction'
 
 const Vision: React.FC = () => {
   return (
-    <Layout title="Vision">
+    <Layout path="vision" title="Vision">
       <Introduction />
       <Extensions />
       <Learn background="white" />

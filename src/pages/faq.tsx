@@ -7,7 +7,7 @@ import Introduction from '../components/pages/faq/introduction'
 
 const FAQ: React.FC = () => {
   return (
-    <Layout title="FAQ">
+    <Layout path="faq" title="FAQ">
       <Introduction />
       <Learn background="white" />
       <Community />

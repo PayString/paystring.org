@@ -107,7 +107,7 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <Layout title="Contact">
+    <Layout path="contact" title="Contact">
       <div
         className="text-white bg-blue-dark-900 faq-bg xl:bg-cover"
         style={minHeight}

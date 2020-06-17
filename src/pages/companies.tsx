@@ -8,7 +8,7 @@ import Members from '../components/pages/companies/members'
 
 const Companies: React.FC = () => {
   return (
-    <Layout title="Companies">
+    <Layout path="companies" title="Companies">
       <Introduction />
       <Members />
       <Learn background="gray" />

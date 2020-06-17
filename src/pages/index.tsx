@@ -10,7 +10,7 @@ import JoinUs from '../components/pages/home/join-us'
 
 const Index: React.FC = () => {
   return (
-    <Layout title="Home">
+    <Layout path="" title="Home">
       <Introduction />
       <JoinUs />
       <Integrate />
