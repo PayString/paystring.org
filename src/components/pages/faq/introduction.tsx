@@ -116,6 +116,23 @@ const Introduction: React.FC = () => {
           description:
             'PayID is designed by devs for devs. You can deploy a PayID server with just a few commands with existing web infrastructure, and then integrate it into an application or account system in just a few lines of code.',
         },
+        {
+          title: 'Where can I learn more about the PayID technology?',
+          description: (
+            <>
+              For other questions on PayID development and deployment, visit{' '}
+              <a
+                href={`${getDocsLocation()}/docs/payid-overview`}
+                className="text-orange-500 focus:underline hover:underline"
+                target="_blank"
+                rel="noreferrer"
+              >
+                the docs page
+              </a>
+              .
+            </>
+          ),
+        },
       ],
     },
   ]

@@ -3,6 +3,8 @@ import React from 'react'
 import IconGreen from '../../../../content/assets/compliance/synergy/check-green.svg'
 import IconOrange from '../../../../content/assets/compliance/synergy/check-orange.svg'
 import IconPurple from '../../../../content/assets/compliance/synergy/check-purple.svg'
+import TrisaLogo from '../../../../content/assets/compliance/synergy/trisa-logo.svg'
+import Logo from '../../../../content/assets/logo.svg'
 import Wave from '../../common/wave'
 
 const Synergy: React.FC = () => {
@@ -24,7 +26,7 @@ const Synergy: React.FC = () => {
 
   return (
     <Wave background="gray" wave="blue" direction="rtl" spacing="lg">
-      <h2 className="max-w-2xl mb-6 text-3xl font-bold text-left sm:text-5xl sm:mb-10 sm:text-center md:text-left">
+      <h2 className="max-w-xl mb-6 text-3xl font-bold text-left sm:text-5xl sm:mb-10 sm:text-center md:text-left">
         PayID Composability and TRISA Integration
       </h2>
       <div className="grid grid-cols-1 gap-8 sm:gap-20 sm:text-xl md:grid-cols-2">
@@ -41,6 +43,11 @@ const Synergy: React.FC = () => {
             supercharges an already strong solution by providing increased
             efficiency and enhanced privacy - an ideal match.
           </p>
+          <div className="flex items-center justify-center mt-12">
+            <Logo className="h-12 md:h-15" />
+            <div className="h-12 mx-6 border-r md:h-15 border-blue-dark-900" />
+            <TrisaLogo className="mb-1 h-7 md:h-10" />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 gap-8 px-0 sm:gap-20">

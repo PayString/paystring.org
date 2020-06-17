@@ -74,7 +74,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
       <div className="container py-4">
         <div className="flex items-center justify-between">
           <Link to="/">
-            <Logo />
+            <Logo className="h-10.5" />
             <span className="sr-only">Home</span>
           </Link>
           <div className="hidden lg:block">
