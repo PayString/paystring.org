@@ -5,6 +5,7 @@ import MobileIdentifier from '../../../../content/assets/home/introduction/ident
 import Identifier from '../../../../content/assets/home/introduction/identifier.svg'
 import OpenSource from '../../../../content/assets/home/introduction/open-source.svg'
 import TechStack from '../../../../content/assets/home/introduction/tech-stack.svg'
+import getDocsLocation from '../../../utils/config'
 import Button from '../../common/button'
 import Wave from '../../common/wave'
 
@@ -20,19 +21,19 @@ const Introduction: React.FC = () => {
       title: 'Open Source',
       icon: OpenSource,
       description:
-        'Join a community improving payments with open standards and protocols.',
+        'Join the community dedicated to improving payments with open standards and protocols',
     },
     {
-      title: 'Better UX',
+      title: 'Better Payment Experience',
       icon: BetterUX,
       description:
-        'Replace complex account numbers with a simple ID that works across any payment network and currency.',
+        'Replace complex account numbers with a simple ID that works across any payment network and currency',
     },
     {
       title: 'Simple Tech Stack',
       icon: TechStack,
       description:
-        'Built on HTTP/DNS standards for easy deployment in any app, on any platform.',
+        'Built on HTTP/DNS standards for easy deployment in any app, on any platform',
     },
   ]
 
@@ -48,24 +49,29 @@ const Introduction: React.FC = () => {
           The Universal Payment Identifier
         </h1>
         <p className="mb-20 text-center md:mb-10 md:max-w-md sm:text-xl">
-          A more intuitive way for your users to send and receive payments
+          A better way for your users to send and receive payments
         </p>
         <div className="hidden md:flex">
-          <Button
-            to="/contact"
-            size="lg"
-            label="Start Building"
+          <a
+            href={`${getDocsLocation()}/docs/getting-started`}
             className="mr-8"
-          />
+          >
+            <Button size="lg" label="Start Building" />
+          </a>
           <Button
-            to="/contact"
+            to="/vision"
             size="lg"
             variant="secondary"
-            label="Find Out More"
+            label="Learn More"
           />
         </div>
         <div className="md:hidden">
-          <Button to="/contact" label="Start Building" className="mr-6" />
+          <a
+            href={`${getDocsLocation()}/docs/getting-started`}
+            className="mr-6"
+          >
+            <Button label="Start Building" />
+          </a>
           <Button to="/contact" variant="secondary" label="Find Out More" />
         </div>
         <Identifier className="hidden mt-36 lg:block" />

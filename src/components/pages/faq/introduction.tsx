@@ -134,7 +134,7 @@ const Introduction: React.FC = () => {
                 <div className="mb-6" key={sectionIndex}>
                   <button
                     className={classNames(
-                      'text-xs font-bold hover:text-orange-500 focus:text-orange-500 focus:outline-none align-middle',
+                      'text-xs font-semibold hover:text-orange-500 focus:text-orange-500 focus:outline-none align-middle',
                       {
                         'text-orange-500': expanded === sectionIndex,
                         'text-gray-200': expanded !== sectionIndex,
@@ -164,7 +164,7 @@ const Introduction: React.FC = () => {
                           <a
                             key={contentIndex}
                             className={classNames(
-                              'block mb-2 text-xs font-bold hover:text-orange-500 focus:text-orange-500 outline-none',
+                              'block mb-2 text-xs font-semibold hover:text-orange-500 focus:text-orange-500 outline-none',
                               {
                                 'text-orange-500': contentIndex === active,
                                 'text-gray-200': contentIndex !== active,
