@@ -12,7 +12,7 @@
 }
 
 .wave:first-of-type > div > .wave-content {
-  margin-top: 4.625rem;
+  @apply mt-18;
 }
 
 .learnable {

@@ -1,107 +1,238 @@
-import React from 'react'
+import classNames from 'classnames'
+import React, { useState, useEffect } from 'react'
 
 import Button from '../components/common/button'
+import InputField from '../components/common/input-field'
 import Layout from '../components/layout'
 
 const Contact: React.FC = () => {
-  const bgImgStyle = {
-    backgroundImage: 'url(/assets/faq/background.svg)',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center top',
+  const minHeight = {
+    minHeight: 'calc(100vh - 9.25rem)',
+  }
+  const [validForm, setValidForm] = useState<boolean>(false)
+  const [role, setRole] = useState<string>('DEFAULT')
+  const [firstName, setFirstName] = useState<string>()
+  const [lastName, setLastName] = useState<string>()
+  const [email, setEmail] = useState<string>()
+  const [message, setMessage] = useState<string>()
+
+  const roles = [
+    {
+      label: 'Role',
+      value: 'DEFAULT',
+    },
+    {
+      label: 'Project Manager',
+      value: 'PM',
+    },
+    {
+      label: 'Engineer',
+      value: 'Engineer',
+    },
+    {
+      label: 'Business Development',
+      value: 'BD',
+    },
+    {
+      label: 'Sales',
+      value: 'Sales',
+    },
+    {
+      label: 'Operations',
+      value: 'Operations',
+    },
+    {
+      label: 'Executive',
+      value: 'Executive',
+    },
+    {
+      label: 'Marketing',
+      value: 'Marketing',
+    },
+  ]
+
+  const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+  const isValidEmail = (val: string | undefined): boolean => {
+    return !!(val && emailRegex.test(val))
+  }
+
+  useEffect(() => {
+    if (
+      role &&
+      role !== 'DEFAULT' &&
+      firstName &&
+      firstName.length > 0 &&
+      email &&
+      isValidEmail(email) &&
+      message &&
+      message.length > 0
+    ) {
+      setValidForm(true)
+    } else {
+      setValidForm(false)
+    }
+  }, [role, firstName, email, message])
+
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ): Promise<void> => {
+    event.preventDefault()
+    if (!validForm) return
+
+    const formData = {
+      role,
+      'first-name': firstName,
+      'last-name': lastName !== '' ? lastName : undefined,
+      email,
+      message,
+    }
+
+    // TODO Debug Pardot integration
+    console.log(formData)
+    const response = await fetch(
+      'https://go.ripple.com/l/105572/2020-06-15/csn2lj',
+      {
+        mode: 'no-cors',
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    )
+    console.log(response)
+
+    if (typeof window !== 'undefined' && typeof window.heap !== 'undefined') {
+      window.heap.track('contact-us', formData) // eslint-disable-line @typescript-eslint/no-unsafe-call
+    }
   }
 
   return (
-    <Layout title="Contact" fixedNav>
+    <Layout title="Contact">
       <div
-        className="flex items-center justify-center flex-grow text-3xl bg-blue-dark-900"
-        style={bgImgStyle}
+        className="text-white bg-blue-dark-900 faq-bg xl:bg-cover"
+        style={minHeight}
       >
-        <div className="px-6 mx-auto text-white">
-          <div className="max-w-4xl pt-16 pb-22 lg:pt-70">
-            <h1 className="text-3xl font-bold sm:mb-10 mb-7 sm:text-h1 sm:leading-tighter">
-              Start building the future of open payments
-            </h1>
-          </div>
+        <div className="flex justify-center px-6 lg:px-18">
+          <div className="container lg:px-17 lg:mt-0 mt-18">
+            <div className="max-w-4xl pt-16 lg:pt-70">
+              <h1 className="text-3xl font-bold sm:text-h1 sm:leading-tighter">
+                Start building the future of open payments
+              </h1>
+            </div>
 
-          <div className="max-w-lg mx-auto text-3xl font-bold sm:text-4xl pb-22">
-            Have questions? Our team is here to help you get started.
-          </div>
+            <div className="w-full mx-auto mt-20 md:mt-40 md:max-w-md">
+              <h2 className="mb-10 text-2xl font-bold sm:text-4xl sm:mb-14">
+                Have questions? Our team is here to help you get started.
+              </h2>
 
-          <form className="max-w-lg mx-auto mt-10 mb-20 text-lg lg:mb-70">
-            <div className="p-4 mx-auto mb-10 text-white border border-2 border-white">
-              <select
-                className="w-full bg-transparent focus:outline-none "
-                placeholder="Role"
+              <form
+                onSubmit={handleSubmit}
+                className="mt-10 mt-16 mb-20 md:mt-30 md:mb-40"
               >
-                <option>PM</option>
-                <option>Engineer</option>
-                <option>BD</option>
-                <option>Sales</option>
-                <option>Operations</option>
-                <option>Executive</option>
-                <option>Marketing</option>
-              </select>
-            </div>
+                <div
+                  className={classNames('relative px-6 mb-6 border-2 rounded', {
+                    'border-green-600': role !== 'DEFAULT',
+                    'border-white': role === 'DEFAULT',
+                  })}
+                >
+                  <select
+                    defaultValue="DEFAULT"
+                    id="role"
+                    name="role"
+                    onChange={(event) => setRole(event.target.value)}
+                    className="w-full py-4 bg-transparent focus:outline-none"
+                  >
+                    {roles.map((r) => (
+                      <option
+                        value={r.value}
+                        key={r.label}
+                        hidden={r.value === 'DEFAULT'}
+                      >
+                        {r.label}
+                      </option>
+                    ))}
+                  </select>
+                  <label
+                    htmlFor="role"
+                    className={classNames(
+                      'absolute z-50 transition-all duration-300 ease-linear pointer-events-none left-4 bg-blue-dark-900 px-2',
+                      {
+                        '-top-3 text-green-600': role !== 'DEFAULT',
+                        'top-4 text-white': role === 'DEFAULT',
+                      },
+                    )}
+                  >
+                    Role
+                  </label>
+                </div>
 
-            <div className="flex flex-wrap mb-4 -mx-4">
-              <div className="w-full px-4 mb-6 md:w-1/2 md:mb-0">
-                <input
-                  className="block w-full px-4 py-4 mb-3 leading-tight text-white placeholder-white bg-transparent border-2 border-white focus:outline-none"
-                  id="first-name"
-                  type="text"
-                  placeholder="First Name"
-                  aria-label="First Name"
-                />
-                <p className="hidden text-xs italic">
-                  Please fill out this field.
-                </p>
-              </div>
-              <div className="w-full px-4 md:w-1/2">
-                <input
-                  className="block w-full px-4 py-4 leading-tight text-white placeholder-white bg-transparent border-2 border-white focus:outline-none"
-                  id="last-name"
-                  type="text"
-                  placeholder="Last Name"
-                  aria-label="Last Name"
-                />
-              </div>
-            </div>
+                <div className="flex">
+                  <InputField
+                    id="firstName"
+                    label="First Name"
+                    type="text"
+                    name="first-name"
+                    autoComplete="given-name"
+                    className="mr-3"
+                    required
+                    requiredText="First name is required"
+                    onChange={(e): void => setFirstName(e.currentTarget.value)}
+                  />
+                  <InputField
+                    id="lastName"
+                    label="Last Name"
+                    type="text"
+                    name="last-name"
+                    autoComplete="family-name"
+                    className="ml-3"
+                    onChange={(e): void => setLastName(e.currentTarget.value)}
+                  />
+                </div>
 
-            <div className="mx-auto mb-8 border border-2 border-white">
-              <input
-                className="w-full p-4 text-white placeholder-white bg-transparent focus:outline-none"
-                type="email"
-                name="email"
-                id="inputEmail"
-                placeholder="Email"
-                aria-label="Email"
-              />
+                <InputField
+                  id="email"
+                  label="Email"
+                  type="email"
+                  name="email"
+                  autoComplete="email"
+                  required
+                  requiredText="Email address is required"
+                  validate={isValidEmail}
+                  invalidText="Invalid email address"
+                  onChange={(e): void => {
+                    if (isValidEmail(e.currentTarget.value)) {
+                      setEmail(e.currentTarget.value)
+                    } else {
+                      setEmail(undefined)
+                    }
+                  }}
+                />
+
+                <InputField
+                  id="message"
+                  label="Message"
+                  type="text"
+                  name="message"
+                  required
+                  requiredText="Message is required"
+                  onChange={(e): void => setMessage(e.currentTarget.value)}
+                />
+
+                <Button
+                  disabled={!validForm}
+                  label="Submit"
+                  className="mt-8 sm:hidden"
+                />
+                <Button
+                  disabled={!validForm}
+                  label="Submit"
+                  size="lg"
+                  className="hidden mx-auto mt-16 sm:block"
+                />
+              </form>
             </div>
-            <div className="mb-10 border border-2 border-white ">
-              <input
-                className="w-full p-4 text-white placeholder-white bg-transparent focus:outline-none"
-                type="text"
-                name="message"
-                id="inputmessage"
-                placeholder="Message"
-                aria-label="Message"
-              />
-            </div>
-            <Button
-              to="/contact"
-              label="Submit"
-              variant="primary"
-              className=" mt-17 sm:w-auto sm:hidden"
-            />
-            <Button
-              to="/contact"
-              label="Submit"
-              variant="primary"
-              size="lg"
-              className="hidden w-full mx-auto mt-12 sm:w-auto sm:inline-block"
-            />
-          </form>
+          </div>
         </div>
       </div>
     </Layout>

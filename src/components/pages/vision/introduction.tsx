@@ -52,7 +52,7 @@ const Introduction: React.FC = () => {
           Vision
         </h1>
       </div>
-      <div className="w-full m-auto md:max-w-md">
+      <div className="w-full mx-auto md:max-w-md">
         {sectionCopy.map((copy, i) => {
           return (
             <div key={i} className="mt-20 sm:mt-30">
