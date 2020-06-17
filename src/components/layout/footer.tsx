@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
       location: '/faq',
     },
     {
-      text: 'Press Release',
+      text: 'Press Kit',
       location: 'https://www.dropbox.com/home/PayID%20Press%20Kit',
     },
     {
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
           </div>
           <div className="grid grid-flow-col grid-rows-4 row-gap-8 col-gap-4 mt-12 md:mt-10 xl:mt-0 sm:grid-rows-2 lg:grid-rows-1 lg:col-gap-18 xl:ml-18">
             {links.map((link) => {
-              if (link.text !== 'Docs' && link.text !== 'Press Release') {
+              if (link.text !== 'Docs' && link.text !== 'Press Kit') {
                 return (
                   <Link
                     key={link.text}

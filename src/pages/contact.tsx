@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import React, { useState, useEffect } from 'react'
 
+import SelectArrow from '../../content/assets/common/selectArrow.svg'
 import Button from '../components/common/button'
 import InputField from '../components/common/input-field'
 import Layout from '../components/layout'
@@ -136,7 +137,7 @@ const Contact: React.FC = () => {
                     id="role"
                     name="role"
                     onChange={(event) => setRole(event.target.value)}
-                    className="w-full py-4 bg-transparent focus:outline-none"
+                    className="w-full py-4 bg-transparent appearance-none focus:outline-none"
                   >
                     {roles.map((r) => (
                       <option
@@ -148,6 +149,7 @@ const Contact: React.FC = () => {
                       </option>
                     ))}
                   </select>
+                  <SelectArrow className="absolute h-2 mt-2 text-white right-4 top-4" />
                   <label
                     htmlFor="role"
                     className={classNames(

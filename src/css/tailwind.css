@@ -11,6 +11,10 @@
   @apply mb-13;
 }
 
+.wave-vector {
+  margin-bottom: -1px;
+}
+
 .wave:first-of-type > div > .wave-content {
   @apply mt-18;
 }
