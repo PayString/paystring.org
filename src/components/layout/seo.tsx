@@ -7,6 +7,7 @@ interface SEOProps {
   lang?: string
   meta?: []
   title: string
+  url: string
 }
 
 interface Site {
@@ -48,35 +49,43 @@ const SEO: React.FC<SEOProps> = (props: SEOProps) => {
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
-          name: `description`,
+          name: 'description',
           content: metaDescription,
         },
         {
-          property: `og:title`,
+          property: 'og:image',
+          content: 'ogp.png',
+        },
+        {
+          property: 'og:title',
           content: props.title,
         },
         {
-          property: `og:description`,
+          property: 'og:description',
           content: metaDescription,
         },
         {
-          property: `og:type`,
-          content: `website`,
+          property: 'og:type',
+          content: 'website',
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          property: 'og:url',
+          content: props.url,
         },
         {
-          name: `twitter:creator`,
+          name: 'twitter:card',
+          content: 'summary',
+        },
+        {
+          name: 'twitter:creator',
           content: site.siteMetadata.social.twitter,
         },
         {
-          name: `twitter:title`,
+          name: 'twitter:title',
           content: props.title,
         },
         {
-          name: `twitter:description`,
+          name: 'twitter:description',
           content: metaDescription,
         },
       ].concat(props.meta || [])}

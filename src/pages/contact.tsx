@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
       value: 'PM',
     },
     {
-      label: 'Engineer',
+      label: 'Developer',
       value: 'Engineer',
     },
     {
@@ -107,7 +107,11 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <Layout title="Contact">
+    <Layout
+      path="contact"
+      title="Contact the PayID Team"
+      description="Have a question about PayID? Contact us and we will help you find the information you are looking for."
+    >
       <div
         className="text-white bg-blue-dark-900 faq-bg xl:bg-cover"
         style={minHeight}

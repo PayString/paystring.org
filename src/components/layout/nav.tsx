@@ -74,7 +74,11 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
       <div className="container py-4">
         <div className="flex items-center justify-between">
           <Link to="/">
-            <Logo className="h-10.5" />
+            <Logo
+              className="h-10.5"
+              role="img"
+              aria-label="PayID: Unifying payments through a universal payment identifier to simplify sending and receiving payments"
+            />
             <span className="sr-only">Home</span>
           </Link>
           <div className="hidden lg:block">

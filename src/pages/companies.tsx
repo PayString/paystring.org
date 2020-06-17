@@ -8,7 +8,11 @@ import Members from '../components/pages/companies/members'
 
 const Companies: React.FC = () => {
   return (
-    <Layout title="Companies">
+    <Layout
+      path="companies"
+      title="About the Open Payments Coalition"
+      description="PayID joins companies across all industries to provide an open-source solution for cross network payments. Learn more about the Open Payments Coalition."
+    >
       <Introduction />
       <Members />
       <Learn background="gray" />

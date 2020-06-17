@@ -10,7 +10,11 @@ import JoinUs from '../components/pages/home/join-us'
 
 const Index: React.FC = () => {
   return (
-    <Layout title="Home">
+    <Layout
+      path=""
+      title="Open Source, Universal Payment Identifier"
+      description="PayID provides a single ID for anyone needing to send or receive money. Learn about PayID's open-source protocol & how to connect users on any payment network."
+    >
       <Introduction />
       <JoinUs />
       <Integrate />
