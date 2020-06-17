@@ -13,7 +13,7 @@ variables:
   RELEASE_NAME: payidorg
   RELEASE_ENV: dev
   CICD_ICON: https://i.imgur.com/nxYui1j.png
-  INSTALL_XPRING_PROXY: "false"
+  INSTALL_XPRING_PROXY: "true"
 
 include:
   - project: 'xpring/xpring-ci-templates'
@@ -84,7 +84,6 @@ deploy to dev:
   variables:
     RELEASE_ENV: dev
     FULL_DNS_NAME: dev.payid.org
-    INSTALL_XPRING_PROXY: "true"
     REPLICAS: 1
     PROXY_REPLICAS: 1
 
@@ -93,7 +92,6 @@ deploy to stage:
   variables:
     RELEASE_ENV: stage
     FULL_DNS_NAME: stage.payid.org
-    INSTALL_XPRING_PROXY: "true"
     REPLICAS: 2
     PROXY_REPLICAS: 2
 
