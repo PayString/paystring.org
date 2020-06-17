@@ -42,7 +42,7 @@ const Integrate: React.FC = () => {
               <div className="px-8 py-6 whitespace-no-wrap">
                 <span className="block">
                   <span className="text-blue-dark-300">git</span> clone
-                  git@github.com:xpring-eng/payid.git && cd payid.org
+                  git@github.com:payid-org/payid.git && cd payid.org
                 </span>
                 <span className="block">
                   <span className="text-orange-300">cd</span> payid
