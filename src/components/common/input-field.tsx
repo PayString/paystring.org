@@ -10,6 +10,7 @@ interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
   invalidText?: string
   requiredText?: string
+  theme?: 'orange' | 'blue'
   validate?: (e: string | undefined) => boolean
   id: string
 }
@@ -20,6 +21,7 @@ const InputField: React.FC<InputFieldProps> = (props: InputFieldProps) => {
     invalidText,
     requiredText,
     validate,
+    theme = 'blue',
     className,
     onChange,
     ...inputProps
@@ -76,7 +78,7 @@ const InputField: React.FC<InputFieldProps> = (props: InputFieldProps) => {
     setError(false)
   }
 
-  const hasErrors = typeof error !== 'undefined' && error
+  const hasErrors = !!(typeof error !== 'undefined' && error)
 
   return (
     <div className={classNames(className, 'relative w-full mb-6')}>
@@ -89,27 +91,36 @@ const InputField: React.FC<InputFieldProps> = (props: InputFieldProps) => {
         className={classNames(
           'w-full px-6 py-4 placeholder-white bg-transparent rounded border-2 appearance-none focus:outline-none',
           {
-            'border-green-600': isRaised && !hasErrors,
-            'border-white': !isRaised && !hasErrors,
-            'border-orange-600': hasErrors,
+            'border-green-600': isRaised && !hasErrors && theme === 'blue',
+            'border-white': (!isRaised && !hasErrors) || theme === 'orange',
+            'border-orange-600': hasErrors && theme === 'blue',
           },
         )}
       />
       <label
         htmlFor={props.id}
         className={classNames(
-          'absolute z-50 transition-all duration-300 ease-linear pointer-events-none left-4 bg-blue-dark-900 px-2',
+          'absolute z-10 transition-all duration-300 ease-linear pointer-events-none left-4 px-2',
           {
-            'top-4 text-white': !isRaised && !hasErrors,
-            '-top-3 text-green-600': isRaised && !hasErrors,
-            '-top-3 text-orange-600': hasErrors,
+            'top-4': !isRaised && !hasErrors,
+            '-top-3': isRaised || hasErrors,
+            'text-green-600': isRaised && !hasErrors && theme === 'blue',
+            'text-orange-600': hasErrors && theme === 'blue',
+            'text-white': theme === 'orange' || (!isRaised && !hasErrors),
+            'bg-blue-dark-900': theme === 'blue',
+            'bg-orange-500': theme === 'orange',
           },
         )}
       >
         {props.label ?? props.name}{' '}
       </label>
       {typeof error === 'string' && (
-        <div className="flex pt-1 text-sm text-orange-600">
+        <div
+          className={classNames('flex pt-1 text-sm', {
+            'text-orange-600': theme === 'blue',
+            'text-white': theme === 'orange',
+          })}
+        >
           <div>{error}</div>
         </div>
       )}

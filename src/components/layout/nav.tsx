@@ -66,7 +66,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
       className={classNames(
         'top-0 w-full text-white flex justify-center px-6 lg:px-18',
         {
-          'fixed bg-blue-dark-900 z-10': shouldBeFixed(),
+          'fixed bg-blue-dark-900 z-20': shouldBeFixed(),
           'absolute bg-transparent lg:mt-12': !shouldBeFixed(),
         },
       )}

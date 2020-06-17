@@ -128,7 +128,7 @@ const Contact: React.FC = () => {
 
               <form
                 onSubmit={handleSubmit}
-                className="mt-10 mt-16 mb-20 md:mt-30 md:mb-40"
+                className="mt-16 mb-20 md:mt-30 md:mb-40"
               >
                 <div
                   className={classNames('relative px-6 mb-6 border-2 rounded', {
@@ -156,7 +156,7 @@ const Contact: React.FC = () => {
                   <label
                     htmlFor="role"
                     className={classNames(
-                      'absolute z-50 transition-all duration-300 ease-linear pointer-events-none left-4 bg-blue-dark-900 px-2',
+                      'absolute z-10 transition-all duration-300 ease-linear pointer-events-none left-4 bg-blue-dark-900 px-2',
                       {
                         '-top-3 text-green-600': role !== 'DEFAULT',
                         'top-4 text-white': role === 'DEFAULT',
