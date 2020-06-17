@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Button from '../components/common/button'
 import InputField from '../components/common/input-field'
 import Layout from '../components/layout'
+import { encodeFormData } from '../utils/config'
 
 const Contact: React.FC = () => {
   const minHeight = {
@@ -87,24 +88,18 @@ const Contact: React.FC = () => {
       message,
     }
 
-    // TODO Debug Pardot integration
-    console.log(formData)
-    const response = await fetch(
-      'https://go.ripple.com/l/105572/2020-06-15/csn2lj',
-      {
-        mode: 'no-cors',
-        method: 'POST',
-        body: JSON.stringify(formData),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      },
-    )
-    console.log(response)
-
     if (typeof window !== 'undefined' && typeof window.heap !== 'undefined') {
       window.heap.track('contact-us', formData) // eslint-disable-line @typescript-eslint/no-unsafe-call
     }
+
+    await fetch('https://go.ripple.com/l/105572/2020-06-15/csn2lj', {
+      mode: 'no-cors',
+      method: 'POST',
+      body: encodeFormData(formData),
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    })
   }
 
   return (

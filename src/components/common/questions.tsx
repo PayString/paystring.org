@@ -1,6 +1,8 @@
 import classNames from 'classnames'
 import React, { useEffect, useState } from 'react'
 
+import { encodeFormData } from '../../utils/config'
+
 import Button from './button'
 import InputField from './input-field'
 import Wave from './wave'
@@ -84,24 +86,18 @@ const Questions: React.FC<QuestionsProps> = (props) => {
       email,
     }
 
-    // TODO Debug Pardot integration
-    console.log(formData)
-    const response = await fetch(
-      'https://go.ripple.com/l/105572/2020-06-15/cspx4n',
-      {
-        mode: 'no-cors',
-        method: 'POST',
-        body: JSON.stringify(formData),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      },
-    )
-    console.log(response)
-
     if (typeof window !== 'undefined' && typeof window.heap !== 'undefined') {
       window.heap.track('newsletter', formData) // eslint-disable-line @typescript-eslint/no-unsafe-call
     }
+
+    await fetch('https://go.ripple.com/l/105572/2020-06-15/cspx4n', {
+      mode: 'no-cors',
+      method: 'POST',
+      body: encodeFormData(formData),
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    })
   }
 
   return (

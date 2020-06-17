@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { useState } from 'react'
 
-import getDocsLocation from '../../../utils/config'
+import { getDocsLocation } from '../../../utils/config'
 import Button from '../../common/button'
 import Wave from '../../common/wave'
 
