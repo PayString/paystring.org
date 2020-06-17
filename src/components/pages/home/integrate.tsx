@@ -42,7 +42,7 @@ const Integrate: React.FC = () => {
               <div className="px-8 py-6 whitespace-no-wrap">
                 <span className="block">
                   <span className="text-blue-dark-300">git</span> clone
-                  git@github.com:xpring-eng/payid.git
+                  git@github.com:xpring-eng/payid.git && cd payid.org
                 </span>
                 <span className="block">
                   <span className="text-orange-300">cd</span> payid
@@ -59,7 +59,7 @@ const Integrate: React.FC = () => {
                 <p>1</p>
               </div>
               <div className="px-8 py-6 whitespace-no-wrap">
-                <span className="block">./demo/run_payid_demo.sh</span>
+                <span className="block">npm run devEnvUp</span>
               </div>
             </div>
           </div>
@@ -95,12 +95,41 @@ const Integrate: React.FC = () => {
                   <p>1</p>
                   <p>2</p>
                   <p>3</p>
+                  <p>4</p>
+                  <p>5</p>
+                  <p>6</p>
+                  <p>7</p>
                 </div>
                 <div className="px-8 py-6 whitespace-no-wrap">
                   <span className="block">
                     curl --location --request GET{' '}
                     <span className="text-green-300">
-                      &apos;https://xpring.money/stormtv&apos;
+                      &apos;https://xpring.money/alice&apos;
+                    </span>{' '}
+                    \
+                  </span>
+                  <span className="block">
+                    --header{' '}
+                    <span className="text-green-300">
+                      &apos;Accept: application/xrpl-testnet+json,
+                      application/btc-mainnet+json&apos;
+                    </span>{' '}
+                    \
+                  </span>
+                  <span className="block">
+                    --header{' '}
+                    <span className="text-green-300">
+                      &apos;PayID-Version: 1.0&apos;
+                    </span>
+                  </span>
+                  <span className="block">
+                    {' '}
+                    <br></br>
+                  </span>
+                  <span className="block">
+                    curl --location --request GET{' '}
+                    <span className="text-green-300">
+                      &apos;https://xpring.money/bob&apos;
                     </span>{' '}
                     \
                   </span>
@@ -158,7 +187,7 @@ const Integrate: React.FC = () => {
                     <span className="block">
                       &nbsp;&nbsp;
                       <span className="text-orange-300">
-                        &apos;https://xpring.money/stormtv&apos;
+                        &apos;https://xpring.money/bob&apos;
                       </span>
                       ,
                     </span>
