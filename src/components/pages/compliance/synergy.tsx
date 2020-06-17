@@ -45,7 +45,7 @@ const Synergy: React.FC = () => {
           </p>
           <div className="flex items-center mt-12">
             <DarkLogo className="h-15" />
-            <div className="h-16 mx-6 bg-black w-2px"></div>
+            <div className="h-16 mx-6 bg-blue-dark-900 w-2px"></div>
             <TrisaLogo className="mb-1 h-9" />
           </div>
         </div>
