@@ -69,6 +69,7 @@ const Introduction: React.FC = () => {
                 to={`${getDocsLocation()}/docs/payid-overview`}
                 className="text-orange-500 focus:underline hover:underline"
                 target="_blank"
+                rel="noreferrer"
               >
                 the documentation
               </Link>{' '}
@@ -77,6 +78,7 @@ const Introduction: React.FC = () => {
                 to="https://github.com/payid-org/payid"
                 className="text-orange-500 focus:underline hover:underline"
                 target="_blank"
+                rel="noreferrer"
               >
                 GitHub repository
               </Link>

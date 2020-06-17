@@ -25,8 +25,9 @@ const Introduction: React.FC = () => {
             </p>
             <p className="mt-8">
               <Link
-                to="https://trisa.io/"
+                to="https://www.fatf-gafi.org/media/fatf/documents/recommendations/RBA-VA-VASPs.pdf"
                 target="_blank"
+                rel="noreferrer"
                 className="text-orange-500"
               >
                 Learn More
@@ -35,34 +36,6 @@ const Introduction: React.FC = () => {
             </p>
           </div>
         </div>
-        {/* <div>
-          <ul className="lg:list-disc lg:list-outside">
-            <li className="mt-8 lg:mt-0">
-              Travel rule is a regulatory requirement for money services to
-              exchange and retain information on senders and recievers of
-              transactions.
-            </li>
-            <li className="mt-8">
-              Various regulators have signaled that many crypto applications -
-              VASPs (&quot;Virtual Asset Service Providers&quot;) - will need to
-              comply with Travel Rule in the near future.
-            </li>
-            <li className="mt-8">
-              This is a very difficult problem using the old transaction model
-              of sending to on ledger addresses, but PayID make Travel Rule
-              compliance easy.
-            </li>
-          </ul>
-          <div className="mt-8">
-            <a
-              href="https://google.com"
-              className="text-orange-500 focus:underline hover:underline"
-            >
-              Learn more
-            </a>{' '}
-            about Travel Rule in crypto
-          </div>
-        </div> */}
       </div>
     </Wave>
   )

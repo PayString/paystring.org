@@ -23,9 +23,11 @@ const Extensions: React.FC = () => {
       description: 'Simpler to pay back your friends and family.',
     },
     {
-      icon: <IconUtilities className={iconClasses} />,
-      title: 'Utilities and Rent',
-      description: 'Simpler to pay your bills.',
+      icon: (
+        <span className="text-orange-dark-500">TODO DESIGN NEW IMAGE!!!!</span>
+      ),
+      title: 'Digital Identity',
+      description: 'Simpler to know who you are paying.',
     },
     {
       icon: <IconGettingPaid className={iconClasses} />,
