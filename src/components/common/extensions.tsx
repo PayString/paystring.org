@@ -5,7 +5,6 @@ import IconCommerce from '../../../content/assets/common/extensions/commerce.svg
 import IconGettingPaid from '../../../content/assets/common/extensions/getting-paid.svg'
 import IconInvoicing from '../../../content/assets/common/extensions/invoicing.svg'
 import IconP2P from '../../../content/assets/common/extensions/p2p.svg'
-import IconUtilities from '../../../content/assets/common/extensions/utilities.svg'
 
 import Wave from './wave'
 
