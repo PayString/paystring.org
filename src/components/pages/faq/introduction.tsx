@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import React, { useState } from 'react'
 
 import Arrow from '../../../../content/assets/compliance/walkthrough/arrow.svg'
+import getDocsLocation from '../../../utils/config'
 import Wave from '../../common/wave'
 
 const Introduction: React.FC = () => {
@@ -16,7 +17,7 @@ const Introduction: React.FC = () => {
         {
           title: 'What is PayID?',
           description:
-            'PayID is a universal payment identifier that makes it easier for people to send and receive money across any payment network.',
+            'PayID is an open universal payment identifier that makes it easier for people to send and receive money in any currency across any payment network.',
         },
         {
           title: 'Who uses PayID?',
@@ -38,7 +39,7 @@ const Introduction: React.FC = () => {
         },
         {
           title:
-            'How Is PayID compliant with international payment regulations?',
+            'How is PayID compliant with international payment regulations?',
           description: (
             <>
               Rather than prescribing a single solution, PayID is flexible and
@@ -65,7 +66,7 @@ const Introduction: React.FC = () => {
               PayID is open source and easy to set up with just a few lines of
               code. You can explore{' '}
               <Link
-                to="https://docs.payid.org/"
+                to={`${getDocsLocation()}/docs/payid-overview`}
                 className="text-orange-500 focus:underline hover:underline"
                 target="_blank"
               >
@@ -73,7 +74,7 @@ const Introduction: React.FC = () => {
               </Link>{' '}
               and{' '}
               <Link
-                to="https://github.com/xpring-eng/payid"
+                to="https://github.com/payid-org/payid"
                 className="text-orange-500 focus:underline hover:underline"
                 target="_blank"
               >
