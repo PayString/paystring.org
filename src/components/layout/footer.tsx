@@ -28,7 +28,8 @@ const Footer: React.FC = () => {
     },
     {
       text: 'Press Kit',
-      location: 'https://www.dropbox.com/home/PayID%20Press%20Kit',
+      location:
+        'https://www.dropbox.com/sh/ghyjfo40zmhgl98/AABZTCuNjevhuk_6P3vg4jdXa?dl=0',
     },
     {
       text: 'Contact Us',
