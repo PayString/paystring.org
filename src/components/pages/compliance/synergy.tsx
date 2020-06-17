@@ -43,10 +43,10 @@ const Synergy: React.FC = () => {
             supercharges an already strong solution by providing increased
             efficiency and enhanced privacy - an ideal match.
           </p>
-          <div className="flex items-center mt-12">
-            <Logo className="h-15" />
-            <div className="h-16 mx-6 bg-blue-dark-900 w-2px"></div>
-            <TrisaLogo className="mb-1 h-9.5" />
+          <div className="flex items-center justify-center mt-12">
+            <Logo className="h-12 md:h-15" />
+            <div className="h-12 mx-6 border-r md:h-15 border-blue-dark-900" />
+            <TrisaLogo className="mb-1 h-7 md:h-10" />
           </div>
         </div>
 

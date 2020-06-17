@@ -230,9 +230,7 @@ module.exports = {
     },
     extend: {
       spacing: {
-        '2px': '0.125rem',
         '7': '1.75rem',
-        '9.5': '2.375rem',
         '10.5': '2.625rem',
         '12.5': '3.125rem',
         '13': '3.25rem',
