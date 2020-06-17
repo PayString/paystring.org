@@ -34,30 +34,38 @@ const Contact: React.FC = () => {
                 className="w-full bg-transparent focus:outline-none "
                 placeholder="Role"
               >
-                <option>Role</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
+                <option>PM</option>
+                <option>Engineer</option>
+                <option>BD</option>
+                <option>Sales</option>
+                <option>Operations</option>
+                <option>Executive</option>
+                <option>Marketing</option>
               </select>
             </div>
-            <div className="mb-10 border border-2 border-white ">
-              <input
-                className="w-full p-4 text-white placeholder-white bg-transparent focus:outline-none"
-                type="text"
-                name="firstname"
-                id="inputfirstName"
-                placeholder="First Name"
-                aria-label="First Name"
-              />
-            </div>
-            <div className="mb-10 border border-2 border-white ">
-              <input
-                className="w-full p-4 text-white placeholder-white bg-transparent focus:outline-none"
-                type="text"
-                name="lastname"
-                id="inputlastName"
-                placeholder="Last Name"
-                aria-label="Last Name"
-              />
+
+            <div className="flex flex-wrap mb-4 -mx-4">
+              <div className="w-full px-4 mb-6 md:w-1/2 md:mb-0">
+                <input
+                  className="block w-full px-4 py-4 mb-3 leading-tight text-white placeholder-white bg-transparent border-2 border-white focus:outline-none"
+                  id="first-name"
+                  type="text"
+                  placeholder="First Name"
+                  aria-label="First Name"
+                />
+                <p className="hidden text-xs italic">
+                  Please fill out this field.
+                </p>
+              </div>
+              <div className="w-full px-4 md:w-1/2">
+                <input
+                  className="block w-full px-4 py-4 leading-tight text-white placeholder-white bg-transparent border-2 border-white focus:outline-none"
+                  id="last-name"
+                  type="text"
+                  placeholder="Last Name"
+                  aria-label="Last Name"
+                />
+              </div>
             </div>
 
             <div className="mx-auto mb-8 border border-2 border-white">
