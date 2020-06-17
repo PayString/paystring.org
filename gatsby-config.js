@@ -25,7 +25,8 @@ const getHeapAppID = () => {
 module.exports = {
   siteMetadata: {
     title: 'PayID',
-    description: 'A marketing site demonstrating what PayID can do.',
+    description:
+      'The Universial Payment Identifier. A better way for your users to send and receive payments.',
     siteUrl: 'https://payid.org/',
     social: {
       twitter: 'xpringdev',
