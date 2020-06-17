@@ -1,6 +1,6 @@
 import React from 'react'
 
-import getDocsLocation from '../../utils/config'
+import { getDocsLocation } from '../../utils/config'
 
 import Wave from './wave'
 

@@ -1,8 +1,8 @@
 import React from 'react'
 
+import Community from '../components/common/community'
 import Extensions from '../components/common/extensions'
 import Learn from '../components/common/learn'
-import Questions from '../components/common/questions'
 import Layout from '../components/layout'
 import Benefits from '../components/pages/compliance/benefits'
 import Introduction from '../components/pages/compliance/introduction'
@@ -18,7 +18,7 @@ const Compliance: React.FC = () => {
       <Walkthrough />
       <Extensions />
       <Learn background="white" />
-      <Questions />
+      <Community />
     </Layout>
   )
 }

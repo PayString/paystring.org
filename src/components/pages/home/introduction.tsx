@@ -5,7 +5,7 @@ import MobileIdentifier from '../../../../content/assets/home/introduction/ident
 import Identifier from '../../../../content/assets/home/introduction/identifier.svg'
 import OpenSource from '../../../../content/assets/home/introduction/open-source.svg'
 import TechStack from '../../../../content/assets/home/introduction/tech-stack.svg'
-import getDocsLocation from '../../../utils/config'
+import { getDocsLocation } from '../../../utils/config'
 import Button from '../../common/button'
 import Wave from '../../common/wave'
 
