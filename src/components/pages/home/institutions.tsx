@@ -5,6 +5,7 @@ import LogoBrave from '../../../../content/assets/companies/members/logos/brave.
 import LogoFlutterwave from '../../../../content/assets/companies/members/logos/flutterwave.svg'
 import LogoGoPay from '../../../../content/assets/companies/members/logos/gopay.svg'
 import LogoRipple from '../../../../content/assets/companies/members/logos/ripple.svg'
+import InstitutionsGraphic from '../../../../content/assets/home/institutions/institutions.svg'
 import Button from '../../common/button'
 import Wave from '../../common/wave'
 
@@ -44,24 +45,24 @@ const Institutions: React.FC = () => {
         </p>
       </div>
 
-      <div className="overflow-hidden">
-        <div className="flex flex-wrap justify-center -mt-16 text-center sm:-mt-24 -mx-7">
-          {sectionCopy.map((copy) => {
-            return (
-              <div
-                key={copy.title}
-                className="flex flex-col w-full mt-16 sm:w-1/2 md:w-1/3 sm:mt-24"
-              >
-                {
-                  <copy.icon className="self-center rounded-full shadow-logo h-30 w-30" />
-                }
-                <h3 className="self-center mt-8 text-2xl font-bold">
-                  {copy.title}
-                </h3>
-              </div>
-            )
-          })}
-        </div>
+      <InstitutionsGraphic className="hidden -mx-6 md:block lg:-mx-35" />
+
+      <div className="flex flex-wrap justify-center -mx-6 -mt-16 text-center lg:-mx-35 sm:-mt-24 md:hidden">
+        {sectionCopy.map((copy) => {
+          return (
+            <div
+              key={copy.title}
+              className="flex flex-col w-full mt-16 sm:w-1/2 md:w-1/3 sm:mt-24"
+            >
+              {
+                <copy.icon className="self-center rounded-full shadow-logo h-30 w-30" />
+              }
+              <h3 className="self-center mt-8 text-2xl font-bold">
+                {copy.title}
+              </h3>
+            </div>
+          )
+        })}
       </div>
       <div className="flex justify-center mt-16 sm:mt-24">
         <Button to="/companies" label="See More" />
