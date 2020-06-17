@@ -11,8 +11,12 @@
   @apply mb-13;
 }
 
+.wave-vector {
+  margin-bottom: -1px;
+}
+
 .wave:first-of-type > div > .wave-content {
-  margin-top: 4.625rem;
+  @apply mt-18;
 }
 
 .learnable {

@@ -1,7 +1,7 @@
 import React from 'react'
 
+import Community from '../components/common/community'
 import Learn from '../components/common/learn'
-import Questions from '../components/common/questions'
 import Layout from '../components/layout'
 import Institutions from '../components/pages/home/institutions'
 import Integrate from '../components/pages/home/integrate'
@@ -16,7 +16,7 @@ const Index: React.FC = () => {
       <Integrate />
       <Institutions />
       <Learn background="white" direction="rtl" />
-      <Questions direction="rtl" />
+      <Community direction="rtl" />
     </Layout>
   )
 }

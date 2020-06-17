@@ -264,6 +264,8 @@ module.exports = {
         xl: '0.75rem',
       },
       inset: {
+        '-3': '-0.75rem',
+        '4': '1rem',
         '20': '5rem',
       },
     },
