@@ -266,6 +266,12 @@ module.exports = {
       inset: {
         '20': '5rem',
       },
+      width: {
+        '2px': '0.125rem',
+      },
+      height: {
+        '9': '2.375rem',
+      },
     },
   },
   variants: {

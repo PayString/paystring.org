@@ -65,23 +65,23 @@ const Introduction: React.FC = () => {
             <>
               PayID is open source and easy to set up with just a few lines of
               code. You can explore{' '}
-              <Link
-                to={`${getDocsLocation()}/docs/payid-overview`}
+              <a
+                href={`${getDocsLocation()}/docs/payid-overview`}
                 className="text-orange-500 focus:underline hover:underline"
                 target="_blank"
                 rel="noreferrer"
               >
                 the documentation
-              </Link>{' '}
+              </a>{' '}
               and{' '}
-              <Link
-                to="https://github.com/payid-org/payid"
+              <a
+                href="https://github.com/payid-org/payid"
                 className="text-orange-500 focus:underline hover:underline"
                 target="_blank"
                 rel="noreferrer"
               >
                 GitHub repository
-              </Link>
+              </a>
               .
             </>
           ),
@@ -121,14 +121,14 @@ const Introduction: React.FC = () => {
           description: (
             <>
               For other questions on PayID development and deployment, visit{' '}
-              <Link
-                to={`${getDocsLocation()}/docs/payid-overview`}
+              <a
+                href={`${getDocsLocation()}/docs/payid-overview`}
                 className="text-orange-500 focus:underline hover:underline"
                 target="_blank"
                 rel="noreferrer"
               >
                 the docs page
-              </Link>
+              </a>
               .
             </>
           ),

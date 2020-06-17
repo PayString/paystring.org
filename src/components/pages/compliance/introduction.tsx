@@ -24,14 +24,14 @@ const Introduction: React.FC = () => {
               — such as Travel Rule and AML.
             </p>
             <p className="mt-8">
-              <Link
-                to="https://www.fatf-gafi.org/media/fatf/documents/recommendations/RBA-VA-VASPs.pdf"
+              <a
+                href="https://www.fatf-gafi.org/media/fatf/documents/recommendations/RBA-VA-VASPs.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="text-orange-500"
               >
                 Learn More
-              </Link>{' '}
+              </a>{' '}
               about Travel Rule in crypto
             </p>
           </div>
