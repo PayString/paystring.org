@@ -42,7 +42,7 @@ const Integrate: React.FC = () => {
               <div className="px-8 py-6 whitespace-no-wrap">
                 <span className="block">
                   <span className="text-blue-dark-300">git</span> clone
-                  git@github.com:xpring-eng/payid.git
+                  git@github.com:payid-org/payid.git
                 </span>
                 <span className="block">
                   <span className="text-orange-300">cd</span> payid
@@ -59,7 +59,7 @@ const Integrate: React.FC = () => {
                 <p>1</p>
               </div>
               <div className="px-8 py-6 whitespace-no-wrap">
-                <span className="block">./demo/run_payid_demo.sh</span>
+                <span className="block">npm run devEnvUp</span>
               </div>
             </div>
           </div>
