@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import React, { useState } from 'react'
 
 import Arrow from '../../../../content/assets/compliance/walkthrough/arrow.svg'
+import getDocsLocation from '../../../utils/config'
 import Wave from '../../common/wave'
 
 const Introduction: React.FC = () => {
@@ -16,18 +17,17 @@ const Introduction: React.FC = () => {
         {
           title: 'What is PayID?',
           description:
-            'PayID is a universal payment identifier that makes it easier for people to send and receive money across any payment network.',
+            'PayID is an open universal payment identifier that makes it easier for people to send and receive money in any currency across any payment network.',
         },
         {
           title: 'Who uses PayID?',
           description: (
             <>
-              PayID works across jurisdictions — without a patchwork of central
-              registration. Any business that sends and receives money can use
-              PayID to give each of their customers a simple and universal ID
-              that works across any payment network and makes payments faster
-              and easier. PayID is an open and free standard, so anyone can
-              build implementations and extensions on top of PayID.
+              Any business that sends and receives money can use PayID to give
+              each of their customers a simple and human-readable ID that works
+              across any payment network and makes payments easier with greater
+              network reach. PayID is an open standard, so anyone can build
+              implementations and extensions on top of PayID.
               <Link
                 to="/companies"
                 className="block mt-6 text-orange-500 focus:underline hover:underline"
@@ -39,19 +39,57 @@ const Introduction: React.FC = () => {
         },
         {
           title:
-            'How Is PayID compliant with international payment regulations?',
-          description:
-            'Rather than prescribing a single solution, PayID is flexible and composable by design, which empowers transaction participants to implement their own policies. PayID provides a simple extension that helps businesses satisfy Travel Rule record-keeping required in jurisdictions globally, including both current FinCEN rules and FATF guidance. Protocol extensions also make it easy to comply with a variety of other requirements for transactions involving regulated entities, while PayID also facilitates other compliance needs, such as sanctions screening.',
-        },
-        {
-          title: 'Who created this website?',
-          description:
-            'The PayID website was created by Ripple, as an early adopter of PayID.',
+            'How is PayID compliant with international payment regulations?',
+          description: (
+            <>
+              Rather than prescribing a single solution, PayID is flexible and
+              composable by design, which empowers transaction participants to
+              implement their own policies. PayID provides a simple extension
+              that helps businesses satisfy Travel Rule record-keeping required
+              in jurisdictions globally, including both current FinCEN rules and
+              FATF guidance, via native integration with the TRISA protocol.
+              PayID can also be used to improve other compliance solutions for
+              both users and services.
+              <Link
+                to="/compliance"
+                className="block mt-6 text-orange-500 focus:underline hover:underline"
+              >
+                Learn more about PayID and TRISA for Travel Rule
+              </Link>
+            </>
+          ),
         },
         {
           title: 'How can I get started with PayID?',
+          description: (
+            <>
+              PayID is open source and easy to set up with just a few lines of
+              code. You can explore{' '}
+              <Link
+                to={`${getDocsLocation()}/docs/payid-overview`}
+                className="text-orange-500 focus:underline hover:underline"
+                target="_blank"
+                rel="noreferrer"
+              >
+                the documentation
+              </Link>{' '}
+              and{' '}
+              <Link
+                to="https://github.com/payid-org/payid"
+                className="text-orange-500 focus:underline hover:underline"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub repository
+              </Link>
+              .
+            </>
+          ),
+        },
+        {
+          title: 'Who developed this website?',
           description:
-            'PayID is open source and easy to set up with just a few lines of code. You can explore the documentation and GitHub repository',
+            'The content on this website content was developed by Ripple, an early adopter of PayID, in collaboration with the Open Payments Coalition.',
         },
       ],
     },
@@ -61,7 +99,7 @@ const Introduction: React.FC = () => {
         {
           title: 'What does PayID implementation involve?',
           description:
-            'PayID is a free-to-use, fully open standard with an open source implementation. Any service can start using PayID by integrating a PayID server into their existing infrastructure using the reference implementation on GitHub.',
+            'PayID is a free-to-use, fully open standard with an open source implementation. Any company can start using PayID by integrating a PayID server into their existing infrastructure using the reference implementation on GitHub. The PayID SDK is the easiest way to enable “send to PayID” on your app.',
         },
         {
           title: 'What are the underlying technologies?',
@@ -76,7 +114,7 @@ const Introduction: React.FC = () => {
         {
           title: 'What is server deployment like?',
           description:
-            'PayID is designed by devs for devs. You can deploy a PayID server with just a few commands alongside existing web infrastructure then integrate it into an application or account system in just a few lines of code. PayID also includes a variety of tools that makes managing the server after deployment easy.',
+            'PayID is designed by devs for devs. You can deploy a PayID server with just a few commands with existing web infrastructure, and then integrate it into an application or account system in just a few lines of code.',
         },
       ],
     },

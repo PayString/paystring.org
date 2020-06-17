@@ -25,22 +25,20 @@ const Walkthrough: React.FC = () => {
     {
       title: 'Counterparty Indentification',
       descriptions: [
-        'VASP B sends a secure response affirming that Travel Rule applies based on their compliance requirements and the transaction data.',
+        'VASP A and B exchange information about themselves per the TRISA standard and determine whether Travel Rule applies based on their compliance requirements and the transaction data.',
       ],
     },
     {
       title: 'Exchange Travel Rule Payload',
       descriptions: [
-        'VASP A sends a signed Travel Rule data payload to the VASP B. This payload can conform to FinCEN, FATF, or other regulatory standards.',
+        'VASP A sends a signed Travel Rule data payload to VASP B via the TRISA protocol. This payload can conform to FinCEN, FATF, or other regulatory standards.',
       ],
     },
     {
       title: 'Beneficiary Institution Reviews Payload',
       descriptions: [
-        'VASP B reviews the Payload and sends either:',
-        'Authorization to proceed with the transaction, including the PayID to address mapping on the desired network and (optionally) a proof-of-control signature; or',
-        'Rejection for the proposed transaction (digitally signed receipt).',
-        'Both institutions are free to implement any compliance policy the desire at any point.',
+        'VASP B reviews the Payload and sends either authorization to proceed with the transaction, including the PayID to address mapping on the desired network or a rejection.',
+        'Both institutions are free to implement any compliance policy they desire at any point.',
       ],
     },
     {
