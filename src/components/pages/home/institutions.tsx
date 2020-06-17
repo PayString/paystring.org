@@ -35,7 +35,7 @@ const Institutions: React.FC = () => {
   return (
     <Wave background="gray" wave="white" direction="rtl">
       <div className="flex flex-col text-left md:items-center md:text-center">
-        <h2 className="mb-6 text-3xl font-bold md:mb-12 sm:text-5xl">
+        <h2 className="mb-6 text-3xl font-bold md:mb-8 sm:text-5xl">
           Supported by Leading Institutions
         </h2>
         <p className="max-w-xl mb-16 sm:text-xl sm:mb-24">
