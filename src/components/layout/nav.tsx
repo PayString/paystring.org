@@ -20,7 +20,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
     },
     {
       text: 'Docs',
-      location: `${getDocsLocation()}/docs/getting-started`,
+      location: `${getDocsLocation()}/docs/payid-overview`,
     },
     {
       text: 'Companies',

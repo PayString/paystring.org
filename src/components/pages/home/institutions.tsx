@@ -36,11 +36,11 @@ const Institutions: React.FC = () => {
     <Wave background="gray" wave="white" direction="rtl">
       <div className="flex flex-col text-left md:items-center md:text-center">
         <h2 className="mb-6 text-3xl font-bold md:mb-8 sm:text-5xl">
-          Supported by Leading Institutions
+          100 million users and growing
         </h2>
         <p className="max-w-xl mb-16 sm:text-xl sm:mb-24">
-          Be a part of a community of financial and tech organizations dedicated
-          to improving the payment experience.
+          Built and used by leading financial, tech, and non-profit
+          organizations
         </p>
       </div>
 

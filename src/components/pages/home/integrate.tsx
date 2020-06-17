@@ -15,7 +15,7 @@ const Integrate: React.FC = () => {
       <div className="flex justify-center">
         <div className="flex flex-col self-center max-w-xl text-left md:items-center md:text-center">
           <h2 className="mb-6 text-3xl font-bold md:mb-8 sm:text-5xl">
-            Integrate Into Your App in Minutes
+            Build into Your App in Minutes
           </h2>
           <p className="mb-16 sm:text-xl sm:mb-24">
             Set up on your preferred platform with a few lines of code and
@@ -24,12 +24,11 @@ const Integrate: React.FC = () => {
         </div>
       </div>
 
-      {/* Examples */}
       <div className="md:flex">
         <div className="w-full mb-16 overflow-hidden md:mb-0 md:mr-20">
           <h3 className="text-2xl font-bold">Receive Money</h3>
           <p className="mt-4">
-            Setup a PayID server to provide yours users PayIDs
+            Set up a PayID server to provide your users PayIDs
           </p>
           <div className="mt-10 md:mt-16">
             <p className="font-medium">Clone Repo</p>

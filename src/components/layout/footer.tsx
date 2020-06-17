@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
     },
     {
       text: 'Docs',
-      location: `${getDocsLocation()}/docs/getting-started`,
+      location: `${getDocsLocation()}/docs/payid-overview`,
     },
     {
       text: 'Companies',
@@ -73,7 +73,9 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="mt-12 mb-12 text-xs font-black tracking-widest uppercase md:mb-4 md:mt-10 md:flex">
-          <div>© {new Date().getFullYear()} Ripple, All Rights Reserved.</div>
+          <div>
+            This site is operated by Ripple on behalf of the PayID community
+          </div>
           <Link
             to="/terms"
             className="block mt-8 md:mt-0 md:ml-5 focus:text-orange-500 hover:text-orange-500 md:inline-block"
