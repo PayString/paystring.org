@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
     },
     {
       text: 'Docs',
-      location: getDocsLocation(),
+      location: `${getDocsLocation()}/docs/payid-overview`,
     },
     {
       text: 'Companies',
@@ -27,12 +27,12 @@ const Footer: React.FC = () => {
       location: '/faq',
     },
     {
-      text: 'Contact',
-      location: '/contact',
+      text: 'Press Release',
+      location: 'https://www.dropbox.com/home/PayID%20Press%20Kit',
     },
     {
-      text: 'Press Kit',
-      location: 'https://www.dropbox.com/home/PayID%20Press%20Kit',
+      text: 'Contact Us',
+      location: '/contact',
     },
   ]
 
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
           </div>
           <div className="grid grid-flow-col grid-rows-4 row-gap-8 col-gap-4 mt-12 md:mt-10 xl:mt-0 sm:grid-rows-2 lg:grid-rows-1 lg:col-gap-18 xl:ml-18">
             {links.map((link) => {
-              if (link.text !== 'Docs') {
+              if (link.text !== 'Docs' && link.text !== 'Press Release') {
                 return (
                   <Link
                     key={link.text}
@@ -72,8 +72,10 @@ const Footer: React.FC = () => {
             })}
           </div>
         </div>
-        <div className="mt-12 mb-12 text-xs font-black tracking-widest uppercase md:mb-4 md:mt-10 md:flex">
-          <div>© {new Date().getFullYear()} Ripple, All Rights Reserved.</div>
+        <div className="flex flex-col mt-12 mb-12 text-xs font-semibold md:mb-4 md:mt-10 md:flex-row">
+          <div>
+            This site is operated by Ripple on behalf of the PayID community
+          </div>
           <Link
             to="/terms"
             className="block mt-8 md:mt-0 md:ml-5 focus:text-orange-500 hover:text-orange-500 md:inline-block"

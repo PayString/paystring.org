@@ -5,7 +5,6 @@ import IconCommerce from '../../../content/assets/common/extensions/commerce.svg
 import IconGettingPaid from '../../../content/assets/common/extensions/getting-paid.svg'
 import IconInvoicing from '../../../content/assets/common/extensions/invoicing.svg'
 import IconP2P from '../../../content/assets/common/extensions/p2p.svg'
-import IconUtilities from '../../../content/assets/common/extensions/utilities.svg'
 
 import Wave from './wave'
 
@@ -23,9 +22,11 @@ const Extensions: React.FC = () => {
       description: 'Simpler to pay back your friends and family.',
     },
     {
-      icon: <IconUtilities className={iconClasses} />,
-      title: 'Utilities and Rent',
-      description: 'Simpler to pay your bills.',
+      icon: (
+        <span className="text-orange-dark-500">TODO DESIGN NEW IMAGE!!!!</span>
+      ),
+      title: 'Digital Identity',
+      description: 'Simpler to know who you are paying.',
     },
     {
       icon: <IconGettingPaid className={iconClasses} />,

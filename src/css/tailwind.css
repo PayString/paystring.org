@@ -25,6 +25,13 @@
   @apply mt-29;
 }
 
+.vision-bg {
+  background-image: url('/assets/vision/background.svg');
+  background-position: center top;
+
+  @apply bg-no-repeat;
+}
+
 .faq-bg {
   background-image: url('/assets/faq/background.svg');
   background-position: center top -13rem;
@@ -70,7 +77,11 @@
   .faq-bg {
     background-position: center top;
 
-    @apply bg-cover;
+    @apply bg-contain;
+  }
+
+  .vision-bg {
+    @apply bg-contain;
   }
 }
 
