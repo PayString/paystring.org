@@ -75,9 +75,7 @@ const Community: React.FC<CommunityProps> = (props) => {
     }
   }, [role, firstName, email])
 
-  const handleSubmit = async (
-    event: React.FormEvent<HTMLFormElement>,
-  ): Promise<void> => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault()
     if (!validForm) return
 
@@ -92,13 +90,15 @@ const Community: React.FC<CommunityProps> = (props) => {
       window.heap.track('newsletter', formData) // eslint-disable-line @typescript-eslint/no-unsafe-call
     }
 
-    await fetch('https://go.ripple.com/l/105572/2020-06-15/cspx4n', {
+    fetch('https://go.ripple.com/l/105572/2020-06-15/cspx4n', {
       mode: 'no-cors',
       method: 'POST',
       body: encodeFormData(formData),
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
+    }).catch((err) => {
+      Sentry.captureException(err)
     })
 
     setSubmitted(true)

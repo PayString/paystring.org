@@ -76,9 +76,7 @@ const Contact: React.FC = () => {
     }
   }, [role, firstName, email, message])
 
-  const handleSubmit = async (
-    event: React.FormEvent<HTMLFormElement>,
-  ): Promise<void> => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault()
     if (!validForm) return
 
@@ -94,13 +92,15 @@ const Contact: React.FC = () => {
       window.heap.track('contact-us', formData) // eslint-disable-line @typescript-eslint/no-unsafe-call
     }
 
-    await fetch('https://go.ripple.com/l/105572/2020-06-15/csn2lj', {
+    fetch('https://go.ripple.com/l/105572/2020-06-15/csn2lj', {
       mode: 'no-cors',
       method: 'POST',
       body: encodeFormData(formData),
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
+    }).catch((err) => {
+      Sentry.captureException(err)
     })
 
     setSubmitted(true)

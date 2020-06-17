@@ -13,3 +13,11 @@ declare interface Window {
     track: any
   }
 }
+
+declare const Sentry: {
+  captureException(
+    exception: any,
+    hint?: EventHint,
+    scope?: Scope,
+  ): string | undefined
+}
