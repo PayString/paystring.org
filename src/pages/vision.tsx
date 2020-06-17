@@ -8,7 +8,11 @@ import Introduction from '../components/pages/vision/introduction'
 
 const Vision: React.FC = () => {
   return (
-    <Layout path="vision" title="Vision">
+    <Layout
+      path="vision"
+      title="Our Vision for Simplifying Payments"
+      description="Simplify sending & receiving payments across any network with PayID. Our open-source platform is the next leap for accelerating growth in the payments industry."
+    >
       <Introduction />
       <Extensions />
       <Learn background="white" />
