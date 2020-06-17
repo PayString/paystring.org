@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col xl:items-center xl:flex-row">
           <div className="h-10.5">
             <Link to="/" className="inline-block">
-              <Logo />
+              <Logo className="h-10.5" />
               <span className="sr-only">Home</span>
             </Link>
           </div>

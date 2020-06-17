@@ -4,7 +4,7 @@ import IconGreen from '../../../../content/assets/compliance/synergy/check-green
 import IconOrange from '../../../../content/assets/compliance/synergy/check-orange.svg'
 import IconPurple from '../../../../content/assets/compliance/synergy/check-purple.svg'
 import TrisaLogo from '../../../../content/assets/compliance/synergy/trisa-logo.svg'
-import DarkLogo from '../../../../content/assets/logo-dark.svg'
+import Logo from '../../../../content/assets/logo.svg'
 import Wave from '../../common/wave'
 
 const Synergy: React.FC = () => {
@@ -44,7 +44,7 @@ const Synergy: React.FC = () => {
             efficiency and enhanced privacy - an ideal match.
           </p>
           <div className="flex items-center mt-12">
-            <DarkLogo className="h-15" />
+            <Logo className="h-15" />
             <div className="h-16 mx-6 bg-blue-dark-900 w-2px"></div>
             <TrisaLogo className="mb-1 h-9.5" />
           </div>
