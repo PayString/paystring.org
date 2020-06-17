@@ -270,7 +270,7 @@ module.exports = {
         '2px': '0.125rem',
       },
       height: {
-        '9': '2.375rem',
+        '38px': '2.375rem',
       },
     },
   },
