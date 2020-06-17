@@ -18,6 +18,7 @@ const Questions: React.FC<QuestionsProps> = (props) => {
   const [firstName, setFirstName] = useState<string>()
   const [lastName, setLastName] = useState<string>()
   const [email, setEmail] = useState<string>()
+  const [submitted, setSubmitted] = useState<boolean>(false)
 
   const roles = [
     {
@@ -99,6 +100,8 @@ const Questions: React.FC<QuestionsProps> = (props) => {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
     })
+
+    setSubmitted(true)
   }
 
   return (
@@ -107,110 +110,117 @@ const Questions: React.FC<QuestionsProps> = (props) => {
       direction={props.direction}
       wave="blue"
       spacing="lg"
-      className="flex justify-center"
+      className="flex items-center justify-center"
     >
-      <div className="max-w-xl">
-        <div className="text-3xl font-bold text-center sm:text-5xl">
-          Join the PayID Community
-        </div>
-        <div className="mt-8 text-xl text-center">
-          Sign up to access the PayID newsletter and hear about hackathons and
-          speaker events.
-        </div>
-        <form onSubmit={handleSubmit} className="mt-16 md:mt-30">
-          <div className="relative px-6 mb-6 border-2 border-white rounded">
-            <select
-              defaultValue="DEFAULT"
-              id="role"
-              name="role"
-              onChange={(event) => setRole(event.target.value)}
-              className="w-full py-4 bg-transparent appearance-none focus:outline-none"
-            >
-              {roles.map((r) => (
-                <option
-                  value={r.value}
-                  key={r.label}
-                  hidden={r.value === 'DEFAULT'}
-                >
-                  {r.label}
-                </option>
-              ))}
-            </select>
-            <SelectArrow className="absolute h-2 mt-2 text-white right-4 top-4" />
-            <label
-              htmlFor="role"
-              className={classNames(
-                'absolute z-10 transition-all duration-300 ease-linear pointer-events-none text-white left-4 bg-orange-500 px-2',
-                {
-                  '-top-3': role !== 'DEFAULT',
-                  'top-4': role === 'DEFAULT',
-                },
-              )}
-            >
-              Role
-            </label>
+      {!submitted && (
+        <div className="max-w-xl">
+          <div className="text-3xl font-bold text-center sm:text-5xl">
+            Join the PayID Community
           </div>
+          <div className="mt-8 text-xl text-center">
+            Sign up to access the PayID newsletter and hear about hackathons and
+            speaker events.
+          </div>
+          <form onSubmit={handleSubmit} className="mt-16 md:mt-30">
+            <div className="relative px-6 mb-6 border-2 border-white rounded">
+              <select
+                defaultValue="DEFAULT"
+                id="role"
+                name="role"
+                onChange={(event) => setRole(event.target.value)}
+                className="w-full py-4 bg-transparent appearance-none focus:outline-none"
+              >
+                {roles.map((r) => (
+                  <option
+                    value={r.value}
+                    key={r.label}
+                    hidden={r.value === 'DEFAULT'}
+                  >
+                    {r.label}
+                  </option>
+                ))}
+              </select>
+              <SelectArrow className="absolute h-2 mt-2 text-white right-4 top-4" />
+              <label
+                htmlFor="role"
+                className={classNames(
+                  'absolute z-10 transition-all duration-300 ease-linear pointer-events-none text-white left-4 bg-orange-500 px-2',
+                  {
+                    '-top-3': role !== 'DEFAULT',
+                    'top-4': role === 'DEFAULT',
+                  },
+                )}
+              >
+                Role
+              </label>
+            </div>
 
-          <div className="flex">
+            <div className="flex">
+              <InputField
+                theme="orange"
+                id="firstName"
+                label="First Name"
+                type="text"
+                name="first-name"
+                autoComplete="given-name"
+                className="mr-3"
+                required
+                requiredText="First name is required"
+                onChange={(e): void => setFirstName(e.currentTarget.value)}
+              />
+              <InputField
+                theme="orange"
+                id="lastName"
+                label="Last Name"
+                type="text"
+                name="last-name"
+                autoComplete="family-name"
+                className="ml-3"
+                onChange={(e): void => setLastName(e.currentTarget.value)}
+              />
+            </div>
+
             <InputField
               theme="orange"
-              id="firstName"
-              label="First Name"
-              type="text"
-              name="first-name"
-              autoComplete="given-name"
-              className="mr-3"
+              id="email"
+              label="Email"
+              type="email"
+              name="email"
+              autoComplete="email"
               required
-              requiredText="First name is required"
-              onChange={(e): void => setFirstName(e.currentTarget.value)}
+              requiredText="Email address is required"
+              validate={isValidEmail}
+              invalidText="Invalid email address"
+              onChange={(e): void => {
+                if (isValidEmail(e.currentTarget.value)) {
+                  setEmail(e.currentTarget.value)
+                } else {
+                  setEmail(undefined)
+                }
+              }}
             />
-            <InputField
-              theme="orange"
-              id="lastName"
-              label="Last Name"
-              type="text"
-              name="last-name"
-              autoComplete="family-name"
-              className="ml-3"
-              onChange={(e): void => setLastName(e.currentTarget.value)}
+
+            <Button
+              disabled={!validForm}
+              label="Submit"
+              variant="secondary"
+              className="mt-8 bg-white sm:hidden"
             />
-          </div>
-
-          <InputField
-            theme="orange"
-            id="email"
-            label="Email"
-            type="email"
-            name="email"
-            autoComplete="email"
-            required
-            requiredText="Email address is required"
-            validate={isValidEmail}
-            invalidText="Invalid email address"
-            onChange={(e): void => {
-              if (isValidEmail(e.currentTarget.value)) {
-                setEmail(e.currentTarget.value)
-              } else {
-                setEmail(undefined)
-              }
-            }}
-          />
-
-          <Button
-            disabled={!validForm}
-            label="Submit"
-            variant="secondary"
-            className="mt-8 bg-white sm:hidden"
-          />
-          <Button
-            disabled={!validForm}
-            variant="secondary"
-            label="Submit"
-            size="lg"
-            className="hidden mx-auto mt-16 bg-white sm:block"
-          />
-        </form>
-      </div>
+            <Button
+              disabled={!validForm}
+              variant="secondary"
+              label="Submit"
+              size="lg"
+              className="hidden mx-auto mt-16 bg-white sm:block"
+            />
+          </form>
+        </div>
+      )}
+      {submitted && (
+        <div className="text-3xl font-bold text-center sm:text-5xl">
+          Thank you for subscribing!
+        </div>
+      )}
     </Wave>
   )
 }

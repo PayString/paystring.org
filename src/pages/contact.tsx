@@ -17,6 +17,7 @@ const Contact: React.FC = () => {
   const [lastName, setLastName] = useState<string>()
   const [email, setEmail] = useState<string>()
   const [message, setMessage] = useState<string>()
+  const [submitted, setSubmitted] = useState<boolean>(false)
 
   const roles = [
     {
@@ -101,6 +102,8 @@ const Contact: React.FC = () => {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
     })
+
+    setSubmitted(true)
   }
 
   return (
@@ -117,118 +120,133 @@ const Contact: React.FC = () => {
               </h1>
             </div>
 
-            <div className="w-full mx-auto mt-20 md:mt-40 md:max-w-md">
-              <h2 className="mb-10 text-2xl font-bold sm:text-4xl sm:mb-14">
-                Have questions? Our team is here to help you get started.
-              </h2>
+            {!submitted && (
+              <div className="w-full mx-auto mt-20 md:mt-40 md:max-w-md">
+                <h2 className="mb-10 text-2xl font-bold sm:text-4xl sm:mb-14">
+                  Have questions? Our team is here to help you get started.
+                </h2>
 
-              <form
-                onSubmit={handleSubmit}
-                className="mt-16 mb-20 md:mt-30 md:mb-40"
-              >
-                <div
-                  className={classNames('relative px-6 mb-6 border-2 rounded', {
-                    'border-green-600': role !== 'DEFAULT',
-                    'border-white': role === 'DEFAULT',
-                  })}
+                <form
+                  onSubmit={handleSubmit}
+                  className="mt-16 mb-20 md:mt-30 md:mb-40"
                 >
-                  <select
-                    defaultValue="DEFAULT"
-                    id="role"
-                    name="role"
-                    onChange={(event) => setRole(event.target.value)}
-                    className="w-full py-4 bg-transparent appearance-none focus:outline-none"
-                  >
-                    {roles.map((r) => (
-                      <option
-                        value={r.value}
-                        key={r.label}
-                        hidden={r.value === 'DEFAULT'}
-                      >
-                        {r.label}
-                      </option>
-                    ))}
-                  </select>
-                  <SelectArrow className="absolute h-2 mt-2 text-white right-4 top-4" />
-                  <label
-                    htmlFor="role"
+                  <div
                     className={classNames(
-                      'absolute z-10 transition-all duration-300 ease-linear pointer-events-none left-4 bg-blue-dark-900 px-2',
+                      'relative px-6 mb-6 border-2 rounded',
                       {
-                        '-top-3 text-green-600': role !== 'DEFAULT',
-                        'top-4 text-white': role === 'DEFAULT',
+                        'border-green-600': role !== 'DEFAULT',
+                        'border-white': role === 'DEFAULT',
                       },
                     )}
                   >
-                    Role
-                  </label>
-                </div>
+                    <select
+                      defaultValue="DEFAULT"
+                      id="role"
+                      name="role"
+                      onChange={(event) => setRole(event.target.value)}
+                      className="w-full py-4 bg-transparent appearance-none focus:outline-none"
+                    >
+                      {roles.map((r) => (
+                        <option
+                          value={r.value}
+                          key={r.label}
+                          hidden={r.value === 'DEFAULT'}
+                        >
+                          {r.label}
+                        </option>
+                      ))}
+                    </select>
+                    <SelectArrow className="absolute h-2 mt-2 text-white right-4 top-4" />
+                    <label
+                      htmlFor="role"
+                      className={classNames(
+                        'absolute z-10 transition-all duration-300 ease-linear pointer-events-none left-4 bg-blue-dark-900 px-2',
+                        {
+                          '-top-3 text-green-600': role !== 'DEFAULT',
+                          'top-4 text-white': role === 'DEFAULT',
+                        },
+                      )}
+                    >
+                      Role
+                    </label>
+                  </div>
 
-                <div className="flex">
+                  <div className="flex">
+                    <InputField
+                      id="firstName"
+                      label="First Name"
+                      type="text"
+                      name="first-name"
+                      autoComplete="given-name"
+                      className="mr-3"
+                      required
+                      requiredText="First name is required"
+                      onChange={(e): void =>
+                        setFirstName(e.currentTarget.value)
+                      }
+                    />
+                    <InputField
+                      id="lastName"
+                      label="Last Name"
+                      type="text"
+                      name="last-name"
+                      autoComplete="family-name"
+                      className="ml-3"
+                      onChange={(e): void => setLastName(e.currentTarget.value)}
+                    />
+                  </div>
+
                   <InputField
-                    id="firstName"
-                    label="First Name"
-                    type="text"
-                    name="first-name"
-                    autoComplete="given-name"
-                    className="mr-3"
+                    id="email"
+                    label="Email"
+                    type="email"
+                    name="email"
+                    autoComplete="email"
                     required
-                    requiredText="First name is required"
-                    onChange={(e): void => setFirstName(e.currentTarget.value)}
+                    requiredText="Email address is required"
+                    validate={isValidEmail}
+                    invalidText="Invalid email address"
+                    onChange={(e): void => {
+                      if (isValidEmail(e.currentTarget.value)) {
+                        setEmail(e.currentTarget.value)
+                      } else {
+                        setEmail(undefined)
+                      }
+                    }}
                   />
+
                   <InputField
-                    id="lastName"
-                    label="Last Name"
+                    id="message"
+                    label="Message"
                     type="text"
-                    name="last-name"
-                    autoComplete="family-name"
-                    className="ml-3"
-                    onChange={(e): void => setLastName(e.currentTarget.value)}
+                    name="message"
+                    required
+                    requiredText="Message is required"
+                    onChange={(e): void => setMessage(e.currentTarget.value)}
                   />
-                </div>
 
-                <InputField
-                  id="email"
-                  label="Email"
-                  type="email"
-                  name="email"
-                  autoComplete="email"
-                  required
-                  requiredText="Email address is required"
-                  validate={isValidEmail}
-                  invalidText="Invalid email address"
-                  onChange={(e): void => {
-                    if (isValidEmail(e.currentTarget.value)) {
-                      setEmail(e.currentTarget.value)
-                    } else {
-                      setEmail(undefined)
-                    }
-                  }}
-                />
-
-                <InputField
-                  id="message"
-                  label="Message"
-                  type="text"
-                  name="message"
-                  required
-                  requiredText="Message is required"
-                  onChange={(e): void => setMessage(e.currentTarget.value)}
-                />
-
-                <Button
-                  disabled={!validForm}
-                  label="Submit"
-                  className="mt-8 sm:hidden"
-                />
-                <Button
-                  disabled={!validForm}
-                  label="Submit"
-                  size="lg"
-                  className="hidden mx-auto mt-16 sm:block"
-                />
-              </form>
-            </div>
+                  <Button
+                    disabled={!validForm}
+                    label="Submit"
+                    className="mt-8 sm:hidden"
+                  />
+                  <Button
+                    disabled={!validForm}
+                    label="Submit"
+                    size="lg"
+                    className="hidden mx-auto mt-16 sm:block"
+                  />
+                </form>
+              </div>
+            )}
+            {submitted && (
+              <div className="w-full mx-auto my-20 text-center md:my-40 md:max-w-lg">
+                <h2 className="text-2xl font-bold sm:text-4xl">Thank you!</h2>
+                <h3 className="mt-4 text-2xl font-bold">
+                  We will reach out shortly
+                </h3>
+              </div>
+            )}
           </div>
         </div>
       </div>
