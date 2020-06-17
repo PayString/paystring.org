@@ -37,7 +37,7 @@ const Learn: React.FC<LearnProps> = (props) => {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/standards.svg)',
       },
-      title: 'PayID Standards',
+      title: 'PayID Open Standards',
       link: 'https://github.com/payid-org/rfcs',
     },
     {
@@ -66,7 +66,7 @@ const Learn: React.FC<LearnProps> = (props) => {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/xpring-sdk.svg)',
       },
-      title: 'Xpring SDK for PayID',
+      title: 'PayID SDK',
       link: 'https://github.com/xpring-eng/Xpring-SDK',
     },
   ]
@@ -80,7 +80,7 @@ const Learn: React.FC<LearnProps> = (props) => {
     >
       <div className="flex flex-col items-center sm:justify-center mb-14 md:mb-25">
         <h2 className="text-3xl font-bold sm:text-5xl sm:text-center ">
-          Learn More
+          Want to Learn More?
         </h2>
         <p className="max-w-xl mt-6 text-xl sm:mt-8 sm:text-center">
           Discover everything you need to know about the free, open source PayID
