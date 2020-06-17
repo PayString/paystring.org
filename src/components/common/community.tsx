@@ -30,7 +30,7 @@ const Community: React.FC<CommunityProps> = (props) => {
       value: 'PM',
     },
     {
-      label: 'Engineer',
+      label: 'Developer',
       value: 'Engineer',
     },
     {
