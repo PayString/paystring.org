@@ -3,6 +3,7 @@ import React from 'react'
 import IconCharity from '../../../content/assets/common/extensions/charity.svg'
 import IconCommerce from '../../../content/assets/common/extensions/commerce.svg'
 import IconGettingPaid from '../../../content/assets/common/extensions/getting-paid.svg'
+import IconID from '../../../content/assets/common/extensions/id.svg'
 import IconInvoicing from '../../../content/assets/common/extensions/invoicing.svg'
 import IconP2P from '../../../content/assets/common/extensions/p2p.svg'
 
@@ -22,9 +23,7 @@ const Extensions: React.FC = () => {
       description: 'Simpler to pay back your friends and family.',
     },
     {
-      icon: (
-        <span className="text-orange-dark-500">TODO DESIGN NEW IMAGE!!!!</span>
-      ),
+      icon: <IconID className={iconClasses} />,
       title: 'Digital Identity',
       description: 'Simpler to know who you are paying.',
     },
