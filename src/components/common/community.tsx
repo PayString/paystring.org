@@ -8,11 +8,11 @@ import Button from './button'
 import InputField from './input-field'
 import Wave from './wave'
 
-interface QuestionsProps {
+interface CommunityProps {
   direction?: 'ltr' | 'rtl'
 }
 
-const Questions: React.FC<QuestionsProps> = (props) => {
+const Community: React.FC<CommunityProps> = (props) => {
   const [validForm, setValidForm] = useState<boolean>(false)
   const [role, setRole] = useState<string>('DEFAULT')
   const [firstName, setFirstName] = useState<string>()
@@ -225,4 +225,4 @@ const Questions: React.FC<QuestionsProps> = (props) => {
   )
 }
 
-export default Questions
+export default Community
