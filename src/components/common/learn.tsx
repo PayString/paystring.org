@@ -23,8 +23,7 @@ const Learn: React.FC<LearnProps> = (props) => {
         backgroundImage: 'url(/assets/learn/whitepaper.svg)',
       },
       title: 'PayID Technical Whitepaper',
-      link:
-        'https://github.com/payid-org/payid/blob/master/docs/payid_whitepaper.pdf',
+      link: '/whitepaper.pdf',
     },
     {
       bgStyle: {
