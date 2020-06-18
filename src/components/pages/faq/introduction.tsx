@@ -12,7 +12,7 @@ const Introduction: React.FC = () => {
 
   const sections = [
     {
-      topic: 'The Basics',
+      topic: 'PayID Basics',
       contents: [
         {
           title: 'What is PayID?',
@@ -29,7 +29,7 @@ const Introduction: React.FC = () => {
               network reach. PayID is an open standard, so anyone can build
               implementations and extensions on top of PayID.
               <Link
-                to="/companies"
+                to="/about-us"
                 className="block mt-6 text-orange-500 focus:underline hover:underline"
               >
                 See companies that use PayID
@@ -51,7 +51,7 @@ const Introduction: React.FC = () => {
               PayID can also be used to improve other compliance solutions for
               both users and services.
               <Link
-                to="/compliance"
+                to="/compliance-and-regulations"
                 className="block mt-6 text-orange-500 focus:underline hover:underline"
               >
                 Learn more about PayID and TRISA for Travel Rule
@@ -94,7 +94,7 @@ const Introduction: React.FC = () => {
       ],
     },
     {
-      topic: 'Development',
+      topic: 'Development and Implementation',
       contents: [
         {
           title: 'What does PayID implementation involve?',
@@ -139,9 +139,9 @@ const Introduction: React.FC = () => {
 
   return (
     <Wave spacing="sm" waveClassNames="faq-bg">
-      <div className="max-w-4xl pt-16 lg:pt-70">
+      <div className="max-w-3xl pt-16 lg:pt-70">
         <h1 className="text-4xl font-bold sm:mb-10 mb-7 sm:text-h1 sm:leading-tighter">
-          Frequently Asked Questions
+          Understanding and Using PayID
         </h1>
       </div>
 
@@ -154,7 +154,7 @@ const Introduction: React.FC = () => {
                 <div className="mb-6" key={sectionIndex}>
                   <button
                     className={classNames(
-                      'text-xs font-semibold hover:text-orange-500 focus:text-orange-500 focus:outline-none align-middle',
+                      'text-xs font-semibold hover:text-orange-500 focus:text-orange-500 focus:outline-none align-middle text-left',
                       {
                         'text-orange-500': expanded === sectionIndex,
                         'text-gray-200': expanded !== sectionIndex,

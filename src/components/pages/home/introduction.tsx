@@ -59,7 +59,7 @@ const Introduction: React.FC = () => {
             <Button size="lg" label="Start Building" />
           </a>
           <Button
-            to="/vision"
+            to="/our-vision-to-simplify-payments"
             size="lg"
             variant="secondary"
             label="Learn More"

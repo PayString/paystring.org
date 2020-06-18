@@ -16,7 +16,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
   const links = [
     {
       text: 'Vision',
-      location: '/vision',
+      location: '/our-vision-to-simplify-payments',
     },
     {
       text: 'Docs',
@@ -24,15 +24,15 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
     },
     {
       text: 'Companies',
-      location: '/companies',
+      location: '/about-us',
     },
     {
       text: 'Compliance',
-      location: '/compliance',
+      location: '/compliance-and-regulations',
     },
     {
       text: 'FAQ',
-      location: '/faq',
+      location: '/universal-payment-identifier-faqs',
     },
   ]
 

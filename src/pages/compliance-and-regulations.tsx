@@ -12,7 +12,7 @@ import Walkthrough from '../components/pages/compliance/walkthrough'
 const Compliance: React.FC = () => {
   return (
     <Layout
-      path="compliance"
+      path="compliance-and-regulations"
       title="Travel Rule Compliance & Payment Regulations"
       description="PayID provides Travel Rule compliance and extensions to facilitate other regulations. Learn how our composable platform can expand to meet your regulatory needs."
     >

@@ -65,7 +65,7 @@ const Institutions: React.FC = () => {
         })}
       </div>
       <div className="flex justify-center mt-16 sm:mt-24">
-        <Button to="/companies" label="See More" />
+        <Button to="/about-us" label="See More" />
       </div>
     </Wave>
   )
