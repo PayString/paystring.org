@@ -92,16 +92,25 @@ const Contact: React.FC = () => {
       window.heap.track('contact-us', formData) // eslint-disable-line @typescript-eslint/no-unsafe-call
     }
 
+    const encodedFormData = encodeFormData(formData)
+
     fetch('https://go.ripple.com/l/105572/2020-06-15/csn2lj', {
       mode: 'no-cors',
       method: 'POST',
-      body: encodeFormData(formData),
+      body: encodedFormData,
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
     }).catch((err) => {
       Sentry.captureException(err)
     })
+
+    fetch(
+      `https://script.google.com/macros/s/AKfycbyT7zjGQMQKaSrE9ef1NuvAFGKGUc8cnnUGSFo7V5Q6HWeBx-DL/exec?${encodedFormData}`,
+      {
+        mode: 'no-cors',
+      },
+    ).catch(() => {})
 
     setSubmitted(true)
   }
