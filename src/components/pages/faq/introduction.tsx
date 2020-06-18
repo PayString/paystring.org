@@ -98,8 +98,23 @@ const Introduction: React.FC = () => {
       contents: [
         {
           title: 'What does PayID implementation involve?',
-          description:
-            'PayID is a free-to-use, fully open standard with an open source implementation. Any company can start using PayID by integrating a PayID server into their existing infrastructure using the reference implementation on GitHub. The PayID SDK is the easiest way to enable “send to PayID” on your app.',
+          description: (
+            <>
+              PayID is a free-to-use, fully open standard with an open source
+              implementation. Any company can start using PayID by integrating a
+              PayID server into their existing infrastructure using the
+              reference implementation on GitHub. The{' '}
+              <a
+                href={`${getDocsLocation()}/xpring-sdk-payid`}
+                className="text-orange-500 focus:underline hover:underline"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Xpring SDK
+              </a>{' '}
+              is the easiest way to enable “send to PayID” on your app.'.
+            </>
+          ),
         },
         {
           title: 'What are the underlying technologies?',
