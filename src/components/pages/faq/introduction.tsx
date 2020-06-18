@@ -106,7 +106,7 @@ const Introduction: React.FC = () => {
               reference implementation on GitHub. The For other questions on
               PayID development and deployment, visit{' '}
               <a
-                href={getDocsLocation() / xpring - sdk - payid}
+                href={`${getDocsLocation()}/xpring-sdk-payid`}
                 className="text-orange-500 focus:underline hover:underline"
                 target="_blank"
                 rel="noreferrer"
