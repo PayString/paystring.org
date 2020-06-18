@@ -9,7 +9,7 @@ const Introduction: React.FC = () => {
       title: 'Payments Should Be Easier',
       descriptions: [
         'Today, we can instantly send a photo, message or video to billions of people and businesses around the world from a phone, laptop or even through smart-homes. Yet, simple and fast payments are still not possible.',
-        'Unlike email and text SMS, where there is a single network for the entire world, the payments infrastructure consists of hundreds of isolated networks that don’t speak to each other. Imagine how many fewer text messages would each send if messages couldn’t be sent between mobile providers.',
+        'Unlike email and text SMS, where there is a single network for the entire world, the payments infrastructure consists of hundreds of isolated networks that don’t speak to each other. Imagine how many fewer text messages we would each send if messages couldn’t be sent between mobile providers.',
         'If sending a payment were as seamless as sending an email, we would all send more payments quickly and easily around the world.',
       ],
     },
