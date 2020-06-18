@@ -23,6 +23,10 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
       location: getDocsLocation(),
     },
     {
+      text: 'Use Cases',
+      location: '/use-cases',
+    },
+    {
       text: 'Companies',
       location: '/about-us',
     },
@@ -88,7 +92,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
                   <Link
                     key={link.text}
                     to={link.location}
-                    className="inline-block mr-14 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+                    className="inline-block mr-10 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
                     activeClassName="border-b-2 border-orange-500"
                     partiallyActive
                   >
@@ -101,7 +105,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
                 <a
                   key={link.text}
                   href={link.location}
-                  className="inline-block mr-14 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+                  className="inline-block mr-10 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
                 >
                   {link.text}
                 </a>
