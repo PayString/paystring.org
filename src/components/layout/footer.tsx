@@ -77,12 +77,14 @@ const Footer: React.FC = () => {
           <div>
             This site is operated by Ripple on behalf of the PayID community
           </div>
-          <Link
-            to="/terms"
+          <a
+            href="/terms.pdf"
+            target="_blank"
+            rel="noreferrer"
             className="block mt-8 md:mt-0 md:ml-5 focus:text-orange-500 hover:text-orange-500 md:inline-block"
           >
             Terms
-          </Link>
+          </a>
           <a
             href="https://ripple.com/privacy-policy/"
             target="_blank"
