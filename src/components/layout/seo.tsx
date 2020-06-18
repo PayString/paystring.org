@@ -2,6 +2,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
+import { getBaseURL } from '../../utils/config'
+
 interface SEOProps {
   description?: string
   lang?: string
@@ -54,7 +56,7 @@ const SEO: React.FC<SEOProps> = (props: SEOProps) => {
         },
         {
           property: 'og:image',
-          content: 'ogp.png',
+          content: `${getBaseURL()}/ogp.png`,
         },
         {
           property: 'og:title',
