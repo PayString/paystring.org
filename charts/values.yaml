@@ -3,6 +3,7 @@ proxyng:
   install: true
   releaseImage: gcr.io/xpring-dev-sandbox/xpring_nginx:latest
   setHostHeader: true
+  hstsEnabled: true
   resources:
     limits:
       cpu: 500m
