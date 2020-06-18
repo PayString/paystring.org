@@ -152,6 +152,7 @@ const Contact: React.FC = () => {
                     >
                       {roles.map((r) => (
                         <option
+                          className="text-blue-dark-900"
                           value={r.value}
                           key={r.label}
                           hidden={r.value === 'DEFAULT'}
