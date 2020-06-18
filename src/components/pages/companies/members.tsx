@@ -159,7 +159,7 @@ const Members: React.FC = () => {
     },
     {
       icon: LogoDeemoney,
-      title: 'Deemoney',
+      title: 'DeeMoney',
     },
     {
       icon: LogoDharma,
@@ -175,7 +175,7 @@ const Members: React.FC = () => {
     },
     {
       icon: LogoGatehub,
-      title: 'Gatehub',
+      title: 'GateHub',
     },
     {
       icon: LogoGivingBlock,
