@@ -103,8 +103,7 @@ const Introduction: React.FC = () => {
               PayID is a free-to-use, fully open standard with an open source
               implementation. Any company can start using PayID by integrating a
               PayID server into their existing infrastructure using the
-              reference implementation on GitHub. The For other questions on
-              PayID development and deployment, visit{' '}
+              reference implementation on GitHub. The{' '}
               <a
                 href={`${getDocsLocation()}/xpring-sdk-payid`}
                 className="text-orange-500 focus:underline hover:underline"
