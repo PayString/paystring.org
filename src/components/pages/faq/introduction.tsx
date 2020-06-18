@@ -12,7 +12,7 @@ const Introduction: React.FC = () => {
 
   const sections = [
     {
-      topic: 'The Basics',
+      topic: 'PayID Basics',
       contents: [
         {
           title: 'What is PayID?',
@@ -29,7 +29,7 @@ const Introduction: React.FC = () => {
               network reach. PayID is an open standard, so anyone can build
               implementations and extensions on top of PayID.
               <Link
-                to="/companies"
+                to="/about-us"
                 className="block mt-6 text-orange-500 focus:underline hover:underline"
               >
                 See companies that use PayID
@@ -51,7 +51,7 @@ const Introduction: React.FC = () => {
               PayID can also be used to improve other compliance solutions for
               both users and services.
               <Link
-                to="/compliance"
+                to="/compliance-and-regulations"
                 className="block mt-6 text-orange-500 focus:underline hover:underline"
               >
                 Learn more about PayID and TRISA for Travel Rule
@@ -66,7 +66,7 @@ const Introduction: React.FC = () => {
               PayID is open source and easy to set up with just a few lines of
               code. You can explore{' '}
               <a
-                href={`${getDocsLocation()}/docs/payid-overview`}
+                href={getDocsLocation()}
                 className="text-orange-500 focus:underline hover:underline"
                 target="_blank"
                 rel="noreferrer"
@@ -94,35 +94,50 @@ const Introduction: React.FC = () => {
       ],
     },
     {
-      topic: 'Development',
+      topic: 'Development and Implementation',
       contents: [
         {
-          title: 'What does PayID implementation involve?',
-          description:
-            'PayID is a free-to-use, fully open standard with an open source implementation. Any company can start using PayID by integrating a PayID server into their existing infrastructure using the reference implementation on GitHub. The PayID SDK is the easiest way to enable “send to PayID” on your app.',
+          title: 'How do I implement PayID?',
+          description: (
+            <>
+              PayID is a free-to-use, fully open standard with an open source
+              implementation. Any company can start using PayID by integrating a
+              PayID server into their existing infrastructure using the
+              reference implementation on GitHub. The{' '}
+              <a
+                href={`${getDocsLocation()}/xpring-sdk-payid`}
+                className="text-orange-500 focus:underline hover:underline"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Xpring SDK
+              </a>{' '}
+              is the easiest way to enable “send to PayID” on your app.
+            </>
+          ),
         },
         {
-          title: 'What are the underlying technologies?',
+          title: 'What tech is PayID built on?',
           description:
-            'PayID is a web-based protocol built on a simple HTTP API secured by the standard web security stack, such as TLS.',
+            'PayID is a web-based protocol built on a simple HTTP API secured by the standard web security stack, including TLS.',
         },
         {
-          title: 'How secure of a standard does it provide?',
+          title: 'How does PayID handle security?',
           description:
             'PayID leverages tried-and-true security technologies that secure all internet services, including e-commerce and digital banking services. Additionally, PayID messages include cryptographic certificates and signatures that ensure participants in PayID transactions do not need to trust any counterparty.',
         },
         {
-          title: 'What is server deployment like?',
+          title: 'How do I deploy a PayID server?',
           description:
             'PayID is designed by devs for devs. You can deploy a PayID server with just a few commands with existing web infrastructure, and then integrate it into an application or account system in just a few lines of code.',
         },
         {
-          title: 'Where can I learn more about the PayID technology?',
+          title: 'Where can I learn more about building with PayID?',
           description: (
             <>
               For other questions on PayID development and deployment, visit{' '}
               <a
-                href={`${getDocsLocation()}/docs/payid-overview`}
+                href={getDocsLocation()}
                 className="text-orange-500 focus:underline hover:underline"
                 target="_blank"
                 rel="noreferrer"
@@ -139,9 +154,9 @@ const Introduction: React.FC = () => {
 
   return (
     <Wave spacing="sm" waveClassNames="faq-bg">
-      <div className="max-w-4xl pt-16 lg:pt-70">
+      <div className="max-w-3xl pt-16 lg:pt-70">
         <h1 className="text-4xl font-bold sm:mb-10 mb-7 sm:text-h1 sm:leading-tighter">
-          Frequently Asked Questions
+          Understanding and Using PayID
         </h1>
       </div>
 
@@ -154,7 +169,7 @@ const Introduction: React.FC = () => {
                 <div className="mb-6" key={sectionIndex}>
                   <button
                     className={classNames(
-                      'text-xs font-semibold hover:text-orange-500 focus:text-orange-500 focus:outline-none align-middle',
+                      'text-xs font-semibold hover:text-orange-500 focus:text-orange-500 focus:outline-none align-middle text-left',
                       {
                         'text-orange-500': expanded === sectionIndex,
                         'text-gray-200': expanded !== sectionIndex,

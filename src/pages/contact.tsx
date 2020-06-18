@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
       value: 'PM',
     },
     {
-      label: 'Engineer',
+      label: 'Developer',
       value: 'Engineer',
     },
     {
@@ -92,10 +92,12 @@ const Contact: React.FC = () => {
       window.heap.track('contact-us', formData) // eslint-disable-line @typescript-eslint/no-unsafe-call
     }
 
+    const encodedFormData = encodeFormData(formData)
+
     fetch('https://go.ripple.com/l/105572/2020-06-15/csn2lj', {
       mode: 'no-cors',
       method: 'POST',
-      body: encodeFormData(formData),
+      body: encodedFormData,
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
@@ -103,11 +105,22 @@ const Contact: React.FC = () => {
       Sentry.captureException(err)
     })
 
+    fetch(
+      `https://script.google.com/macros/s/AKfycbyT7zjGQMQKaSrE9ef1NuvAFGKGUc8cnnUGSFo7V5Q6HWeBx-DL/exec?${encodedFormData}`,
+      {
+        mode: 'no-cors',
+      },
+    ).catch(() => {})
+
     setSubmitted(true)
   }
 
   return (
-    <Layout title="Contact">
+    <Layout
+      path="contact"
+      title="Contact the PayID Team"
+      description="Have a question about PayID? Contact us and we will help you find the information you are looking for."
+    >
       <div
         className="text-white bg-blue-dark-900 faq-bg xl:bg-cover"
         style={minHeight}
@@ -148,6 +161,7 @@ const Contact: React.FC = () => {
                     >
                       {roles.map((r) => (
                         <option
+                          className="text-blue-dark-900"
                           value={r.value}
                           key={r.label}
                           hidden={r.value === 'DEFAULT'}

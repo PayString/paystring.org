@@ -16,15 +16,14 @@ const Learn: React.FC<LearnProps> = (props) => {
         backgroundImage: 'url(/assets/learn/developers.svg)',
       },
       title: 'Getting Started for Developers',
-      link: `${getDocsLocation()}/docs/getting-started`,
+      link: getDocsLocation(),
     },
     {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/whitepaper.svg)',
       },
       title: 'PayID Technical Whitepaper',
-      link:
-        'https://github.com/payid-org/payid/blob/master/docs/payid_whitepaper.pdf',
+      link: '/whitepaper.pdf',
     },
     {
       bgStyle: {
@@ -66,8 +65,8 @@ const Learn: React.FC<LearnProps> = (props) => {
       bgStyle: {
         backgroundImage: 'url(/assets/learn/xpring-sdk.svg)',
       },
-      title: 'PayID SDK',
-      link: 'https://github.com/xpring-eng/Xpring-SDK',
+      title: 'Xpring SDK Integration',
+      link: `${getDocsLocation()}/xpring-sdk-payid`,
     },
   ]
 

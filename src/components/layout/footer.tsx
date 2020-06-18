@@ -8,23 +8,27 @@ const Footer: React.FC = () => {
   const links = [
     {
       text: 'Vision',
-      location: '/vision',
+      location: '/our-vision-to-simplify-payments',
     },
     {
       text: 'Docs',
-      location: `${getDocsLocation()}/docs/payid-overview`,
+      location: getDocsLocation(),
+    },
+    {
+      text: 'Use Cases',
+      location: '/use-cases',
     },
     {
       text: 'Companies',
-      location: '/companies',
+      location: '/about-us',
     },
     {
       text: 'Compliance',
-      location: '/compliance',
+      location: '/compliance-and-regulations',
     },
     {
       text: 'FAQ',
-      location: '/faq',
+      location: '/universal-payment-identifier-faqs',
     },
     {
       text: 'Press Kit',
@@ -47,7 +51,7 @@ const Footer: React.FC = () => {
               <span className="sr-only">Home</span>
             </Link>
           </div>
-          <div className="grid grid-flow-col grid-rows-4 row-gap-8 col-gap-4 mt-12 md:mt-10 xl:mt-0 sm:grid-rows-2 lg:grid-rows-1 lg:col-gap-18 xl:ml-18">
+          <div className="grid grid-flow-col grid-rows-4 row-gap-8 col-gap-4 mt-12 md:mt-10 xl:mt-0 sm:grid-rows-2 lg:grid-rows-1 lg:col-gap-12 xl:col-gap-14 xl:ml-14">
             {links.map((link) => {
               if (link.text !== 'Docs' && link.text !== 'Press Kit') {
                 return (
@@ -77,18 +81,22 @@ const Footer: React.FC = () => {
           <div>
             This site is operated by Ripple on behalf of the PayID community
           </div>
-          <Link
-            to="/terms"
+          <a
+            href="/terms.pdf"
+            target="_blank"
+            rel="noreferrer"
             className="block mt-8 md:mt-0 md:ml-5 focus:text-orange-500 hover:text-orange-500 md:inline-block"
           >
             Terms
-          </Link>
-          <Link
-            to="/privacy"
+          </a>
+          <a
+            href="https://ripple.com/privacy-policy/"
+            target="_blank"
+            rel="noreferrer"
             className="block mt-8 md:mt-0 md:ml-5 focus:text-orange-500 hover:text-orange-500 md:inline-block"
           >
             Privacy
-          </Link>
+          </a>
         </div>
       </div>
     </footer>

@@ -30,7 +30,7 @@ const Community: React.FC<CommunityProps> = (props) => {
       value: 'PM',
     },
     {
-      label: 'Engineer',
+      label: 'Developer',
       value: 'Engineer',
     },
     {
@@ -90,16 +90,25 @@ const Community: React.FC<CommunityProps> = (props) => {
       window.heap.track('newsletter', formData) // eslint-disable-line @typescript-eslint/no-unsafe-call
     }
 
+    const encodedFormData = encodeFormData(formData)
+
     fetch('https://go.ripple.com/l/105572/2020-06-15/cspx4n', {
       mode: 'no-cors',
       method: 'POST',
-      body: encodeFormData(formData),
+      body: encodedFormData,
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
     }).catch((err) => {
       Sentry.captureException(err)
     })
+
+    fetch(
+      `https://script.google.com/macros/s/AKfycbyT7zjGQMQKaSrE9ef1NuvAFGKGUc8cnnUGSFo7V5Q6HWeBx-DL/exec?${encodedFormData}`,
+      {
+        mode: 'no-cors',
+      },
+    ).catch(() => {})
 
     setSubmitted(true)
   }
@@ -119,7 +128,7 @@ const Community: React.FC<CommunityProps> = (props) => {
           </div>
           <div className="mt-8 text-xl text-center">
             Sign up to access the PayID newsletter and hear about hackathons and
-            speaker events.
+            speaker events
           </div>
           <form onSubmit={handleSubmit} className="mt-16 md:mt-30">
             <div className="relative px-6 mb-6 border-2 border-white rounded">
@@ -132,6 +141,7 @@ const Community: React.FC<CommunityProps> = (props) => {
               >
                 {roles.map((r) => (
                   <option
+                    className="text-blue-dark-900"
                     value={r.value}
                     key={r.label}
                     hidden={r.value === 'DEFAULT'}

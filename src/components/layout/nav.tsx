@@ -16,23 +16,27 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
   const links = [
     {
       text: 'Vision',
-      location: '/vision',
+      location: '/our-vision-to-simplify-payments',
     },
     {
       text: 'Docs',
-      location: `${getDocsLocation()}/docs/payid-overview`,
+      location: getDocsLocation(),
+    },
+    {
+      text: 'Use Cases',
+      location: '/use-cases',
     },
     {
       text: 'Companies',
-      location: '/companies',
+      location: '/about-us',
     },
     {
       text: 'Compliance',
-      location: '/compliance',
+      location: '/compliance-and-regulations',
     },
     {
       text: 'FAQ',
-      location: '/faq',
+      location: '/universal-payment-identifier-faqs',
     },
   ]
 
@@ -74,7 +78,11 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
       <div className="container py-4">
         <div className="flex items-center justify-between">
           <Link to="/">
-            <Logo className="h-10.5" />
+            <Logo
+              className="h-10.5"
+              role="img"
+              aria-label="PayID: Unifying payments through a universal payment identifier to simplify sending and receiving payments"
+            />
             <span className="sr-only">Home</span>
           </Link>
           <div className="hidden lg:block">
@@ -84,7 +92,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
                   <Link
                     key={link.text}
                     to={link.location}
-                    className="inline-block mr-14 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+                    className="inline-block mr-10 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
                     activeClassName="border-b-2 border-orange-500"
                     partiallyActive
                   >
@@ -97,7 +105,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
                 <a
                   key={link.text}
                   href={link.location}
-                  className="inline-block mr-14 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+                  className="inline-block mr-10 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
                 >
                   {link.text}
                 </a>

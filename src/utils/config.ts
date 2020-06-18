@@ -11,6 +11,19 @@ export const getDocsLocation = (): string => {
   }
 }
 
+export const getBaseURL = (): string => {
+  switch (process.env.GATSBY_RELEASE_ENV) {
+    case 'dev':
+      return 'https://dev.payid.org'
+    case 'stage':
+      return 'https://stage.payid.org'
+    case 'prod':
+      return 'https://payid.org'
+    default:
+      return 'http://localhost:8000'
+  }
+}
+
 export const encodeFormData = (formData: { [s: string]: unknown }): string => {
   const formBody: string[] = []
   Object.entries(formData).forEach(([key, value]) => {

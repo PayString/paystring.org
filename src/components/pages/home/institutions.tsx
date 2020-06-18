@@ -1,16 +1,28 @@
 import React from 'react'
 
+import LogoBitGo from '../../../../content/assets/companies/members/logos/bitgo.svg'
 import LogoBlockchainDotCom from '../../../../content/assets/companies/members/logos/blockchain.svg'
 import LogoBrave from '../../../../content/assets/companies/members/logos/brave.svg'
+import LogoBRD from '../../../../content/assets/companies/members/logos/brd.svg'
+import LogoCoinsDotPh from '../../../../content/assets/companies/members/logos/coins.svg'
 import LogoFlutterwave from '../../../../content/assets/companies/members/logos/flutterwave.svg'
 import LogoGoPay from '../../../../content/assets/companies/members/logos/gopay.svg'
-import LogoRipple from '../../../../content/assets/companies/members/logos/ripple.svg'
+import LogoHuobi from '../../../../content/assets/companies/members/logos/huobi.svg'
+import LogoMercyCorps from '../../../../content/assets/companies/members/logos/mercy-corps.svg'
 import InstitutionsGraphic from '../../../../content/assets/home/institutions/institutions.svg'
 import Button from '../../common/button'
 import Wave from '../../common/wave'
 
 const Institutions: React.FC = () => {
   const sectionCopy = [
+    {
+      icon: LogoHuobi,
+      title: 'Huobi',
+    },
+    {
+      icon: LogoBitGo,
+      title: 'BitGo',
+    },
     {
       icon: LogoGoPay,
       title: 'GoPay',
@@ -20,12 +32,20 @@ const Institutions: React.FC = () => {
       title: 'Blockchain.com',
     },
     {
+      icon: LogoBRD,
+      title: 'BRD',
+    },
+    {
       icon: LogoBrave,
       title: 'Brave',
     },
     {
-      icon: LogoRipple,
-      title: 'Ripple',
+      icon: LogoCoinsDotPh,
+      title: 'Coins.ph',
+    },
+    {
+      icon: LogoMercyCorps,
+      title: 'Mercy Corps',
     },
     {
       icon: LogoFlutterwave,
@@ -65,7 +85,7 @@ const Institutions: React.FC = () => {
         })}
       </div>
       <div className="flex justify-center mt-16 sm:mt-24">
-        <Button to="/companies" label="See More" />
+        <Button to="/about-us" label="See More" />
       </div>
     </Wave>
   )

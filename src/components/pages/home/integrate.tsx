@@ -6,7 +6,7 @@ import Button from '../../common/button'
 import Wave from '../../common/wave'
 
 const Integrate: React.FC = () => {
-  const panels = ['cURL', 'Javascript']
+  const panels = ['cURL', 'Javascript', 'Xpring-JS', 'XpringKit', 'Xpring4j']
   const [activePanel, setActivePanel] = useState<string>('cURL')
 
   return (
@@ -40,13 +40,13 @@ const Integrate: React.FC = () => {
                 <p>2</p>
               </div>
               <div className="px-8 py-6 whitespace-no-wrap">
-                <span className="block">
+                <div>
                   <span className="text-blue-dark-300">git</span> clone
                   git@github.com:payid-org/payid.git
-                </span>
-                <span className="block">
+                </div>
+                <div>
                   <span className="text-orange-300">cd</span> payid
-                </span>
+                </div>
               </div>
             </div>
           </div>
@@ -59,11 +59,11 @@ const Integrate: React.FC = () => {
                 <p>1</p>
               </div>
               <div className="px-8 py-6 whitespace-no-wrap">
-                <span className="block">npm run devEnvUp</span>
+                <div>npm run devEnvUp</div>
               </div>
             </div>
           </div>
-          <a href={`${getDocsLocation()}/docs/getting-started`}>
+          <a href={getDocsLocation()}>
             <Button label="Read More" className="mt-10 md:mt-16" />
           </a>
         </div>
@@ -97,27 +97,27 @@ const Integrate: React.FC = () => {
                   <p>3</p>
                 </div>
                 <div className="px-8 py-6 whitespace-no-wrap">
-                  <span className="block">
+                  <div>
                     curl --location --request GET{' '}
                     <span className="text-green-300">
                       &apos;https://xpring.money/stormtv&apos;
                     </span>{' '}
                     \
-                  </span>
-                  <span className="block">
+                  </div>
+                  <div>
                     --header{' '}
                     <span className="text-green-300">
                       &apos;Accept: application/xrpl-testnet+json,
                       application/btc-mainnet+json&apos;
                     </span>{' '}
                     \
-                  </span>
-                  <span className="block">
+                  </div>
+                  <div>
                     --header{' '}
                     <span className="text-green-300">
                       &apos;PayID-Version: 1.0&apos;
                     </span>
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -141,65 +141,63 @@ const Integrate: React.FC = () => {
                     <p>12</p>
                   </div>
                   <div className="px-8 py-6 whitespace-no-wrap">
-                    <span className="block">
+                    <div>
                       <span className="text-blue-dark-300">const</span>{' '}
                       <span className="text-blue-300">axios</span> =
                       <span className="text-green-200"> require</span>(
                       <span className="text-orange-300">&apos;axios&apos;</span>
                       )
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       <span className="text-blue-dark-300">const</span>{' '}
                       <span className="text-blue-300">response</span> ={' '}
                       <span className="text-purple-200">await</span>
                       <span className="text-blue-light-300"> axios</span>.
                       <span className="text-green-200">get</span>(
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       &nbsp;&nbsp;
                       <span className="text-orange-300">
                         &apos;https://xpring.money/stormtv&apos;
                       </span>
                       ,
-                    </span>
-                    <span className="block">&nbsp;&nbsp;&#123;</span>
-                    <span className="block">
+                    </div>
+                    <div>&nbsp;&nbsp;&#123;</div>
+                    <div>
                       &nbsp;&nbsp;&nbsp;&nbsp;
                       <span className="text-blue-light-300">headers:</span>{' '}
                       &#123;
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <span className="text-blue-light-300">Accept:</span>
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <span className="text-orange-300">
                         &apos;application/xrpl-mainnet+json,
                         application/btc-mainnet+json&apos;
                       </span>
                       ,
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <span className="text-orange-300">
                         &apos;PayID-Version&apos;
                       </span>
                       :<span className="text-orange-300">&apos;1.0&apos;</span>,
-                    </span>
-                    <span className="block">
-                      &nbsp;&nbsp;&nbsp;&nbsp;&#125;,
-                    </span>
-                    <span className="block">&nbsp;&nbsp;&#125;,</span>
-                    <span className="block">)</span>
-                    <span className="block">
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&#125;,</div>
+                    <div>&nbsp;&nbsp;&#125;,</div>
+                    <div>)</div>
+                    <div>
                       <span className="text-blue-dark-300">const</span>{' '}
                       <span className="text-blue-300">addresses</span> =
                       <span className="text-blue-light-300">
                         {' '}
                         response.data.addresses
                       </span>
-                    </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -209,6 +207,357 @@ const Integrate: React.FC = () => {
                 rel="noreferrer"
               >
                 <Button label="Try It" className="mt-10 md:mt-16" />
+              </a>
+            </>
+          )}
+          {activePanel === 'Xpring-JS' && (
+            <>
+              <p className="mt-4">
+                <a
+                  href="https://github.com/xpring-eng/xpring-js"
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Xpring-JS
+                </a>
+                &nbsp;is the JavaScript library of the&nbsp;
+                <a
+                  href="https://github.com/xpring-eng/xpring-sdk"
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Xpring SDK
+                </a>
+                . Classes are provided for working directly with PayID.
+              </p>
+              <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
+                <div className="flex w-full p-4">
+                  <div className="px-4 py-6 text-center rounded bg-blue-dark-700">
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                    <p>4</p>
+                    <p>5</p>
+                    <p>6</p>
+                    <p>7</p>
+                  </div>
+                  <div className="px-8 py-6 whitespace-no-wrap">
+                    <div>
+                      <div>
+                        <span className="text-blue-dark-300">const</span>
+                        {' { '}
+                        <span className="text-blue-300">PayIDClient</span>
+                        {' } = '}
+                        <span className="text-green-200"> require</span>(
+                        <span className="text-orange-300">
+                          &apos;xpring-js&apos;
+                        </span>
+                        )
+                      </div>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div>
+                      <span className="text-blue-dark-300">const</span>{' '}
+                      <span className="text-blue-300">payIDClient</span>
+                      {' = '}
+                      <span className="text-green-200">new </span>
+                      <span className="text-blue-light-300">PayIDClient</span>(
+                      <span className="text-orange-300">
+                        &apos;btc-testnet&apos;
+                      </span>
+                      )
+                    </div>
+                    <div>
+                      <span className="text-blue-dark-300">const</span>{' '}
+                      <span className="text-blue-300">payID</span>
+                      {' = '}
+                      <span className="text-orange-300">
+                        &apos;stormtv$xpring.money&apos;
+                      </span>
+                    </div>
+                    <div>&nbsp;</div>
+
+                    <div>
+                      <span className="text-blue-dark-300">const</span>{' '}
+                      <span className="text-blue-300">
+                        resolvedAddressDetails
+                      </span>
+                      {' = '}
+                      <span className="text-purple-200">await </span>
+                      <span className="text-blue-300">payIDClient</span>.
+                      <span className="text-green-200">addressForPayID</span>(
+                      <span className="text-blue-300">payID</span>)
+                    </div>
+                    <div>
+                      <span className="text-blue-300">console</span>.
+                      <span className="text-green-200">log</span>(
+                      <span className="text-blue-300">
+                        resolvedAddressDetails
+                      </span>
+                      .<span className="text-blue-300">address</span>)
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://github.com/xpring-eng/Xpring-SDK-Demo/tree/master/node"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button label="See Demo" className="mt-10 md:mt-16" />
+              </a>
+            </>
+          )}
+          {activePanel === 'XpringKit' && (
+            <>
+              <p className="mt-4">
+                <a
+                  href="https://github.com/xpring-eng/xpringkit"
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  XpringKit
+                </a>
+                &nbsp;is the Swift library of thee&nbsp;
+                <a
+                  href="https://github.com/xpring-eng/xpring-sdk"
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Xpring SDK
+                </a>
+                . Classes are provided for working directly with PayID.
+              </p>
+              <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
+                <div className="flex w-full p-4">
+                  <div className="px-4 py-6 text-center rounded bg-blue-dark-700">
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                    <p>4</p>
+                    <p>5</p>
+                    <p>6</p>
+                    <p>7</p>
+                    <p>8</p>
+                    <p>9</p>
+                    <p>10</p>
+                    <p>11</p>
+                    <p>12</p>
+                    <p>13</p>
+                    <p>14</p>
+                  </div>
+                  <div className="px-8 py-6 whitespace-no-wrap">
+                    <div>
+                      <span className="text-purple-200">import</span>{' '}
+                      <span className="text-green-300">XpringKit</span>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div>
+                      <span className="text-blue-dark-300">let</span>{' '}
+                      <span className="text-blue-300">network</span> ={' '}
+                      <span className="text-orange-300">
+                        &quot;btc-mainnet&quot;
+                      </span>
+                    </div>
+                    <div>
+                      {' '}
+                      <span className="text-blue-dark-300">let</span>{' '}
+                      <span className="text-blue-300">payIDClient</span> ={' '}
+                      <span className="text-green-300">PayIDClient</span>
+                      <span>(</span>
+                      <span className="text-green-dark-300">network:</span>{' '}
+                      <span className="text-blue-300">network</span>
+                      <span>)</span>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div>
+                      {' '}
+                      <span className="text-blue-dark-300">let</span>{' '}
+                      <span className="text-blue-300">payID</span> ={' '}
+                      <span className="text-orange-300">
+                        &quot;stormtv$xpring.money&quot;
+                      </span>
+                    </div>
+                    <span className="text-blue-300">payIDClient</span>
+                    <span>.</span>
+                    <span className="text-green-300">address</span>
+                    <span>(</span>
+                    <span className="text-green-dark-300">for:</span>{' '}
+                    <span className="text-blue-300">payID</span>
+                    <span>)&nbsp;{`{`}&nbsp;</span>
+                    <span className="text-blue-300">result</span>{' '}
+                    <span className="text-purple-200">in</span>
+                    <div>
+                      &nbsp;&nbsp;
+                      <span className="text-purple-200">switch</span>{' '}
+                      <span className="text-blue-300">result</span>{' '}
+                      <span>{`{`}</span>
+                    </div>
+                    <div>
+                      &nbsp;&nbsp;
+                      <span className="text-purple-200">case</span>{' '}
+                      <span>.success</span>
+                      <span>(</span>
+                      <span className="text-blue-dark-300">let</span>{' '}
+                      <span className="text-blue-300">addressComponents</span>
+                      <span>):</span>
+                    </div>
+                    <div>
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      <span className="text-green-300">print</span>
+                      <span>(</span>
+                      <span className="text-blue-300">
+                        btcAddressComponents.address
+                      </span>
+                      <span>)</span>
+                    </div>
+                    <div>
+                      &nbsp;&nbsp;
+                      <span className="text-purple-200">case</span>{' '}
+                      <span>.failure</span>
+                      <span>(</span>
+                      <span className="text-blue-dark-300">let</span>{' '}
+                      <span className="text-blue-300">error</span>
+                      <span>):</span>
+                    </div>
+                    <div>
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      <span className="text-green-300">print</span>
+                      <span>(</span>
+                      <span className="text-blue-300">error</span>
+                      <span>)</span>
+                    </div>
+                    <div>&nbsp;&nbsp;{`}`}</div>
+                    <div>{`}`}</div>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://github.com/xpring-eng/Xpring-SDK-Demo/tree/master/swift"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button label="See Demo" className="mt-10 md:mt-16" />
+              </a>
+            </>
+          )}
+          {activePanel === 'Xpring4j' && (
+            <>
+              <p className="mt-4">
+                <a
+                  href="https://github.com/xpring-eng/xpring4j"
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Xpring4j
+                </a>
+                &nbsp;is the Java library of the&nbsp;
+                <a
+                  href="https://github.com/xpring-eng/xpring-sdk"
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Xpring SDK
+                </a>
+                . Classes are provided for working directly with PayID.
+              </p>
+              <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
+                <div className="flex w-full p-4">
+                  <div className="px-4 py-6 text-center rounded bg-blue-dark-700">
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                    <p>4</p>
+                    <p>5</p>
+                    <p>6</p>
+                    <p>7</p>
+                    <p>8</p>
+                    <p>9</p>
+                  </div>
+                  <div className="px-8 py-6 whitespace-no-wrap">
+                    <div>
+                      <span className="text-purple-200">import</span>{' '}
+                      <span className="text-blue-light-300">
+                        io.xpring.payid.
+                      </span>
+                      <span className="text-blue-300">PayIDClient</span>
+                      <span className="text-purple-200">;</span>
+                    </div>
+                    <div>
+                      <span className="text-purple-200">import</span>{' '}
+                      <span className="text-blue-light-300">
+                        io.xpring.payid.generated.model.
+                      </span>
+                      <span className="text-blue-300">
+                        CryptoAddressDetails
+                      </span>
+                      <span className="text-purple-200">;</span>
+                    </div>
+                    <div>&nbsp;</div>
+
+                    <div>
+                      <span className="text-blue-dark-300">String</span>{' '}
+                      <span className="text-blue-300">network</span>
+                      {' = '}
+                      <span className="text-orange-300">
+                        &quot;btc-testnet&quot;
+                      </span>
+                      <span className="text-purple-200">;</span>
+                    </div>
+                    <div>
+                      <span className="text-blue-dark-300">PayIDClient</span>{' '}
+                      <span className="text-blue-300">payIDClient</span>
+                      {' = '}
+                      <span className="text-purple-200">new</span>{' '}
+                      <span className="text-green-300">PayIDClient</span>(
+                      <span className="text-blue-300">network</span>)
+                      <span className="text-purple-200">;</span>
+                    </div>
+                    <div>
+                      <span className="text-blue-dark-300">String</span>{' '}
+                      <span className="text-blue-300">payID</span>
+                      {' = '}
+                      <span className="text-orange-300">
+                        &quot;stormtv$xpring.money&quot;
+                      </span>
+                      <span className="text-purple-200">;</span>{' '}
+                    </div>
+                    <div>&nbsp;</div>
+
+                    <div>
+                      <span className="text-blue-dark-300">
+                        CryptoAddressDetails
+                      </span>{' '}
+                      <span className="text-blue-300">addressComponents</span>
+                      {' = '}
+                      <span className="text-blue-300">payIDClient</span>.
+                      <span className="text-green-300">addressForPayID</span>(
+                      <span className="text-blue-300">payID</span>)
+                      <span className="text-purple-200">;</span>{' '}
+                    </div>
+                    <div>
+                      <span className="text-blue-300">System</span>.
+                      <span className="text-blue-300">out</span>.
+                      <span className="text-green-300">println</span>(
+                      <span className="text-blue-300">addressComponents</span>.
+                      <span className="text-green-300">getAddress</span>())
+                      <span className="text-purple-200">;</span>{' '}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://github.com/xpring-eng/Xpring-SDK-Demo/tree/master/java"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button label="See Demo" className="mt-10 md:mt-16" />
               </a>
             </>
           )}
