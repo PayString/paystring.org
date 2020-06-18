@@ -66,7 +66,7 @@ const Learn: React.FC<LearnProps> = (props) => {
         backgroundImage: 'url(/assets/learn/xpring-sdk.svg)',
       },
       title: 'Xpring SDK Integration',
-      link: getDocsLocation() + '/xpring-sdk-payid',
+      link: `${getDocsLocation()}/xpring-sdk-payid`,
     },
   ]
 
