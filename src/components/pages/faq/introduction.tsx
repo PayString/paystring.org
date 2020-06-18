@@ -97,7 +97,7 @@ const Introduction: React.FC = () => {
       topic: 'Development and Implementation',
       contents: [
         {
-          title: 'What does PayID implementation involve?',
+          title: 'How do I implement PayID?',
           description: (
             <>
               PayID is a free-to-use, fully open standard with an open source
@@ -112,27 +112,27 @@ const Introduction: React.FC = () => {
               >
                 Xpring SDK
               </a>{' '}
-              is the easiest way to enable “send to PayID” on your app.'.
+              is the easiest way to enable “send to PayID” on your app.
             </>
           ),
         },
         {
-          title: 'What are the underlying technologies?',
+          title: 'What tech is PayID built on?',
           description:
-            'PayID is a web-based protocol built on a simple HTTP API secured by the standard web security stack, such as TLS.',
+            'PayID is a web-based protocol built on a simple HTTP API secured by the standard web security stack, including TLS.',
         },
         {
-          title: 'How secure of a standard does it provide?',
+          title: 'How does PayID handle security?',
           description:
             'PayID leverages tried-and-true security technologies that secure all internet services, including e-commerce and digital banking services. Additionally, PayID messages include cryptographic certificates and signatures that ensure participants in PayID transactions do not need to trust any counterparty.',
         },
         {
-          title: 'What is server deployment like?',
+          title: 'How do I deploy a PayID server?',
           description:
             'PayID is designed by devs for devs. You can deploy a PayID server with just a few commands with existing web infrastructure, and then integrate it into an application or account system in just a few lines of code.',
         },
         {
-          title: 'Where can I learn more about the PayID technology?',
+          title: 'Where can I learn more about building with PayID?',
           description: (
             <>
               For other questions on PayID development and deployment, visit{' '}

@@ -119,7 +119,7 @@ const Community: React.FC<CommunityProps> = (props) => {
           </div>
           <div className="mt-8 text-xl text-center">
             Sign up to access the PayID newsletter and hear about hackathons and
-            speaker events.
+            speaker events
           </div>
           <form onSubmit={handleSubmit} className="mt-16 md:mt-30">
             <div className="relative px-6 mb-6 border-2 border-white rounded">
