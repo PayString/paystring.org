@@ -63,7 +63,7 @@ const Integrate: React.FC = () => {
               </div>
             </div>
           </div>
-          <a href={`${getDocsLocation()}/docs/getting-started`}>
+          <a href={getDocsLocation()}>
             <Button label="Read More" className="mt-10 md:mt-16" />
           </a>
         </div>

@@ -16,7 +16,7 @@ const Learn: React.FC<LearnProps> = (props) => {
         backgroundImage: 'url(/assets/learn/developers.svg)',
       },
       title: 'Getting Started for Developers',
-      link: `${getDocsLocation()}/docs/getting-started`,
+      link: getDocsLocation(),
     },
     {
       bgStyle: {

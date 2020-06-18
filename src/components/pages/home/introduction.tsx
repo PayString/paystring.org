@@ -52,10 +52,7 @@ const Introduction: React.FC = () => {
           A better way for your users to send and receive payments
         </p>
         <div className="hidden md:flex">
-          <a
-            href={`${getDocsLocation()}/docs/getting-started`}
-            className="mr-8"
-          >
+          <a href={getDocsLocation()} className="mr-8">
             <Button size="lg" label="Start Building" />
           </a>
           <Button
@@ -66,10 +63,7 @@ const Introduction: React.FC = () => {
           />
         </div>
         <div className="md:hidden">
-          <a
-            href={`${getDocsLocation()}/docs/getting-started`}
-            className="mr-6"
-          >
+          <a href={getDocsLocation()} className="mr-6">
             <Button label="Start Building" />
           </a>
           <Button to="/contact" variant="secondary" label="Find Out More" />
