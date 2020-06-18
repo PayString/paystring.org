@@ -65,7 +65,7 @@ publish prod image:
   script:
     - export IMAGE_UID="$(cat image_uid.meta.txt)"
     - mkdir dependency_charts
-    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.in.xpring.tech/xpring/xpring_nginx.git dependency_charts/xpring_nginx
+    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.in.xpring.tech/xpring-eng/xpring_nginx.git dependency_charts/xpring_nginx
     - helm dep update ./charts
     - kubectl create namespace ${RELEASE_NAME}-${RELEASE_ENV} || true
     - helm upgrade --install --namespace ${RELEASE_NAME}-${RELEASE_ENV}
