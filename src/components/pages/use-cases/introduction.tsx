@@ -73,7 +73,7 @@ const Introduction: React.FC = () => {
             subscribers’ digital and crypto wallets.
           </p>
           <p className="mt-4 md:mt-6 md:text-xl">
-            Key benefit: PayId offers customers a much easier, simple way to
+            Key benefit: PayID offers customers a much easier, simple way to
             renew their subscriptions, using any currency or wallet.
           </p>
         </div>
