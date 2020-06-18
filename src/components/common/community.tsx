@@ -132,6 +132,7 @@ const Community: React.FC<CommunityProps> = (props) => {
               >
                 {roles.map((r) => (
                   <option
+                    className="text-blue-dark-900"
                     value={r.value}
                     key={r.label}
                     hidden={r.value === 'DEFAULT'}
