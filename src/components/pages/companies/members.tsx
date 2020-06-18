@@ -147,7 +147,7 @@ const Members: React.FC = () => {
     },
     {
       icon: LogoCoinfield,
-      title: 'Coinfield',
+      title: 'CoinField',
     },
     {
       icon: LogoCoinme,
