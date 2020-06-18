@@ -139,7 +139,7 @@ const Members: React.FC = () => {
     },
     {
       icon: LogoCipherTrace,
-      title: 'Cipher Trace',
+      title: 'CipherTrace',
     },
     {
       icon: LogoCoil,
