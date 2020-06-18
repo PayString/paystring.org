@@ -6,7 +6,7 @@ import Button from '../../common/button'
 import Wave from '../../common/wave'
 
 const Integrate: React.FC = () => {
-  const panels = ['cURL', 'Javascript']
+  const panels = ['cURL', 'Javascript', 'Xpring SDK']
   const [activePanel, setActivePanel] = useState<string>('cURL')
 
   return (
@@ -210,6 +210,44 @@ const Integrate: React.FC = () => {
               >
                 <Button label="Try It" className="mt-10 md:mt-16" />
               </a>
+            </>
+          )}
+          {activePanel === 'Xpring SDK' && (
+            <>
+              <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
+                <div className="flex w-full p-4">
+                  <div className="px-4 py-6 text-center rounded bg-blue-dark-700">
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                    <p>4</p>
+                    <p>5</p>
+                    <p>6</p>
+                    <p>7</p>
+                    <p>8</p>
+                  </div>
+                  <div className="px-8 py-6 whitespace-no-wrap">
+                    <span className="block">
+                      {`const { PayIDClient } = require("xpring-js")`}
+                    </span>
+                    <span className="block">&nbsp;</span>
+                    <span className="block">
+                      {`const payIDClient = new PayIDClient('btc-testnet')`}
+                    </span>
+                    <span className="block">
+                      {`const payID = 'stormtv$xpring.money'`}
+                    </span>
+                    <span className="block">&nbsp;</span>
+
+                    <span className="block">
+                      {`const resolvedAddressDetails = await payIDClient.addressForPayID(payID)`}
+                    </span>
+                    <span className="block">
+                      {`console.log("Resolved to " + resolvedAddressDetails.address)`}
+                    </span>
+                  </div>
+                </div>
+              </div>
             </>
           )}
         </div>
