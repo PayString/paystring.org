@@ -247,22 +247,58 @@ const Integrate: React.FC = () => {
                   </div>
                   <div className="px-8 py-6 whitespace-no-wrap">
                     <span className="block">
-                      {`const { PayIDClient } = require("xpring-js")`}
+                      <span className="block">
+                        <span className="text-blue-dark-300">const</span>
+                        {' { '}
+                        <span className="text-blue-300">PayIDClient</span>
+                        {' } = '}
+                        <span className="text-green-200"> require</span>(
+                        <span className="text-orange-300">
+                          &apos;xpring-js&apos;
+                        </span>
+                        )
+                      </span>
                     </span>
                     <span className="block">&nbsp;</span>
                     <span className="block">
-                      {`const payIDClient = new PayIDClient('btc-testnet')`}
+                      <span className="text-blue-dark-300">const</span>{' '}
+                      <span className="text-blue-300">payIDClient</span>
+                      {' = '}
+                      <span className="text-green-200">new </span>
+                      <span className="text-blue-light-300">PayIDClient</span>(
+                      <span className="text-orange-300">
+                        &apos;btc-testnet&apos;
+                      </span>
+                      )
                     </span>
                     <span className="block">
-                      {`const payID = 'stormtv$xpring.money'`}
+                      <span className="text-blue-dark-300">const</span>{' '}
+                      <span className="text-blue-300">payID</span>
+                      {' = '}
+                      <span className="text-orange-300">
+                        &apos;stormtv$xpring.money&apos;
+                      </span>
                     </span>
                     <span className="block">&nbsp;</span>
 
                     <span className="block">
-                      {`const resolvedAddressDetails = await payIDClient.addressForPayID(payID)`}
+                      <span className="text-blue-dark-300">const</span>{' '}
+                      <span className="text-blue-300">
+                        resolvedAddressDetails
+                      </span>
+                      {' = '}
+                      <span className="text-purple-200">await </span>
+                      <span className="text-blue-300">payIDClient</span>.
+                      <span className="text-green-200">addressForPayID</span>(
+                      <span className="text-blue-300">payID</span>)
                     </span>
                     <span className="block">
-                      {`console.log("Resolved to " + resolvedAddressDetails.address)`}
+                      <span className="text-blue-300">console</span>.
+                      <span className="text-green-200">log</span>(
+                      <span className="text-blue-300">
+                        resolvedAddressDetails
+                      </span>
+                      .<span className="text-blue-300">address</span>)
                     </span>
                   </div>
                 </div>
@@ -317,30 +353,85 @@ const Integrate: React.FC = () => {
                     <p>14</p>
                   </div>
                   <div className="px-8 py-6 whitespace-no-wrap">
-                    <span className="block">{`import XpringKit`}</span>
-                    <span className="block">&nbsp;</span>
-                    <span className="block">{`let network = "btc-mainnet"`}</span>
-                    <span className="block">{`let payIdClient = PayIDClient(network: network)`}</span>
-                    <span className="block">&nbsp;</span>
-                    <span className="block">{`let payID = "georgewashington$xpring.money"`}</span>
-                    <span className="block">{`payIDClient.address(for: payID) { result in`}</span>
                     <span className="block">
-                      &nbsp;&nbsp;{`switch result {`}
+                      <span className="text-purple-200">import</span>{' '}
+                      <span className="text-green-300">XpringKit</span>
+                    </span>
+                    <span className="block">&nbsp;</span>
+                    <span className="block">
+                      <span className="text-blue-dark-300">let</span>{' '}
+                      <span className="text-blue-300">network</span> ={' '}
+                      <span className="text-orange-300">
+                        &quot;btc-mainnet&quot;
+                      </span>
+                    </span>
+                    <span className="block">
+                      {' '}
+                      <span className="text-blue-dark-300">let</span>{' '}
+                      <span className="text-blue-300">payIDClient</span> ={' '}
+                      <span className="text-green-300">PayIDClient</span>
+                      <span>(</span>
+                      <span className="text-green-dark-300">network:</span>{' '}
+                      <span className="text-blue-300">network</span>
+                      <span>)</span>
+                    </span>
+                    <span className="block">&nbsp;</span>
+                    <span className="block">
+                      {' '}
+                      <span className="text-blue-dark-300">let</span>{' '}
+                      <span className="text-blue-300">payID</span> ={' '}
+                      <span className="text-orange-300">
+                        &quot;stormtv$xpring.money&quot;
+                      </span>
+                    </span>
+                    <span className="text-blue-300">payIDClient</span>
+                    <span>.</span>
+                    <span className="text-green-300">address</span>
+                    <span>(</span>
+                    <span className="text-green-dark-300">for:</span>{' '}
+                    <span className="text-blue-300">payID</span>
+                    <span>)&nbsp;{`{`}&nbsp;</span>
+                    <span className="text-blue-300">result</span>{' '}
+                    <span className="text-purple-200">in</span>
+                    <span className="block">
+                      &nbsp;&nbsp;
+                      <span className="text-purple-200">switch</span>{' '}
+                      <span className="text-blue-300">result</span>{' '}
+                      <span>{`{`}</span>
                     </span>
                     <span className="block">
                       &nbsp;&nbsp;
-                      {`case .success(let btcAddressComponents)`}
+                      <span className="text-purple-200">case</span>{' '}
+                      <span>.success</span>
+                      <span>(</span>
+                      <span className="text-blue-dark-300">let</span>{' '}
+                      <span className="text-blue-300">addressComponents</span>
+                      <span>):</span>
                     </span>
                     <span className="block">
                       &nbsp;&nbsp;&nbsp;&nbsp;
-                      {`print("Resolved to \(btcAddressComponents.address)")`}
+                      <span className="text-green-300">print</span>
+                      <span>(</span>
+                      <span className="text-blue-300">
+                        btcAddressComponents.address
+                      </span>
+                      <span>)</span>
                     </span>
                     <span className="block">
-                      &nbsp;&nbsp;{`case .failure(let error):`}
+                      &nbsp;&nbsp;
+                      <span className="text-purple-200">case</span>{' '}
+                      <span>.failure</span>
+                      <span>(</span>
+                      <span className="text-blue-dark-300">let</span>{' '}
+                      <span className="text-blue-300">error</span>
+                      <span>):</span>
                     </span>
                     <span className="block">
                       &nbsp;&nbsp;&nbsp;&nbsp;
-                      {`fatalError("Unknown error resolving address: \(error)")`}
+                      <span className="text-green-300">print</span>
+                      <span>(</span>
+                      <span className="text-blue-300">error</span>
+                      <span>)</span>
                     </span>
                     <span className="block">&nbsp;&nbsp;{`}`}</span>
                     <span className="block">{`}`}</span>
@@ -389,18 +480,77 @@ const Integrate: React.FC = () => {
                     <p>6</p>
                     <p>7</p>
                     <p>8</p>
+                    <p>9</p>
                   </div>
                   <div className="px-8 py-6 whitespace-no-wrap">
-                    <span className="block">{`import io.xpring.payid.PayIDClient;`}</span>
-                    <span className="block">{`import io.xpring.payid.generated.model.CryptoAddressDetails;`}</span>
+                    <span className="block">
+                      <span className="text-purple-200">import</span>{' '}
+                      <span className="text-blue-light-300">
+                        io.xpring.payid.
+                      </span>
+                      <span className="text-blue-300">PayIDClient</span>
+                      <span className="text-purple-200">;</span>
+                    </span>
+                    <span className="block">
+                      <span className="text-purple-200">import</span>{' '}
+                      <span className="text-blue-light-300">
+                        io.xpring.payid.generated.model.
+                      </span>
+                      <span className="text-blue-300">
+                        CryptoAddressDetails
+                      </span>
+                      <span className="text-purple-200">;</span>
+                    </span>
                     <span className="block">&nbsp;</span>
 
-                    <span className="block">{`PayIDClient payIDClient = new PayIDClient("btc-testnet");`}</span>
-                    <span className="block">{`String payID = "georgewashington$xpring.money";`}</span>
+                    <span className="block">
+                      <span className="text-blue-dark-300">String</span>{' '}
+                      <span className="text-blue-300">network</span>
+                      {' = '}
+                      <span className="text-orange-300">
+                        &quot;btc-testnet&quot;
+                      </span>
+                      <span className="text-purple-200">;</span>
+                    </span>
+                    <span className="block">
+                      <span className="text-blue-dark-300">PayIDClient</span>{' '}
+                      <span className="text-blue-300">payIDClient</span>
+                      {' = '}
+                      <span className="text-purple-200">new</span>{' '}
+                      <span className="text-green-300">PayIDClient</span>(
+                      <span className="text-blue-300">network</span>)
+                      <span className="text-purple-200">;</span>
+                    </span>
+                    <span className="block">
+                      <span className="text-blue-dark-300">String</span>{' '}
+                      <span className="text-blue-300">payID</span>
+                      {' = '}
+                      <span className="text-orange-300">
+                        &quot;stormtv$xpring.money&quot;
+                      </span>
+                      <span className="text-purple-200">;</span>{' '}
+                    </span>
                     <span className="block">&nbsp;</span>
 
-                    <span className="block">{`CryptoAddressDetails btcAddressComponents = payIDClient.addressForPayID(payID);`}</span>
-                    <span className="block">{`System.out.println("Resolved to " + btcAddressComponents.getAddress());`}</span>
+                    <span className="block">
+                      <span className="text-blue-dark-300">
+                        CryptoAddressDetails
+                      </span>{' '}
+                      <span className="text-blue-300">addressComponents</span>
+                      {' = '}
+                      <span className="text-blue-300">payIDClient</span>.
+                      <span className="text-green-300">addressForPayID</span>(
+                      <span className="text-blue-300">payID</span>)
+                      <span className="text-purple-200">;</span>{' '}
+                    </span>
+                    <span className="block">
+                      <span className="text-blue-300">System</span>.
+                      <span className="text-blue-300">out</span>.
+                      <span className="text-green-300">println</span>(
+                      <span className="text-blue-300">addressComponents</span>.
+                      <span className="text-green-300">getAddress</span>())
+                      <span className="text-purple-200">;</span>{' '}
+                    </span>
                   </div>
                 </div>
               </div>
