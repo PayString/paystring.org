@@ -111,7 +111,7 @@ const Introduction: React.FC = () => {
                 rel="noreferrer"
               >
                 Xpring SDK
-              </a>
+              </a>{' '}
               is the easiest way to enable “send to PayID” on your app.'.
             </>
           ),
