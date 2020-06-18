@@ -40,13 +40,13 @@ const Integrate: React.FC = () => {
                 <p>2</p>
               </div>
               <div className="px-8 py-6 whitespace-no-wrap">
-                <span className="block">
+                <div>
                   <span className="text-blue-dark-300">git</span> clone
                   git@github.com:payid-org/payid.git
-                </span>
-                <span className="block">
+                </div>
+                <div>
                   <span className="text-orange-300">cd</span> payid
-                </span>
+                </div>
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@ const Integrate: React.FC = () => {
                 <p>1</p>
               </div>
               <div className="px-8 py-6 whitespace-no-wrap">
-                <span className="block">npm run devEnvUp</span>
+                <div>npm run devEnvUp</div>
               </div>
             </div>
           </div>
@@ -97,27 +97,27 @@ const Integrate: React.FC = () => {
                   <p>3</p>
                 </div>
                 <div className="px-8 py-6 whitespace-no-wrap">
-                  <span className="block">
+                  <div>
                     curl --location --request GET{' '}
                     <span className="text-green-300">
                       &apos;https://xpring.money/stormtv&apos;
                     </span>{' '}
                     \
-                  </span>
-                  <span className="block">
+                  </div>
+                  <div>
                     --header{' '}
                     <span className="text-green-300">
                       &apos;Accept: application/xrpl-testnet+json,
                       application/btc-mainnet+json&apos;
                     </span>{' '}
                     \
-                  </span>
-                  <span className="block">
+                  </div>
+                  <div>
                     --header{' '}
                     <span className="text-green-300">
                       &apos;PayID-Version: 1.0&apos;
                     </span>
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -141,65 +141,63 @@ const Integrate: React.FC = () => {
                     <p>12</p>
                   </div>
                   <div className="px-8 py-6 whitespace-no-wrap">
-                    <span className="block">
+                    <div>
                       <span className="text-blue-dark-300">const</span>{' '}
                       <span className="text-blue-300">axios</span> =
                       <span className="text-green-200"> require</span>(
                       <span className="text-orange-300">&apos;axios&apos;</span>
                       )
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       <span className="text-blue-dark-300">const</span>{' '}
                       <span className="text-blue-300">response</span> ={' '}
                       <span className="text-purple-200">await</span>
                       <span className="text-blue-light-300"> axios</span>.
                       <span className="text-green-200">get</span>(
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       &nbsp;&nbsp;
                       <span className="text-orange-300">
                         &apos;https://xpring.money/stormtv&apos;
                       </span>
                       ,
-                    </span>
-                    <span className="block">&nbsp;&nbsp;&#123;</span>
-                    <span className="block">
+                    </div>
+                    <div>&nbsp;&nbsp;&#123;</div>
+                    <div>
                       &nbsp;&nbsp;&nbsp;&nbsp;
                       <span className="text-blue-light-300">headers:</span>{' '}
                       &#123;
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <span className="text-blue-light-300">Accept:</span>
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <span className="text-orange-300">
                         &apos;application/xrpl-mainnet+json,
                         application/btc-mainnet+json&apos;
                       </span>
                       ,
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <span className="text-orange-300">
                         &apos;PayID-Version&apos;
                       </span>
                       :<span className="text-orange-300">&apos;1.0&apos;</span>,
-                    </span>
-                    <span className="block">
-                      &nbsp;&nbsp;&nbsp;&nbsp;&#125;,
-                    </span>
-                    <span className="block">&nbsp;&nbsp;&#125;,</span>
-                    <span className="block">)</span>
-                    <span className="block">
+                    </div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&#125;,</div>
+                    <div>&nbsp;&nbsp;&#125;,</div>
+                    <div>)</div>
+                    <div>
                       <span className="text-blue-dark-300">const</span>{' '}
                       <span className="text-blue-300">addresses</span> =
                       <span className="text-blue-light-300">
                         {' '}
                         response.data.addresses
                       </span>
-                    </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -246,8 +244,8 @@ const Integrate: React.FC = () => {
                     <p>7</p>
                   </div>
                   <div className="px-8 py-6 whitespace-no-wrap">
-                    <span className="block">
-                      <span className="block">
+                    <div>
+                      <div>
                         <span className="text-blue-dark-300">const</span>
                         {' { '}
                         <span className="text-blue-300">PayIDClient</span>
@@ -257,10 +255,10 @@ const Integrate: React.FC = () => {
                           &apos;xpring-js&apos;
                         </span>
                         )
-                      </span>
-                    </span>
-                    <span className="block">&nbsp;</span>
-                    <span className="block">
+                      </div>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div>
                       <span className="text-blue-dark-300">const</span>{' '}
                       <span className="text-blue-300">payIDClient</span>
                       {' = '}
@@ -270,18 +268,18 @@ const Integrate: React.FC = () => {
                         &apos;btc-testnet&apos;
                       </span>
                       )
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       <span className="text-blue-dark-300">const</span>{' '}
                       <span className="text-blue-300">payID</span>
                       {' = '}
                       <span className="text-orange-300">
                         &apos;stormtv$xpring.money&apos;
                       </span>
-                    </span>
-                    <span className="block">&nbsp;</span>
+                    </div>
+                    <div>&nbsp;</div>
 
-                    <span className="block">
+                    <div>
                       <span className="text-blue-dark-300">const</span>{' '}
                       <span className="text-blue-300">
                         resolvedAddressDetails
@@ -291,15 +289,15 @@ const Integrate: React.FC = () => {
                       <span className="text-blue-300">payIDClient</span>.
                       <span className="text-green-200">addressForPayID</span>(
                       <span className="text-blue-300">payID</span>)
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       <span className="text-blue-300">console</span>.
                       <span className="text-green-200">log</span>(
                       <span className="text-blue-300">
                         resolvedAddressDetails
                       </span>
                       .<span className="text-blue-300">address</span>)
-                    </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -353,19 +351,19 @@ const Integrate: React.FC = () => {
                     <p>14</p>
                   </div>
                   <div className="px-8 py-6 whitespace-no-wrap">
-                    <span className="block">
+                    <div>
                       <span className="text-purple-200">import</span>{' '}
                       <span className="text-green-300">XpringKit</span>
-                    </span>
-                    <span className="block">&nbsp;</span>
-                    <span className="block">
+                    </div>
+                    <div>&nbsp;</div>
+                    <div>
                       <span className="text-blue-dark-300">let</span>{' '}
                       <span className="text-blue-300">network</span> ={' '}
                       <span className="text-orange-300">
                         &quot;btc-mainnet&quot;
                       </span>
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       {' '}
                       <span className="text-blue-dark-300">let</span>{' '}
                       <span className="text-blue-300">payIDClient</span> ={' '}
@@ -374,16 +372,16 @@ const Integrate: React.FC = () => {
                       <span className="text-green-dark-300">network:</span>{' '}
                       <span className="text-blue-300">network</span>
                       <span>)</span>
-                    </span>
-                    <span className="block">&nbsp;</span>
-                    <span className="block">
+                    </div>
+                    <div>&nbsp;</div>
+                    <div>
                       {' '}
                       <span className="text-blue-dark-300">let</span>{' '}
                       <span className="text-blue-300">payID</span> ={' '}
                       <span className="text-orange-300">
                         &quot;stormtv$xpring.money&quot;
                       </span>
-                    </span>
+                    </div>
                     <span className="text-blue-300">payIDClient</span>
                     <span>.</span>
                     <span className="text-green-300">address</span>
@@ -393,13 +391,13 @@ const Integrate: React.FC = () => {
                     <span>)&nbsp;{`{`}&nbsp;</span>
                     <span className="text-blue-300">result</span>{' '}
                     <span className="text-purple-200">in</span>
-                    <span className="block">
+                    <div>
                       &nbsp;&nbsp;
                       <span className="text-purple-200">switch</span>{' '}
                       <span className="text-blue-300">result</span>{' '}
                       <span>{`{`}</span>
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       &nbsp;&nbsp;
                       <span className="text-purple-200">case</span>{' '}
                       <span>.success</span>
@@ -407,8 +405,8 @@ const Integrate: React.FC = () => {
                       <span className="text-blue-dark-300">let</span>{' '}
                       <span className="text-blue-300">addressComponents</span>
                       <span>):</span>
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       &nbsp;&nbsp;&nbsp;&nbsp;
                       <span className="text-green-300">print</span>
                       <span>(</span>
@@ -416,8 +414,8 @@ const Integrate: React.FC = () => {
                         btcAddressComponents.address
                       </span>
                       <span>)</span>
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       &nbsp;&nbsp;
                       <span className="text-purple-200">case</span>{' '}
                       <span>.failure</span>
@@ -425,16 +423,16 @@ const Integrate: React.FC = () => {
                       <span className="text-blue-dark-300">let</span>{' '}
                       <span className="text-blue-300">error</span>
                       <span>):</span>
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       &nbsp;&nbsp;&nbsp;&nbsp;
                       <span className="text-green-300">print</span>
                       <span>(</span>
                       <span className="text-blue-300">error</span>
                       <span>)</span>
-                    </span>
-                    <span className="block">&nbsp;&nbsp;{`}`}</span>
-                    <span className="block">{`}`}</span>
+                    </div>
+                    <div>&nbsp;&nbsp;{`}`}</div>
+                    <div>{`}`}</div>
                   </div>
                 </div>
               </div>
@@ -483,15 +481,15 @@ const Integrate: React.FC = () => {
                     <p>9</p>
                   </div>
                   <div className="px-8 py-6 whitespace-no-wrap">
-                    <span className="block">
+                    <div>
                       <span className="text-purple-200">import</span>{' '}
                       <span className="text-blue-light-300">
                         io.xpring.payid.
                       </span>
                       <span className="text-blue-300">PayIDClient</span>
                       <span className="text-purple-200">;</span>
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       <span className="text-purple-200">import</span>{' '}
                       <span className="text-blue-light-300">
                         io.xpring.payid.generated.model.
@@ -500,10 +498,10 @@ const Integrate: React.FC = () => {
                         CryptoAddressDetails
                       </span>
                       <span className="text-purple-200">;</span>
-                    </span>
-                    <span className="block">&nbsp;</span>
+                    </div>
+                    <div>&nbsp;</div>
 
-                    <span className="block">
+                    <div>
                       <span className="text-blue-dark-300">String</span>{' '}
                       <span className="text-blue-300">network</span>
                       {' = '}
@@ -511,8 +509,8 @@ const Integrate: React.FC = () => {
                         &quot;btc-testnet&quot;
                       </span>
                       <span className="text-purple-200">;</span>
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       <span className="text-blue-dark-300">PayIDClient</span>{' '}
                       <span className="text-blue-300">payIDClient</span>
                       {' = '}
@@ -520,8 +518,8 @@ const Integrate: React.FC = () => {
                       <span className="text-green-300">PayIDClient</span>(
                       <span className="text-blue-300">network</span>)
                       <span className="text-purple-200">;</span>
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       <span className="text-blue-dark-300">String</span>{' '}
                       <span className="text-blue-300">payID</span>
                       {' = '}
@@ -529,10 +527,10 @@ const Integrate: React.FC = () => {
                         &quot;stormtv$xpring.money&quot;
                       </span>
                       <span className="text-purple-200">;</span>{' '}
-                    </span>
-                    <span className="block">&nbsp;</span>
+                    </div>
+                    <div>&nbsp;</div>
 
-                    <span className="block">
+                    <div>
                       <span className="text-blue-dark-300">
                         CryptoAddressDetails
                       </span>{' '}
@@ -542,15 +540,15 @@ const Integrate: React.FC = () => {
                       <span className="text-green-300">addressForPayID</span>(
                       <span className="text-blue-300">payID</span>)
                       <span className="text-purple-200">;</span>{' '}
-                    </span>
-                    <span className="block">
+                    </div>
+                    <div>
                       <span className="text-blue-300">System</span>.
                       <span className="text-blue-300">out</span>.
                       <span className="text-green-300">println</span>(
                       <span className="text-blue-300">addressComponents</span>.
                       <span className="text-green-300">getAddress</span>())
                       <span className="text-purple-200">;</span>{' '}
-                    </span>
+                    </div>
                   </div>
                 </div>
               </div>
