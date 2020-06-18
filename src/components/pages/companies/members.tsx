@@ -41,6 +41,7 @@ import LogoSCVentures from '../../../../content/assets/companies/members/logos/s
 import LogoSygnum from '../../../../content/assets/companies/members/logos/sygnum.svg'
 import LogoTangem from '../../../../content/assets/companies/members/logos/tangem.svg'
 import LogoTrisa from '../../../../content/assets/companies/members/logos/trisa.svg'
+import LogoTWP from '../../../../content/assets/companies/members/logos/twp.svg'
 import LogoUnstoppableDomains from '../../../../content/assets/companies/members/logos/unstoppable-domains.svg'
 import LogoUphold from '../../../../content/assets/companies/members/logos/uphold.svg'
 import LogoWyre from '../../../../content/assets/companies/members/logos/wyre.svg'
@@ -224,6 +225,10 @@ const Members: React.FC = () => {
     {
       icon: LogoXUMM,
       title: 'XUMM',
+    },
+    {
+      icon: LogoTWP,
+      title: 'The Water Project',
     },
     {
       icon: LogoRipple,
