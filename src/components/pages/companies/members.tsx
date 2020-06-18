@@ -179,11 +179,11 @@ const Members: React.FC = () => {
     },
     {
       icon: LogoGivingBlock,
-      title: 'Giving Block',
+      title: 'The Giving Block',
     },
     {
       icon: LogoGlobalID,
-      title: 'GlobalID',
+      title: 'globaliD',
     },
     {
       icon: LogoIndependentReserve,
