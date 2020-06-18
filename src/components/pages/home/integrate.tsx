@@ -321,7 +321,7 @@ const Integrate: React.FC = () => {
                 >
                   XpringKit
                 </a>
-                &nbsp;is the Swift library of thee&nbsp;
+                &nbsp;is the Swift library of the&nbsp;
                 <a
                   href="https://github.com/xpring-eng/xpring-sdk"
                   className="text-orange-500 focus:underline hover:underline"
