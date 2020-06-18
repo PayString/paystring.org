@@ -45,7 +45,7 @@ const Learn: React.FC<LearnProps> = (props) => {
       },
       title: 'Security and Privacy',
       link:
-        'https://github.com/payid-org/rfcs/blob/master/payid/dist/spec/verifiable-payid-protocol.txt',
+        'https://github.com/payid-org/rfcs/blob/master/dist/spec/verifiable-payid-protocol.txt',
     },
     {
       bgStyle: {
