@@ -6,7 +6,7 @@ import Button from '../../common/button'
 import Wave from '../../common/wave'
 
 const Integrate: React.FC = () => {
-  const panels = ['cURL', 'Javascript', 'Xpring SDK']
+  const panels = ['cURL', 'Javascript', 'Xpring-JS', 'XpringKit', 'Xpring4j']
   const [activePanel, setActivePanel] = useState<string>('cURL')
 
   return (
@@ -212,8 +212,28 @@ const Integrate: React.FC = () => {
               </a>
             </>
           )}
-          {activePanel === 'Xpring SDK' && (
+          {activePanel === 'Xpring-JS' && (
             <>
+              <p className="mt-4">
+                <a
+                  href="https://github.com/xpring-eng/xpring-js"
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Xpring-JS
+                </a>
+                &nbsp;is the JavaScript library of the&nbsp;
+                <a
+                  href="https://github.com/xpring-eng/xpring-sdk"
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Xpring SDK
+                </a>
+                . Classes are provided for working directly with PayID.
+              </p>
               <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
                 <div className="flex w-full p-4">
                   <div className="px-4 py-6 text-center rounded bg-blue-dark-700">
@@ -224,7 +244,6 @@ const Integrate: React.FC = () => {
                     <p>5</p>
                     <p>6</p>
                     <p>7</p>
-                    <p>8</p>
                   </div>
                   <div className="px-8 py-6 whitespace-no-wrap">
                     <span className="block">
@@ -248,6 +267,150 @@ const Integrate: React.FC = () => {
                   </div>
                 </div>
               </div>
+              <a
+                href="https://github.com/xpring-eng/Xpring-SDK-Demo/tree/master/node"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button label="See Demo" className="mt-10 md:mt-16" />
+              </a>
+            </>
+          )}
+          {activePanel === 'XpringKit' && (
+            <>
+              <p className="mt-4">
+                <a
+                  href="https://github.com/xpring-eng/xpringkit"
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  XpringKit
+                </a>
+                &nbsp;is the Swift library of thee&nbsp;
+                <a
+                  href="https://github.com/xpring-eng/xpring-sdk"
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Xpring SDK
+                </a>
+                . Classes are provided for working directly with PayID.
+              </p>
+              <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
+                <div className="flex w-full p-4">
+                  <div className="px-4 py-6 text-center rounded bg-blue-dark-700">
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                    <p>4</p>
+                    <p>5</p>
+                    <p>6</p>
+                    <p>7</p>
+                    <p>8</p>
+                    <p>9</p>
+                    <p>10</p>
+                    <p>11</p>
+                    <p>12</p>
+                    <p>13</p>
+                    <p>14</p>
+                  </div>
+                  <div className="px-8 py-6 whitespace-no-wrap">
+                    <span className="block">{`import XpringKit`}</span>
+                    <span className="block">&nbsp;</span>
+                    <span className="block">{`let network = "btc-mainnet"`}</span>
+                    <span className="block">{`let payIdClient = PayIDClient(network: network)`}</span>
+                    <span className="block">&nbsp;</span>
+                    <span className="block">{`let payID = "georgewashington$xpring.money"`}</span>
+                    <span className="block">{`payIDClient.address(for: payID) { result in`}</span>
+                    <span className="block">
+                      &nbsp;&nbsp;{`switch result {`}
+                    </span>
+                    <span className="block">
+                      &nbsp;&nbsp;
+                      {`case .success(let btcAddressComponents)`}
+                    </span>
+                    <span className="block">
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      {`print("Resolved to \(btcAddressComponents.address)")`}
+                    </span>
+                    <span className="block">
+                      &nbsp;&nbsp;{`case .failure(let error):`}
+                    </span>
+                    <span className="block">
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      {`fatalError("Unknown error resolving address: \(error)")`}
+                    </span>
+                    <span className="block">&nbsp;&nbsp;{`}`}</span>
+                    <span className="block">{`}`}</span>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://github.com/xpring-eng/Xpring-SDK-Demo/tree/master/swift"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button label="See Demo" className="mt-10 md:mt-16" />
+              </a>
+            </>
+          )}
+          {activePanel === 'Xpring4j' && (
+            <>
+              <p className="mt-4">
+                <a
+                  href="https://github.com/xpring-eng/xpring4j"
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Xpring4j
+                </a>
+                &nbsp;is the Java library of the&nbsp;
+                <a
+                  href="https://github.com/xpring-eng/xpring-sdk"
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Xpring SDK
+                </a>
+                . Classes are provided for working directly with PayID.
+              </p>
+              <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
+                <div className="flex w-full p-4">
+                  <div className="px-4 py-6 text-center rounded bg-blue-dark-700">
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                    <p>4</p>
+                    <p>5</p>
+                    <p>6</p>
+                    <p>7</p>
+                    <p>8</p>
+                  </div>
+                  <div className="px-8 py-6 whitespace-no-wrap">
+                    <span className="block">{`import io.xpring.payid.PayIDClient;`}</span>
+                    <span className="block">{`import io.xpring.payid.generated.model.CryptoAddressDetails;`}</span>
+                    <span className="block">&nbsp;</span>
+
+                    <span className="block">{`PayIDClient payIDClient = new PayIDClient("btc-testnet");`}</span>
+                    <span className="block">{`String payID = "georgewashington$xpring.money";`}</span>
+                    <span className="block">&nbsp;</span>
+
+                    <span className="block">{`CryptoAddressDetails btcAddressComponents = payIDClient.addressForPayID(payID);`}</span>
+                    <span className="block">{`System.out.println("Resolved to " + btcAddressComponents.getAddress());`}</span>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://github.com/xpring-eng/Xpring-SDK-Demo/tree/master/java"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button label="See Demo" className="mt-10 md:mt-16" />
+              </a>
             </>
           )}
         </div>
