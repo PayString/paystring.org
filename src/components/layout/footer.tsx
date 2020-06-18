@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
   const links = [
     {
       text: 'Vision',
-      location: '/vision',
+      location: '/our-vision-to-simplify-payments',
     },
     {
       text: 'Docs',
@@ -16,15 +16,15 @@ const Footer: React.FC = () => {
     },
     {
       text: 'Companies',
-      location: '/companies',
+      location: '/about-us',
     },
     {
       text: 'Compliance',
-      location: '/compliance',
+      location: '/compliance-and-regulations',
     },
     {
       text: 'FAQ',
-      location: '/faq',
+      location: '/universal-payment-identifier-faqs',
     },
     {
       text: 'Press Kit',
@@ -83,12 +83,14 @@ const Footer: React.FC = () => {
           >
             Terms
           </Link>
-          <Link
-            to="/privacy"
+          <a
+            href="https://ripple.com/privacy-policy/"
+            target="_blank"
+            rel="noreferrer"
             className="block mt-8 md:mt-0 md:ml-5 focus:text-orange-500 hover:text-orange-500 md:inline-block"
           >
             Privacy
-          </Link>
+          </a>
         </div>
       </div>
     </footer>

@@ -26,7 +26,7 @@ const Introduction: React.FC = () => {
         <>
           Backed by{' '}
           <Link
-            to="/companies"
+            to="/about-us"
             className="text-orange-500 focus:underline hover:underline"
           >
             industry leaders
