@@ -33,7 +33,8 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "tailwindcss-gradients": "^3.0.0",
-    "typeface-inter": "^3.12.0"
+    "typeface-inter": "^3.12.0",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.10",
