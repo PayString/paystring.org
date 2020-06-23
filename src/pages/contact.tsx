@@ -88,8 +88,15 @@ const Contact: React.FC = () => {
       message,
     }
 
-    if (typeof window !== 'undefined' && typeof window.heap !== 'undefined') {
-      window.heap.track('contact-us', formData) // eslint-disable-line @typescript-eslint/no-unsafe-call
+    if (typeof window !== 'undefined') {
+      if (typeof window.heap !== 'undefined') {
+        window.heap.track('contact', formData)
+      }
+      if (typeof window.gtag !== 'undefined') {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-877332159/jdvuCLLdpdQBEL-NrKID',
+        })
+      }
     }
 
     const encodedFormData = encodeFormData(formData)

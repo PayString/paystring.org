@@ -10,8 +10,9 @@ declare const __PATH_PREFIX__: string
 
 declare interface Window {
   heap?: {
-    track: any
+    track: (eventName: string, eventData: unknown) => void
   }
+  gtag?: (type: string, eventName: string, eventData: unknown) => void
 }
 
 declare const Sentry: {
