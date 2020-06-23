@@ -116,6 +116,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
           <button
             aria-haspopup
             aria-expanded={expanded}
+            aria-label="Navigation Menu"
             onClick={(): void => setExpanded(!expanded)}
             className={classNames(
               'cursor-pointer lg:hidden hover:text-orange-500 focus:text-orange-500',

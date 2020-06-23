@@ -82,12 +82,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-148411216-7',
-      },
-    },
-    {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
@@ -107,6 +101,21 @@ module.exports = {
         dsn: getSentryDSN(),
         environment: process.env.GATSBY_RELEASE_ENV,
         enabled: getSentryDSN() !== null,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: ['AW-877332159'],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-148411216-7',
       },
     },
     'gatsby-transformer-sharp',

@@ -86,8 +86,15 @@ const Community: React.FC<CommunityProps> = (props) => {
       email,
     }
 
-    if (typeof window !== 'undefined' && typeof window.heap !== 'undefined') {
-      window.heap.track('newsletter', formData) // eslint-disable-line @typescript-eslint/no-unsafe-call
+    if (typeof window !== 'undefined') {
+      if (typeof window.heap !== 'undefined') {
+        window.heap.track('newsletter', formData)
+      }
+      if (typeof window.gtag !== 'undefined') {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-877332159/jdvuCLLdpdQBEL-NrKID',
+        })
+      }
     }
 
     const encodedFormData = encodeFormData(formData)
