@@ -151,7 +151,6 @@ const Contact: React.FC = () => {
                     Role
                   </label>
                 </div>
-
                 <InputField
                   id="company"
                   label="Company"
@@ -162,7 +161,6 @@ const Contact: React.FC = () => {
                   requiredText="Company is required"
                   onChange={(e): void => setCompany(e.currentTarget.value)}
                 />
-
                 <div className="flex">
                   <InputField
                     id="firstName"
@@ -185,7 +183,6 @@ const Contact: React.FC = () => {
                     onChange={(e): void => setLastName(e.currentTarget.value)}
                   />
                 </div>
-
                 <InputField
                   id="email"
                   label="Email"
@@ -204,6 +201,31 @@ const Contact: React.FC = () => {
                     }
                   }}
                 />
+
+                <div className="mb-6">
+                  <div className="mb-2">
+                    Do you plan to implement PayID within the next 6 months?
+                  </div>
+                  <label>
+                    <input
+                      type="radio"
+                      value="true"
+                      defaultChecked
+                      name="implementSoon"
+                    />{' '}
+                    Yes
+                  </label>
+                  <label className="ml-4">
+                    <input type="radio" value="false" name="implementSoon" /> No
+                  </label>
+                </div>
+
+                <div className="mb-6">
+                  <label>
+                    <input name="notify" type="checkbox" /> Notify me about
+                    future developer events. (e.g. Hackathons, panels)
+                  </label>
+                </div>
 
                 <Button
                   disabled={!validForm}
