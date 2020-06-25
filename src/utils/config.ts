@@ -29,7 +29,7 @@ export const getCharityAppURL = (): string => {
     case 'dev':
       return 'https://dev.wallet.xpring.io/donation'
     case 'stage':
-      return 'https//stage.xpring.io/portal/donation'
+      return 'https://stage.xpring.io/portal/donation'
     case 'prod':
       return 'https://xpring.io/portal/donation'
     default:
