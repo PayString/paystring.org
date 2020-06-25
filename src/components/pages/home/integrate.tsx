@@ -242,13 +242,14 @@ const Integrate: React.FC = () => {
                     <p>5</p>
                     <p>6</p>
                     <p>7</p>
+                    <p>8</p>
                   </div>
                   <div className="px-8 py-6 whitespace-no-wrap">
                     <div>
                       <div>
                         <span className="text-blue-dark-300">const</span>
                         {' { '}
-                        <span className="text-blue-300">PayIDClient</span>
+                        <span className="text-blue-300">PayIdClient</span>
                         {' } = '}
                         <span className="text-green-200"> require</span>(
                         <span className="text-orange-300">
@@ -260,22 +261,27 @@ const Integrate: React.FC = () => {
                     <div>&nbsp;</div>
                     <div>
                       <span className="text-blue-dark-300">const</span>{' '}
-                      <span className="text-blue-300">payIDClient</span>
-                      {' = '}
-                      <span className="text-green-200">new </span>
-                      <span className="text-blue-light-300">PayIDClient</span>(
-                      <span className="text-orange-300">
-                        &apos;btc-testnet&apos;
-                      </span>
-                      )
-                    </div>
-                    <div>
-                      <span className="text-blue-dark-300">const</span>{' '}
-                      <span className="text-blue-300">payID</span>
+                      <span className="text-blue-300">payId</span>
                       {' = '}
                       <span className="text-orange-300">
                         &apos;stormtv$xpring.money&apos;
                       </span>
+                    </div>
+                    <div>
+                      <span className="text-blue-dark-300">const</span>{' '}
+                      <span className="text-blue-300">network</span>
+                      {' = '}
+                      <span className="text-orange-300">
+                        &apos;btc-mainnet&apos;
+                      </span>
+                    </div>
+
+                    <div>
+                      <span className="text-blue-dark-300">const</span>{' '}
+                      <span className="text-blue-300">payIdClient</span>
+                      {' = '}
+                      <span className="text-green-200">new </span>
+                      <span className="text-blue-light-300">PayIdClient</span>()
                     </div>
                     <div>&nbsp;</div>
 
@@ -286,9 +292,13 @@ const Integrate: React.FC = () => {
                       </span>
                       {' = '}
                       <span className="text-purple-200">await </span>
-                      <span className="text-blue-300">payIDClient</span>.
-                      <span className="text-green-200">addressForPayID</span>(
-                      <span className="text-blue-300">payID</span>)
+                      <span className="text-blue-300">payIdClient</span>.
+                      <span className="text-green-200">
+                        cryptoAddressForPayId
+                      </span>
+                      (<span className="text-blue-300">payId</span>
+                      {', '}
+                      <span className="text-blue-300">network</span>)
                     </div>
                     <div>
                       <span className="text-blue-300">console</span>.
@@ -364,41 +374,39 @@ const Integrate: React.FC = () => {
                       </span>
                     </div>
                     <div>
-                      {' '}
-                      <span className="text-blue-dark-300">let</span>{' '}
-                      <span className="text-blue-300">payIDClient</span> ={' '}
-                      <span className="text-green-300">PayIDClient</span>
-                      <span>(</span>
-                      <span className="text-green-dark-300">network:</span>{' '}
-                      <span className="text-blue-300">network</span>
-                      <span>)</span>
-                    </div>
-                    <div>&nbsp;</div>
-                    <div>
-                      {' '}
                       <span className="text-blue-dark-300">let</span>{' '}
                       <span className="text-blue-300">payID</span> ={' '}
                       <span className="text-orange-300">
                         &quot;stormtv$xpring.money&quot;
                       </span>
                     </div>
-                    <span className="text-blue-300">payIDClient</span>
-                    <span>.</span>
-                    <span className="text-green-300">address</span>
-                    <span>(</span>
-                    <span className="text-green-dark-300">for:</span>{' '}
-                    <span className="text-blue-300">payID</span>
-                    <span>)&nbsp;{`{`}&nbsp;</span>
-                    <span className="text-blue-300">result</span>{' '}
-                    <span className="text-purple-200">in</span>
                     <div>
-                      &nbsp;&nbsp;
+                      {' '}
+                      <span className="text-blue-dark-300">let</span>{' '}
+                      <span className="text-blue-300">payIDClient</span> ={' '}
+                      <span className="text-green-300">PayIDClient</span>()
+                    </div>
+                    <div>&nbsp;</div>
+                    <div>
+                      <span className="text-blue-dark-300">let</span>{' '}
+                      <span className="text-blue-300">result</span> ={' '}
+                      <span className="text-blue-300">payIDClient</span>
+                      <span>.</span>
+                      <span className="text-green-300">cryptoAddress</span>
+                      <span>(</span>
+                      <span className="text-green-dark-300">for:</span>{' '}
+                      <span className="text-blue-300">payID</span>
+                      {', '}
+                      <span className="text-green-dark-300">on:</span>{' '}
+                      <span className="text-blue-300">network</span>)
+                    </div>
+                    <div>&nbsp;</div>
+                    <div>
                       <span className="text-purple-200">switch</span>{' '}
                       <span className="text-blue-300">result</span>{' '}
                       <span>{`{`}</span>
                     </div>
                     <div>
-                      &nbsp;&nbsp;
                       <span className="text-purple-200">case</span>{' '}
                       <span>.success</span>
                       <span>(</span>
@@ -407,7 +415,7 @@ const Integrate: React.FC = () => {
                       <span>):</span>
                     </div>
                     <div>
-                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;
                       <span className="text-green-300">print</span>
                       <span>(</span>
                       <span className="text-blue-300">
@@ -416,7 +424,6 @@ const Integrate: React.FC = () => {
                       <span>)</span>
                     </div>
                     <div>
-                      &nbsp;&nbsp;
                       <span className="text-purple-200">case</span>{' '}
                       <span>.failure</span>
                       <span>(</span>
@@ -425,13 +432,12 @@ const Integrate: React.FC = () => {
                       <span>):</span>
                     </div>
                     <div>
-                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;
                       <span className="text-green-300">print</span>
                       <span>(</span>
                       <span className="text-blue-300">error</span>
                       <span>)</span>
                     </div>
-                    <div>&nbsp;&nbsp;{`}`}</div>
                     <div>{`}`}</div>
                   </div>
                 </div>
@@ -486,7 +492,7 @@ const Integrate: React.FC = () => {
                       <span className="text-blue-light-300">
                         io.xpring.payid.
                       </span>
-                      <span className="text-blue-300">PayIDClient</span>
+                      <span className="text-blue-300">PayIdClient</span>
                       <span className="text-purple-200">;</span>
                     </div>
                     <div>
@@ -503,31 +509,31 @@ const Integrate: React.FC = () => {
 
                     <div>
                       <span className="text-blue-dark-300">String</span>{' '}
-                      <span className="text-blue-300">network</span>
-                      {' = '}
-                      <span className="text-orange-300">
-                        &quot;btc-testnet&quot;
-                      </span>
-                      <span className="text-purple-200">;</span>
-                    </div>
-                    <div>
-                      <span className="text-blue-dark-300">PayIDClient</span>{' '}
-                      <span className="text-blue-300">payIDClient</span>
-                      {' = '}
-                      <span className="text-purple-200">new</span>{' '}
-                      <span className="text-green-300">PayIDClient</span>(
-                      <span className="text-blue-300">network</span>)
-                      <span className="text-purple-200">;</span>
-                    </div>
-                    <div>
-                      <span className="text-blue-dark-300">String</span>{' '}
-                      <span className="text-blue-300">payID</span>
+                      <span className="text-blue-300">payId</span>
                       {' = '}
                       <span className="text-orange-300">
                         &quot;stormtv$xpring.money&quot;
                       </span>
                       <span className="text-purple-200">;</span>{' '}
                     </div>
+                    <div>
+                      <span className="text-blue-dark-300">String</span>{' '}
+                      <span className="text-blue-300">network</span>
+                      {' = '}
+                      <span className="text-orange-300">
+                        &quot;btc-mainnet&quot;
+                      </span>
+                      <span className="text-purple-200">;</span>
+                    </div>
+                    <div>
+                      <span className="text-blue-dark-300">PayIdClient</span>{' '}
+                      <span className="text-blue-300">payIdClient</span>
+                      {' = '}
+                      <span className="text-purple-200">new</span>{' '}
+                      <span className="text-green-300">PayIdClient</span>()
+                      <span className="text-purple-200">;</span>
+                    </div>
+
                     <div>&nbsp;</div>
 
                     <div>
@@ -536,9 +542,13 @@ const Integrate: React.FC = () => {
                       </span>{' '}
                       <span className="text-blue-300">addressComponents</span>
                       {' = '}
-                      <span className="text-blue-300">payIDClient</span>.
-                      <span className="text-green-300">addressForPayID</span>(
-                      <span className="text-blue-300">payID</span>)
+                      <span className="text-blue-300">payIdClient</span>.
+                      <span className="text-green-300">
+                        cryptoAddressForPayId
+                      </span>
+                      (<span className="text-blue-300">payId</span>
+                      {', '}
+                      <span className="text-blue-300">network</span>)
                       <span className="text-purple-200">;</span>{' '}
                     </div>
                     <div>
