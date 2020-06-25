@@ -5,6 +5,7 @@ import SelectArrow from '../../content/assets/common/selectArrow.svg'
 import Button from '../components/common/button'
 import InputField from '../components/common/input-field'
 import Layout from '../components/layout'
+import { encodeFormData, getCharityAppURL } from '../utils/config'
 
 const Contact: React.FC = () => {
   const minHeight = {
@@ -16,6 +17,8 @@ const Contact: React.FC = () => {
   const [firstName, setFirstName] = useState<string>()
   const [lastName, setLastName] = useState<string>()
   const [email, setEmail] = useState<string>()
+  const [implementing, setImplementing] = useState<boolean>(true)
+  const [notify, setNotify] = useState<boolean>(true)
   const [submitted, setSubmitted] = useState<boolean>(false)
 
   const roles = [
@@ -73,7 +76,9 @@ const Contact: React.FC = () => {
     }
   }, [role, firstName, email])
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ): Promise<void> => {
     event.preventDefault()
     if (!validForm) return
 
@@ -83,18 +88,28 @@ const Contact: React.FC = () => {
       'first-name': firstName,
       'last-name': lastName !== '' ? lastName : undefined,
       email,
+      implementing: implementing ? 'yes' : 'no',
+      notify: notify ? 'yes' : 'no',
     }
 
-    console.log(formData)
+    const encodedFormData = encodeFormData(formData)
+    await fetch(
+      `https://script.google.com/macros/s/AKfycbyT7zjGQMQKaSrE9ef1NuvAFGKGUc8cnnUGSFo7V5Q6HWeBx-DL/exec?${encodedFormData}`,
+      {
+        mode: 'no-cors',
+      },
+    ).catch(() => {})
 
     setSubmitted(true)
+
+    if (typeof window !== 'undefined') window.location.href = getCharityAppURL()
   }
 
   return (
     <Layout
-      path="contact"
-      title="Contact the PayID Team"
-      description="Have a question about PayID? Contact us and we will help you find the information you are looking for."
+      path="give"
+      title="Charity Giving"
+      description="Give to charities using PayID"
     >
       <div
         className="text-white bg-blue-dark-900 faq-bg xl:bg-cover"
@@ -103,9 +118,13 @@ const Contact: React.FC = () => {
         <div className="flex justify-center px-6 lg:px-18">
           <div className="container lg:px-17 lg:mt-0 mt-18">
             <div className="max-w-4xl pt-16 lg:pt-70">
-              <h1 className="text-3xl font-bold sm:text-h1 sm:leading-tighter">
-                Give to charities
+              <h1 className="text-3xl font-bold sm:mb-10 mb-7 sm:text-h1 sm:leading-tighter">
+                Give to charities through PayID
               </h1>
+              <div className="mb-13 sm:text-2xl">
+                Fill in your information to get funds to donate to a choice of
+                charities.
+              </div>
             </div>
 
             {!submitted && (
@@ -202,39 +221,63 @@ const Contact: React.FC = () => {
                   }}
                 />
 
-                <div className="mb-6">
+                <div className="mb-6 text-sm">
                   <div className="mb-2">
                     Do you plan to implement PayID within the next 6 months?
                   </div>
-                  <label>
+                  <div className="flex items-center">
                     <input
+                      id="implementing"
                       type="radio"
                       value="true"
                       defaultChecked
                       name="implementSoon"
-                    />{' '}
-                    Yes
-                  </label>
-                  <label className="ml-4">
-                    <input type="radio" value="false" name="implementSoon" /> No
-                  </label>
+                      className="transition duration-150 ease-in-out form-radio"
+                      onChange={(): void => setImplementing(true)}
+                    />
+                    <label htmlFor="implementing" className="pl-2">
+                      Yes
+                    </label>
+                    <input
+                      id="notImplementing"
+                      type="radio"
+                      value="false"
+                      name="implementSoon"
+                      className="ml-3 transition duration-150 ease-in-out form-radio"
+                      onChange={(): void => setImplementing(false)}
+                    />
+                    <label htmlFor="notImplementing" className="pl-2">
+                      No
+                    </label>
+                  </div>
                 </div>
 
-                <div className="mb-6">
-                  <label>
-                    <input name="notify" type="checkbox" /> Notify me about
-                    future developer events. (e.g. Hackathons, panels)
-                  </label>
+                <div className="mb-6 text-sm">
+                  <div className="flex items-center">
+                    <input
+                      id="notify"
+                      type="checkbox"
+                      defaultChecked
+                      className="transition duration-150 ease-in-out form-checkbox"
+                      onChange={(e): void => {
+                        setNotify(e.currentTarget.checked)
+                      }}
+                    />
+                    <label htmlFor="notify" className="pl-2">
+                      Notify me about future developer events. (e.g. Hackathons,
+                      panels)
+                    </label>
+                  </div>
                 </div>
 
                 <Button
                   disabled={!validForm}
-                  label="Submit"
+                  label="Go to Charity App"
                   className="mt-8 sm:hidden"
                 />
                 <Button
                   disabled={!validForm}
-                  label="Submit"
+                  label="Go to Charity App"
                   size="lg"
                   className="hidden mx-auto mt-16 sm:block"
                 />
@@ -243,9 +286,14 @@ const Contact: React.FC = () => {
             {submitted && (
               <div className="w-full mx-auto my-20 text-center md:my-40 md:max-w-lg">
                 <h2 className="text-2xl font-bold sm:text-4xl">Thank you!</h2>
-                <h3 className="mt-4 text-2xl font-bold">
-                  We will reach out shortly
-                </h3>
+                <a
+                  href={getCharityAppURL()}
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Access the charity application
+                </a>
               </div>
             )}
           </div>

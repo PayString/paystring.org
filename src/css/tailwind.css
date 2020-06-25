@@ -43,6 +43,42 @@
   @apply bg-no-repeat;
 }
 
+.form-checkbox {
+  @apply flex-shrink-0 inline-block w-4 h-4 text-orange-500 align-middle border border-white rounded appearance-none select-none bg-blue-dark-900;
+
+  color-adjust: exact;
+  background-origin: border-box;
+}
+
+.form-checkbox:focus {
+  @apply outline-none border-orange-light-500;
+
+  box-shadow: 0 0 0 3px rgba(255, 129, 0, 0.45);
+}
+
+.form-checkbox:checked {
+  @apply bg-current bg-center bg-no-repeat bg-cover border-transparent;
+
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L7 8.586 5.707 7.293z'/%3E%3C/svg%3E");
+}
+
+.form-radio {
+  @apply flex-shrink-0 inline-block w-4 h-4 text-orange-500 align-middle border border-white rounded-full appearance-none select-none bg-blue-dark-900;
+
+  color-adjust: exact;
+  background-origin: border-box;
+}
+
+.form-radio:focus {
+  @apply outline-none;
+
+  box-shadow: 0 0 0 3px rgba(255, 129, 0, 0.45);
+}
+
+.form-radio:checked {
+  @apply bg-current;
+}
+
 @media (min-width: 640px) {
   .wave-content {
     @apply mb-0;
