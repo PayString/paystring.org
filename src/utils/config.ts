@@ -24,6 +24,19 @@ export const getBaseURL = (): string => {
   }
 }
 
+export const getCharityAppURL = (): string => {
+  switch (process.env.GATSBY_RELEASE_ENV) {
+    case 'dev':
+      return 'https://dev.wallet.xpring.io/donation'
+    case 'stage':
+      return 'https//stage.xpring.io/portal/donation'
+    case 'prod':
+      return 'https://xpring.io/portal/donation'
+    default:
+      return 'http://localhost:4000/donation'
+  }
+}
+
 export const encodeFormData = (formData: { [s: string]: unknown }): string => {
   const formBody: string[] = []
   Object.entries(formData).forEach(([key, value]) => {

@@ -100,7 +100,7 @@ const InputField: React.FC<InputFieldProps> = (props: InputFieldProps) => {
       <label
         htmlFor={props.id}
         className={classNames(
-          'absolute z-10 transition-all duration-300 ease-linear pointer-events-none left-4 px-2',
+          'absolute z-10 transition-all duration-300 ease-linear pointer-events-none left-4 px-2 rounded',
           {
             'top-4': !isRaised && !hasErrors,
             '-top-3': isRaised || hasErrors,
