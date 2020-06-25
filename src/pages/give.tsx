@@ -17,7 +17,7 @@ const Contact: React.FC = () => {
   const [firstName, setFirstName] = useState<string>()
   const [lastName, setLastName] = useState<string>()
   const [email, setEmail] = useState<string>()
-  const [implementing, setImplementing] = useState<boolean>(true)
+  const [implementing, setImplementing] = useState<string>('undecided')
   const [notify, setNotify] = useState<boolean>(true)
   const [submitted, setSubmitted] = useState<boolean>(false)
 
@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
       'last-name': lastName !== '' ? lastName : undefined,
       email,
       company,
-      implementing: implementing ? 'yes' : 'no',
+      implementing,
       notify: notify ? 'yes' : 'no',
     }
 
@@ -231,11 +231,12 @@ const Contact: React.FC = () => {
                     <input
                       id="implementing"
                       type="radio"
-                      value="true"
-                      defaultChecked
+                      value="yes"
                       name="implementSoon"
                       className="transition duration-150 ease-in-out form-radio"
-                      onChange={(): void => setImplementing(true)}
+                      onChange={(e): void =>
+                        setImplementing(e.currentTarget.value)
+                      }
                     />
                     <label htmlFor="implementing" className="pl-2">
                       Yes
@@ -243,13 +244,29 @@ const Contact: React.FC = () => {
                     <input
                       id="notImplementing"
                       type="radio"
-                      value="false"
+                      value="no"
                       name="implementSoon"
                       className="ml-3 transition duration-150 ease-in-out form-radio"
-                      onChange={(): void => setImplementing(false)}
+                      onChange={(e): void =>
+                        setImplementing(e.currentTarget.value)
+                      }
                     />
                     <label htmlFor="notImplementing" className="pl-2">
                       No
+                    </label>
+                    <input
+                      id="notSureImplementing"
+                      type="radio"
+                      value="undecided"
+                      name="implementSoon"
+                      className="ml-3 transition duration-150 ease-in-out form-radio"
+                      defaultChecked
+                      onChange={(e): void =>
+                        setImplementing(e.currentTarget.value)
+                      }
+                    />
+                    <label htmlFor="notSureImplementing" className="pl-2">
+                      Undecided
                     </label>
                   </div>
                 </div>
