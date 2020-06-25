@@ -11,6 +11,7 @@ const Contact: React.FC = () => {
   const minHeight = {
     minHeight: 'calc(100vh - 9.25rem)',
   }
+  const [pendingSubmit, setPendingSubmit] = useState<boolean>(false)
   const [validForm, setValidForm] = useState<boolean>(false)
   const [role, setRole] = useState<string>('DEFAULT')
   const [company, setCompany] = useState<string>()
@@ -84,6 +85,8 @@ const Contact: React.FC = () => {
     event.preventDefault()
     if (!validForm) return
 
+    setPendingSubmit(true)
+
     const formData = {
       role,
       'first-name': firstName,
@@ -103,6 +106,7 @@ const Contact: React.FC = () => {
     ).catch(() => {})
 
     setSubmitted(true)
+    setPendingSubmit(false)
 
     if (typeof window !== 'undefined') window.location.href = getCharityAppURL()
   }
@@ -290,13 +294,13 @@ const Contact: React.FC = () => {
                 </div>
 
                 <Button
-                  disabled={!validForm}
-                  label="Go to Charity App"
+                  disabled={!validForm || pendingSubmit}
+                  label={pendingSubmit ? 'Submiting...' : 'Go to Charity App'}
                   className="mt-8 sm:hidden"
                 />
                 <Button
-                  disabled={!validForm}
-                  label="Go to Charity App"
+                  disabled={!validForm || pendingSubmit}
+                  label={pendingSubmit ? 'Submiting...' : 'Go to Charity App'}
                   size="lg"
                   className="hidden mx-auto mt-16 sm:block"
                 />
