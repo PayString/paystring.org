@@ -67,6 +67,8 @@ const Contact: React.FC = () => {
       role !== 'DEFAULT' &&
       firstName &&
       firstName.length > 0 &&
+      company &&
+      company.length > 0 &&
       email &&
       isValidEmail(email)
     ) {
@@ -74,7 +76,7 @@ const Contact: React.FC = () => {
     } else {
       setValidForm(false)
     }
-  }, [role, firstName, email])
+  }, [role, firstName, company, email])
 
   const handleSubmit = async (
     event: React.FormEvent<HTMLFormElement>,
@@ -84,10 +86,10 @@ const Contact: React.FC = () => {
 
     const formData = {
       role,
-      company,
       'first-name': firstName,
       'last-name': lastName !== '' ? lastName : undefined,
       email,
+      company,
       implementing: implementing ? 'yes' : 'no',
       notify: notify ? 'yes' : 'no',
     }
