@@ -92,7 +92,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
       })}
     >
       {!shouldBeFixed() && bannerVisible && (
-        <div className="top-0 w-full py-1 text-sm text-center text-gray-300 bg-gray-800 lg:absolute">
+        <div className="w-full py-1 text-sm text-center text-gray-300 bg-gray-800 lg:top-0 lg:absolute">
           <span>
             Participate in the{' '}
             <a href="https://hackathon.payid.org" className="underline">
