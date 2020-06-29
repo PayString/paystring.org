@@ -119,10 +119,6 @@
 
     @apply bg-contain;
   }
-
-  .vision-bg {
-    @apply bg-contain;
-  }
 }
 
 @media (min-width: 1280px) {
@@ -138,6 +134,10 @@
   .learnable-title {
     @apply text-2xl;
     @apply mt-29;
+  }
+
+  .vision-bg {
+    @apply bg-contain;
   }
 }
 
