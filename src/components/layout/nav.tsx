@@ -92,20 +92,22 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
       })}
     >
       {!shouldBeFixed() && bannerVisible && (
-        <div className="w-full py-1 text-sm text-center text-gray-300 bg-gray-800 lg:top-0 lg:absolute">
-          <span>
-            Participate in the{' '}
-            <a href="https://hackathon.payid.org" className="underline">
-              PayID Hackathon
-            </a>{' '}
-            and win up to $15K! Submissions are due by 5:00pm PDT Aug 2, 2020
-          </span>
-          <button
-            onClick={() => hideBanner()}
-            className="absolute top-0 right-0 w-16 text-lg"
-          >
-            x
-          </button>
+        <div>
+          <div className="w-full py-1 text-sm text-center text-gray-300 bg-gray-800 lg:top-0 lg:absolute">
+            <span>
+              Participate in the{' '}
+              <a href="https://hackathon.payid.org" className="underline">
+                PayID Hackathon
+              </a>{' '}
+              and win up to $15K! Submissions are due by 5:00pm PDT Aug 2, 2020
+            </span>
+            <button
+              onClick={() => hideBanner()}
+              className="absolute top-0 right-0 w-16 text-lg"
+            >
+              x
+            </button>
+          </div>
         </div>
       )}
       <div
