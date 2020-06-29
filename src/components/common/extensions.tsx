@@ -10,7 +10,7 @@ import IconP2P from '../../../content/assets/common/extensions/p2p.svg'
 import Wave from './wave'
 
 const Extensions: React.FC = () => {
-  const iconClasses = 'h-12.5 sm:h-14 mb-5 md:mb-10'
+  const iconClasses = 'h-12-5 sm:h-14 mb-5 md:mb-10'
   const sectionCopy = [
     {
       icon: <IconCharity className={iconClasses} />,

@@ -45,9 +45,9 @@ const Footer: React.FC = () => {
     <footer className="flex justify-center px-6 text-white bg-blue-dark-900 lg:px-18">
       <div className="container py-4">
         <div className="flex flex-col xl:items-center xl:flex-row">
-          <div className="h-10.5">
+          <div className="h-10-5">
             <Link to="/" className="inline-block">
-              <Logo className="h-10.5" />
+              <Logo className="h-10-5" />
               <span className="sr-only">Home</span>
             </Link>
           </div>

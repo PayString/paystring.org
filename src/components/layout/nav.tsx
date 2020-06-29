@@ -72,6 +72,10 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
     )
   }
 
+  const shouldShowBanner = (): boolean => {
+    return !shouldBeFixed() && bannerVisible
+  }
+
   const closeExpandedMenu = useCallback((event: KeyboardEvent) => {
     if (event.keyCode === 27) setExpanded(false)
   }, [])
@@ -91,23 +95,25 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
         'absolute bg-transparent': !shouldBeFixed(),
       })}
     >
-      {!shouldBeFixed() && bannerVisible && (
-        <div>
-          <div className="w-full py-1 text-sm text-center text-gray-300 bg-gray-800 lg:top-0 lg:absolute">
-            <span>
-              Participate in the{' '}
-              <a href="https://hackathon.payid.org" className="underline">
-                PayID Hackathon
-              </a>{' '}
-              and win up to $15K! Submissions are due by 5:00pm PDT Aug 2, 2020
-            </span>
-            <button
-              onClick={() => hideBanner()}
-              className="absolute top-0 right-0 w-16 text-lg"
-            >
-              x
-            </button>
-          </div>
+      {shouldShowBanner() && (
+        <div
+          className={classNames(
+            'w-full py-1 text-sm text-center text-gray-300 bg-gray-800 lg:top-0 lg:absolute',
+          )}
+        >
+          <span>
+            Participate in the{' '}
+            <a href="https://hackathon.payid.org" className="underline">
+              PayID Hackathon
+            </a>{' '}
+            and win up to $15K! Submissions are due by 5:00pm PDT Aug 2, 2020
+          </span>
+          <button
+            onClick={() => hideBanner()}
+            className="absolute top-0 right-0 w-16 text-lg"
+          >
+            x
+          </button>
         </div>
       )}
       <div
@@ -119,7 +125,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
           <div className="flex items-center justify-between">
             <Link to="/">
               <Logo
-                className="h-10.5"
+                className="h-10-5"
                 role="img"
                 aria-label="PayID: Unifying payments through a universal payment identifier to simplify sending and receiving payments"
               />

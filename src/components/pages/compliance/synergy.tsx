@@ -8,7 +8,7 @@ import Logo from '../../../../content/assets/logo.svg'
 import Wave from '../../common/wave'
 
 const Synergy: React.FC = () => {
-  const iconClasses = 'h-12.5 sm:h-14 lg:float-left pr-15 my-5'
+  const iconClasses = 'h-12-5 sm:h-14 lg:float-left pr-15 my-5'
   const sectionCopy = [
     {
       icon: <IconPurple className={iconClasses} />,

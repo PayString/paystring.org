@@ -88,7 +88,7 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   }
 
   // Adds styles for the large size of buttons
-  if (size === 'lg') classes.push('text-base px-8 py-4 leading-tightest h-12.5')
+  if (size === 'lg') classes.push('text-base px-8 py-4 leading-tightest h-12-5')
 
   // Adds styles for the medium size of buttons
   if (size === 'md') classes.push('text-sm px-6 py-3 leading-tighter h-10')
