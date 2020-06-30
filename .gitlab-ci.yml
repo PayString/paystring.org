@@ -1,108 +1,13 @@
-# CI for PayID.org
-#
-
 stages:
-  - publish
-  - deploy
+  - test
 
-variables:
-  GCR_PROJECT_ID: xpring-dev-sandbox
-  GCLOUD_PROJECT_ID: xpring-dev-sandbox
-  CLUSTER_NAME: poc1-cluster
-  CLUSTER_REGION: us-central1
-  RELEASE_NAME: payidorg
-  RELEASE_ENV: dev
-  CICD_ICON: https://i.imgur.com/nxYui1j.png
-  INSTALL_XPRING_PROXY: "true"
-
-include:
-  - project: 'xpring/xpring-ci-templates'
-    file: '/templates/build_for_gcr.yml'
-
-# Build a docker image and push it to the GCR associated with $GCLOUD_PROJECT_ID
-.publish_payid:
-  stage: publish
-  extends: .publish
-  image: gcr.io/xpring-dev-sandbox/xpring_util_image:0.0.4
-  variables:
-    GCLOUD_PROJECT_ID: $GCR_PROJECT_ID
+link checker:
+  stage: test
+  image:
+    name: golang:1.14-alpine
+  before_script:
+    - apk add git
+    - export GO111MODULE=on
+    - go get -u github.com/raviqqe/liche
   script:
-    - export GOOGLE_APPLICATION_CREDENTIALS=/tmp/kaniko-secret.json
-    - echo $GCP_SA > $GOOGLE_APPLICATION_CREDENTIALS
-    - export IMAGE_UID=$(echo -n "$(date +%s)-${CI_COMMIT_SHORT_SHA}-${CI_MERGE_REQUEST_TARGET_BRANCH_NAME}" | tr -d ' ')
-    - /usr/local/bin/executor --cache=true --context . --dockerfile Dockerfile
-      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:latest
-      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$CI_COMMIT_SHORT_SHA
-      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$RELEASE_ENV
-      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$CI_MERGE_REQUEST_TARGET_BRANCH_NAME
-      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$(date +%s)
-      --destination gcr.io/$GCLOUD_PROJECT_ID/$CI_PROJECT_NAME:$IMAGE_UID
-      --build-arg GATSBY_RELEASE_ENV=$RELEASE_ENV
-    - echo -n "$IMAGE_UID" > image_uid.meta.txt
-
-publish dev image:
-  extends: .publish_payid
-  variables:
-    RELEASE_ENV: dev
-
-publish stage image:
-  when: manual
-  extends: .publish_payid
-  variables:
-    RELEASE_ENV: stage
-
-publish prod image:
-  when: manual
-  extends: .publish_payid
-  variables:
-    RELEASE_ENV: prod
-
-# This is a template that is used below. It does not do anything by itself
-.deploy_payidorg:
-  stage: deploy
-  extends: .deploy
-  when: manual
-  script:
-    - export IMAGE_UID="$(cat image_uid.meta.txt)"
-    - mkdir dependency_charts
-    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.in.xpring.tech/xpring-eng/xpring_nginx.git dependency_charts/xpring_nginx
-    - helm dep update ./charts
-    - kubectl create namespace ${RELEASE_NAME}-${RELEASE_ENV} || true
-    - helm upgrade --install --namespace ${RELEASE_NAME}-${RELEASE_ENV}
-        --set releaseEnv=$RELEASE_ENV
-        --set replicas=$REPLICAS
-        --set releaseImage="gcr.io/$GCR_PROJECT_ID/$CI_PROJECT_NAME:$IMAGE_UID"
-        --set proxyng.domainName="${FULL_DNS_NAME}"
-        --set proxyng.proxiedService="http://${RELEASE_NAME}-${RELEASE_ENV}:80"
-        --set proxyng.replicaCount=$PROXY_REPLICAS
-        --set proxyng.install=$INSTALL_XPRING_PROXY
-        ${RELEASE_NAME}-${RELEASE_ENV} ./charts
-
-deploy to dev:
-  extends: .deploy_payidorg
-  needs: ["publish dev image"]
-  variables:
-    RELEASE_ENV: dev
-    FULL_DNS_NAME: dev.payid.org
-    REPLICAS: 1
-    PROXY_REPLICAS: 1
-
-deploy to stage:
-  extends: .deploy_payidorg
-  variables:
-    RELEASE_ENV: stage
-    FULL_DNS_NAME: stage.payid.org
-    REPLICAS: 2
-    PROXY_REPLICAS: 2
-
-# Prod is being deployed to a different GCP project and cluster
-deploy to prod:
-  extends: .deploy_payidorg
-  variables:
-    RELEASE_ENV: prod
-    GCLOUD_PROJECT_ID: xpring-testnet
-    CLUSTER_NAME: xpring-testnet-cluster01
-    CLUSTER_REGION: us-central1
-    FULL_DNS_NAME: payid.org
-    REPLICAS: 4
-    PROXY_REPLICAS: 4
+    - liche -r ${CI_PROJECT_DIR}
