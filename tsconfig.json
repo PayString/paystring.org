@@ -24,8 +24,6 @@
     "node_modules"
   ],
   "include": [
-    "stylelint.config.js",
-    "postcss.config.js",
     "tailwind.config.js",
     "gatsby-*.js",
     "src/**/*.ts",

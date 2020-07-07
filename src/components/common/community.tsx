@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { useEffect, useState } from 'react'
 
-import SelectArrow from '../../../content/assets/common/selectArrow.svg'
+import SelectArrow from '../../assets/common/selectArrow.svg'
 import { encodeFormData } from '../../utils/config'
 
 import Button from './button'
