@@ -1,11 +1,11 @@
 import React from 'react'
 
-import IconCharity from '../../../content/assets/common/extensions/charity.svg'
-import IconCommerce from '../../../content/assets/common/extensions/commerce.svg'
-import IconGettingPaid from '../../../content/assets/common/extensions/getting-paid.svg'
-import IconID from '../../../content/assets/common/extensions/id.svg'
-import IconInvoicing from '../../../content/assets/common/extensions/invoicing.svg'
-import IconP2P from '../../../content/assets/common/extensions/p2p.svg'
+import IconCharity from '../../assets/common/extensions/charity.svg'
+import IconCommerce from '../../assets/common/extensions/commerce.svg'
+import IconGettingPaid from '../../assets/common/extensions/getting-paid.svg'
+import IconID from '../../assets/common/extensions/id.svg'
+import IconInvoicing from '../../assets/common/extensions/invoicing.svg'
+import IconP2P from '../../assets/common/extensions/p2p.svg'
 
 import Wave from './wave'
 

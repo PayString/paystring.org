@@ -1,10 +1,10 @@
 import React from 'react'
 
-import IconGreen from '../../../../content/assets/compliance/synergy/check-green.svg'
-import IconOrange from '../../../../content/assets/compliance/synergy/check-orange.svg'
-import IconPurple from '../../../../content/assets/compliance/synergy/check-purple.svg'
-import TrisaLogo from '../../../../content/assets/compliance/synergy/trisa-logo.svg'
-import Logo from '../../../../content/assets/logo.svg'
+import IconGreen from '../../../assets/compliance/synergy/check-green.svg'
+import IconOrange from '../../../assets/compliance/synergy/check-orange.svg'
+import IconPurple from '../../../assets/compliance/synergy/check-purple.svg'
+import TrisaLogo from '../../../assets/compliance/synergy/trisa-logo.svg'
+import Logo from '../../../assets/logo.svg'
 import Wave from '../../common/wave'
 
 const Synergy: React.FC = () => {

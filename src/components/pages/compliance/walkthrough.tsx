@@ -1,9 +1,9 @@
 import classNames from 'classnames'
 import React, { useState } from 'react'
 
-import Arrow from '../../../../content/assets/compliance/walkthrough/arrow.svg'
-import GraphMobile from '../../../../content/assets/compliance/walkthrough/graph-mobile.svg'
-import GraphWeb from '../../../../content/assets/compliance/walkthrough/graph-web.svg'
+import Arrow from '../../../assets/compliance/walkthrough/arrow.svg'
+import GraphMobile from '../../../assets/compliance/walkthrough/graph-mobile.svg'
+import GraphWeb from '../../../assets/compliance/walkthrough/graph-web.svg'
 import Wave from '../../common/wave'
 
 const Walkthrough: React.FC = () => {
