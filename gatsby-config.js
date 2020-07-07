@@ -1,3 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable global-require */
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 require('dotenv/config')
 
 const getSentryDSN = () => {
@@ -82,7 +86,12 @@ module.exports = {
         trackingId: 'UA-148411216-7',
       },
     },
-    'gatsby-plugin-postcss',
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [require('tailwindcss')],
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
     'gatsby-plugin-offline',
