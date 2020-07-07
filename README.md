@@ -12,9 +12,9 @@ This repository powers the [PayID.org](https://payid.org) web application built 
 
 ## 🚀 Quick start
 
-1.  **Clone the payid.org repository.**
+1.  **Clone the PayID.org repository.**
 
-    Use git to pull down the payid.org repository.
+    Use git to pull down the PayID.org repository.
 
     ```shell
     git clone https://github.com/payid-org/payid.org.git
@@ -22,7 +22,7 @@ This repository powers the [PayID.org](https://payid.org) web application built 
 
 2.  **Start developing.**
 
-    Navigate into payid.org's directory, install the packages, and start it up.
+    Navigate into PayID.org's directory, install the packages, and start it up.
 
     ```shell
     cd payid.org/
@@ -32,7 +32,7 @@ This repository powers the [PayID.org](https://payid.org) web application built 
 
 3.  **Start editing!**
 
-    Your site is now running at `http://localhost:8000`!
+    PayID.org is now running at `http://localhost:8000`!
 
     Save your changes and the browser will update in real time!
 
@@ -54,7 +54,7 @@ A quick look at the top-level files and directories you'll see in the PayID.org 
 
 1.  **`/node_modules`**: This directory contains all of the modules of code that our project depends on (npm packages) are automatically installed when using the `npm i` command.
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of payid.org (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of PayID.org (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
 
 3.  **`.prettierrc.js`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
 
