@@ -96,6 +96,9 @@ const Contact: React.FC = () => {
         window.gtag('event', 'conversion', {
           send_to: 'AW-877332159/jdvuCLLdpdQBEL-NrKID',
         })
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-616173950/7ehtCOKFvNYBEP6i6KUC',
+        })
       }
     }
 
