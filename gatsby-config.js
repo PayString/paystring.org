@@ -86,14 +86,14 @@ module.exports = {
         trackingId: 'UA-148411216-7',
       },
     },
-    {
-      resolve: `gatsby-plugin-segment-js`,
-      options: {
-        prodKey: `5KojrihxpEBJvAn3u0JXi9hlhzMh5b1M`,
-        trackPage: false,
-        delayLoad: true,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-segment-js`,
+    //   options: {
+    //     prodKey: `5KojrihxpEBJvAn3u0JXi9hlhzMh5b1M`,
+    //     trackPage: false,
+    //     delayLoad: true,
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-postcss',
       options: {
