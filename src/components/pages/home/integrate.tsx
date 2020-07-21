@@ -230,7 +230,7 @@ const Integrate: React.FC = () => {
                 >
                   Xpring SDK
                 </a>
-                . Classes are provided for working directly with PayID.
+                . Use the provided classes to work directly with PayID.
               </p>
               <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
                 <div className="flex w-full p-4">
@@ -340,7 +340,7 @@ const Integrate: React.FC = () => {
                 >
                   Xpring SDK
                 </a>
-                . Classes are provided for working directly with PayID.
+                . Use the provided classes to work directly with PayID.
               </p>
               <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
                 <div className="flex w-full p-4">
@@ -471,7 +471,7 @@ const Integrate: React.FC = () => {
                 >
                   Xpring SDK
                 </a>
-                . Classes are provided for working directly with PayID.
+                . Use the provided classes to work directly with PayID.
               </p>
               <div className="mt-6 overflow-x-auto font-mono text-sm font-normal text-white rounded bg-blue-dark-800 md:mt-8">
                 <div className="flex w-full p-4">
