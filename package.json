@@ -7,8 +7,6 @@
     "classnames": "^2.2.6",
     "dotenv": "^8.2.0",
     "gatsby": "^2.23.3",
-    "gatsby-image": "^2.4.7",
-    "gatsby-plugin-feed": "^2.5.5",
     "gatsby-plugin-google-analytics": "^2.3.4",
     "gatsby-plugin-google-gtag": "^2.1.5",
     "gatsby-plugin-heap": "^1.1.0",
@@ -17,25 +15,14 @@
     "gatsby-plugin-postcss": "^2.3.4",
     "gatsby-plugin-react-helmet": "^3.3.4",
     "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-plugin-segment-js": "^3.3.0",
     "gatsby-plugin-sentry": "^1.0.1",
-    "gatsby-plugin-sharp": "^2.6.11",
     "gatsby-plugin-typescript": "^2.4.6",
-    "gatsby-remark-copy-linked-files": "^2.3.5",
-    "gatsby-remark-images": "^3.3.10",
-    "gatsby-remark-prismjs": "^3.5.4",
-    "gatsby-remark-responsive-iframe": "^2.4.5",
-    "gatsby-remark-smartypants": "^2.3.4",
-    "gatsby-source-filesystem": "^2.3.11",
-    "gatsby-transformer-remark": "^2.8.15",
-    "gatsby-transformer-sharp": "^2.5.5",
-    "prismjs": "^1.19.0",
-    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "tailwindcss-gradients": "^3.0.0",
-    "typeface-inter": "^3.12.0",
-    "whatwg-fetch": "^3.0.0"
+    "typeface-inter": "^3.12.0"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.10",
@@ -43,7 +30,6 @@
     "@types/react": "^16.9.35",
     "@types/react-helmet": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^3.2.0",
-    "autoprefixer": "^9.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-airbnb-typescript": "^8.0.2",
     "eslint-config-prettier": "^6.11.0",
@@ -78,5 +64,98 @@
   },
   "bugs": {
     "url": "https://github.com/xpring-eng/payid.org/issues"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "printWidth": 80,
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "all",
+    "arrowParens": "always"
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json",
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "impliedStrict": true
+      }
+    },
+    "env": {
+      "node": true,
+      "es2020": true
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "import",
+      "prettier",
+      "react"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript",
+      "airbnb-base",
+      "airbnb-typescript/base",
+      "prettier/@typescript-eslint",
+      "plugin:prettier/recommended",
+      "plugin:react/recommended"
+    ],
+    "rules": {
+      "lines-between-class-members": [
+        "error",
+        "always",
+        {
+          "exceptAfterSingleLine": true
+        }
+      ],
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          "argsIgnorePattern": "^_",
+          "ignoreRestSiblings": true
+        }
+      ],
+      "import/order": [
+        "error",
+        {
+          "newlines-between": "always",
+          "alphabetize": {
+            "order": "asc",
+            "caseInsensitive": false
+          }
+        }
+      ],
+      "import/extensions": 0,
+      "react/prop-types": "off"
+    },
+    "settings": {
+      "react": {
+        "createClass": "createReactClass",
+        "pragma": "React",
+        "version": "detect"
+      }
+    }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "font-family-name-quotes": "always-where-recommended",
+      "function-url-quotes": "always",
+      "at-rule-no-vendor-prefix": true,
+      "media-feature-name-no-vendor-prefix": true,
+      "property-no-vendor-prefix": true,
+      "selector-no-vendor-prefix": true,
+      "value-no-vendor-prefix": true,
+      "declaration-no-important": true,
+      "font-weight-notation": "numeric",
+      "at-rule-no-unknown": null
+    }
   }
 }

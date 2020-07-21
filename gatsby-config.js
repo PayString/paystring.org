@@ -1,3 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable global-require */
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 require('dotenv/config')
 
 const getSentryDSN = () => {
@@ -29,46 +33,10 @@ module.exports = {
       'The Universial Payment Identifier. A better way for your users to send and receive payments.',
     siteUrl: 'https://payid.org/',
     social: {
-      twitter: 'xpringdev',
+      twitter: 'payid_org',
     },
   },
   plugins: [
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: 'blog',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: 'assets',
-      },
-    },
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 590,
-            },
-          },
-          {
-            resolve: 'gatsby-remark-responsive-iframe',
-            options: {
-              wrapperStyle: 'margin-bottom: 1.0725rem',
-            },
-          },
-          'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
-        ],
-      },
-    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -78,7 +46,7 @@ module.exports = {
         background_color: '#E5E5E5',
         theme_color: '#304659',
         display: 'minimal-ui',
-        icon: 'content/assets/icon.png',
+        icon: 'static/assets/icon.png',
       },
     },
     {
@@ -106,7 +74,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-gtag',
       options: {
-        trackingIds: ['AW-877332159'],
+        trackingIds: ['AW-877332159', 'AW-616173950'],
         pluginConfig: {
           head: true,
         },
@@ -118,10 +86,20 @@ module.exports = {
         trackingId: 'UA-148411216-7',
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-feed',
-    'gatsby-plugin-postcss',
+    // {
+    //   resolve: `gatsby-plugin-segment-js`,
+    //   options: {
+    //     prodKey: `5KojrihxpEBJvAn3u0JXi9hlhzMh5b1M`,
+    //     trackPage: false,
+    //     delayLoad: true,
+    //   },
+    // },
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [require('tailwindcss')],
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
     'gatsby-plugin-offline',

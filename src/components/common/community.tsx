@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { useEffect, useState } from 'react'
 
-import SelectArrow from '../../../content/assets/common/selectArrow.svg'
+import SelectArrow from '../../assets/common/selectArrow.svg'
 import { encodeFormData } from '../../utils/config'
 
 import Button from './button'
@@ -94,6 +94,9 @@ const Community: React.FC<CommunityProps> = (props) => {
         window.gtag('event', 'conversion', {
           send_to: 'AW-877332159/jdvuCLLdpdQBEL-NrKID',
         })
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-616173950/7ehtCOKFvNYBEP6i6KUC',
+        })
       }
     }
 
@@ -118,7 +121,6 @@ const Community: React.FC<CommunityProps> = (props) => {
     ).catch(() => {})
 
     setSubmitted(true)
-    if (typeof window !== 'undefined') window.scrollTo(0, 0)
   }
 
   return (
