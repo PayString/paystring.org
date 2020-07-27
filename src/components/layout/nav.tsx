@@ -103,7 +103,10 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
         >
           <span>
             Participate in the{' '}
-            <a href="https://hackathon.payid.org" className="underline">
+            <a
+              href="https://payid.devpost.com/?utm_source=payid.org&utm_medium=banner"
+              className="underline"
+            >
               PayID Hackathon
             </a>{' '}
             and win up to $15K! Submissions are due by 5:00pm PDT Aug 2, 2020
