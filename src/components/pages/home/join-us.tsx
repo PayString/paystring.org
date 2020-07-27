@@ -15,7 +15,7 @@ const JoinUs: React.FC = () => {
         <div>Over $24K in prizes</div>
         <div className="mt-12 md:mt-16">
           <a
-            href="https://hackathon.payid.org/"
+            href="https://payid.devpost.com/?utm_source=payid.org&utm_medium=body"
             target="_blank"
             rel="noreferrer"
           >
