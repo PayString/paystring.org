@@ -32,6 +32,14 @@
   @apply bg-no-repeat;
 }
 
+.vision-quote {
+  background-image: url('/assets/vision/quote_background.svg');
+  background-position: left top;
+  min-height: 580px;
+
+  @apply bg-no-repeat;
+}
+
 .faq-bg {
   background-image: url('/assets/faq/background.svg');
   background-position: center top -13rem;
