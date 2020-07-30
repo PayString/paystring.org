@@ -13,3 +13,4 @@ WORKDIR /payidorg
 
 FROM nginx:1.17-alpine
 COPY --from=0 /payidorg/public /usr/share/nginx/html
+COPY files/default.conf /etc/nginx/conf.d/default.conf
