@@ -30,7 +30,6 @@ import LogoGivingBlock from '../../../assets/companies/members/logos/giving-bloc
 import LogoGlobalID from '../../../assets/companies/members/logos/globalid.svg'
 import LogoGoPay from '../../../assets/companies/members/logos/gopay.svg'
 import LogoHuobi from '../../../assets/companies/members/logos/huobi.svg'
-import LogoIndependentReserve from '../../../assets/companies/members/logos/independent-reserve.svg'
 import LogoLiquid from '../../../assets/companies/members/logos/liquid.svg'
 import LogoMercuryFX from '../../../assets/companies/members/logos/mercury-fx.svg'
 import LogoMercyCorps from '../../../assets/companies/members/logos/mercy-corps.svg'
@@ -185,10 +184,6 @@ const Members: React.FC = () => {
     {
       icon: LogoGlobalID,
       title: 'globaliD',
-    },
-    {
-      icon: LogoIndependentReserve,
-      title: 'Independent Reserve',
     },
     {
       icon: LogoMercuryFX,
