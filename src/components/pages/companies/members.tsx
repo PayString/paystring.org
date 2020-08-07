@@ -9,7 +9,6 @@ import LogoBitstamp from '../../../assets/companies/members/logos/bitstamp.svg'
 import LogoBlockchainDotCom from '../../../assets/companies/members/logos/blockchain.svg'
 import LogoBrave from '../../../assets/companies/members/logos/brave.svg'
 import LogoBRD from '../../../assets/companies/members/logos/brd.svg'
-import LogoBTCMarkets from '../../../assets/companies/members/logos/btc-markets.svg'
 import LogoCare from '../../../assets/companies/members/logos/care.svg'
 import LogoCipherTrace from '../../../assets/companies/members/logos/cipher-trace.svg'
 import LogoCoil from '../../../assets/companies/members/logos/coil.svg'
@@ -132,10 +131,6 @@ const Members: React.FC = () => {
     {
       icon: LogoBitrue,
       title: 'Bitrue',
-    },
-    {
-      icon: LogoBTCMarkets,
-      title: 'BTC Markets',
     },
     {
       icon: LogoCipherTrace,
