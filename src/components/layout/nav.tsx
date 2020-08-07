@@ -42,23 +42,23 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
 
   const [expanded, setExpanded] = useState<boolean>(false)
 
-  const getInitialBannerState = () => {
-    if (typeof window === 'undefined') return true
-    return (
-      window.localStorage.getItem('bannerVisible') === null ||
-      window.localStorage.getItem('bannerVisible') !== 'hackathon'
-    )
-  }
+  // const getInitialBannerState = () => {
+  //   if (typeof window === 'undefined') return true
+  //   return (
+  //     window.localStorage.getItem('bannerVisible') === null ||
+  //     window.localStorage.getItem('bannerVisible') !== 'hackathon'
+  //   )
+  // }
 
-  const [bannerVisible, setBannerVisible] = useState<boolean>(
-    getInitialBannerState(),
-  )
+  // const [bannerVisible, setBannerVisible] = useState<boolean>(
+  //   getInitialBannerState(),
+  // )
 
-  const hideBanner = () => {
-    setBannerVisible(false)
-    if (typeof window === 'undefined') return
-    window.localStorage.setItem('bannerVisible', 'hackathon')
-  }
+  // const hideBanner = () => {
+  //   setBannerVisible(false)
+  //   if (typeof window === 'undefined') return
+  //   window.localStorage.setItem('bannerVisible', 'hackathon')
+  // }
 
   const { y, direction } = useScroll()
 
@@ -72,10 +72,9 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
     )
   }
 
-  const shouldShowBanner = (): boolean => {
-    return false
-    // return !shouldBeFixed() && bannerVisible
-  }
+  // const shouldShowBanner = (): boolean => {
+  //   return !shouldBeFixed() && bannerVisible
+  // }
 
   const closeExpandedMenu = useCallback((event: KeyboardEvent) => {
     if (event.keyCode === 27) setExpanded(false)
@@ -96,7 +95,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
         'absolute bg-transparent': !shouldBeFixed(),
       })}
     >
-      {shouldShowBanner() && (
+      {/* {shouldShowBanner() && (
         <div
           className={classNames(
             'w-full py-1 text-sm text-center text-gray-300 bg-gray-800 lg:top-0 lg:absolute',
@@ -119,7 +118,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
             x
           </button>
         </div>
-      )}
+      )} */}
       <div
         className={classNames('flex w-full justify-center px-6 lg:px-18', {
           'lg:mt-12': !shouldBeFixed(),
