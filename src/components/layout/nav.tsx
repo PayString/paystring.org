@@ -73,7 +73,8 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
   }
 
   const shouldShowBanner = (): boolean => {
-    return !shouldBeFixed() && bannerVisible
+    return false
+    // return !shouldBeFixed() && bannerVisible
   }
 
   const closeExpandedMenu = useCallback((event: KeyboardEvent) => {
