@@ -6,7 +6,6 @@ import Layout from '../components/layout'
 import Institutions from '../components/pages/home/institutions'
 import Integrate from '../components/pages/home/integrate'
 import Introduction from '../components/pages/home/introduction'
-import JoinUs from '../components/pages/home/join-us'
 
 const Index: React.FC = () => {
   return (
@@ -16,7 +15,6 @@ const Index: React.FC = () => {
       description="PayID provides a single ID for anyone needing to send or receive money. Learn about PayID's open-source protocol & how to connect users on any payment network."
     >
       <Introduction />
-      <JoinUs />
       <Integrate />
       <Institutions />
       <Learn background="white" direction="rtl" />

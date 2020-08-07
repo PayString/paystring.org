@@ -40,7 +40,7 @@ const Introduction: React.FC = () => {
   return (
     <Wave
       style={bgImgStyle}
-      wave="light-blue"
+      wave="white"
       spacing="sm"
       waveClassNames="bg-contain lg:bg-auto xl:bg-contain"
     >
