@@ -13,10 +13,10 @@ const Introduction: React.FC = () => {
         'If sending a payment were as seamless as sending an email, we would all send more payments quickly and easily around the world.',
       ],
       quote:
-        '“The Open Payments Coalition is laying important groundwork for the complex issue of global payment standardization, which we believe is important to opening the value layer of the internet for developers worldwide.”',
-      quoteAuthor: 'Kris Marszalek',
-      quoteAuthorTitle: 'CEO of Crypto.com',
-      quoteImage: '/assets/vision/quote-image-temp.png',
+        '“Though the global payments ecosystem has expanded on the promise of simplifying the transfer of money, it has also resulted in siloed, closed and complex networks that often make sending money more difficult.”',
+      quoteAuthor: ['Kris Marszalek', 'CEO of Crypto.com'],
+      quoteImage: '/assets/vision/quote-author-1.png',
+      quoteBackground: '/assets/vision/quote-background-1.svg',
     },
     {
       title: 'Tomorrow’s Payment Network Will Be Open',
@@ -24,10 +24,14 @@ const Introduction: React.FC = () => {
         'In the near future, a single, global payment network will enable anyone to easily pay any other person or business instantly. Everyone, everywhere will tap into the power of this network dozens of times a day, sending payments both large and small. Payments won’t run over fragmented networks using proprietary standards to complicated account numbers, but rather, will use a united network in which all payment companies participate and is built for today’s consumers and businesses.',
       ],
       quote:
-        '“Though the global payments ecosystem has expanded on the promise of simplifying the transfer of money, it has also resulted in siloed, closed and complex networks that often make sending money more difficult.”',
-      quoteAuthor: 'Kris Marszalek',
-      quoteAuthorTitle: 'CEO of Crypto.com',
-      quoteImage: '/assets/vision/quote-image-temp.png',
+        '“An open payment network will play a key role in the next generation of games supported by community economics. By being free, open source, and easy to implement, PayID provides the games community with a frictionless solution that will benefit players and game developers around the world.”',
+      quoteAuthor: [
+        'Chris Jimison',
+        'Vice President of',
+        'Engineering at Forte',
+      ],
+      quoteImage: '/assets/vision/quote-author-2.png',
+      quoteBackground: '/assets/vision/quote-background-2.svg',
     },
     {
       title: 'PayID is the Universal Payment Identifier',
@@ -53,10 +57,10 @@ const Introduction: React.FC = () => {
         </>,
       ],
       quote:
-        '“An open payment network will play a key role in the next generation of games supported by community economics. By being free, open source, and easy to implement, PayID provides the games community with a frictionless solution that will benefit players and game developers around the world.”',
-      quoteAuthor: 'Kris Marszalek',
-      quoteAuthorTitle: 'CEO of Crypto.com',
-      quoteImage: '/assets/vision/quote-image-temp.png',
+        '“The Open Payments Coalition is laying important groundwork for the complex issue of global payment standardization, which we believe is important to opening the value layer of the internet for developers worldwide.”',
+      quoteAuthor: ['Ben Milne', 'Founder and Chairman', 'of Dwolla'],
+      quoteImage: '/assets/vision/quote-author-3.png',
+      quoteBackground: '/assets/vision/quote-background-3.svg',
     },
   ]
 
@@ -72,9 +76,9 @@ const Introduction: React.FC = () => {
           return (
             <div
               key={i}
-              className="grid grid-cols-1 gap-8 mt-20 sm:mt-40 sm:gap-20 md:grid-cols-2"
+              className="flex flex-wrap mt-20 even:flex-row-reverse sm:mt-40"
             >
-              <div className={i === 1 ? 'sm:order-last' : ''}>
+              <div className="lg:w-1/2">
                 <h2 className="mb-10 text-3xl font-bold sm:text-4xl sm:mb-14">
                   {copy.title}
                 </h2>
@@ -86,20 +90,36 @@ const Introduction: React.FC = () => {
                   )
                 })}
               </div>
-
-              <div className={i === 1 ? '' : 'flex sm:justify-end'}>
-                <div>
-                  <div className="max-w-sm pb-10 pt-36 vision-quote">
-                    <p className="text-xl px-15">{copy.quote}</p>
-                  </div>
-                  <div className="mt-10 ml-10">
+              <div
+                className={
+                  i === 1
+                    ? 'flex w-full lg:w-1/2 justify-center lg:justify-start'
+                    : 'flex w-full lg:w-1/2 justify-center lg:justify-end'
+                }
+              >
+                <div className="mt-20 lg:mt-0">
+                  <div className="relative max-w-sm">
                     <img
-                      className="float-left pr-5"
-                      src={copy.quoteImage}
-                      alt={copy.quoteAuthor}
+                      className="w-74 sm:w-full"
+                      src={copy.quoteBackground}
                     />
-                    <p className="pt-2">{copy.quoteAuthor},</p>
-                    <p className="">{copy.quoteAuthorTitle}</p>
+                    <p className="absolute top-0 left-0 px-12 text-sm pt-30 lg:pt-36 sm:text-base lg:text-xl ">
+                      {copy.quote}
+                    </p>
+                  </div>
+                  <div className="flex items-center mt-5 ml-10">
+                    <div>
+                      <img className="pr-5 " src={copy.quoteImage} />
+                    </div>
+                    <div>
+                      {copy.quoteAuthor.map((title, index) => {
+                        return (
+                          <p className="" key={index}>
+                            {title}
+                          </p>
+                        )
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>

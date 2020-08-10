@@ -264,6 +264,8 @@ module.exports = {
   variants: {
     margin: ['responsive', 'last', 'first'],
     linearGradients: ['responsive', 'hover', 'focus'],
+    flexDirection: ['responsive', 'odd', 'even'],
+    justifyContent: ['responsive', 'odd', 'even'],
   },
   plugins: [tailwindGradients],
 }
