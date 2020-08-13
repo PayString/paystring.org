@@ -20,7 +20,6 @@ import LogoCryptoDotCom from '../../../assets/companies/members/logos/crypto.svg
 import LogoDeemoney from '../../../assets/companies/members/logos/deemoney.svg'
 import LogoDharma from '../../../assets/companies/members/logos/dharma.svg'
 import LogoDwolla from '../../../assets/companies/members/logos/dwolla.svg'
-import LogoFlashFX from '../../../assets/companies/members/logos/flashfx.svg'
 import LogoFlutterwave from '../../../assets/companies/members/logos/flutterwave.svg'
 import LogoForte from '../../../assets/companies/members/logos/forte.svg'
 import LogoGatehub from '../../../assets/companies/members/logos/gatehub.svg'
@@ -159,10 +158,6 @@ const Members: React.FC = () => {
     {
       icon: LogoDharma,
       title: 'Dharma',
-    },
-    {
-      icon: LogoFlashFX,
-      title: 'FlashFX',
     },
     {
       icon: LogoForte,
