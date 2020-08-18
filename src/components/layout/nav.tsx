@@ -4,7 +4,7 @@ import React, { useState, useCallback, useEffect } from 'react'
 
 import Hamburger from '../../assets/hamburger.svg'
 import Logo from '../../assets/logo.svg'
-import { getDocsLocation } from '../../utils/config'
+import { getBaseURL, getDocsLocation } from '../../utils/config'
 import useScroll from '../../utils/useScroll'
 import Button from '../common/button'
 
@@ -37,6 +37,10 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
     {
       text: 'FAQ',
       location: '/universal-payment-identifier-faqs',
+    },
+    {
+      text: 'Contact Us',
+      location: '/contact',
     },
   ]
 
@@ -141,7 +145,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
                     <Link
                       key={link.text}
                       to={link.location}
-                      className="inline-block mr-10 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+                      className="inline-block mr-6 xl:mr-14 focus:text-orange-500 hover:text-orange-500 last:mr-0"
                       activeClassName="border-b-2 border-orange-500"
                       partiallyActive
                     >
@@ -154,15 +158,15 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
                   <a
                     key={link.text}
                     href={link.location}
-                    className="inline-block mr-10 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+                    className="inline-block mr-6 xl:mr-14 focus:text-orange-500 hover:text-orange-500 last:mr-0"
                   >
                     {link.text}
                   </a>
                 )
               })}
               <Button
-                to="/contact"
-                label="Contact Us"
+                to={`${getBaseURL()}/sandbox`}
+                label="Sign In"
                 className="inline-block"
               />
             </div>
@@ -218,8 +222,8 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
               })}
               <Button
                 role="menuitem"
-                to="/contact"
-                label="Contact Us"
+                to={`${getBaseURL()}/sandbox`}
+                label="Sign In"
                 className="inline-block"
               />
             </ul>
