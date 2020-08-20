@@ -72,7 +72,7 @@ A quick look at the top-level files and directories you'll see in the PayID.org 
 
 7.  **`.gitignore`**: This is a configuration file for git. The gitignore tells us which files to exclude in our committed source code.
 
-8.  **`.gitlab-ci.yml`**: This is a configuration file for [Gitlab CI](https://docs.gitlab.com/ee/ci/yaml/README.html). This is the required steps that setups up our continuous deployment as well as tests our code to ensure our code meets basic standards before being merged into github.
+8.  **`.gitlab-ci.yml`**: This is a configuration file for [Gitlab CI](https://docs.gitlab.com/ee/ci/yaml/README.html). This is the required steps that sets up our continuous deployment as well as tests our code to ensure our code meets basic standards before being merged into github.
 
 9.  **`Dockerfile`**: This is a configuration file for [Docker](https://docker.com/). The Dockerfile tells the docker container how to process and deploy the code.
 
