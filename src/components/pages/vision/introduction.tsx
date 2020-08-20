@@ -13,7 +13,7 @@ const Introduction: React.FC = () => {
         'If sending a payment were as seamless as sending an email, we would all send more payments quickly and easily around the world.',
       ],
       quote:
-        '“As the leading fintech company in Indonesia, GoPay is excited to join this global consortium. Blockchain technology represents a potential opportunity through which we may eventually be able to offer improved services to our users and it is therefore an area that we are happy to explore further. We remain committed to working in partnership with all stakeholders including local regulators, to utilise technology to increase financial inclusion throughout Southeast Asia.”',
+        '“GoPay International is excited to join this global consortium and explore potential opportunities to apply blockchain technology to enhance services to our users. We remain committed to working in partnership with all stakeholders, including local regulators, to utilise technology to increase financial inclusion in our international markets.”',
       quoteAuthor: ['Hassan Ahmed', 'Head of Strategy, GoPay'],
       quoteImage: '/assets/vision/quote-author-3.jpeg',
       quoteBackground: '/assets/vision/quote-background-3.svg',
