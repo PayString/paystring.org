@@ -2,9 +2,9 @@ import classNames from 'classnames'
 import { Link } from 'gatsby'
 import React, { useState, useCallback, useEffect } from 'react'
 
-import Hamburger from '../../../content/assets/hamburger.svg'
-import Logo from '../../../content/assets/logo.svg'
-import { getDocsLocation } from '../../utils/config'
+import Hamburger from '../../assets/hamburger.svg'
+import Logo from '../../assets/logo.svg'
+import { getBaseURL, getDocsLocation } from '../../utils/config'
 import useScroll from '../../utils/useScroll'
 import Button from '../common/button'
 
@@ -38,27 +38,31 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
       text: 'FAQ',
       location: '/universal-payment-identifier-faqs',
     },
+    {
+      text: 'Contact Us',
+      location: '/contact',
+    },
   ]
 
   const [expanded, setExpanded] = useState<boolean>(false)
 
-  const getInitialBannerState = () => {
-    if (typeof window === 'undefined') return true
-    return (
-      window.localStorage.getItem('bannerVisible') === null ||
-      window.localStorage.getItem('bannerVisible') !== 'hackathon'
-    )
-  }
+  // const getInitialBannerState = () => {
+  //   if (typeof window === 'undefined') return true
+  //   return (
+  //     window.localStorage.getItem('bannerVisible') === null ||
+  //     window.localStorage.getItem('bannerVisible') !== 'hackathon'
+  //   )
+  // }
 
-  const [bannerVisible, setBannerVisible] = useState<boolean>(
-    getInitialBannerState(),
-  )
+  // const [bannerVisible, setBannerVisible] = useState<boolean>(
+  //   getInitialBannerState(),
+  // )
 
-  const hideBanner = () => {
-    setBannerVisible(false)
-    if (typeof window === 'undefined') return
-    window.localStorage.setItem('bannerVisible', 'hackathon')
-  }
+  // const hideBanner = () => {
+  //   setBannerVisible(false)
+  //   if (typeof window === 'undefined') return
+  //   window.localStorage.setItem('bannerVisible', 'hackathon')
+  // }
 
   const { y, direction } = useScroll()
 
@@ -72,9 +76,9 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
     )
   }
 
-  const shouldShowBanner = (): boolean => {
-    return !shouldBeFixed() && bannerVisible
-  }
+  // const shouldShowBanner = (): boolean => {
+  //   return !shouldBeFixed() && bannerVisible
+  // }
 
   const closeExpandedMenu = useCallback((event: KeyboardEvent) => {
     if (event.keyCode === 27) setExpanded(false)
@@ -95,7 +99,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
         'absolute bg-transparent': !shouldBeFixed(),
       })}
     >
-      {shouldShowBanner() && (
+      {/* {shouldShowBanner() && (
         <div
           className={classNames(
             'w-full py-1 text-sm text-center text-gray-300 bg-gray-800 lg:top-0 lg:absolute',
@@ -103,7 +107,10 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
         >
           <span>
             Participate in the{' '}
-            <a href="https://hackathon.payid.org" className="underline">
+            <a
+              href="https://payid.devpost.com/?utm_source=payid.org&utm_medium=banner"
+              className="underline"
+            >
               PayID Hackathon
             </a>{' '}
             and win up to $15K! Submissions are due by 5:00pm PDT Aug 2, 2020
@@ -115,7 +122,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
             x
           </button>
         </div>
-      )}
+      )} */}
       <div
         className={classNames('flex w-full justify-center px-6 lg:px-18', {
           'lg:mt-12': !shouldBeFixed(),
@@ -138,7 +145,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
                     <Link
                       key={link.text}
                       to={link.location}
-                      className="inline-block mr-10 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+                      className="inline-block mr-6 xl:mr-14 focus:text-orange-500 hover:text-orange-500 last:mr-0"
                       activeClassName="border-b-2 border-orange-500"
                       partiallyActive
                     >
@@ -151,15 +158,15 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
                   <a
                     key={link.text}
                     href={link.location}
-                    className="inline-block mr-10 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+                    className="inline-block mr-6 xl:mr-14 focus:text-orange-500 hover:text-orange-500 last:mr-0"
                   >
                     {link.text}
                   </a>
                 )
               })}
               <Button
-                to="/contact"
-                label="Contact Us"
+                to={`${getBaseURL()}/sandbox`}
+                label="Sign In"
                 className="inline-block"
               />
             </div>
@@ -215,8 +222,8 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
               })}
               <Button
                 role="menuitem"
-                to="/contact"
-                label="Contact Us"
+                to={`${getBaseURL()}/sandbox`}
+                label="Sign In"
                 className="inline-block"
               />
             </ul>

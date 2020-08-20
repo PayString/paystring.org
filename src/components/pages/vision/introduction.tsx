@@ -12,12 +12,26 @@ const Introduction: React.FC = () => {
         'Unlike email and text SMS, where there is a single network for the entire world, the payments infrastructure consists of hundreds of isolated networks that don’t speak to each other. Imagine how many fewer text messages each of us would each send if messages couldn’t be sent between mobile providers.',
         'If sending a payment were as seamless as sending an email, we would all send more payments quickly and easily around the world.',
       ],
+      quote:
+        '“As the leading fintech company in Indonesia, GoPay is excited to join this global consortium. Blockchain technology represents a potential opportunity through which we may eventually be able to offer improved services to our users and it is therefore an area that we are happy to explore further. We remain committed to working in partnership with all stakeholders including local regulators, to utilise technology to increase financial inclusion throughout Southeast Asia.”',
+      quoteAuthor: ['Hassan Ahmed', 'Head of Strategy, GoPay'],
+      quoteImage: '/assets/vision/quote-author-3.jpeg',
+      quoteBackground: '/assets/vision/quote-background-3.svg',
     },
     {
       title: 'Tomorrow’s Payment Network Will Be Open',
       descriptions: [
         'In the near future, a single, global payment network will enable anyone to easily pay any other person or business instantly. Everyone, everywhere will tap into the power of this network dozens of times a day, sending payments both large and small. Payments won’t run over fragmented networks using proprietary standards to complicated account numbers, but rather, will use a united network in which all payment companies participate and is built for today’s consumers and businesses.',
       ],
+      quote:
+        '“An open payment network will play a key role in the next generation of games supported by community economics. By being free, open source, and easy to implement, PayID provides the games community with a frictionless solution that will benefit players and game developers around the world.”',
+      quoteAuthor: [
+        'Chris Jimison',
+        'Vice President of',
+        'Engineering at Forte',
+      ],
+      quoteImage: '/assets/vision/quote-author-2.png',
+      quoteBackground: '/assets/vision/quote-background-2.svg',
     },
     {
       title: 'PayID is the Universal Payment Identifier',
@@ -42,6 +56,11 @@ const Introduction: React.FC = () => {
           a world where money moves as easily as information.
         </>,
       ],
+      quote:
+        '“Though the global payments ecosystem has expanded on the promise of simplifying the transfer of money, it has also resulted in siloed, closed and complex networks that often make sending money more difficult.”',
+      quoteAuthor: ['Kris Marszalek', 'CEO of Crypto.com'],
+      quoteImage: '/assets/vision/quote-author-1.png',
+      quoteBackground: '/assets/vision/quote-background-1.svg',
     },
   ]
 
@@ -52,20 +71,57 @@ const Introduction: React.FC = () => {
           Vision
         </h1>
       </div>
-      <div className="w-full mx-auto md:max-w-md">
+      <div className="w-full ">
         {sectionCopy.map((copy, i) => {
           return (
-            <div key={i} className="mt-20 sm:mt-30">
-              <h2 className="mb-10 text-3xl font-bold sm:text-4xl sm:mb-14">
-                {copy.title}
-              </h2>
-              {copy.descriptions.map((description, index) => {
-                return (
-                  <p className="mt-8" key={index}>
-                    {description}
-                  </p>
-                )
-              })}
+            <div
+              key={i}
+              className="flex flex-wrap mt-20 even:flex-row-reverse sm:mt-40"
+            >
+              <div className="lg:w-1/2">
+                <h2 className="mb-10 text-3xl font-bold sm:text-4xl sm:mb-14">
+                  {copy.title}
+                </h2>
+                {copy.descriptions.map((description, index) => {
+                  return (
+                    <p className="mt-8 text-xl" key={index}>
+                      {description}
+                    </p>
+                  )
+                })}
+              </div>
+              <div
+                className={
+                  i === 1
+                    ? 'flex w-full lg:w-1/2 justify-center lg:justify-start'
+                    : 'flex w-full lg:w-1/2 justify-center lg:justify-end'
+                }
+              >
+                <div className="mt-20 lg:mt-0">
+                  <div className="relative max-w-sm">
+                    <img
+                      className="w-74 sm:w-full"
+                      src={copy.quoteBackground}
+                    />
+                    <p className="absolute top-0 left-0 px-12 text-sm pt-30 lg:pt-36 sm:text-base lg:text-xl ">
+                      {copy.quote}
+                    </p>
+                  </div>
+                  <div className="flex items-center mt-5 ml-10">
+                    <div>
+                      <img
+                        className="w-16 mr-5 rounded-full"
+                        src={copy.quoteImage}
+                      />
+                    </div>
+                    <div>
+                      {copy.quoteAuthor.map((title, index) => {
+                        return <p key={index}>{title}</p>
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           )
         })}

@@ -1,9 +1,5 @@
-/* purgecss start ignore */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
-
-/* purgecss end ignore */
-
 @import 'tailwindcss/utilities';
 
 /* Wave Content for negative spacing */
@@ -32,6 +28,14 @@
 .vision-bg {
   background-image: url('/assets/vision/background.svg');
   background-position: center top;
+
+  @apply bg-no-repeat;
+}
+
+.vision-quote {
+  background-image: url('/assets/vision/quote_background.svg');
+  background-position: left top;
+  min-height: 580px;
 
   @apply bg-no-repeat;
 }

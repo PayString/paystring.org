@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 import React from 'react'
 
-import WaveVectorLTR from '../../../content/assets/WaveLTR.svg'
-import WaveVectorRTL from '../../../content/assets/WaveRTL.svg'
+import WaveVectorLTR from '../../assets/WaveLTR.svg'
+import WaveVectorRTL from '../../assets/WaveRTL.svg'
 
 interface WaveVectorProps {
   direction: 'ltr' | 'rtl'

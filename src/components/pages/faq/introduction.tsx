@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import { Link } from 'gatsby'
 import React, { useState } from 'react'
 
-import Arrow from '../../../../content/assets/compliance/walkthrough/arrow.svg'
+import Arrow from '../../../assets/compliance/walkthrough/arrow.svg'
 import { getDocsLocation } from '../../../utils/config'
 import Wave from '../../common/wave'
 

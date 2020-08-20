@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { useState, useEffect } from 'react'
 
-import SelectArrow from '../../content/assets/common/selectArrow.svg'
+import SelectArrow from '../assets/common/selectArrow.svg'
 import Button from '../components/common/button'
 import InputField from '../components/common/input-field'
 import Layout from '../components/layout'
@@ -95,6 +95,9 @@ const Contact: React.FC = () => {
       if (typeof window.gtag !== 'undefined') {
         window.gtag('event', 'conversion', {
           send_to: 'AW-877332159/jdvuCLLdpdQBEL-NrKID',
+        })
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-616173950/7ehtCOKFvNYBEP6i6KUC',
         })
       }
     }

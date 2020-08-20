@@ -23,15 +23,6 @@ module.exports = {
         '"Segoe UI Symbol"',
         '"Noto Color Emoji"',
       ],
-      mono: [
-        '"Roboto Mono"',
-        'Menlo',
-        'Monaco',
-        'Consolas',
-        '"Liberation Mono"',
-        '"Courier New"',
-        'monospace',
-      ],
     },
     colors: {
       orange: {
@@ -273,6 +264,7 @@ module.exports = {
   variants: {
     margin: ['responsive', 'last', 'first'],
     linearGradients: ['responsive', 'hover', 'focus'],
+    flexDirection: ['responsive', 'odd', 'even'],
   },
   plugins: [tailwindGradients],
 }
