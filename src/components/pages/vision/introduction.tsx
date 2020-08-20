@@ -13,10 +13,10 @@ const Introduction: React.FC = () => {
         'If sending a payment were as seamless as sending an email, we would all send more payments quickly and easily around the world.',
       ],
       quote:
-        '“Though the global payments ecosystem has expanded on the promise of simplifying the transfer of money, it has also resulted in siloed, closed and complex networks that often make sending money more difficult.”',
-      quoteAuthor: ['Kris Marszalek', 'CEO of Crypto.com'],
-      quoteImage: '/assets/vision/quote-author-1.png',
-      quoteBackground: '/assets/vision/quote-background-1.svg',
+        '“As the leading fintech company in Indonesia, GoPay is excited to join this global consortium. Blockchain technology represents a potential opportunity through which we may eventually be able to offer improved services to our users and it is therefore an area that we are happy to explore further. We remain committed to working in partnership with all stakeholders including local regulators, to utilise technology to increase financial inclusion throughout Southeast Asia.”',
+      quoteAuthor: ['Hassan Ahmed', 'Head of Strategy, GoPay'],
+      quoteImage: '/assets/vision/quote-author-3.jpeg',
+      quoteBackground: '/assets/vision/quote-background-3.svg',
     },
     {
       title: 'Tomorrow’s Payment Network Will Be Open',
@@ -57,10 +57,10 @@ const Introduction: React.FC = () => {
         </>,
       ],
       quote:
-        '“The Open Payments Coalition is laying important groundwork for the complex issue of global payment standardization, which we believe is important to opening the value layer of the internet for developers worldwide.”',
-      quoteAuthor: ['Ben Milne', 'Founder and Chairman', 'of Dwolla'],
-      quoteImage: '/assets/vision/quote-author-3.png',
-      quoteBackground: '/assets/vision/quote-background-3.svg',
+        '“Though the global payments ecosystem has expanded on the promise of simplifying the transfer of money, it has also resulted in siloed, closed and complex networks that often make sending money more difficult.”',
+      quoteAuthor: ['Kris Marszalek', 'CEO of Crypto.com'],
+      quoteImage: '/assets/vision/quote-author-1.png',
+      quoteBackground: '/assets/vision/quote-background-1.svg',
     },
   ]
 
@@ -109,15 +109,14 @@ const Introduction: React.FC = () => {
                   </div>
                   <div className="flex items-center mt-5 ml-10">
                     <div>
-                      <img className="pr-5 " src={copy.quoteImage} />
+                      <img
+                        className="w-16 mr-5 rounded-full"
+                        src={copy.quoteImage}
+                      />
                     </div>
                     <div>
                       {copy.quoteAuthor.map((title, index) => {
-                        return (
-                          <p className="" key={index}>
-                            {title}
-                          </p>
-                        )
+                        return <p key={index}>{title}</p>
                       })}
                     </div>
                   </div>
