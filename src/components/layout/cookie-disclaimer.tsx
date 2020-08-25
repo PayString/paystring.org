@@ -24,7 +24,7 @@ const CookieDisclaimer: React.FC = () => {
           experience. By continuing to use our site, you accept our use of
           cookies and{' '}
           <a
-            href="https://ripple.com/privacy-policy/"
+            href="/privacy.pdf"
             target="_blank"
             rel="noreferrer"
             className="text-orange-500 focus:underline hover:underline"
