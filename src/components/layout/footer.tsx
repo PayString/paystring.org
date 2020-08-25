@@ -90,7 +90,7 @@ const Footer: React.FC = () => {
             Terms
           </a>
           <a
-            href="https://ripple.com/privacy-policy/"
+            href="/static/PayID.org_Privacy_Policy.pdf"
             target="_blank"
             rel="noreferrer"
             className="block mt-8 md:mt-0 md:ml-5 focus:text-orange-500 hover:text-orange-500 md:inline-block"
