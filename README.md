@@ -89,3 +89,6 @@ A quick look at the top-level files and directories you'll see in the PayID.org 
 15.  **`tailwind.config.js`**: This is the main css configuration file that holds all of our theming configuration. This is for the [CSS framework tailwind](https://tailwindcss.com/) which we use for PayID.org.
 
 16.  **`tsconfig.js`**: This is the configuration file for our typescript configuration. We use a strict configuration that doesn't allow any loose typings in order to maintain a high code quality.
+
+## Legal
+**This code is not authorised for download in Australia.  Any persons located in Australia are expressly prohibited from downloading, using, reproducing or distributing the code.** This code is not owned by, or associated with, NPP Australia Limited, and has no sponsorship, affiliation or other connection with the “Pay ID” service operated by NPP Australia Limited in Australia.
