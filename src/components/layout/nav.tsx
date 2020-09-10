@@ -4,7 +4,11 @@ import React, { useState, useCallback, useEffect } from 'react'
 
 import Hamburger from '../../assets/hamburger.svg'
 import Logo from '../../assets/logo.svg'
-import { getBaseURL, getDocsLocation } from '../../utils/config'
+import {
+  getBaseURL,
+  getDocsLocation,
+  getBlogLocation,
+} from '../../utils/config'
 import useScroll from '../../utils/useScroll'
 import Button from '../common/button'
 
@@ -37,6 +41,10 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
     {
       text: 'FAQ',
       location: '/universal-payment-identifier-faqs',
+    },
+    {
+      text: 'Blog',
+      location: getBlogLocation(),
     },
     {
       text: 'Contact Us',
