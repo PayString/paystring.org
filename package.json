@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Marketing Website for PayID",
   "homepage": "https://github.com/xpring-eng/payid.org#readme",
+  "engines": {
+    "node": ">= 12"
+  },
   "dependencies": {
     "classnames": "^2.2.6",
     "dotenv": "^8.2.0",
