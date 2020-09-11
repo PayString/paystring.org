@@ -37,19 +37,6 @@ export const getCharityAppURL = (): string => {
   }
 }
 
-export const getBlogLocation = (): string => {
-  switch (process.env.GATSBY_RELEASE_ENV) {
-    case 'dev':
-      return 'https://blog.payid.org/'
-    case 'stage':
-      return 'https://blog.payid.org'
-    case 'prod':
-      return 'https://blog.payid.org/'
-    default:
-      return 'https://blog.payid.org/'
-  }
-}
-
 export const encodeFormData = (formData: { [s: string]: unknown }): string => {
   const formBody: string[] = []
   Object.entries(formData).forEach(([key, value]) => {
