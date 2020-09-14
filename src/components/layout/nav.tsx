@@ -39,6 +39,10 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
       location: '/universal-payment-identifier-faqs',
     },
     {
+      text: 'Blog',
+      location: 'https://blog.payid.org/',
+    },
+    {
       text: 'Contact Us',
       location: '/contact',
     },
@@ -145,7 +149,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
                     <Link
                       key={link.text}
                       to={link.location}
-                      className="inline-block mr-6 xl:mr-14 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+                      className="inline-block mr-4 xl:mr-12 focus:text-orange-500 hover:text-orange-500 last:mr-0"
                       activeClassName="border-b-2 border-orange-500"
                       partiallyActive
                     >
@@ -158,7 +162,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
                   <a
                     key={link.text}
                     href={link.location}
-                    className="inline-block mr-6 xl:mr-14 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+                    className="inline-block mr-4 xl:mr-12 focus:text-orange-500 hover:text-orange-500 last:mr-0"
                   >
                     {link.text}
                   </a>
