@@ -95,6 +95,14 @@ module.exports = {
     //   },
     // },
     {
+      resolve: 'gatsby-plugin-hubspot',
+      options: {
+        trackingCode: '8186536',
+        respectDNT: true,
+        productionOnly: true,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-postcss',
       options: {
         postCssPlugins: [require('tailwindcss')],
