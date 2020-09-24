@@ -10,9 +10,19 @@ import Wave from './wave'
 
 interface CommunityProps {
   direction?: 'ltr' | 'rtl'
+  title?: string
+  description?: string
+  orangeButton?: boolean
 }
 
 const Community: React.FC<CommunityProps> = (props) => {
+  const {
+    direction = 'rtl',
+    title = 'Join the PayID Community',
+    description = 'Sign up to access the PayID newsletter and hear about hackathons and speaker events',
+    orangeButton = false,
+  } = props
+
   const [validForm, setValidForm] = useState<boolean>(false)
   const [role, setRole] = useState<string>('DEFAULT')
   const [firstName, setFirstName] = useState<string>()
@@ -126,20 +136,17 @@ const Community: React.FC<CommunityProps> = (props) => {
   return (
     <Wave
       background="orange"
-      direction={props.direction}
+      direction={direction}
       wave="blue"
       spacing="lg"
       className="flex items-center justify-center"
     >
       {!submitted && (
-        <div className="max-w-xl">
+        <div>
           <div className="text-3xl font-bold text-center sm:text-5xl">
-            Join the PayID Community
+            {title}
           </div>
-          <div className="mt-8 text-xl text-center">
-            Sign up to access the PayID newsletter and hear about hackathons and
-            speaker events
-          </div>
+          <div className="mt-8 text-xl text-center">{description}</div>
           <form onSubmit={handleSubmit} className="mt-16 md:mt-30">
             <div className="relative px-6 mb-6 border-2 border-white rounded">
               <select
@@ -231,7 +238,9 @@ const Community: React.FC<CommunityProps> = (props) => {
               variant="secondary"
               label="Submit"
               size="lg"
-              className="hidden mx-auto mt-16 bg-white sm:block"
+              className={classNames('hidden mx-auto mt-16 sm:block bg-white', {
+                'text-orange-500': !!orangeButton,
+              })}
             />
           </form>
         </div>

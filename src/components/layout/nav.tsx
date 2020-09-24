@@ -27,6 +27,10 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
       location: '/use-cases',
     },
     {
+      text: 'Wallets',
+      location: '/wallets-and-exchanges',
+    },
+    {
       text: 'Companies',
       location: '/about-us',
     },
@@ -128,7 +132,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
         </div>
       )} */}
       <div
-        className={classNames('flex w-full justify-center px-6 lg:px-18', {
+        className={classNames('flex w-full justify-center px-6 lg:px-12', {
           'lg:mt-12': !shouldBeFixed(),
         })}
       >
@@ -149,7 +153,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
                     <Link
                       key={link.text}
                       to={link.location}
-                      className="inline-block mr-4 xl:mr-12 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+                      className="inline-block mr-4 xl:mr-10 focus:text-orange-500 hover:text-orange-500 last:mr-0"
                       activeClassName="border-b-2 border-orange-500"
                       partiallyActive
                     >
@@ -162,7 +166,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
                   <a
                     key={link.text}
                     href={link.location}
-                    className="inline-block mr-4 xl:mr-12 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+                    className="inline-block mr-4 xl:mr-10 focus:text-orange-500 hover:text-orange-500 last:mr-0"
                   >
                     {link.text}
                   </a>

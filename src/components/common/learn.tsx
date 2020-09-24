@@ -1,3 +1,4 @@
+import { withPrefix } from 'gatsby'
 import React from 'react'
 
 import { getDocsLocation } from '../../utils/config'
@@ -13,35 +14,37 @@ const Learn: React.FC<LearnProps> = (props) => {
   const learnables = [
     {
       bgStyle: {
-        backgroundImage: 'url(/assets/learn/developers.svg)',
+        backgroundImage: `url(${withPrefix('/assets/learn/developers.svg')})`,
       },
       title: 'Getting Started for Developers',
       link: getDocsLocation(),
     },
     {
       bgStyle: {
-        backgroundImage: 'url(/assets/learn/whitepaper.svg)',
+        backgroundImage: `url(${withPrefix('/assets/learn/whitepaper.svg')})`,
       },
       title: 'PayID Technical Whitepaper',
       link: '/whitepaper.pdf',
     },
     {
       bgStyle: {
-        backgroundImage: 'url(/assets/learn/api-reference.svg)',
+        backgroundImage: `url(${withPrefix(
+          '/assets/learn/api-reference.svg',
+        )})`,
       },
       title: 'API Reference',
       link: 'https://api.payid.org/?version=latest',
     },
     {
       bgStyle: {
-        backgroundImage: 'url(/assets/learn/standards.svg)',
+        backgroundImage: `url(${withPrefix('/assets/learn/standards.svg')})`,
       },
       title: 'PayID Open Standards',
       link: 'https://github.com/payid-org/rfcs',
     },
     {
       bgStyle: {
-        backgroundImage: 'url(/assets/learn/security.svg)',
+        backgroundImage: `url(${withPrefix('/assets/learn/security.svg')})`,
       },
       title: 'Security and Privacy',
       link:
@@ -49,21 +52,21 @@ const Learn: React.FC<LearnProps> = (props) => {
     },
     {
       bgStyle: {
-        backgroundImage: 'url(/assets/learn/travel-rule.svg)',
+        backgroundImage: `url(${withPrefix('/assets/learn/travel-rule.svg')})`,
       },
       title: 'Travel Rule and Compliance',
       link: 'https://trisa.io/',
     },
     {
       bgStyle: {
-        backgroundImage: 'url(/assets/learn/checkout.svg)',
+        backgroundImage: `url(${withPrefix('/assets/learn/checkout.svg')})`,
       },
       title: 'PayID Test Wallet',
       link: 'https://xpring.io/portal/wallet/xrp/testnet',
     },
     {
       bgStyle: {
-        backgroundImage: 'url(/assets/learn/xpring-sdk.svg)',
+        backgroundImage: `url(${withPrefix('/assets/learn/xpring-sdk.svg')})`,
       },
       title: 'Xpring SDK Integration',
       link: `${getDocsLocation()}/xpring-sdk-payid`,

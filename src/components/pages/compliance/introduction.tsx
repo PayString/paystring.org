@@ -1,10 +1,11 @@
+import { withPrefix } from 'gatsby'
 import React from 'react'
 
 import Wave from '../../common/wave'
 
 const Introduction: React.FC = () => {
   const bgImgStyle = {
-    backgroundImage: 'url(/assets/compliance/background.svg)',
+    backgroundImage: `url(${withPrefix('/assets/compliance/background.svg')})`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center top',
   }

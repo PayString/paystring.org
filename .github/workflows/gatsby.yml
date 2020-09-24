@@ -1,0 +1,63 @@
+name: 'Gatsby build only on PR'
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  build:
+    name: Build Gatsby Site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Npm Setup
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Npm Install
+        run: |
+          npm i
+      - name: Lint
+        run: npm run lint
+      - name: PR Branch Name
+        uses: mdecoleman/pr-branch-name@1.0.0
+        id: branchname
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: GitHub Environment Variables Action
+        uses: FranzDiebold/github-env-vars-action@v1.2.0
+      - name: Get PR commit trigger SHA
+        uses: bhowell2/github-substring-action@v1.0.0
+        id: prsha
+        with:
+          value: ${{ github.event.pull_request.head.sha }}
+          length_from_start: 6
+      - name: Get short SHA6
+        id: slug
+        env:
+          PRSHA: ${{ steps.prsha.outputs.substring }}
+        run: echo "::set-output name=sha6::$(echo ${PRSHA} | cut -c1-6)"
+      - name: Modify gatsby prefix in gatsby-config.js
+        env:
+          SHA: ${{ steps.slug.outputs.sha6 }}
+          BRANCH: ${{ steps.branchname.outputs.branch }}
+          SLUG: ${{ env.GITHUB_REPOSITORY_NAME }}
+        run: |
+          sed "114 a \ \ pathPrefix: '/${SLUG}/review-apps/${BRANCH}/${SHA}'," gatsby-config.js > gatsby-config.temp.js
+          rm -rf gatsby-config.js
+          mv gatsby-config.temp.js gatsby-config.js
+      - name: Build and deploy to gh-pages
+        uses: sauloxd/review-apps@v1.3.2
+        with:
+          build-cmd: 'npx gatsby build --prefix-paths'
+          branch: 'gh-pages'
+          dist: 'public'
+          slug: 'review-apps'
+      - name: Comment URL on PR
+        uses: unsplash/comment-on-pr@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+        with:
+          msg: 'https://${{env.GITHUB_REPOSITORY_OWNER_SLUG}}.github.io/${{env.GITHUB_REPOSITORY_NAME}}/review-apps/${{steps.branchname.outputs.branch}}/${{steps.slug.outputs.sha6}}'
+          check_for_duplicate_msg: false
