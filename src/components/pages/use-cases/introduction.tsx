@@ -1,4 +1,4 @@
-// import { Link } from 'gatsby'
+import { withPrefix } from 'gatsby'
 import React from 'react'
 
 import Wave from '../../common/wave'
@@ -34,7 +34,10 @@ const Introduction: React.FC = () => {
           </p>
         </div>
         <div className="w-full">
-          <img src="/assets/use-cases/p2p.png" className="object-contain" />
+          <img
+            src={withPrefix('/assets/use-cases/p2p.png')}
+            className="object-contain"
+          />
         </div>
       </div>
 
@@ -42,7 +45,7 @@ const Introduction: React.FC = () => {
       <div className="flex flex-col items-center justify-center mt-32 md:flex-row md:mt-64">
         <div className="w-full md:mr-18">
           <img
-            src="/assets/use-cases/checkout.png"
+            src={withPrefix('/assets/use-cases/checkout.png')}
             className="transform md:-ml-16 md:scale-125"
             style={bgShadow}
           />
@@ -79,7 +82,7 @@ const Introduction: React.FC = () => {
         </div>
         <div className="w-full">
           <img
-            src="/assets/use-cases/subscription.png"
+            src={withPrefix('/assets/use-cases/subscription.png')}
             className="object-contain"
           />
         </div>
@@ -89,7 +92,7 @@ const Introduction: React.FC = () => {
       <div className="flex flex-col items-center justify-center mt-32 md:flex-row md:mt-64">
         <div className="w-full md:mr-18">
           <img
-            src="/assets/use-cases/invoice.png"
+            src={withPrefix('/assets/use-cases/invoice.png')}
             className="transform md:-ml-16 md:scale-125"
             style={bgShadow}
           />

@@ -12,6 +12,8 @@ interface WaveProps {
   waveClassNames?: string
   style?: CSSProperties
   'no-gutter'?: boolean
+  'no-spacing'?: boolean
+  waveVectorClassNames?: string
 }
 
 const Wave: React.FC<WaveProps> = (
@@ -33,6 +35,7 @@ const Wave: React.FC<WaveProps> = (
   } else if (spacing === 'lg') {
     waveVectorClasses = 'xl:-mt-74 lg:-mt-52 md:-mt-36 sm:-mt-28'
   }
+  waveVectorClasses = classNames(waveVectorClasses, props.waveVectorClassNames)
 
   // Figure out the background color and text colors based on given background prop
   const waveClasses = classNames(props.waveClassNames, 'wave', {
@@ -43,17 +46,27 @@ const Wave: React.FC<WaveProps> = (
     'bg-blue-dark-800 text-white': background === 'light-blue',
   })
 
+  const childrenClass = classNames('flex justify-center', {
+    'px-6 lg:px-18': !props['no-spacing'],
+  })
+
   const contentClasses = classNames(
-    'wave-content container',
+    'wave-content',
     {
       'lg:px-17': !props['no-gutter'],
+    },
+    {
+      container: !props['no-spacing'],
+    },
+    {
+      'w-full': props['no-spacing'],
     },
     props.className,
   )
 
   return (
     <div className={waveClasses} style={props.style}>
-      <div className="flex justify-center px-6 lg:px-18">
+      <div className={childrenClass}>
         <div className={contentClasses}>{props.children}</div>
       </div>
       <WaveVector

@@ -1,4 +1,4 @@
-import { Link } from 'gatsby'
+import { Link, withPrefix } from 'gatsby'
 import React from 'react'
 
 import Wave from '../../common/wave'
@@ -15,8 +15,8 @@ const Introduction: React.FC = () => {
       quote:
         '“GoPay International is excited to join this global consortium and explore potential opportunities to apply blockchain technology to enhance services to our users. We remain committed to working in partnership with all stakeholders, including local regulators, to utilise technology to increase financial inclusion in our international markets.”',
       quoteAuthor: ['Hassan Ahmed', 'Head of Strategy, GoPay'],
-      quoteImage: '/assets/vision/quote-author-3.jpeg',
-      quoteBackground: '/assets/vision/quote-background-3.svg',
+      quoteImage: `${withPrefix('/assets/vision/quote-author-3.jpeg')}`,
+      quoteBackground: `${withPrefix('/assets/vision/quote-background-3.svg')}`,
     },
     {
       title: 'Tomorrow’s Payment Network Will Be Open',
@@ -30,8 +30,8 @@ const Introduction: React.FC = () => {
         'Vice President of',
         'Engineering at Forte',
       ],
-      quoteImage: '/assets/vision/quote-author-2.png',
-      quoteBackground: '/assets/vision/quote-background-2.svg',
+      quoteImage: `${withPrefix('/assets/vision/quote-author-2.png')}`,
+      quoteBackground: `${withPrefix('/assets/vision/quote-background-2.svg')}`,
     },
     {
       title: 'PayID is the Universal Payment Identifier',
@@ -59,8 +59,8 @@ const Introduction: React.FC = () => {
       quote:
         '“Though the global payments ecosystem has expanded on the promise of simplifying the transfer of money, it has also resulted in siloed, closed and complex networks that often make sending money more difficult.”',
       quoteAuthor: ['Kris Marszalek', 'CEO of Crypto.com'],
-      quoteImage: '/assets/vision/quote-author-1.png',
-      quoteBackground: '/assets/vision/quote-background-1.svg',
+      quoteImage: `${withPrefix('/assets/vision/quote-author-1.png')}`,
+      quoteBackground: `${withPrefix('/assets/vision/quote-background-1.svg')}`,
     },
   ]
 
