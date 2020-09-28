@@ -241,7 +241,7 @@ const CaseStudies: React.FC = () => {
         </div>
       </div>
       <div className="flex flex-col px-1 lg:items-center">
-        <h2 className="mb-20 text-3xl font-bold capitalize md:mb-8 sm:text-5xl">
+        <h2 className="mt-24 mb-20 text-3xl font-bold capitalize md:mb-8 sm:text-5xl md:mt-0">
           What Press Says
         </h2>
       </div>
@@ -250,7 +250,7 @@ const CaseStudies: React.FC = () => {
         keyField="bottomText"
         changeChip={changePressData}
         activeIndex={currentPressIdx}
-        className="justify-center"
+        className="md:justify-center"
       />
       <div className="hidden w-full h-auto lg:flex" style={{ minHeight: 435 }}>
         <GoLeft

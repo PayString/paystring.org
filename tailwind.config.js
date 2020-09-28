@@ -225,6 +225,9 @@ module.exports = {
       }
     },
     extend: {
+      screens: {
+        xxl: '1440px',
+      },
       spacing: {
         7: '1.75rem',
         '10-5': '2.625rem',

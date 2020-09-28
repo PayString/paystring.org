@@ -67,7 +67,7 @@ const Introduction: React.FC = () => {
           <h1 className="mb-6 text-3xl font-bold text-center lg:text-h1 md:mb-8">
             Wallets & Exchanges
           </h1>
-          <p className="mb-20 text-center md:mb-10 md:max-w-md sm:text-xl">
+          <p className="mb-10 ml-6 mr-6 text-center md:mb-20 md:max-w-md sm:text-xl">
             Grow your business with the easiest way to send and receive crypto
           </p>
         </div>
@@ -88,9 +88,9 @@ const Introduction: React.FC = () => {
           </div>
         </div>
         <div className="flex flex-col w-full px-6 -mb-20 md:items-center lg:px-20 bg-blue-dark-800">
-          <h1 className="max-w-3xl pt-16 mb-10 text-3xl font-bold text-left md:text-center sm:leading-tighter lg:pt-30">
+          <h2 className="max-w-3xl pt-16 mb-10 text-3xl font-bold text-left md:text-center sm:leading-tighter lg:pt-30 sm:text-5xl">
             PayID in Numbers
-          </h1>
+          </h2>
           <img
             className="hidden w-full lg:block"
             src={withPrefix('/assets/wallets/numbersBig.svg')}
