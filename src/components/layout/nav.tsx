@@ -3,10 +3,16 @@ import { Link } from 'gatsby'
 import React, { useState, useCallback, useEffect } from 'react'
 
 import Hamburger from '../../assets/hamburger.svg'
+import ComplianceIcon from '../../assets/layout/nav/compliance.svg'
+import FaqIcon from '../../assets/layout/nav/faq.svg'
+import VisionIcon from '../../assets/layout/nav/vision.svg'
 import Logo from '../../assets/logo.svg'
 import { getBaseURL, getDocsLocation } from '../../utils/config'
 import useScroll from '../../utils/useScroll'
 import Button from '../common/button'
+
+import DesktopNavlinks from './DesktopNavlinks'
+import MobileNavlinks from './MobileNavlinks'
 
 interface NavProps {
   fixed?: boolean
@@ -15,8 +21,28 @@ interface NavProps {
 const Nav: React.FC<NavProps> = (props: NavProps) => {
   const links = [
     {
-      text: 'Vision',
-      location: '/our-vision-to-simplify-payments',
+      text: 'Learn',
+      sublinks: [
+        {
+          text: 'Vision',
+          location: '/our-vision-to-simplify-payments',
+          icon: VisionIcon,
+        },
+        {
+          text: 'Compliance',
+          location: '/compliance-and-regulations',
+          icon: ComplianceIcon,
+        },
+        {
+          text: 'FAQ',
+          location: '/universal-payment-identifier-faqs',
+          icon: FaqIcon,
+        },
+      ],
+    },
+    {
+      text: 'Wallets & Exchanges',
+      location: '/wallets-and-exchanges',
     },
     {
       text: 'Docs',
@@ -26,30 +52,18 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
       text: 'Use Cases',
       location: '/use-cases',
     },
-    {
-      text: 'Wallets',
-      location: '/wallets-and-exchanges',
-    },
-    {
-      text: 'Companies',
-      location: '/about-us',
-    },
-    {
-      text: 'Compliance',
-      location: '/compliance-and-regulations',
-    },
-    {
-      text: 'FAQ',
-      location: '/universal-payment-identifier-faqs',
-    },
+    // {
+    //   text: 'Companies',
+    //   location: '/about-us',
+    // },
     {
       text: 'Blog',
       location: 'https://blog.payid.org/',
     },
-    {
-      text: 'Contact Us',
-      location: '/contact',
-    },
+    // {
+    //   text: 'Contact Us',
+    //   location: '/contact',
+    // },
   ]
 
   const [expanded, setExpanded] = useState<boolean>(false)
@@ -132,7 +146,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
         </div>
       )} */}
       <div
-        className={classNames('flex w-full justify-center px-6 lg:px-12', {
+        className={classNames('flex w-full justify-center px-6 lg:px-18', {
           'lg:mt-12': !shouldBeFixed(),
         })}
       >
@@ -148,29 +162,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
             </Link>
             <div className="hidden lg:block">
               {links.map((link) => {
-                if (link.text !== 'Docs') {
-                  return (
-                    <Link
-                      key={link.text}
-                      to={link.location}
-                      className="inline-block mr-4 xl:mr-10 focus:text-orange-500 hover:text-orange-500 last:mr-0"
-                      activeClassName="border-b-2 border-orange-500"
-                      partiallyActive
-                    >
-                      {link.text}
-                    </Link>
-                  )
-                }
-
-                return (
-                  <a
-                    key={link.text}
-                    href={link.location}
-                    className="inline-block mr-4 xl:mr-10 focus:text-orange-500 hover:text-orange-500 last:mr-0"
-                  >
-                    {link.text}
-                  </a>
-                )
+                return <DesktopNavlinks key={link.text} {...link} />
               })}
               <Button
                 to={`${getBaseURL()}/sandbox`}
@@ -200,33 +192,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
               className="pt-4 mb-6 lg:hidden"
             >
               {links.map((link) => {
-                if (link.text !== 'Docs') {
-                  return (
-                    <li role="none" key={link.text} className="mb-6">
-                      <Link
-                        role="menuitem"
-                        to={link.location}
-                        className="focus:text-orange-500 hover:text-orange-500"
-                        activeClassName="border-b-2 border-orange-500"
-                        partiallyActive
-                      >
-                        {link.text}
-                      </Link>
-                    </li>
-                  )
-                }
-
-                return (
-                  <li role="none" key={link.text} className="mb-6">
-                    <a
-                      role="menuitem"
-                      href={link.location}
-                      className="focus:text-orange-500 hover:text-orange-500"
-                    >
-                      {link.text}
-                    </a>
-                  </li>
-                )
+                return <MobileNavlinks key={link.text} {...link} />
               })}
               <Button
                 role="menuitem"
