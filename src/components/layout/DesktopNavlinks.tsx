@@ -132,7 +132,7 @@ const DesktopNavlinks: React.FC<NavlinkProps> = ({
     return (
       <Link
         to={location || '/'}
-        className="inline-block mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+        className="inline-block mr-12 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
         activeClassName="border-b-2 border-orange-500"
         partiallyActive
       >
@@ -144,7 +144,7 @@ const DesktopNavlinks: React.FC<NavlinkProps> = ({
   return (
     <a
       href={location}
-      className="inline-block mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+      className="inline-block mr-12 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
     >
       {text}
     </a>
