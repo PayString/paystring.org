@@ -59,14 +59,15 @@ const CompanyChipRow: React.FC<CompanyChipRowProps> = ({
     >
       {chips.map((chipData, idx) => {
         return (
-          <div
+          <button
             onClick={() => {
               changeChip(idx)
             }}
             key={chipData[keyField] as string}
+            className="focus:outline-none"
           >
             <CompanyChip active={idx === activeIndex} Logo={chipData.logo} />
-          </div>
+          </button>
         )
       })}
     </div>
@@ -253,12 +254,14 @@ const CaseStudies: React.FC = () => {
         className="md:justify-center"
       />
       <div className="hidden w-full h-auto lg:flex" style={{ minHeight: 435 }}>
-        <GoLeft
-          className="m-auto mr-5 cursor-pointer"
-          onClick={() => {
-            changePressRender(-1)
-          }}
-        />
+        <button className="border-none cursor-pointer background-none focus:outline-none">
+          <GoLeft
+            className="m-auto mr-5 cursor-pointer"
+            onClick={() => {
+              changePressRender(-1)
+            }}
+          />
+        </button>
         <div className="w-full rounded-md" style={blogBgImage}>
           <div className="mb-5 ml-5 mr-5 mt-15">
             <currentPress.logo className="w-full m-auto" />
@@ -276,12 +279,14 @@ const CaseStudies: React.FC = () => {
             </a>
           </div>
         </div>
-        <GoRight
-          className="m-auto ml-5 cursor-pointer"
-          onClick={() => {
-            changePressRender(1)
-          }}
-        />
+        <button className="border-none cursor-pointer background-none focus:outline-none">
+          <GoRight
+            className="m-auto ml-5 cursor-pointer"
+            onClick={() => {
+              changePressRender(1)
+            }}
+          />
+        </button>
       </div>
       <div className="flex w-full h-auto bg-white lg:hidden">
         <div className="w-full rounded">

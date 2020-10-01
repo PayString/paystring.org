@@ -188,6 +188,7 @@ module.exports = {
     },
     linearGradientColors: (theme) => {
       return {
+        gray: [theme('colors.gray.50')],
         orange: [
           theme('colors.orange-dark.500'),
           theme('colors.orange-light.500'),
@@ -249,10 +250,14 @@ module.exports = {
         70: '17.5rem',
         74: '18.5rem',
         78: '19.5rem',
+        94: '23.5rem',
         112: '28rem',
+        // 16:9 aspect ratio
+        '16-9': '56.25%',
       },
       boxShadow: {
         logo: '0px 24px 48px rgba(0, 0, 0, 0.08)',
+        devcard: '0px 30px 60px rgba(0, 0, 0, 0.08)',
       },
       lineHeight: {
         tightest: 1.15,
@@ -263,6 +268,8 @@ module.exports = {
       },
       borderRadius: {
         xl: '0.75rem',
+        '1rem': '1rem',
+        xxl: '1.25rem',
       },
       inset: {
         '-4': '-1rem',
