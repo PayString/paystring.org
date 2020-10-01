@@ -3,9 +3,10 @@ import React from 'react'
 import Community from '../components/common/community'
 import Learn from '../components/common/learn'
 import Layout from '../components/layout'
-import Institutions from '../components/pages/home/institutions'
 import Integrate from '../components/pages/home/integrate'
 import Introduction from '../components/pages/home/introduction'
+import Questions from '../components/pages/home/questions'
+import Support from '../components/pages/home/support'
 
 const Index: React.FC = () => {
   return (
@@ -16,9 +17,14 @@ const Index: React.FC = () => {
     >
       <Introduction />
       <Integrate />
-      <Institutions />
+      <Support />
       <Learn background="white" direction="rtl" />
-      <Community direction="rtl" />
+      <div className="hidden md:block">
+        <Community direction="rtl" enabledFields={['email']} />
+      </div>
+      <div className=" md:hidden">
+        <Questions direction="rtl" />
+      </div>
     </Layout>
   )
 }

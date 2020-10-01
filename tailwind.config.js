@@ -188,6 +188,7 @@ module.exports = {
     },
     linearGradientColors: (theme) => {
       return {
+        gray: [theme('colors.gray.50')],
         orange: [
           theme('colors.orange-dark.500'),
           theme('colors.orange-light.500'),
@@ -249,6 +250,7 @@ module.exports = {
         70: '17.5rem',
         74: '18.5rem',
         78: '19.5rem',
+        94: '23.5rem',
         112: '28rem',
       },
       boxShadow: {
@@ -263,6 +265,7 @@ module.exports = {
       },
       borderRadius: {
         xl: '0.75rem',
+        xxl: '1.25rem',
       },
       inset: {
         '-4': '-1rem',
