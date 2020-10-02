@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { Link } from 'gatsby'
-import React, { useState, useCallback, useEffect } from 'react'
+import React, { useState, useCallback, useEffect, useMemo } from 'react'
 
 import Hamburger from '../../assets/hamburger.svg'
 import ComplianceIcon from '../../assets/layout/nav/compliance.svg'
@@ -11,6 +11,7 @@ import { getBaseURL, getDocsLocation } from '../../utils/config'
 import useScroll from '../../utils/useScroll'
 import Button from '../common/button'
 
+import BannerHandler, { getInitialBannerState } from './BannerHandler'
 import DesktopNavlinks from './DesktopNavlinks'
 import MobileNavlinks from './MobileNavlinks'
 
@@ -66,41 +67,32 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
     // },
   ]
 
+  const bannerProps = {
+    title: 'oct20-event',
+    description: 'Register for our PayID Virtual Event on Oct 12-13!',
+    link: 'https://lp.payid.org/october-event-registration-0',
+    enabled: true,
+  }
+
+  const yOffsetWithBanner = 8
+  const yOffsetWithoutBanner = 48
+
   const [expanded, setExpanded] = useState<boolean>(false)
-
-  // const getInitialBannerState = () => {
-  //   if (typeof window === 'undefined') return true
-  //   return (
-  //     window.localStorage.getItem('bannerVisible') === null ||
-  //     window.localStorage.getItem('bannerVisible') !== 'hackathon'
-  //   )
-  // }
-
-  // const [bannerVisible, setBannerVisible] = useState<boolean>(
-  //   getInitialBannerState(),
-  // )
-
-  // const hideBanner = () => {
-  //   setBannerVisible(false)
-  //   if (typeof window === 'undefined') return
-  //   window.localStorage.setItem('bannerVisible', 'hackathon')
-  // }
+  const [bannerShown, setBannerShown] = useState(
+    bannerProps.enabled && getInitialBannerState(bannerProps.title),
+  )
 
   const { y, direction } = useScroll()
-
-  const shouldBeFixed = (): boolean => {
+  const shouldBeFixed = useMemo((): boolean => {
     if (typeof window === 'undefined' || props.fixed || expanded) return true
+    const fixedYOffset = bannerShown ? yOffsetWithBanner : yOffsetWithoutBanner
     return !!(
       direction &&
       direction === 'up' &&
-      ((window.outerHeight >= 1024 && y >= 48) ||
+      ((window.outerHeight >= 1024 && y >= fixedYOffset) ||
         (window.outerHeight < 1024 && y > 0))
     )
-  }
-
-  // const shouldShowBanner = (): boolean => {
-  //   return !shouldBeFixed() && bannerVisible
-  // }
+  }, [props.fixed, expanded, direction, y, bannerShown])
 
   const closeExpandedMenu = useCallback((event: KeyboardEvent) => {
     if (event.keyCode === 27) setExpanded(false)
@@ -117,37 +109,19 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
   return (
     <nav
       className={classNames('top-0 w-full text-white', {
-        'fixed bg-blue-dark-900 z-20': shouldBeFixed(),
-        'absolute bg-transparent': !shouldBeFixed(),
+        'fixed bg-blue-dark-900 z-20': shouldBeFixed,
+        'absolute bg-transparent': !shouldBeFixed,
       })}
     >
-      {/* {shouldShowBanner() && (
-        <div
-          className={classNames(
-            'w-full py-1 text-sm text-center text-gray-300 bg-gray-800 lg:top-0 lg:absolute',
-          )}
-        >
-          <span>
-            Participate in the{' '}
-            <a
-              href="https://payid.devpost.com/?utm_source=payid.org&utm_medium=banner"
-              className="underline"
-            >
-              PayID Hackathon
-            </a>{' '}
-            and win up to $15K! Submissions are due by 5:00pm PDT Aug 2, 2020
-          </span>
-          <button
-            onClick={() => hideBanner()}
-            className="absolute top-0 right-0 w-16 text-lg"
-          >
-            x
-          </button>
-        </div>
-      )} */}
+      <BannerHandler
+        {...bannerProps}
+        fixed={shouldBeFixed}
+        top={y}
+        setBannerShown={setBannerShown}
+      />
       <div
         className={classNames('flex w-full justify-center px-6 lg:px-18', {
-          'lg:mt-12': !shouldBeFixed(),
+          'lg:mt-12': !shouldBeFixed,
         })}
       >
         <div className="container py-4">

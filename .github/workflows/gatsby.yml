@@ -37,6 +37,17 @@ jobs:
         env:
           PRSHA: ${{ steps.prsha.outputs.substring }}
         run: echo "::set-output name=sha6::$(echo ${PRSHA} | cut -c1-6)"
+      - name: Get PR commit trigger SHA
+        uses: bhowell2/github-substring-action@v1.0.0
+        id: prsha7
+        with:
+          value: ${{ github.event.pull_request.head.sha }}
+          length_from_start: 7
+      - name: Get short SHA7
+        id: slug7
+        env:
+          PRSHA: ${{ steps.prsha7.outputs.substring }}
+        run: echo "::set-output name=sha7::$(echo ${PRSHA} | cut -c1-7)"
       - name: Modify gatsby prefix in gatsby-config.js
         env:
           SHA: ${{ steps.slug.outputs.sha6 }}
@@ -59,5 +70,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SHA: ${{ github.event.pull_request.head.sha }}
         with:
-          msg: 'https://${{env.GITHUB_REPOSITORY_OWNER_SLUG}}.github.io/${{env.GITHUB_REPOSITORY_NAME}}/review-apps/${{steps.branchname.outputs.branch}}/${{steps.slug.outputs.sha6}}'
+          msg: 'https://${{env.GITHUB_REPOSITORY_OWNER_SLUG}}.github.io/${{env.GITHUB_REPOSITORY_NAME}}/review-apps/${{steps.branchname.outputs.branch}}/${{steps.slug.outputs.sha6}}?version=${{steps.slug7.outputs.sha7}}'
           check_for_duplicate_msg: false
