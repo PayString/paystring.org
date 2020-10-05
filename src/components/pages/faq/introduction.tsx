@@ -105,12 +105,12 @@ const Introduction: React.FC = () => {
               PayID server into their existing infrastructure using the
               reference implementation on GitHub. The{' '}
               <a
-                href={`${getDocsLocation()}/xpring-sdk-payid`}
+                href={`${getDocsLocation()}/ripplex-dev-kit-payid`}
                 className="text-orange-500 focus:underline hover:underline"
                 target="_blank"
                 rel="noreferrer"
               >
-                Xpring SDK
+                RippleX Dev Kit
               </a>{' '}
               is the easiest way to enable “send to PayID” on your app.
             </>

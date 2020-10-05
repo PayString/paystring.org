@@ -6,7 +6,13 @@ import Button from '../../common/button'
 import Wave from '../../common/wave'
 
 const Integrate: React.FC = () => {
-  const panels = ['cURL', 'Javascript', 'Xpring-JS', 'XpringKit', 'Xpring4j']
+  const panels = [
+    'cURL',
+    'Javascript',
+    'RippleX-JS',
+    'RippleX-Swift',
+    'RippleX4j',
+  ]
   const [activePanel, setActivePanel] = useState<string>('cURL')
 
   return (
@@ -100,7 +106,7 @@ const Integrate: React.FC = () => {
                   <div>
                     curl --location --request GET{' '}
                     <span className="text-green-300">
-                      &apos;https://xpring.money/stormtv&apos;
+                      &apos;https://ripplex.money/stormtv&apos;
                     </span>{' '}
                     \
                   </div>
@@ -158,7 +164,7 @@ const Integrate: React.FC = () => {
                     <div>
                       &nbsp;&nbsp;
                       <span className="text-orange-300">
-                        &apos;https://xpring.money/stormtv&apos;
+                        &apos;https://ripplex.money/stormtv&apos;
                       </span>
                       ,
                     </div>
@@ -210,7 +216,7 @@ const Integrate: React.FC = () => {
               </a>
             </>
           )}
-          {activePanel === 'Xpring-JS' && (
+          {activePanel === 'RippleX-JS' && (
             <>
               <p className="mt-4">
                 <a
@@ -219,7 +225,7 @@ const Integrate: React.FC = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Xpring-JS
+                  RippleX-JS
                 </a>
                 &nbsp;is the JavaScript library of the&nbsp;
                 <a
@@ -228,7 +234,7 @@ const Integrate: React.FC = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Xpring SDK
+                  RippleX Dev Kit
                 </a>
                 . Use the provided classes to work directly with PayID.
               </p>
@@ -264,7 +270,7 @@ const Integrate: React.FC = () => {
                       <span className="text-blue-300">payId</span>
                       {' = '}
                       <span className="text-orange-300">
-                        &apos;stormtv$xpring.money&apos;
+                        &apos;stormtv$ripplex.money&apos;
                       </span>
                     </div>
                     <div>
@@ -320,7 +326,7 @@ const Integrate: React.FC = () => {
               </a>
             </>
           )}
-          {activePanel === 'XpringKit' && (
+          {activePanel === 'RippleX-Swift' && (
             <>
               <p className="mt-4">
                 <a
@@ -329,7 +335,7 @@ const Integrate: React.FC = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  XpringKit
+                  RippleX-Swift
                 </a>
                 &nbsp;is the Swift library of the&nbsp;
                 <a
@@ -338,7 +344,7 @@ const Integrate: React.FC = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Xpring SDK
+                  RippleX Dev Kit
                 </a>
                 . Use the provided classes to work directly with PayID.
               </p>
@@ -377,7 +383,7 @@ const Integrate: React.FC = () => {
                       <span className="text-blue-dark-300">let</span>{' '}
                       <span className="text-blue-300">payID</span> ={' '}
                       <span className="text-orange-300">
-                        &quot;stormtv$xpring.money&quot;
+                        &quot;stormtv$ripplex.money&quot;
                       </span>
                     </div>
                     <div>
@@ -451,7 +457,7 @@ const Integrate: React.FC = () => {
               </a>
             </>
           )}
-          {activePanel === 'Xpring4j' && (
+          {activePanel === 'RippleX4j' && (
             <>
               <p className="mt-4">
                 <a
@@ -460,7 +466,7 @@ const Integrate: React.FC = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Xpring4j
+                  RippleX4j
                 </a>
                 &nbsp;is the Java library of the&nbsp;
                 <a
@@ -469,7 +475,7 @@ const Integrate: React.FC = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Xpring SDK
+                  RippleX Dev Kit
                 </a>
                 . Use the provided classes to work directly with PayID.
               </p>
@@ -512,7 +518,7 @@ const Integrate: React.FC = () => {
                       <span className="text-blue-300">payId</span>
                       {' = '}
                       <span className="text-orange-300">
-                        &quot;stormtv$xpring.money&quot;
+                        &quot;stormtv$ripplex.money&quot;
                       </span>
                       <span className="text-purple-200">;</span>{' '}
                     </div>

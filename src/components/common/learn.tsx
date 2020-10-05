@@ -62,14 +62,14 @@ const Learn: React.FC<LearnProps> = (props) => {
         backgroundImage: `url(${withPrefix('/assets/learn/checkout.svg')})`,
       },
       title: 'PayID Test Wallet',
-      link: 'https://xpring.io/portal/wallet/xrp/testnet',
+      link: 'https://ripplex.io/portal/wallet/xrp/testnet',
     },
     {
       bgStyle: {
         backgroundImage: `url(${withPrefix('/assets/learn/xpring-sdk.svg')})`,
       },
-      title: 'Xpring SDK Integration',
-      link: `${getDocsLocation()}/xpring-sdk-payid`,
+      title: 'RippleX Dev Kit Integration',
+      link: `${getDocsLocation()}/ripplex-dev-kit-payid`,
     },
   ]
 

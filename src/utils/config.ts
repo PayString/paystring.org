@@ -27,11 +27,11 @@ export const getBaseURL = (): string => {
 export const getCharityAppURL = (): string => {
   switch (process.env.GATSBY_RELEASE_ENV) {
     case 'dev':
-      return 'https://dev.wallet.xpring.io/donation'
+      return 'https://dev.wallet.ripplex.io/donation'
     case 'stage':
-      return 'https://stage.xpring.io/portal/donation'
+      return 'https://stage.ripplex.io/portal/donation'
     case 'prod':
-      return 'https://xpring.io/portal/donation'
+      return 'https://ripplex.io/portal/donation'
     default:
       return 'http://localhost:4000/donation'
   }
