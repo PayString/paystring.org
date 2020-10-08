@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable @typescript-eslint/naming-convention */
 // src/global.d.ts
 declare module '*.svg' {
   const value: React.StatelessComponent<React.SVGAttributes<SVGElement>>
@@ -18,7 +15,7 @@ declare interface Window {
 declare const Sentry: {
   captureException(
     exception: any,
-    hint?: EventHint,
-    scope?: Scope,
+    hint?: import('@sentry/types').EventHint,
+    scope?: import('@sentry/types').Scope,
   ): string | undefined
 }

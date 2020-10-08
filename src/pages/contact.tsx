@@ -1,3 +1,4 @@
+/* global Sentry */
 import classNames from 'classnames'
 import React, { useState, useEffect } from 'react'
 

@@ -34,16 +34,10 @@ module.exports = {
       resolve: `gatsby-plugin-segment-js`,
       options: {
         prodKey: `5KojrihxpEBJvAn3u0JXi9hlhzMh5b1M`,
-        trackPage: false,
-        delayLoad: true,
+        trackPage: true,
       },
     },
-    {
-      resolve: 'gatsby-plugin-postcss',
-      options: {
-        postCssPlugins: [require('tailwindcss')],
-      },
-    },
+    'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
     'gatsby-plugin-offline',

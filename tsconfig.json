@@ -25,6 +25,7 @@
   ],
   "include": [
     "tailwind.config.js",
+    "postcss.config.js",
     "gatsby-*.js",
     "src/**/*.ts",
     "src/**/*.tsx"
