@@ -53,18 +53,10 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
       text: 'Use Cases',
       location: '/use-cases',
     },
-    // {
-    //   text: 'Companies',
-    //   location: '/about-us',
-    // },
     {
       text: 'Blog',
       location: 'https://blog.payid.org/',
     },
-    // {
-    //   text: 'Contact Us',
-    //   location: '/contact',
-    // },
   ]
 
   const bannerProps = {
@@ -141,6 +133,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
               <Button
                 to={`${getBaseURL()}/sandbox`}
                 label="Sign In"
+                external
                 className="inline-block"
               />
             </div>
@@ -172,6 +165,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
                 role="menuitem"
                 to={`${getBaseURL()}/sandbox`}
                 label="Sign In"
+                external
                 className="inline-block"
               />
             </ul>

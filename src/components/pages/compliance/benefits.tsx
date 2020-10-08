@@ -32,7 +32,7 @@ const Benefits: React.FC = () => {
           Benefits of Using PayID for Travel Rule
         </h2>
       </div>
-      <div className="grid grid-cols-1 gap-15 sm:row-gap-28 sm:col-gap-20 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-15 sm:gap-y-28 sm:gap-x-20 md:grid-cols-2">
         {sectionCopy.map((copy) => {
           return (
             <div key={copy.title}>

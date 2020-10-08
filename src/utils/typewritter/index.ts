@@ -37,6 +37,8 @@ export interface FormSubmitted {
   first_name?: string
   form_name?: string
   last_name?: string
+  implementing_payid?: string
+  notify_future_developer_events?: string
   message?: string
   role?: string
 }

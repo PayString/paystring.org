@@ -128,7 +128,7 @@ const DesktopNavlinks: React.FC<NavlinkProps> = ({
       </button>
     )
   }
-  if (text !== 'Docs') {
+  if (text !== 'Docs' && text !== 'Blog') {
     return (
       <Link
         to={location || '/'}

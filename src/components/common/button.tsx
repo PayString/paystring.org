@@ -9,6 +9,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'lg' | 'md' | 'sm' | 'xs'
   variant?: 'primary' | 'secondary' | 'ghost'
   to?: string
+  external?: boolean
 }
 
 const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
@@ -100,6 +101,18 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   if (size === 'xs') classes.push('text-xs px-4 py-1 leading-snug h-6')
 
   if (props.to && !props.disabled) {
+    if (props.external) {
+      return (
+        <a
+          href={props.to}
+          role={buttonProps.role}
+          className={classnames(classes)}
+        >
+          {label}
+        </a>
+      )
+    }
+
     return (
       <Link
         to={props.to}
