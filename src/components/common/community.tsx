@@ -1,9 +1,8 @@
-/* global Sentry */
 import classNames from 'classnames'
 import React, { useEffect, useState } from 'react'
 
 import SelectArrow from '../../assets/common/selectArrow.svg'
-import { encodeFormData } from '../../utils/config'
+import { formSubmitted } from '../../utils/typewritter'
 
 import Button from './button'
 import InputField from './input-field'
@@ -88,12 +87,12 @@ const Community: React.FC<CommunityProps> = (props) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault()
-    if (!validForm) return
+    if (!validForm || !email) return
 
     const formData = {
       role,
-      'first-name': firstName,
-      'last-name': lastName !== '' ? lastName : undefined,
+      first_name: firstName,
+      last_name: lastName !== '' ? lastName : undefined,
       email,
     }
 
@@ -101,35 +100,10 @@ const Community: React.FC<CommunityProps> = (props) => {
       if (typeof window.heap !== 'undefined') {
         window.heap.track('newsletter', formData)
       }
-      if (typeof window.gtag !== 'undefined') {
-        window.gtag('event', 'conversion', {
-          send_to: 'AW-877332159/jdvuCLLdpdQBEL-NrKID',
-        })
-        window.gtag('event', 'conversion', {
-          send_to: 'AW-616173950/7ehtCOKFvNYBEP6i6KUC',
-        })
+      if (typeof window.analytics !== 'undefined') {
+        formSubmitted({ ...formData, form_name: 'newsletter ' })
       }
     }
-
-    const encodedFormData = encodeFormData(formData)
-
-    fetch('https://go.ripple.com/l/105572/2020-06-15/cspx4n', {
-      mode: 'no-cors',
-      method: 'POST',
-      body: encodedFormData,
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    }).catch((err) => {
-      Sentry.captureException(err)
-    })
-
-    fetch(
-      `https://script.google.com/macros/s/AKfycbyT7zjGQMQKaSrE9ef1NuvAFGKGUc8cnnUGSFo7V5Q6HWeBx-DL/exec?${encodedFormData}`,
-      {
-        mode: 'no-cors',
-      },
-    ).catch(() => {})
 
     setSubmitted(true)
   }

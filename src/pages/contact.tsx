@@ -1,4 +1,3 @@
-/* global Sentry */
 import classNames from 'classnames'
 import React, { useState, useEffect } from 'react'
 
@@ -6,7 +5,7 @@ import SelectArrow from '../assets/common/selectArrow.svg'
 import Button from '../components/common/button'
 import InputField from '../components/common/input-field'
 import Layout from '../components/layout'
-import { encodeFormData } from '../utils/config'
+import { formSubmitted } from '../utils/typewritter'
 
 const Contact: React.FC = () => {
   const minHeight = {
@@ -79,12 +78,12 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault()
-    if (!validForm) return
+    if (!validForm || !email) return
 
     const formData = {
       role,
-      'first-name': firstName,
-      'last-name': lastName !== '' ? lastName : undefined,
+      first_name: firstName,
+      last_name: lastName !== '' ? lastName : undefined,
       email,
       message,
     }
@@ -93,35 +92,10 @@ const Contact: React.FC = () => {
       if (typeof window.heap !== 'undefined') {
         window.heap.track('contact', formData)
       }
-      if (typeof window.gtag !== 'undefined') {
-        window.gtag('event', 'conversion', {
-          send_to: 'AW-877332159/jdvuCLLdpdQBEL-NrKID',
-        })
-        window.gtag('event', 'conversion', {
-          send_to: 'AW-616173950/7ehtCOKFvNYBEP6i6KUC',
-        })
+      if (typeof window.analytics !== 'undefined') {
+        formSubmitted({ ...formData, form_name: 'contact ' })
       }
     }
-
-    const encodedFormData = encodeFormData(formData)
-
-    fetch('https://go.ripple.com/l/105572/2020-06-15/csn2lj', {
-      mode: 'no-cors',
-      method: 'POST',
-      body: encodedFormData,
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    }).catch((err) => {
-      Sentry.captureException(err)
-    })
-
-    fetch(
-      `https://script.google.com/macros/s/AKfycbyT7zjGQMQKaSrE9ef1NuvAFGKGUc8cnnUGSFo7V5Q6HWeBx-DL/exec?${encodedFormData}`,
-      {
-        mode: 'no-cors',
-      },
-    ).catch(() => {})
 
     setSubmitted(true)
     if (typeof window !== 'undefined') window.scrollTo(0, 0)

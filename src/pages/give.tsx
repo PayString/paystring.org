@@ -5,7 +5,8 @@ import SelectArrow from '../assets/common/selectArrow.svg'
 import Button from '../components/common/button'
 import InputField from '../components/common/input-field'
 import Layout from '../components/layout'
-import { encodeFormData, getCharityAppURL } from '../utils/config'
+import { getCharityAppURL } from '../utils/config'
+import { formSubmitted } from '../utils/typewritter'
 
 const Contact: React.FC = () => {
   const minHeight = {
@@ -79,31 +80,23 @@ const Contact: React.FC = () => {
     }
   }, [role, firstName, company, email])
 
-  const handleSubmit = async (
-    event: React.FormEvent<HTMLFormElement>,
-  ): Promise<void> => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault()
-    if (!validForm) return
+    if (!validForm || !email) return
 
     setPendingSubmit(true)
 
     const formData = {
       role,
-      'first-name': firstName,
-      'last-name': lastName !== '' ? lastName : undefined,
+      first_name: firstName,
+      last_name: lastName !== '' ? lastName : undefined,
       email,
       company,
-      implementing,
-      notify: notify ? 'yes' : 'no',
+      implementing_payid: implementing,
+      notify_future_developer_events: notify ? 'yes' : 'no',
     }
 
-    const encodedFormData = encodeFormData(formData)
-    await fetch(
-      `https://script.google.com/macros/s/AKfycbyT7zjGQMQKaSrE9ef1NuvAFGKGUc8cnnUGSFo7V5Q6HWeBx-DL/exec?${encodedFormData}`,
-      {
-        mode: 'no-cors',
-      },
-    ).catch(() => {})
+    formSubmitted({ ...formData, form_name: 'charity' })
 
     setSubmitted(true)
     setPendingSubmit(false)
