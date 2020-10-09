@@ -97,6 +97,13 @@ const Contact: React.FC = () => {
     }
 
     formSubmitted({ ...formData, form_name: 'charity' })
+    window.analytics.identify({
+      role: formData.role,
+      first_name: formData.first_name,
+      last_name: formData.last_name,
+      email: formData.email,
+      company: formData.company,
+    })
 
     setSubmitted(true)
     setPendingSubmit(false)

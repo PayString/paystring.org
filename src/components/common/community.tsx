@@ -102,6 +102,7 @@ const Community: React.FC<CommunityProps> = (props) => {
       }
       if (typeof window.analytics !== 'undefined') {
         formSubmitted({ ...formData, form_name: 'newsletter ' })
+        window.analytics.identify(formData)
       }
     }
 

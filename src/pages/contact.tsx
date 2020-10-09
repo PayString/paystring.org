@@ -94,6 +94,12 @@ const Contact: React.FC = () => {
       }
       if (typeof window.analytics !== 'undefined') {
         formSubmitted({ ...formData, form_name: 'contact ' })
+        window.analytics.identify({
+          role: formData.role,
+          first_name: formData.first_name,
+          last_name: formData.last_name,
+          email: formData.email,
+        })
       }
     }
 
