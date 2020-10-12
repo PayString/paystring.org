@@ -13,6 +13,7 @@ const DesktopNavlinks: React.FC<NavlinkProps> = ({
   text,
   location,
   sublinks = [],
+  resource = null,
 }) => {
   const [showSubLinks, setShowSublinks] = useState(false)
   const { pathname } = useLocation()
@@ -48,7 +49,7 @@ const DesktopNavlinks: React.FC<NavlinkProps> = ({
   if (sublinks.length > 0) {
     return (
       <button
-        className="inline-block mr-18 last:mr-0"
+        className="inline-block mr-7 xl:mr-12 xxl:mr-16"
         aria-haspopup="true"
         aria-expanded={showSubLinks}
         onMouseOver={() =>
@@ -65,7 +66,7 @@ const DesktopNavlinks: React.FC<NavlinkProps> = ({
       >
         <span
           className={classNames(
-            'cursor-pointer inline-block focus:text-orange-500 hover:text-orange-500',
+            'inline-block focus:text-orange-500 hover:text-orange-500',
             {
               'border-b-2 border-orange-500': sublinkMatch,
             },
@@ -79,72 +80,126 @@ const DesktopNavlinks: React.FC<NavlinkProps> = ({
         </span>
         {/* box-shadow: 0px 27px 54px rgba(0, 0, 0, 0.2); */}
         {showSubLinks && (
-          <ul
-            className="absolute mt-4 -ml-32 border-t border-blue-800 shadow-2xl w-78 bg-blue-dark-900"
+          <div
+            className={classNames(
+              'cursor-auto pt-10 pb-10 pl-20 absolute mt-6 flex -ml-32 border-t border-blue-800 shadow-2xl bg-blue-dark-900',
+              {
+                '-ml-32': !resource,
+              },
+              {
+                '-ml-48': !!resource,
+              },
+            )}
             onMouseOver={() => debouncedSetShowSublinks(true)}
             onBlur={() => debouncedSetShowSublinks(false)}
             onFocus={() => debouncedSetShowSublinks(true)}
           >
-            {sublinks.map((sublink, idx) => {
-              return (
-                <li
-                  key={sublink.text}
-                  className={classNames(
-                    {
-                      'mt-10': idx === 0,
-                    },
-                    {
+            <ul className="mr-24">
+              {sublinks.map((sublink, idx) => {
+                return (
+                  <li
+                    key={sublink.text}
+                    className={classNames({
                       'mb-6': idx !== sublinks.length - 1,
-                    },
-                    {
-                      'mb-10': idx === sublinks.length - 1,
-                    },
-                  )}
-                >
-                  {sublink.location && sublink.location?.startsWith('http') ? (
-                    <a
-                      onClick={() => setShowSublinks(false)}
-                      href={sublink.location || '/'}
-                      className="flex focus:text-orange-500 hover:text-orange-500"
-                    >
-                      {sublink.icon && (
-                        <sublink.icon className="w-12 ml-20 mr-1" />
-                      )}
-                      <span
-                        className={classNames('m-auto ml-4 mr-0', {
-                          'border-b-2 border-orange-500':
-                            sublink.location &&
-                            pathname.includes(sublink.location || ''),
-                        })}
+                    })}
+                  >
+                    {sublink.location && sublink.location.startsWith('http') ? (
+                      <a
+                        onClick={() => setShowSublinks(false)}
+                        href={sublink.location || '/'}
+                        className="flex focus:text-orange-500 hover:text-orange-500"
                       >
-                        {sublink.text}
-                      </span>
-                    </a>
-                  ) : (
-                    <Link
-                      onClick={() => setShowSublinks(false)}
-                      to={sublink.location || '/'}
-                      partiallyActive
-                      className="flex focus:text-orange-500 hover:text-orange-500"
-                    >
-                      {sublink.icon && (
-                        <sublink.icon className="w-12 ml-20 mr-1" />
-                      )}
-                      <span
-                        className={classNames('m-auto ml-4 mr-0', {
-                          'border-b-2 border-orange-500':
-                            sublink.location &&
-                            pathname.includes(sublink.location || ''),
-                        })}
+                        {sublink.icon && <sublink.icon className="w-12 mr-1" />}
+                        <div
+                          className={classNames('text-left ml-4 mr-0', {
+                            'm-auto': !resource,
+                          })}
+                        >
+                          <span
+                            className={classNames({
+                              'border-b-2 border-orange-500':
+                                sublink.location &&
+                                pathname.includes(sublink.location || ''),
+                            })}
+                          >
+                            {sublink.text}
+                          </span>
+                          {sublink.description && (
+                            <div className="mt-2 text-xs">
+                              {sublink.description}
+                            </div>
+                          )}
+                        </div>
+                      </a>
+                    ) : (
+                      <Link
+                        onClick={() => setShowSublinks(false)}
+                        to={sublink.location || '/'}
+                        partiallyActive
+                        className="flex focus:text-orange-500 hover:text-orange-500"
                       >
-                        {sublink.text}
-                      </span>
-                    </Link>
-                  )}
-                </li>
-              )
-            })}
-          </ul>
+                        {sublink.icon && <sublink.icon className="w-12 mr-1" />}
+                        <div
+                          className={classNames('text-left ml-4 mr-0', {
+                            'm-auto': !resource,
+                          })}
+                        >
+                          <span
+                            className={classNames({
+                              'border-b-2 border-orange-500':
+                                sublink.location &&
+                                pathname.includes(sublink.location || ''),
+                            })}
+                          >
+                            {sublink.text}
+                          </span>
+                          {sublink.description && (
+                            <div className="mt-2 text-xs">
+                              {sublink.description}
+                            </div>
+                          )}
+                        </div>
+                      </Link>
+                    )}
+                  </li>
+                )
+              })}
+            </ul>
+            {resource && resource.links && resource.links.length > 0 && (
+              <div className="mr-16 text-left">
+                <span className="text-xs font-bold uppercase">
+                  {resource.title}
+                </span>
+                <ul className="mt-2">
+                  {resource.links.map((link) => (
+                    <li
+                      key={`resource-${link.text}`}
+                      className="mb-2 text-xs font-semibold"
+                    >
+                      {link.external && (
+                        <a
+                          href={link.location}
+                          className="focus:text-orange-500 hover:text-orange-500"
+                        >
+                          {link.text}
+                        </a>
+                      )}
+                      {!link.external && (
+                        <Link
+                          to={link.location || '/'}
+                          className="focus:text-orange-500 hover:text-orange-500"
+                          activeClassName="border-b-2 border-orange-500"
+                          partiallyActive
+                        >
+                          {link.text}
+                        </Link>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
         )}
       </button>
     )
@@ -153,7 +208,7 @@ const DesktopNavlinks: React.FC<NavlinkProps> = ({
     return (
       <Link
         to={location || '/'}
-        className="inline-block mr-12 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+        className="inline-block mr-7 xl:mr-12 xxl:mr-16 focus:text-orange-500 hover:text-orange-500"
         activeClassName="border-b-2 border-orange-500"
         partiallyActive
       >
@@ -165,7 +220,7 @@ const DesktopNavlinks: React.FC<NavlinkProps> = ({
   return (
     <a
       href={location}
-      className="inline-block mr-12 xl:mr-18 focus:text-orange-500 hover:text-orange-500 last:mr-0"
+      className="inline-block mr-7 xl:mr-12 xxl:mr-16 focus:text-orange-500 hover:text-orange-500"
     >
       {text}
     </a>

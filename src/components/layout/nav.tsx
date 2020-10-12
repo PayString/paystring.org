@@ -3,8 +3,11 @@ import { Link } from 'gatsby'
 import React, { useState, useCallback, useEffect, useMemo } from 'react'
 
 import Hamburger from '../../assets/hamburger.svg'
+import ApiDocumentIcon from '../../assets/layout/nav/api-document.svg'
 import ComplianceIcon from '../../assets/layout/nav/compliance.svg'
+import DeveloperDocsIcon from '../../assets/layout/nav/developer-docs.svg'
 import FaqIcon from '../../assets/layout/nav/faq.svg'
+import SandboxIcon from '../../assets/layout/nav/sandbox.svg'
 import VisionIcon from '../../assets/layout/nav/vision.svg'
 import Logo from '../../assets/logo.svg'
 import { getBaseURL, getDocsLocation } from '../../utils/config'
@@ -46,8 +49,43 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
       location: '/wallets-and-exchanges',
     },
     {
-      text: 'Docs',
-      location: getDocsLocation(),
+      text: 'Developers',
+      sublinks: [
+        {
+          text: 'Developer Docs',
+          description: 'Explore what developers are building',
+          icon: DeveloperDocsIcon,
+          location: getDocsLocation(),
+          external: true,
+        },
+        {
+          text: 'Sandbox',
+          description: 'Experiment with PayID Sandbox',
+          location: `${getBaseURL()}/sandbox`,
+          icon: SandboxIcon,
+        },
+        {
+          text: 'API Documentation',
+          description: 'Start building with PayID',
+          location: getDocsLocation(),
+          icon: ApiDocumentIcon,
+          external: true,
+        },
+      ],
+      resource: {
+        title: 'Community Resources',
+        links: [
+          {
+            text: 'Join Discord',
+            location: 'https://chat.payid.org/',
+            external: true,
+          },
+          {
+            text: 'GitHub Repository',
+            location: 'https://github.com/payid-org/payid',
+          },
+        ],
+      },
     },
     {
       text: 'Use Cases',
@@ -60,6 +98,10 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
     {
       text: 'Blog',
       location: 'https://blog.payid.org/',
+    },
+    {
+      text: 'Sign In',
+      location: `${getBaseURL()}/sandbox`,
     },
     // {
     //   text: 'Contact Us',
@@ -121,9 +163,12 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
         setBannerShown={setBannerShown}
       />
       <div
-        className={classNames('flex w-full justify-center px-6 lg:px-18', {
-          'lg:mt-12': !shouldBeFixed,
-        })}
+        className={classNames(
+          'flex w-full justify-center px-6 lg:px-8 xl:px-18',
+          {
+            'lg:mt-12': !shouldBeFixed,
+          },
+        )}
       >
         <div className="container py-4">
           <div className="flex items-center justify-between">
@@ -139,11 +184,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
               {links.map((link) => {
                 return <DesktopNavlinks key={link.text} {...link} />
               })}
-              <Button
-                to={`${getBaseURL()}/sandbox`}
-                label="Sign In"
-                className="inline-block"
-              />
+              <Button to="contact" label="Contact Us" />
             </div>
             <button
               aria-haspopup
@@ -170,9 +211,8 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
                 return <MobileNavlinks key={link.text} {...link} />
               })}
               <Button
-                role="menuitem"
-                to={`${getBaseURL()}/sandbox`}
-                label="Sign In"
+                to="contact"
+                label="Contact Us"
                 className="inline-block"
               />
             </ul>
