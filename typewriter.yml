@@ -12,5 +12,5 @@ trackingPlans:
   # https://app.segment.com/ripplex/protocols/tracking-plans/rs_1ibhNXCFfrXSwj4y7YNiWCRf27l
   - id: rs_1ibhNXCFfrXSwj4y7YNiWCRf27l
     workspaceSlug: ripplex
-    path: src/
+    path: src/utils/typewritter
 

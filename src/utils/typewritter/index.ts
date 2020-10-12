@@ -36,11 +36,14 @@ export interface FormSubmitted {
   email: string
   first_name?: string
   form_name?: string
-  last_name?: string
   implementing_payid?: string
-  notify_future_developer_events?: string
+  last_name?: string
   message?: string
+  notify_future_developer_events?: string
   role?: string
+}
+export interface GithubNavigation {
+  type: string
 }
 export interface LoggedIn {
   type: string
@@ -169,9 +172,15 @@ function withTypewriterContext(message: Segment.Options = {}): Segment.Options {
  * @property {string} email -
  * @property {string} [first_name] -
  * @property {string} [form_name] -
+ * @property {string} [implementing_payid] -
  * @property {string} [last_name] -
  * @property {string} [message] -
+ * @property {string} [notify_future_developer_events] -
  * @property {string} [role] -
+ */
+/**
+ * @typedef GithubNavigation
+ * @property {string} type -
  */
 /**
  * @typedef LoggedIn
@@ -333,11 +342,19 @@ export function formSubmitted(
             description: '',
             type: 'string',
           },
+          implementing_payid: {
+            description: '',
+            type: 'string',
+          },
           last_name: {
             description: '',
             type: 'string',
           },
           message: {
+            description: '',
+            type: 'string',
+          },
+          notify_future_developer_events: {
             description: '',
             type: 'string',
           },
@@ -368,6 +385,59 @@ export function formSubmitted(
   if (a) {
     a.track(
       'Form Submitted',
+      props || {},
+      withTypewriterContext(options),
+      callback,
+    )
+  }
+}
+/**
+ * Fires a 'Github Navigation' track call.
+ *
+ * @param {GithubNavigation} props - The analytics properties that will be sent to Segment.
+ * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
+ * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
+ * 		call is fired.
+ */
+export function githubNavigation(
+  props: GithubNavigation,
+  options?: Segment.Options,
+  callback?: Segment.Callback,
+): void {
+  const schema = {
+    $schema: 'http://json-schema.org/draft-07/schema#',
+    labels: {},
+    properties: {
+      context: {},
+      properties: {
+        properties: {
+          type: {
+            description: '',
+            type: 'string',
+          },
+        },
+        required: ['type'],
+        type: 'object',
+      },
+      traits: {
+        type: 'object',
+      },
+    },
+    required: ['properties'],
+    title: 'Github Navigation',
+    type: 'object',
+  }
+  const message = {
+    event: 'Github Navigation',
+    properties: props || {},
+    options,
+  }
+  validateAgainstSchema(message, schema)
+
+  const a = analytics()
+  if (a) {
+    a.track(
+      'Github Navigation',
       props || {},
       withTypewriterContext(options),
       callback,
@@ -522,6 +592,15 @@ const clientAPI = {
    * 		call is fired.
    */
   formSubmitted,
+  /**
+   * Fires a 'Github Navigation' track call.
+   *
+   * @param {GithubNavigation} props - The analytics properties that will be sent to Segment.
+   * @param {Object} [options] - A dictionary of options. For example, enable or disable specific destinations for the call.
+   * @param {Function} [callback] - An optional callback called after a short timeout after the analytics
+   * 		call is fired.
+   */
+  githubNavigation,
   /**
    * Fires a 'Logged In' track call.
    *

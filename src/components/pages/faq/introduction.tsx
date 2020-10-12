@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 
 import Arrow from '../../../assets/compliance/walkthrough/arrow.svg'
 import { getDocsLocation } from '../../../utils/config'
+import { githubNavigation } from '../../../utils/typewritter'
 import Wave from '../../common/wave'
 
 const Introduction: React.FC = () => {
@@ -78,6 +79,7 @@ const Introduction: React.FC = () => {
                 href="https://github.com/payid-org/payid"
                 className="text-orange-500 focus:underline hover:underline"
                 target="_blank"
+                onClick={() => githubNavigation({ type: 'faq' })}
                 rel="noreferrer"
               >
                 GitHub repository
