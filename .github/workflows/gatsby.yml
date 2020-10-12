@@ -54,9 +54,7 @@ jobs:
           BRANCH: ${{ steps.branchname.outputs.branch }}
           SLUG: ${{ env.GITHUB_REPOSITORY_NAME }}
         run: |
-          sed "114 a \ \ pathPrefix: '/${SLUG}/review-apps/${BRANCH}/${SHA}'," gatsby-config.js > gatsby-config.temp.js
-          rm -rf gatsby-config.js
-          mv gatsby-config.temp.js gatsby-config.js
+          sed -i "s@pathPrefix: ''@pathPrefix: '/${SLUG}/review-apps/${BRANCH}/${SHA}'@g" gatsby-config.js
       - name: Build and deploy to gh-pages
         uses: sauloxd/review-apps@v1.3.2
         with:

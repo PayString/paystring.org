@@ -101,25 +101,46 @@ const DesktopNavlinks: React.FC<NavlinkProps> = ({
                     },
                   )}
                 >
-                  <Link
-                    onClick={() => setShowSublinks(false)}
-                    to={sublink.location || '/'}
-                    partiallyActive
-                    className="flex focus:text-orange-500 hover:text-orange-500"
-                  >
-                    {sublink.icon && (
-                      <sublink.icon className="w-12 ml-20 mr-1" />
-                    )}
-                    <span
-                      className={classNames('m-auto ml-4 mr-0', {
-                        'border-b-2 border-orange-500':
-                          sublink.location &&
-                          pathname.includes(sublink.location || ''),
-                      })}
+                  {sublink.location && sublink.location?.startsWith('http') ? (
+                    <a
+                      onClick={() => setShowSublinks(false)}
+                      href={sublink.location || '/'}
+                      className="flex focus:text-orange-500 hover:text-orange-500"
                     >
-                      {sublink.text}
-                    </span>
-                  </Link>
+                      {sublink.icon && (
+                        <sublink.icon className="w-12 ml-20 mr-1" />
+                      )}
+                      <span
+                        className={classNames('m-auto ml-4 mr-0', {
+                          'border-b-2 border-orange-500':
+                            sublink.location &&
+                            pathname.includes(sublink.location || ''),
+                        })}
+                      >
+                        {sublink.text}
+                      </span>
+                    </a>
+                  ) : (
+                    <Link
+                      onClick={() => setShowSublinks(false)}
+                      to={sublink.location || '/'}
+                      partiallyActive
+                      className="flex focus:text-orange-500 hover:text-orange-500"
+                    >
+                      {sublink.icon && (
+                        <sublink.icon className="w-12 ml-20 mr-1" />
+                      )}
+                      <span
+                        className={classNames('m-auto ml-4 mr-0', {
+                          'border-b-2 border-orange-500':
+                            sublink.location &&
+                            pathname.includes(sublink.location || ''),
+                        })}
+                      >
+                        {sublink.text}
+                      </span>
+                    </Link>
+                  )}
                 </li>
               )
             })}
@@ -128,7 +149,7 @@ const DesktopNavlinks: React.FC<NavlinkProps> = ({
       </button>
     )
   }
-  if (text !== 'Docs' && text !== 'Blog') {
+  if (!location?.startsWith('http')) {
     return (
       <Link
         to={location || '/'}

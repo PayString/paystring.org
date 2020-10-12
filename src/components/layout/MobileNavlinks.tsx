@@ -8,7 +8,7 @@ import NavigationUp from '../../assets/layout/nav/navUp.svg'
 import useSublinkMatch, { NavlinkProps } from './useSublinkMatch'
 
 const RenderLink: React.FC<NavlinkProps> = ({ text, location }) => {
-  if (text !== 'Docs') {
+  if (!location?.startsWith('http')) {
     return (
       <li role="none" key={text} className="mb-6">
         <Link
@@ -85,23 +85,42 @@ const MobileNavlinks: React.FC<NavlinkProps> = (props) => {
                     },
                   )}
                 >
-                  <Link
-                    onClick={() => toggleShowOptions()}
-                    to={sublink.location || '/'}
-                    partiallyActive
-                    className="flex focus:text-orange-500 hover:text-orange-500"
-                  >
-                    {sublink.icon && <sublink.icon className="w-10" />}
-                    <span
-                      className={classNames('m-auto mr-0 ml-5 font-medium', {
-                        'border-b-2 border-orange-500':
-                          sublink.location &&
-                          pathname.includes(sublink.location || ''),
-                      })}
+                  {sublink.location?.startsWith('http') ? (
+                    <a
+                      onClick={() => toggleShowOptions()}
+                      href={sublink.location || '/'}
+                      className="flex focus:text-orange-500 hover:text-orange-500"
                     >
-                      {sublink.text}
-                    </span>
-                  </Link>
+                      {sublink.icon && <sublink.icon className="w-10" />}
+                      <span
+                        className={classNames('m-auto mr-0 ml-5 font-medium', {
+                          'border-b-2 border-orange-500':
+                            sublink.location &&
+                            pathname.includes(sublink.location || ''),
+                        })}
+                      >
+                        {sublink.text}
+                      </span>
+                    </a>
+                  ) : (
+                    <Link
+                      onClick={() => toggleShowOptions()}
+                      to={sublink.location || '/'}
+                      partiallyActive
+                      className="flex focus:text-orange-500 hover:text-orange-500"
+                    >
+                      {sublink.icon && <sublink.icon className="w-10" />}
+                      <span
+                        className={classNames('m-auto mr-0 ml-5 font-medium', {
+                          'border-b-2 border-orange-500':
+                            sublink.location &&
+                            pathname.includes(sublink.location || ''),
+                        })}
+                      >
+                        {sublink.text}
+                      </span>
+                    </Link>
+                  )}
                 </li>
               )
             })}

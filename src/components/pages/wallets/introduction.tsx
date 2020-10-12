@@ -60,7 +60,7 @@ const Introduction: React.FC = () => {
       waveVectorClassNames="bg-blue-dark-800"
     >
       <div className="flex flex-col">
-        <div className="flex flex-col w-full bg-blue-dark-900 md:items-center lg:px-40 lg:pt-70">
+        <div className="flex flex-col w-full pt-16 bg-blue-dark-900 md:items-center lg:px-40 lg:pt-70">
           <h1 className="text-3xl font-bold text-center lg:text-h1">
             Easy P2P Payments for
           </h1>

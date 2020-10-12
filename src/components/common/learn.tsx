@@ -23,7 +23,7 @@ const Learn: React.FC<LearnProps> = (props) => {
       bgStyle: {
         backgroundImage: `url(${withPrefix('/assets/learn/whitepaper.svg')})`,
       },
-      title: 'PayID Technical Whitepaper',
+      title: 'PayID Technical White Paper',
       link: '/whitepaper.pdf',
     },
     {
@@ -39,7 +39,7 @@ const Learn: React.FC<LearnProps> = (props) => {
       bgStyle: {
         backgroundImage: `url(${withPrefix('/assets/learn/standards.svg')})`,
       },
-      title: 'PayID Open Standards',
+      title: 'PayID Standards',
       link: 'https://github.com/payid-org/rfcs',
     },
     {
@@ -61,14 +61,14 @@ const Learn: React.FC<LearnProps> = (props) => {
       bgStyle: {
         backgroundImage: `url(${withPrefix('/assets/learn/checkout.svg')})`,
       },
-      title: 'PayID Test Wallet',
+      title: 'Checkout',
       link: 'https://ripplex.io/portal/wallet/xrp/testnet',
     },
     {
       bgStyle: {
         backgroundImage: `url(${withPrefix('/assets/learn/xpring-sdk.svg')})`,
       },
-      title: 'RippleX Dev Kit Integration',
+      title: 'RippleX SDK for PayID',
       link: `${getDocsLocation()}/ripplex-dev-kit-payid`,
     },
   ]
@@ -82,7 +82,7 @@ const Learn: React.FC<LearnProps> = (props) => {
     >
       <div className="flex flex-col items-center sm:justify-center mb-14 md:mb-25">
         <h2 className="text-3xl font-bold sm:text-5xl sm:text-center ">
-          Want to Learn More?
+          Learn More
         </h2>
         <p className="max-w-xl mt-6 text-xl sm:mt-8 sm:text-center">
           Discover everything you need to know about the free, open source PayID

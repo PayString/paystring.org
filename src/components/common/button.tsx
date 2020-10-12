@@ -101,7 +101,7 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   if (size === 'xs') classes.push('text-xs px-4 py-1 leading-snug h-6')
 
   if (props.to && !props.disabled) {
-    if (props.external) {
+    if (props.to.startsWith('http')) {
       return (
         <a
           href={props.to}
@@ -112,7 +112,6 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
         </a>
       )
     }
-
     return (
       <Link
         to={props.to}
