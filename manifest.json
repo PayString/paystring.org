@@ -75,5 +75,16 @@
         "pullRequestUrl": "https://github.com/payid-org/payid.org/pull/89"
       }
     ]
+  },
+  "payme": {
+    "apps": [
+      {
+        "name": "review-apps",
+        "headCommitId": "f466e264754841058ca77ffe95eeb2f64bb41597",
+        "updatedAt": "2020-10-13T00:51:51.560Z",
+        "href": "review-apps/payme/f466e2",
+        "pullRequestUrl": "https://github.com/payid-org/payid.org/pull/90"
+      }
+    ]
   }
 }
