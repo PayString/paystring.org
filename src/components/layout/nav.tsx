@@ -60,9 +60,10 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
   ]
 
   const bannerProps = {
-    title: 'oct20-event',
-    description: 'Register for our PayID Virtual Event on Oct 12-13!',
-    link: 'https://lp.payid.org/october-event-registration-0',
+    title: 'payme-plus',
+    description: 'Get a PayID today with PayMe+',
+    link:
+      'https://www.payme.plus/?utm_source=RippleBanner&utm_medium=link&utm_campaign=RippleWebBanner',
     enabled: true,
   }
 

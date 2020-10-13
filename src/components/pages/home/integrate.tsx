@@ -766,7 +766,11 @@ const Integrate: React.FC = () => {
         >
           <Discord className="m-auto mt-16" />
           <h1 className="mt-10 text-3xl font-bold">Join Discord Community</h1>
-          <Button label="Join Discord" className="mt-10" />
+          <Button
+            label="Join Discord"
+            className="mt-10"
+            to="https://chat.payid.org/"
+          />
         </div>
         <div
           style={discordBackgroundSmall}
