@@ -79,7 +79,13 @@ const Introduction: React.FC = () => {
                 href="https://github.com/payid-org/payid"
                 className="text-orange-500 focus:underline hover:underline"
                 target="_blank"
-                onClick={() => githubNavigation({ type: 'faq' })}
+                onClick={() =>
+                  githubNavigation({
+                    type: 'faq',
+                    url: 'https://github.com/payid-org/payid',
+                    text: 'GitHub repository',
+                  })
+                }
                 rel="noreferrer"
               >
                 GitHub repository

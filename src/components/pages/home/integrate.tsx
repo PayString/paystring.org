@@ -326,7 +326,11 @@ const Integrate: React.FC = () => {
                       target="_blank"
                       rel="noreferrer"
                       onClick={() =>
-                        githubNavigation({ type: `Integrate - RippleX-JS` })
+                        githubNavigation({
+                          type: 'Integrate - RippleX-JS',
+                          url: 'https://github.com/xpring-eng/xpring-js',
+                          text: 'RippleX-JS',
+                        })
                       }
                     >
                       RippleX-JS
@@ -339,7 +343,9 @@ const Integrate: React.FC = () => {
                       rel="noreferrer"
                       onClick={() =>
                         githubNavigation({
-                          type: `Integrate - RippleX Dev Kit`,
+                          type: 'Integrate - RippleX Dev Kit',
+                          url: 'https://github.com/xpring-eng/xpring-sdk',
+                          text: 'RippleX Dev Kit',
                         })
                       }
                     >
@@ -356,7 +362,11 @@ const Integrate: React.FC = () => {
                       target="_blank"
                       rel="noreferrer"
                       onClick={() =>
-                        githubNavigation({ type: `Integrate - RippleX-Swift` })
+                        githubNavigation({
+                          type: 'Integrate - RippleX-Swift',
+                          url: 'https://github.com/xpring-eng/xpringkit',
+                          text: 'RippleX-Swift',
+                        })
                       }
                     >
                       RippleX-Swift
@@ -369,7 +379,9 @@ const Integrate: React.FC = () => {
                       rel="noreferrer"
                       onClick={() =>
                         githubNavigation({
-                          type: `Integrate - RippleX Dev Kit`,
+                          type: 'Integrate - RippleX Dev Kit',
+                          url: 'https://github.com/xpring-eng/xpring-sdk',
+                          text: 'RippleX Dev Kit',
                         })
                       }
                     >
@@ -386,7 +398,11 @@ const Integrate: React.FC = () => {
                       target="_blank"
                       rel="noreferrer"
                       onClick={() =>
-                        githubNavigation({ type: `Integrate - RippleX4J` })
+                        githubNavigation({
+                          type: 'Integrate - RippleX4j',
+                          url: 'https://github.com/xpring-eng/xpring4j',
+                          text: 'RippleX4j',
+                        })
                       }
                     >
                       RippleX4j
@@ -399,7 +415,9 @@ const Integrate: React.FC = () => {
                       rel="noreferrer"
                       onClick={() =>
                         githubNavigation({
-                          type: `Integrate - RippleX Dev Kit`,
+                          type: 'Integrate - RippleX Dev Kit',
+                          url: 'https://github.com/xpring-eng/xpring-sdk',
+                          text: 'RippleX Dev Kit',
                         })
                       }
                     >

@@ -43,7 +43,9 @@ export interface FormSubmitted {
   role?: string
 }
 export interface GithubNavigation {
+  text?: string
   type: string
+  url: string
 }
 export interface LoggedIn {
   type: string
@@ -150,7 +152,7 @@ function withTypewriterContext(message: Segment.Options = {}): Segment.Options {
       ...(message.context || {}),
       typewriter: {
         language: 'typescript',
-        version: '7.1.0',
+        version: '7.2.1',
       },
     },
   }
@@ -180,7 +182,9 @@ function withTypewriterContext(message: Segment.Options = {}): Segment.Options {
  */
 /**
  * @typedef GithubNavigation
+ * @property {string} [text] -
  * @property {string} type -
+ * @property {string} url -
  */
 /**
  * @typedef LoggedIn
@@ -411,12 +415,20 @@ export function githubNavigation(
       context: {},
       properties: {
         properties: {
+          text: {
+            description: '',
+            type: 'string',
+          },
           type: {
             description: '',
             type: 'string',
           },
+          url: {
+            description: '',
+            type: 'string',
+          },
         },
-        required: ['type'],
+        required: ['type', 'url'],
         type: 'object',
       },
       traits: {

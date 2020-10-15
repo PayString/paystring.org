@@ -22,7 +22,11 @@ interface Learnable {
 const Learn: React.FC<LearnProps> = (props) => {
   const recordEvent = (learnable: Learnable): void => {
     if (learnable.link.startsWith('https://github.com/')) {
-      githubNavigation({ type: learnable.title })
+      githubNavigation({
+        type: learnable.title,
+        url: learnable.link,
+        text: learnable.title,
+      })
     }
   }
 
