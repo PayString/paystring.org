@@ -1,5 +1,8 @@
 import React from 'react'
 
+import AirTM from '../../../assets/companies/members/logos/airtm.svg'
+import Atomic from '../../../assets/companies/members/logos/atomic.svg'
+import BinanceAustralia from '../../../assets/companies/members/logos/binance-australia.svg'
 import LogoBitBNS from '../../../assets/companies/members/logos/bitbns.svg'
 import LogoBitGo from '../../../assets/companies/members/logos/bitgo.svg'
 import LogoBitpay from '../../../assets/companies/members/logos/bitpay.svg'
@@ -12,6 +15,7 @@ import LogoBRD from '../../../assets/companies/members/logos/brd.svg'
 import LogoCare from '../../../assets/companies/members/logos/care.svg'
 import LogoCipherTrace from '../../../assets/companies/members/logos/cipher-trace.svg'
 import LogoCoil from '../../../assets/companies/members/logos/coil.svg'
+import CoinPayments from '../../../assets/companies/members/logos/coin-payments.svg'
 import LogoCoinfield from '../../../assets/companies/members/logos/coinfield.svg'
 import LogoCoinme from '../../../assets/companies/members/logos/coinme.svg'
 import LogoCoinone from '../../../assets/companies/members/logos/coinone.svg'
@@ -124,6 +128,18 @@ const Members: React.FC = () => {
       title: 'Wyre',
     },
     {
+      icon: AirTM,
+      title: 'AirTm',
+    },
+    {
+      icon: Atomic,
+      title: 'Atomic',
+    },
+    {
+      icon: BinanceAustralia,
+      title: 'Binance Australia',
+    },
+    {
       icon: LogoBitBNS,
       title: 'BitBNS',
     },
@@ -150,6 +166,10 @@ const Members: React.FC = () => {
     {
       icon: LogoCoinone,
       title: 'Coinone',
+    },
+    {
+      icon: CoinPayments,
+      title: 'CoinPayments',
     },
     {
       icon: LogoDeemoney,
