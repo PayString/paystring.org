@@ -86,5 +86,16 @@
         "pullRequestUrl": "https://github.com/payid-org/payid.org/pull/90"
       }
     ]
+  },
+  "new-coalition-companies": {
+    "apps": [
+      {
+        "name": "review-apps",
+        "headCommitId": "59a38bef6720c57f13673c6117dd8dd04c52fbc2",
+        "updatedAt": "2020-10-19T20:15:25.455Z",
+        "href": "review-apps/new-coalition-companies/59a38b",
+        "pullRequestUrl": "https://github.com/payid-org/payid.org/pull/91"
+      }
+    ]
   }
 }
