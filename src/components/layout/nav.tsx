@@ -67,7 +67,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
         {
           text: 'API Documentation',
           description: 'Start building with PayID',
-          location: getDocsLocation(),
+          location: 'https://api.payid.org/',
           icon: ApiDocumentIcon,
           external: true,
         },
