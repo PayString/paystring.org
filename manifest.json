@@ -108,5 +108,16 @@
         "pullRequestUrl": "https://github.com/payid-org/payid.org/pull/92"
       }
     ]
+  },
+  "fix-api-docs-link": {
+    "apps": [
+      {
+        "name": "review-apps",
+        "headCommitId": "fd95ecdc08ff607652ea17b01d25a816684dfacf",
+        "updatedAt": "2020-10-21T01:35:37.165Z",
+        "href": "review-apps/fix-api-docs-link/fd95ec",
+        "pullRequestUrl": "https://github.com/payid-org/payid.org/pull/93"
+      }
+    ]
   }
 }
