@@ -5,10 +5,18 @@ export interface Links {
   text: string
   location?: string
   icon?: FunctionComponent<SVGAttributes<SVGElement>>
+  description?: string
+  external?: boolean
+}
+
+export interface Resources {
+  title: string
+  links: Links[]
 }
 
 export interface NavlinkProps extends Links {
   sublinks?: Links[]
+  resource?: Resources
 }
 
 const useSublinkMatch = (location = '', sublinks: Links[] = []): boolean => {
