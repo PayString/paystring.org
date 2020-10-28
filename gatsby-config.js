@@ -85,6 +85,7 @@ module.exports = {
             'inkscapePageshadow',
             'inkscapePageopacity',
             'maskType',
+            'inkscapePagecheckerboard',
           ],
         },
       },

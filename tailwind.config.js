@@ -277,6 +277,9 @@ module.exports = {
         4: '1rem',
         20: '5rem',
       },
+      zIndex: {
+        '-1': '-1',
+      },
     },
   },
   variants: {

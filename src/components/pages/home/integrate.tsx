@@ -106,7 +106,7 @@ const Integrate: React.FC = () => {
     <Wave background="white" wave="gray" no-gutter>
       {/* Header */}
       <div className="flex justify-center">
-        <div className="flex flex-col self-center max-w-xl text-left md:items-center md:text-center">
+        <div className="flex flex-col self-center max-w-xl text-left md:items-center md:text-center z-10">
           <h2 className="mb-6 text-3xl font-bold md:mb-8 sm:text-5xl">
             Integrate Into Your App in Minutes
           </h2>
@@ -745,7 +745,7 @@ const Integrate: React.FC = () => {
           className="block w-full h-full overflow-hidden text-white rounded-xxl lg:hidden"
         >
           <Discord className="m-auto mt-16" />
-          <h1 className="mt-10 text-3xl font-bold">Join Discord Community</h1>
+          <h1 className="mt-10 text-4xl font-bold">Join Discord Community</h1>
           <Button
             label="Join Discord"
             className="mt-10 mb-10"

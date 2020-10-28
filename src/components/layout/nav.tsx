@@ -4,6 +4,7 @@ import React, { useState, useCallback, useEffect, useMemo } from 'react'
 
 import Hamburger from '../../assets/hamburger.svg'
 import ApiDocumentIcon from '../../assets/layout/nav/api-document.svg'
+import CompanyIcon from '../../assets/layout/nav/companies.svg'
 import ComplianceIcon from '../../assets/layout/nav/compliance.svg'
 import DeveloperDocsIcon from '../../assets/layout/nav/developer-docs.svg'
 import FaqIcon from '../../assets/layout/nav/faq.svg'
@@ -36,6 +37,11 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
           text: 'Compliance',
           location: '/compliance-and-regulations',
           icon: ComplianceIcon,
+        },
+        {
+          text: 'Companies',
+          location: '/about-us',
+          icon: CompanyIcon,
         },
         {
           text: 'FAQ',
@@ -83,6 +89,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
           {
             text: 'GitHub Repository',
             location: 'https://github.com/payid-org/payid',
+            external: true,
           },
         ],
       },
@@ -91,10 +98,6 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
       text: 'Use Cases',
       location: '/use-cases',
     },
-    // {
-    //   text: 'Companies',
-    //   location: '/about-us',
-    // },
     {
       text: 'Blog',
       location: 'https://blog.payid.org/',
@@ -151,8 +154,8 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
 
   return (
     <nav
-      className={classNames('top-0 w-full text-white', {
-        'fixed bg-blue-dark-900 z-20': shouldBeFixed,
+      className={classNames('top-0 w-full text-white z-20', {
+        'fixed bg-blue-dark-900': shouldBeFixed,
         'absolute bg-transparent': !shouldBeFixed,
       })}
     >

@@ -1,5 +1,6 @@
 import { withPrefix } from 'gatsby'
-import React, { useState } from 'react'
+import lottie, { AnimationItem } from 'lottie-web'
+import React, { useState, useCallback, useRef } from 'react'
 import ReactPlayer from 'react-player'
 
 import BetterUX from '../../../assets/home/introduction/better-ux.svg'
@@ -10,13 +11,35 @@ import { getDocsLocation } from '../../../utils/config'
 import Button from '../../common/button'
 import Wave from '../../common/wave'
 
+import bgImage from './background-animation.json'
+
 const Introduction: React.FC = () => {
+  const videoRef = useRef<ReactPlayer>(null)
   const [playing, setPlaying] = useState(false)
-  const bgImgStyle = {
-    backgroundImage: `url(${withPrefix('/assets/home/background.svg')})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center top',
-  }
+  const [backgroundAnimation, setBackgroundAnimation] = useState<
+    AnimationItem
+  >()
+
+  const setBgRef = useCallback((node: HTMLDivElement) => {
+    if (backgroundAnimation) {
+      backgroundAnimation.destroy()
+    }
+
+    if (node) {
+      setBackgroundAnimation(
+        lottie.loadAnimation({
+          container: node,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          animationData: bgImage,
+          rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+          },
+        }),
+      )
+    }
+  }, [])
 
   const sectionCopy = [
     {
@@ -39,13 +62,22 @@ const Introduction: React.FC = () => {
     },
   ]
 
+  const onVideoEnd = useCallback(() => {
+    if (videoRef.current) {
+      videoRef.current.showPreview()
+    }
+  }, [videoRef])
+
   return (
     <Wave
-      style={bgImgStyle}
       wave="white"
       spacing="sm"
-      waveClassNames="bg-contain lg:bg-auto xl:bg-contain"
+      waveClassNames="bg-contain lg:bg-auto xl:bg-contain z-10"
     >
+      <div
+        className="absolute left-0 right-0 lottie-player -z-1"
+        ref={setBgRef}
+      />
       <div className="flex flex-col items-center">
         <h1 className="max-w-3xl pt-16 text-3xl font-bold text-center sm:text-h1 sm:leading-tighter lg:pt-70 sm:mb-10 mb-7">
           The Universal Payment Identifier
@@ -61,17 +93,18 @@ const Introduction: React.FC = () => {
             to="/our-vision-to-simplify-payments"
             size="lg"
             variant="secondary"
-            label="Find Out More"
+            label="Learn More"
           />
         </div>
         <div className="md:hidden">
           <a href={getDocsLocation()} className="mr-6">
             <Button label="Start Building" />
           </a>
-          <Button to="contact" variant="secondary" label="Find Out More" />
+          <Button to="contact" variant="secondary" label="Learn More" />
         </div>
         <div className="relative w-full h-full p-px mt-20 border-2 rounded-lg border-blue-dark-500 pb-16-9">
           <ReactPlayer
+            ref={videoRef}
             playing={playing}
             onReady={() => {
               setPlaying(true)
@@ -79,6 +112,7 @@ const Introduction: React.FC = () => {
             width="100%"
             height="100%"
             controls
+            onEnded={onVideoEnd}
             className="absolute object-cover w-full h-full overflow-hidden rounded-lg"
             url="https://player.vimeo.com/video/466717408"
             playIcon={<Play className="w-24" />}
