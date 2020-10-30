@@ -19,11 +19,7 @@ const Index: React.FC = () => {
       <Integrate />
       <Support />
       <Learn background="white" direction="rtl" />
-      <Community
-        direction="rtl"
-        enabledFields={['email']}
-        className="hidden md:block"
-      />
+      <Community direction="rtl" className="hidden md:block" />
       <Questions direction="rtl" className="md:hidden" />
     </Layout>
   )
