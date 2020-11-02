@@ -76,10 +76,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-segment-js`,
+      resolve: 'gatsby-plugin-segment-js',
       options: {
         prodKey: getSegmentId(),
         trackPage: true,
+        host: 'https://segment.ripplex.io',
       },
     },
     'gatsby-plugin-postcss',
