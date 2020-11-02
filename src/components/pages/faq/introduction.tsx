@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import React, { useState } from 'react'
 
 import Arrow from '../../../assets/compliance/walkthrough/arrow.svg'
-import { getDocsLocation } from '../../../utils/config'
+import { getDocsLocation, getBaseURL } from '../../../utils/config'
 import { githubNavigation } from '../../../utils/typewritter'
 import Wave from '../../common/wave'
 
@@ -99,6 +99,97 @@ const Introduction: React.FC = () => {
           description:
             'The content on this website content was developed by Ripple, an early adopter of PayID, in collaboration with the Open Payments Coalition.',
         },
+        {
+          title: 'What payment networks does PayID support?',
+          description:
+            'PayID supports any payment network or payment processor. Companies may add any payment network or payment processor to a PayID header to send and receive money.',
+        },
+        {
+          title: 'How is PayID different from payment networks and processors?',
+          description:
+            'PayID is an open standard for payment identifiers. This means that PayID is a naming convention for any payment ID —​ like a bank account number or a crypto address. Any payment network or payment processor can support PayID as an identifier.',
+        },
+        {
+          title: 'Where can I get a PayID?',
+          description: (
+            <>
+              <p>
+                You can get a PayID in the following apps: PayMe+,{' '}
+                <a
+                  href="http://coinfield.com/"
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Coinfield
+                </a>
+                ,{' '}
+                <a
+                  href="http://crypto.com/"
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Crypto.com
+                </a>
+                ,{' '}
+                <a
+                  href="http://shop.tangem.com/"
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Tangem
+                </a>
+                , and{' '}
+                <a
+                  href="http://bitrue.com/"
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Bitrue
+                </a>
+                .
+              </p>
+            </>
+          ),
+        },
+      ],
+    },
+    {
+      topic: 'Verifiable PayID',
+      contents: [
+        {
+          title: 'What is Verifiable PayID?',
+          description: (
+            <>
+              <p>
+                In the default version of PayID, a receiver trusts their PayID
+                provider to not swap the mapping between PayID to payment
+                address. While this trust is sufficient with custodial wallets,
+                it may not be appropriate in some circumstances, such as with a
+                non-custodial wallet.
+              </p>
+              <p className="mt-4">
+                PayID for Wallets removes this layer of trust by
+                cryptographically signing response messages with digital
+                identity keys. As a result, PayID providers cannot swap out
+                payment addresses without the sender or receiver finding out.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Is Verifiable PayID secure?',
+          description:
+            'Yes, it is. Default PayID uses tried-and-true security technologies that secure all internet services. PayID for Wallets adds another layer of security by including digital identity keys that cryptographically sign response messages, so participants in PayID transactions do not need to trust any counterparty.',
+        },
+        {
+          title: 'What does Verifiable PayID allow me to do?',
+          description:
+            'Verifiable PayID adds several digital signature fields so you can link a PayID to one or more external digital identities, prove control of the payment rail address, and provide non-repudiable messaging.',
+        },
       ],
     },
     {
@@ -136,8 +227,52 @@ const Introduction: React.FC = () => {
         },
         {
           title: 'How do I deploy a PayID server?',
-          description:
-            'PayID is designed by devs for devs. You can deploy a PayID server with just a few commands with existing web infrastructure, and then integrate it into an application or account system in just a few lines of code.',
+          description: (
+            <>
+              <p>
+                PayID is designed by devs for devs. You can deploy a PayID
+                server with just a few commands with existing web
+                infrastructure, and then integrate it into an application or
+                account system with just a few lines of code.
+              </p>
+              <p className="mt-4">
+                When you want to experiment with or deploy a PayID server, you
+                have several options:
+              </p>
+              <ul className="mt-4 list-inside">
+                <li className="list-disc hover:underline">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-orange-500 focus:underline hover:underline"
+                    href={`${getDocsLocation()}/local-deployment`}
+                  >
+                    Deploy Locally Without Docker
+                  </a>
+                </li>
+                <li className="list-disc hover:underline">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-orange-500 focus:underline hover:underline"
+                    href={`${getDocsLocation()}/remote-deployment`}
+                  >
+                    Deploy a PayID server on AWS with NGINX reverse proxy
+                  </a>
+                </li>
+                <li className="list-disc hover:underline">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-orange-500 focus:underline hover:underline"
+                    href={`${getDocsLocation()}/aws-lambda-deploy`}
+                  >
+                    Deploy on AWS Lambda
+                  </a>
+                </li>
+              </ul>
+            </>
+          ),
         },
         {
           title: 'Where can I learn more about building with PayID?',
@@ -153,6 +288,96 @@ const Introduction: React.FC = () => {
                 the docs page
               </a>
               .
+            </>
+          ),
+        },
+        {
+          title: 'How can I try out a PayID server?',
+          description: (
+            <>
+              <p>
+                The{' '}
+                <a
+                  className="text-orange-500 focus:underline hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                  href={`${getBaseURL()}/sandbox`}
+                >
+                  PayID Sandbox{' '}
+                </a>
+                lets you experiment with PayID in a test environment. To use
+                PayID Sandbox, log in with your GitHub account and follow the
+                prompts. You can quickly set up a virtual test server, and then
+                create users with simple PayID addresses that map to addresses
+                on various payment networks.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'How does the PayID protocol work?',
+          description: (
+            <>
+              <p>
+                With PayID, you can use human-readable addresses to transmit
+                value in the currency of your choice. The PayID network allows
+                participants to reach one another through a standardized
+                address. For example, alice$wallet.com maps to the corresponding
+                URL https://wallet.com/alice.
+              </p>
+              <p className="mt-4">
+                When you make an HTTP GET request that follows the PayID
+                protocol, it resolves to an address on the underlying payment
+                network. PayID is a payment-network-agnostic protocol, capable
+                of sending payments to any payment network.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'What is the PayID reference implementation?',
+          description: (
+            <>
+              <p>
+                The Open Payments Coalition provides a reference implementation
+                of the PayID protocol. Anyone may use this reference
+                implementation or make changes to it. Other implementations can
+                be created, as long as they follow the PayID protocol.
+              </p>
+              <p className="mt-4">
+                The reference implementation uses TypeScript, a Node.js HTTP
+                server, and a Postgres database. By default, the server hosts
+                the PayID Protocol implementation, or Public API, on port 8080.
+                It also hosts a second RESTful API on port 8081 for CRUD
+                operations of PayIDs and associated addresses.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'What are the requirements to run a PayID server?',
+          description: (
+            <>
+              <p>
+                To run a PayID server in a production environment, you should
+                give each component of the stack a vCPU and 500 MB of RAM, and
+                ensure there are at least two High-Availability replicas for
+                each component.
+              </p>
+              <p className="mt-4">
+                Here&apos;s how the requirements would break down:
+              </p>
+              <ul className="mt-4 list-inside">
+                <li className="list-disc">
+                  1 vCPU + 500 MB RAM per nginx replica (2x)
+                </li>
+                <li className="list-disc">
+                  1 vCPU + 500 MB RAM per PayID Node.js server replica (2x)
+                </li>
+                <li className="list-disc">
+                  1 vCPU + 500 MB RAM per Postgres replica (2x)
+                </li>
+              </ul>
             </>
           ),
         },
