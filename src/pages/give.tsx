@@ -5,7 +5,7 @@ import SelectArrow from '../assets/common/selectArrow.svg'
 import Button from '../components/common/button'
 import InputField from '../components/common/input-field'
 import Layout from '../components/layout'
-import { getCharityAppURL } from '../utils/config'
+import { encodeFormData, getCharityAppURL } from '../utils/config'
 import { formSubmitted } from '../utils/typewritter'
 
 const Contact: React.FC = () => {
@@ -80,7 +80,9 @@ const Contact: React.FC = () => {
     }
   }, [role, firstName, company, email])
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ): Promise<void> => {
     event.preventDefault()
     if (!validForm || !email) return
 
@@ -104,6 +106,14 @@ const Contact: React.FC = () => {
       email: formData.email,
       company: formData.company,
     })
+
+    const encodedFormData = encodeFormData(formData)
+    await fetch(
+      `https://script.google.com/macros/s/AKfycbyT7zjGQMQKaSrE9ef1NuvAFGKGUc8cnnUGSFo7V5Q6HWeBx-DL/exec?${encodedFormData}`,
+      {
+        mode: 'no-cors',
+      },
+    ).catch(() => {})
 
     setSubmitted(true)
     setPendingSubmit(false)

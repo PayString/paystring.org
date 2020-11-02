@@ -5,6 +5,7 @@ import SelectArrow from '../assets/common/selectArrow.svg'
 import Button from '../components/common/button'
 import InputField from '../components/common/input-field'
 import Layout from '../components/layout'
+import { encodeFormData } from '../utils/config'
 import { formSubmitted } from '../utils/typewritter'
 
 const Contact: React.FC = () => {
@@ -102,6 +103,24 @@ const Contact: React.FC = () => {
         })
       }
     }
+
+    const encodedFormData = encodeFormData(formData)
+
+    fetch('https://go.ripple.com/l/105572/2020-06-15/csn2lj', {
+      mode: 'no-cors',
+      method: 'POST',
+      body: encodedFormData,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    }).catch(() => {})
+
+    fetch(
+      `https://script.google.com/macros/s/AKfycbyT7zjGQMQKaSrE9ef1NuvAFGKGUc8cnnUGSFo7V5Q6HWeBx-DL/exec?${encodedFormData}`,
+      {
+        mode: 'no-cors',
+      },
+    ).catch(() => {})
 
     setSubmitted(true)
     if (typeof window !== 'undefined') window.scrollTo(0, 0)

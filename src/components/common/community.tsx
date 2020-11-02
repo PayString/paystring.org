@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import React, { useEffect, useState, useMemo } from 'react'
 
 import SelectArrow from '../../assets/common/selectArrow.svg'
+import { encodeFormData } from '../../utils/config'
 import { formSubmitted } from '../../utils/typewritter'
 
 import Button from './button'
@@ -148,6 +149,24 @@ const Community: React.FC<CommunityProps> = (props) => {
         window.analytics.identify(formData)
       }
     }
+
+    const encodedFormData = encodeFormData(formData)
+
+    fetch(
+      `https://script.google.com/macros/s/AKfycbyT7zjGQMQKaSrE9ef1NuvAFGKGUc8cnnUGSFo7V5Q6HWeBx-DL/exec?${encodedFormData}`,
+      {
+        mode: 'no-cors',
+      },
+    ).catch(() => {})
+
+    fetch('https://go.ripple.com/l/105572/2020-06-15/cspx4n', {
+      mode: 'no-cors',
+      method: 'POST',
+      body: encodedFormData,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    }).catch(() => {})
 
     setSubmitted(true)
   }
