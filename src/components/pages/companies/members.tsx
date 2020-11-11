@@ -2,7 +2,6 @@ import React from 'react'
 
 import AirTM from '../../../assets/companies/members/logos/airtm.svg'
 import Atomic from '../../../assets/companies/members/logos/atomic.svg'
-import BinanceAustralia from '../../../assets/companies/members/logos/binance-australia.svg'
 import LogoBitBNS from '../../../assets/companies/members/logos/bitbns.svg'
 import LogoBitGo from '../../../assets/companies/members/logos/bitgo.svg'
 import LogoBitpay from '../../../assets/companies/members/logos/bitpay.svg'
@@ -134,10 +133,6 @@ const Members: React.FC = () => {
     {
       icon: Atomic,
       title: 'Atomic',
-    },
-    {
-      icon: BinanceAustralia,
-      title: 'Binance Australia',
     },
     {
       icon: LogoBitBNS,
