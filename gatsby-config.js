@@ -1,16 +1,5 @@
 require('dotenv/config')
 
-const getSegmentId = () => {
-  switch (process.env.GATSBY_RELEASE_ENV) {
-    case 'stage':
-      return 'fY65tW4oAAvTElIHzrXQ2plf99qDjjAe'
-    case 'prod':
-      return 'eGcENJL6ghTAXTAdzOrmd4oqxDlRorz1'
-    default:
-      return '5KojrihxpEBJvAn3u0JXi9hlhzMh5b1M'
-  }
-}
-
 module.exports = {
   siteMetadata: {
     title: 'PayID',
@@ -73,14 +62,6 @@ module.exports = {
             'inkscapePagecheckerboard',
           ],
         },
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-segment-js',
-      options: {
-        prodKey: getSegmentId(),
-        trackPage: true,
-        host: 'https://segment.ripplex.io',
       },
     },
     'gatsby-plugin-postcss',
