@@ -9,6 +9,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'lg' | 'md' | 'sm' | 'xs'
   variant?: 'primary' | 'secondary' | 'ghost'
   to?: string
+  external?: boolean
 }
 
 const Button: React.FC<ButtonProps> = (props: ButtonProps) => {

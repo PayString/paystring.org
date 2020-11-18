@@ -4,6 +4,7 @@ import React, { useState, useMemo } from 'react'
 
 import Discord from '../../../assets/home/integrate/discord.svg'
 import { getDocsLocation } from '../../../utils/config'
+import { githubNavigation } from '../../../utils/typewritter'
 import Button from '../../common/button'
 import Wave from '../../common/wave'
 
@@ -324,6 +325,13 @@ const Integrate: React.FC = () => {
                       className="text-orange-500 focus:underline hover:underline"
                       target="_blank"
                       rel="noreferrer"
+                      onClick={() =>
+                        githubNavigation({
+                          type: 'Integrate - RippleX-JS',
+                          url: 'https://github.com/xpring-eng/xpring-js',
+                          text: 'RippleX-JS',
+                        })
+                      }
                     >
                       RippleX-JS
                     </a>
@@ -333,6 +341,13 @@ const Integrate: React.FC = () => {
                       className="text-orange-500 focus:underline hover:underline"
                       target="_blank"
                       rel="noreferrer"
+                      onClick={() =>
+                        githubNavigation({
+                          type: 'Integrate - RippleX Dev Kit',
+                          url: 'https://github.com/xpring-eng/xpring-sdk',
+                          text: 'RippleX Dev Kit',
+                        })
+                      }
                     >
                       RippleX Dev Kit
                     </a>
@@ -346,6 +361,13 @@ const Integrate: React.FC = () => {
                       className="text-orange-500 focus:underline hover:underline"
                       target="_blank"
                       rel="noreferrer"
+                      onClick={() =>
+                        githubNavigation({
+                          type: 'Integrate - RippleX-Swift',
+                          url: 'https://github.com/xpring-eng/xpringkit',
+                          text: 'RippleX-Swift',
+                        })
+                      }
                     >
                       RippleX-Swift
                     </a>
@@ -355,6 +377,13 @@ const Integrate: React.FC = () => {
                       className="text-orange-500 focus:underline hover:underline"
                       target="_blank"
                       rel="noreferrer"
+                      onClick={() =>
+                        githubNavigation({
+                          type: 'Integrate - RippleX Dev Kit',
+                          url: 'https://github.com/xpring-eng/xpring-sdk',
+                          text: 'RippleX Dev Kit',
+                        })
+                      }
                     >
                       RippleX Dev Kit
                     </a>
@@ -368,6 +397,13 @@ const Integrate: React.FC = () => {
                       className="text-orange-500 focus:underline hover:underline"
                       target="_blank"
                       rel="noreferrer"
+                      onClick={() =>
+                        githubNavigation({
+                          type: 'Integrate - RippleX4j',
+                          url: 'https://github.com/xpring-eng/xpring4j',
+                          text: 'RippleX4j',
+                        })
+                      }
                     >
                       RippleX4j
                     </a>
@@ -377,6 +413,13 @@ const Integrate: React.FC = () => {
                       className="text-orange-500 focus:underline hover:underline"
                       target="_blank"
                       rel="noreferrer"
+                      onClick={() =>
+                        githubNavigation({
+                          type: 'Integrate - RippleX Dev Kit',
+                          url: 'https://github.com/xpring-eng/xpring-sdk',
+                          text: 'RippleX Dev Kit',
+                        })
+                      }
                     >
                       RippleX Dev Kit
                     </a>
@@ -666,7 +709,14 @@ const Integrate: React.FC = () => {
                 </div>
               </div>
               <div>
-                <a href={subPanelLink} target="_blank" rel="noreferrer">
+                <a
+                  href={subPanelLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() =>
+                    githubNavigation({ type: `Integrate - ${activeSubPanel}` })
+                  }
+                >
                   <Button label="Run" />
                 </a>
               </div>

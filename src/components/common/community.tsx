@@ -3,6 +3,7 @@ import React, { useEffect, useState, useMemo } from 'react'
 
 import SelectArrow from '../../assets/common/selectArrow.svg'
 import { encodeFormData } from '../../utils/config'
+import { formSubmitted } from '../../utils/typewritter'
 
 import Button from './button'
 import InputField from './input-field'
@@ -122,10 +123,10 @@ const Community: React.FC<CommunityProps> = (props) => {
 
     const formData = {
       role: enabledFieldsFinal.includes('role') ? role : undefined,
-      'first-name': enabledFieldsFinal.includes('first_name')
+      first_name: enabledFieldsFinal.includes('first_name')
         ? firstName
         : undefined,
-      'last-name':
+      last_name:
         enabledFieldsFinal.includes('last_name') && lastName !== ''
           ? lastName
           : undefined,
@@ -136,17 +137,27 @@ const Community: React.FC<CommunityProps> = (props) => {
       if (typeof window.heap !== 'undefined') {
         window.heap.track('newsletter', formData)
       }
-      if (typeof window.gtag !== 'undefined') {
-        window.gtag('event', 'conversion', {
-          send_to: 'AW-877332159/jdvuCLLdpdQBEL-NrKID',
+      if (
+        typeof window.analytics !== 'undefined' &&
+        typeof formData.email !== 'undefined'
+      ) {
+        formSubmitted({
+          ...formData,
+          email: formData.email,
+          form_name: 'newsletter',
         })
-        window.gtag('event', 'conversion', {
-          send_to: 'AW-616173950/7ehtCOKFvNYBEP6i6KUC',
-        })
+        window.analytics.identify(formData)
       }
     }
 
     const encodedFormData = encodeFormData(formData)
+
+    fetch(
+      `https://script.google.com/macros/s/AKfycbyT7zjGQMQKaSrE9ef1NuvAFGKGUc8cnnUGSFo7V5Q6HWeBx-DL/exec?${encodedFormData}`,
+      {
+        mode: 'no-cors',
+      },
+    ).catch(() => {})
 
     fetch('https://go.ripple.com/l/105572/2020-06-15/cspx4n', {
       mode: 'no-cors',
@@ -155,16 +166,7 @@ const Community: React.FC<CommunityProps> = (props) => {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-    }).catch((err) => {
-      Sentry.captureException(err)
-    })
-
-    fetch(
-      `https://script.google.com/macros/s/AKfycbyT7zjGQMQKaSrE9ef1NuvAFGKGUc8cnnUGSFo7V5Q6HWeBx-DL/exec?${encodedFormData}`,
-      {
-        mode: 'no-cors',
-      },
-    ).catch(() => {})
+    }).catch(() => {})
 
     setSubmitted(true)
   }

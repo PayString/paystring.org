@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 
 import Arrow from '../../../assets/compliance/walkthrough/arrow.svg'
 import { getDocsLocation, getBaseURL } from '../../../utils/config'
+import { githubNavigation } from '../../../utils/typewritter'
 import Wave from '../../common/wave'
 
 const Introduction: React.FC = () => {
@@ -78,6 +79,13 @@ const Introduction: React.FC = () => {
                 href="https://github.com/payid-org/payid"
                 className="text-orange-500 focus:underline hover:underline"
                 target="_blank"
+                onClick={() =>
+                  githubNavigation({
+                    type: 'faq',
+                    url: 'https://github.com/payid-org/payid',
+                    text: 'GitHub repository',
+                  })
+                }
                 rel="noreferrer"
               >
                 GitHub repository

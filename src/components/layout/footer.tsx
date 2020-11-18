@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
               <span className="sr-only">Home</span>
             </Link>
           </div>
-          <div className="grid grid-flow-col grid-rows-4 row-gap-8 col-gap-4 mt-12 md:mt-10 xl:mt-0 sm:grid-rows-2 lg:grid-rows-1 lg:col-gap-12 xl:col-gap-14 xl:ml-14">
+          <div className="grid grid-flow-col grid-rows-4 mt-12 gap-y-8 gap-x-4 md:mt-10 xl:mt-0 sm:grid-rows-2 lg:grid-rows-1 lg:gap-x-12 xl:gap-x-14 xl:ml-14">
             {links.map((link) => {
               if (link.text !== 'Docs' && link.text !== 'Press Kit') {
                 return (

@@ -106,10 +106,6 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
       text: 'Sign In',
       location: `${getBaseURL()}/sandbox`,
     },
-    // {
-    //   text: 'Contact Us',
-    //   location: '/contact',
-    // },
   ]
 
   const bannerProps = {

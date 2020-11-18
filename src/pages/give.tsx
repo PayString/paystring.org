@@ -6,6 +6,7 @@ import Button from '../components/common/button'
 import InputField from '../components/common/input-field'
 import Layout from '../components/layout'
 import { encodeFormData, getCharityAppURL } from '../utils/config'
+import { formSubmitted } from '../utils/typewritter'
 
 const Contact: React.FC = () => {
   const minHeight = {
@@ -83,19 +84,28 @@ const Contact: React.FC = () => {
     event: React.FormEvent<HTMLFormElement>,
   ): Promise<void> => {
     event.preventDefault()
-    if (!validForm) return
+    if (!validForm || !email) return
 
     setPendingSubmit(true)
 
     const formData = {
       role,
-      'first-name': firstName,
-      'last-name': lastName !== '' ? lastName : undefined,
+      first_name: firstName,
+      last_name: lastName !== '' ? lastName : undefined,
       email,
       company,
-      implementing,
-      notify: notify ? 'yes' : 'no',
+      implementing_payid: implementing,
+      notify_future_developer_events: notify ? 'yes' : 'no',
     }
+
+    formSubmitted({ ...formData, form_name: 'charity' })
+    window.analytics.identify({
+      role: formData.role,
+      first_name: formData.first_name,
+      last_name: formData.last_name,
+      email: formData.email,
+      company: formData.company,
+    })
 
     const encodedFormData = encodeFormData(formData)
     await fetch(

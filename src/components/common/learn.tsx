@@ -2,6 +2,7 @@ import { withPrefix } from 'gatsby'
 import React from 'react'
 
 import { getDocsLocation } from '../../utils/config'
+import { githubNavigation } from '../../utils/typewritter'
 
 import Wave from './wave'
 
@@ -10,7 +11,25 @@ interface LearnProps {
   direction?: 'ltr' | 'rtl'
 }
 
+interface Learnable {
+  bgStyle: {
+    backgroundImage: string
+  }
+  title: string
+  link: string
+}
+
 const Learn: React.FC<LearnProps> = (props) => {
+  const recordEvent = (learnable: Learnable): void => {
+    if (learnable.link.startsWith('https://github.com/')) {
+      githubNavigation({
+        type: learnable.title,
+        url: learnable.link,
+        text: learnable.title,
+      })
+    }
+  }
+
   const learnables = [
     {
       bgStyle: {
@@ -100,6 +119,7 @@ const Learn: React.FC<LearnProps> = (props) => {
                 key={learnable.title}
                 className="transition duration-500 ease-in-out transform bg-no-repeat bg-cover rounded-xl bg-blue-dark-900 focus:shadow-2xl hover:shadow-2xl focus:scale-105 hover:scale-105 focus:outline-none learnable"
                 style={learnable.bgStyle}
+                onClick={() => recordEvent(learnable)}
               >
                 <h3 className="font-bold text-white learnable-title mx-13">
                   {learnable.title}

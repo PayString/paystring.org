@@ -6,6 +6,7 @@ import Button from '../components/common/button'
 import InputField from '../components/common/input-field'
 import Layout from '../components/layout'
 import { encodeFormData } from '../utils/config'
+import { formSubmitted } from '../utils/typewritter'
 
 const Contact: React.FC = () => {
   const minHeight = {
@@ -78,12 +79,12 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault()
-    if (!validForm) return
+    if (!validForm || !email) return
 
     const formData = {
       role,
-      'first-name': firstName,
-      'last-name': lastName !== '' ? lastName : undefined,
+      first_name: firstName,
+      last_name: lastName !== '' ? lastName : undefined,
       email,
       message,
     }
@@ -92,12 +93,13 @@ const Contact: React.FC = () => {
       if (typeof window.heap !== 'undefined') {
         window.heap.track('contact', formData)
       }
-      if (typeof window.gtag !== 'undefined') {
-        window.gtag('event', 'conversion', {
-          send_to: 'AW-877332159/jdvuCLLdpdQBEL-NrKID',
-        })
-        window.gtag('event', 'conversion', {
-          send_to: 'AW-616173950/7ehtCOKFvNYBEP6i6KUC',
+      if (typeof window.analytics !== 'undefined') {
+        formSubmitted({ ...formData, form_name: 'contact ' })
+        window.analytics.identify({
+          role: formData.role,
+          first_name: formData.first_name,
+          last_name: formData.last_name,
+          email: formData.email,
         })
       }
     }
@@ -111,9 +113,7 @@ const Contact: React.FC = () => {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-    }).catch((err) => {
-      Sentry.captureException(err)
-    })
+    }).catch(() => {})
 
     fetch(
       `https://script.google.com/macros/s/AKfycbyT7zjGQMQKaSrE9ef1NuvAFGKGUc8cnnUGSFo7V5Q6HWeBx-DL/exec?${encodedFormData}`,
