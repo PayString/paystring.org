@@ -14,11 +14,11 @@ const getSegmentKey = () => {
 const getSegmentHost = () => {
   switch (process.env.GATSBY_RELEASE_ENV) {
     case 'stage':
-      return 'fY65tW4oAAvTElIHzrXQ2plf99qDjjAe'
+      return 'https://segment.ripplex.io/ana_stg.js'
     case 'prod':
-      return 'eGcENJL6ghTAXTAdzOrmd4oqxDlRorz1'
+      return 'https://segment.ripplex.io/ana_prod.js'
     default:
-      return 'https://segment.ripplex.io/ana.js'
+      return 'https://segment.ripplex.io/ana_dev.js'
   }
 }
 
