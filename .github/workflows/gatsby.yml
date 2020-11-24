@@ -56,7 +56,7 @@ jobs:
         run: |
           sed -i "s@pathPrefix: ''@pathPrefix: '/${SLUG}/review-apps/${BRANCH}/${SHA}'@g" gatsby-config.js
       - name: Build and deploy to gh-pages
-        uses: sauloxd/review-apps@v1.3.2
+        uses: sauloxd/review-apps@v1.3.3
         with:
           build-cmd: 'npx gatsby build --prefix-paths'
           branch: 'gh-pages'
