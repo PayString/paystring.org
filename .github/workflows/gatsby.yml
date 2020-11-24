@@ -25,7 +25,7 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: GitHub Environment Variables Action
-        uses: FranzDiebold/github-env-vars-action@v1.2.0
+        uses: FranzDiebold/github-env-vars-action@v1.2.1
       - name: Get PR commit trigger SHA
         uses: bhowell2/github-substring-action@v1.0.0
         id: prsha
