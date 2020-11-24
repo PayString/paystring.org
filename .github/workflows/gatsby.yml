@@ -25,7 +25,7 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: GitHub Environment Variables Action
-        uses: FranzDiebold/github-env-vars-action@v1.2.0
+        uses: FranzDiebold/github-env-vars-action@v1.2.1
       - name: Get PR commit trigger SHA
         uses: bhowell2/github-substring-action@v1.0.0
         id: prsha
@@ -56,7 +56,7 @@ jobs:
         run: |
           sed -i "s@pathPrefix: ''@pathPrefix: '/${SLUG}/review-apps/${BRANCH}/${SHA}'@g" gatsby-config.js
       - name: Build and deploy to gh-pages
-        uses: sauloxd/review-apps@v1.3.2
+        uses: sauloxd/review-apps@v1.3.3
         with:
           build-cmd: 'npx gatsby build --prefix-paths'
           branch: 'gh-pages'
