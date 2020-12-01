@@ -11,7 +11,7 @@ const Companies: React.FC = () => {
     <Layout
       path="about-us"
       title="About the Open Payments Coalition"
-      description="PayID joins companies across all industries to provide an open-source solution for cross network payments. Learn more about the Open Payments Coalition."
+      description="PayString joins companies across all industries to provide an open-source solution for cross network payments. Learn more about the Open Payments Coalition."
     >
       <Introduction />
       <Members />

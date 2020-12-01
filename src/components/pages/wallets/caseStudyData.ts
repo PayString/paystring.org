@@ -14,7 +14,7 @@ import TangemLogoWhite from '../../../assets/wallets/casestudies/logo/tangemWhit
 export default [
   {
     logo: BittrueLogo,
-    description: `PayID is one of the biggest leaps forward for crypto
+    description: `PayString is one of the biggest leaps forward for crypto
     currency adoption that we've ever seen. The ability for users
     to share their addresses through a pronounceable and memorable
     format will help demistyfy the payment process for
@@ -36,7 +36,7 @@ export default [
   },
   {
     logo: BlockChainLogo,
-    description: `Initiatives like PayID enable a future where sending money is as easy as sending an email. We're supportive of initiatives like PayID that have the potential to bridge the worlds of crypto and traditional finance, opening up the opportunity for greater adoption and use.`,
+    description: `Initiatives like PayString enable a future where sending money is as easy as sending an email. We're supportive of initiatives like PayString that have the potential to bridge the worlds of crypto and traditional finance, opening up the opportunity for greater adoption and use.`,
     whiteLogo: BlockChainLogoWhite,
     user: 'Xen Baynham-Herd',
     designation: 'COO, Blockchain.com',
@@ -54,7 +54,7 @@ export default [
   },
   {
     logo: BitgoLogo,
-    description: `PayID is solving a big UX hurdle that digital assets adoption has been facing. Crypto can modernize finance and payments beyond account numbers, and BitGo is supportive of this initiative.`,
+    description: `PayString is solving a big UX hurdle that digital assets adoption has been facing. Crypto can modernize finance and payments beyond account numbers, and BitGo is supportive of this initiative.`,
     whiteLogo: BitgoLogoWhite,
     user: 'Ben Chan',
     designation: 'CTO, BitGo',
@@ -63,7 +63,7 @@ export default [
   },
   {
     logo: CareLogo,
-    description: `PayID offers an easy, flexible, and cost-effective payment option for donors to contribute to CARE's mission and to join in the fight against global poverty and new threats like COVID-19.`,
+    description: `PayString offers an easy, flexible, and cost-effective payment option for donors to contribute to CARE's mission and to join in the fight against global poverty and new threats like COVID-19.`,
     whiteLogo: CareLogoWhite,
     user: 'Michelle Nunn',
     designation: 'President and CEO, CARE USA',

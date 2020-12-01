@@ -13,13 +13,13 @@ const Walkthrough: React.FC = () => {
     {
       title: 'Initiate Transaction',
       descriptions: [
-        'The originating user, Alice, instructs her custodial wallet, VASP A, to send a transaction to the beneficiary user, Bob, to his PayID, bob$vaspb.com, provided by his custodial wallet VASP B.',
+        'The originating user, Alice, instructs her custodial wallet, VASP A, to send a transaction to the beneficiary user, Bob, to his PayString, bob$vaspb.com, provided by his custodial wallet VASP B.',
       ],
     },
     {
-      title: 'Kick off PayID Handshake',
+      title: 'Kick off PayString Handshake',
       descriptions: [
-        'VASP A initiates a secure HTTP connection with VASP B through the PayID URL. This kicks off the PayID handshake that determines whether Travel Rule applies to this transaction.',
+        'VASP A initiates a secure HTTP connection with VASP B through the PayString URL. This kicks off the PayString handshake that determines whether Travel Rule applies to this transaction.',
       ],
     },
     {
@@ -37,7 +37,7 @@ const Walkthrough: React.FC = () => {
     {
       title: 'Beneficiary Institution Reviews Payload',
       descriptions: [
-        'VASP B reviews the Payload and sends either authorization to proceed with the transaction, including the PayID to address mapping on the desired network or a rejection.',
+        'VASP B reviews the Payload and sends either authorization to proceed with the transaction, including the PayString to address mapping on the desired network or a rejection.',
         'Both institutions are free to implement any compliance policy they desire at any point.',
       ],
     },
@@ -54,7 +54,7 @@ const Walkthrough: React.FC = () => {
     <Wave background="blue" wave="gray" direction="rtl">
       <div className="flex flex-col items-center">
         <h2 className="max-w-xl text-3xl font-bold mb-14 sm:text-5xl sm:text-center md:mb-25">
-          How Travel Rules works with PayID
+          How Travel Rules works with PayString
         </h2>
         <GraphWeb className="hidden max-w-5xl mb-25 md:block" />
         <GraphMobile className="block mb-14 md:hidden" />

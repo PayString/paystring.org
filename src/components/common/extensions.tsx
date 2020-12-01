@@ -48,7 +48,7 @@ const Extensions: React.FC = () => {
     <Wave background="gray" wave="white">
       <div className="flex justify-center">
         <h2 className="max-w-2xl text-3xl font-bold mb-14 sm:text-5xl sm:text-center md:mb-25">
-          Other Extensions for PayID
+          Other Extensions for PayString
         </h2>
       </div>
       <div className="grid grid-cols-1 gap-15 md:gap-30 md:grid-cols-2 lg:grid-cols-3">

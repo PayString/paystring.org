@@ -42,7 +42,7 @@ const Learn: React.FC<LearnProps> = (props) => {
       bgStyle: {
         backgroundImage: `url(${withPrefix('/assets/learn/whitepaper.svg')})`,
       },
-      title: 'PayID Technical White Paper',
+      title: 'PayString Technical White Paper',
       link: '/whitepaper.pdf',
     },
     {
@@ -52,14 +52,14 @@ const Learn: React.FC<LearnProps> = (props) => {
         )})`,
       },
       title: 'API Reference',
-      link: 'https://api.payid.org/?version=latest',
+      link: 'https://api.PayString.org/?version=latest',
     },
     {
       bgStyle: {
         backgroundImage: `url(${withPrefix('/assets/learn/standards.svg')})`,
       },
-      title: 'PayID Standards',
-      link: 'https://github.com/payid-org/rfcs',
+      title: 'PayString Standards',
+      link: 'https://github.com/paystring/rfcs',
     },
     {
       bgStyle: {
@@ -67,7 +67,7 @@ const Learn: React.FC<LearnProps> = (props) => {
       },
       title: 'Security and Privacy',
       link:
-        'https://github.com/payid-org/rfcs/blob/master/dist/spec/verifiable-payid-protocol.txt',
+        'https://github.com/paystring/rfcs/blob/master/dist/spec/verifiable-payid-protocol.txt',
     },
     {
       bgStyle: {
@@ -87,8 +87,8 @@ const Learn: React.FC<LearnProps> = (props) => {
       bgStyle: {
         backgroundImage: `url(${withPrefix('/assets/learn/xpring-sdk.svg')})`,
       },
-      title: 'RippleX SDK for PayID',
-      link: `${getDocsLocation()}/ripplex-dev-kit-payid`,
+      title: 'RippleX SDK for PayString',
+      link: `${getDocsLocation()}/ripplex-dev-kit-paystring`,
     },
   ]
 
@@ -104,8 +104,8 @@ const Learn: React.FC<LearnProps> = (props) => {
           Learn More
         </h2>
         <p className="max-w-xl mt-6 text-xl sm:mt-8 sm:text-center">
-          Discover everything you need to know about the free, open source PayID
-          protocol
+          Discover everything you need to know about the free, open source
+          PayString protocol
         </p>
       </div>
       <div className="flex justify-center">

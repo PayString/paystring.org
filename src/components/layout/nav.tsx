@@ -66,14 +66,14 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
         },
         {
           text: 'Sandbox',
-          description: 'Experiment with PayID Sandbox',
+          description: 'Experiment with PayString Sandbox',
           location: `${getBaseURL()}/sandbox`,
           icon: SandboxIcon,
         },
         {
           text: 'API Documentation',
-          description: 'Start building with PayID',
-          location: 'https://api.payid.org/',
+          description: 'Start building with PayString',
+          location: 'https://api.paystring.org/',
           icon: ApiDocumentIcon,
           external: true,
         },
@@ -83,12 +83,12 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
         links: [
           {
             text: 'Join Discord',
-            location: 'https://chat.payid.org/',
+            location: 'https://chat.paystring.org/',
             external: true,
           },
           {
             text: 'GitHub Repository',
-            location: 'https://github.com/payid-org/payid',
+            location: 'https://github.com/paystring/paystring',
             external: true,
           },
         ],
@@ -100,7 +100,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
     },
     {
       text: 'Blog',
-      location: 'https://blog.payid.org/',
+      location: 'https://blog.paystring.org/',
     },
     {
       text: 'Sign In',
@@ -110,7 +110,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
 
   const bannerProps = {
     title: 'payme-plus',
-    description: 'Get a PayID today with PayMe+',
+    description: 'Get a PayString today with PayMe+',
     link:
       'https://www.payme.plus/?utm_source=RippleBanner&utm_medium=link&utm_campaign=RippleWebBanner',
     enabled: true,
@@ -175,7 +175,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
               <Logo
                 className="h-10-5"
                 role="img"
-                aria-label="PayID: Unifying payments through a universal payment identifier to simplify sending and receiving payments"
+                aria-label="PayString: Unifying payments through a universal payment identifier to simplify sending and receiving payments"
               />
               <span className="sr-only">Home</span>
             </Link>

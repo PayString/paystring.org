@@ -11,7 +11,7 @@ const Companies: React.FC = () => {
     <Layout
       path="wallets-and-exchanges"
       title="Wallets and Exchanges"
-      description="PayID improves the user experience of wallets and exchanges. Learn more about how PayID can improve your applications user experience."
+      description="PayString improves the user experience of wallets and exchanges. Learn more about how PayString can improve your applications user experience."
     >
       <Introduction />
       <CaseStudies />

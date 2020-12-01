@@ -30,8 +30,8 @@ interface CommunityProps {
 const Community: React.FC<CommunityProps> = (props) => {
   const {
     direction = 'rtl',
-    title = 'Join the PayID Community',
-    description = 'Sign up to access the PayID newsletter and hear about hackathons and speaker events',
+    title = 'Join the PayString Community',
+    description = 'Sign up to access the PayString newsletter and hear about hackathons and speaker events',
     orangeButton = false,
     enabledFields,
     className,

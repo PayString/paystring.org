@@ -1,8 +1,8 @@
 {
-  "name": "payid.org",
+  "name": "paystring.org",
   "version": "0.0.1",
-  "description": "Marketing Website for PayID",
-  "homepage": "https://github.com/xpring-eng/payid.org#readme",
+  "description": "Marketing Website for PayString",
+  "homepage": "https://github.com/paystring/paystring.org#readme",
   "engines": {
     "node": ">= 12"
   },

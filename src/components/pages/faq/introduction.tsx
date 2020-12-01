@@ -13,59 +13,59 @@ const Introduction: React.FC = () => {
 
   const sections = [
     {
-      topic: 'PayID Basics',
+      topic: 'PayString Basics',
       contents: [
         {
-          title: 'What is PayID?',
+          title: 'What is PayString?',
           description:
-            'PayID is an open universal payment identifier that makes it easier for people to send and receive money in any currency across any payment network.',
+            'PayString is an open universal payment identifier that makes it easier for people to send and receive money in any currency across any payment network.',
         },
         {
-          title: 'Who uses PayID?',
+          title: 'Who uses PayString?',
           description: (
             <>
-              Any business that sends and receives money can use PayID to give
-              each of their customers a simple and human-readable ID that works
-              across any payment network and makes payments easier with greater
-              network reach. PayID is an open standard, so anyone can build
-              implementations and extensions on top of PayID.
+              Any business that sends and receives money can use PayString to
+              give each of their customers a simple and human-readable ID that
+              works across any payment network and makes payments easier with
+              greater network reach. PayString is an open standard, so anyone
+              can build implementations and extensions on top of PayString.
               <Link
                 to="/about-us"
                 className="block mt-6 text-orange-500 focus:underline hover:underline"
               >
-                See companies that use PayID
+                See companies that use PayString
               </Link>
             </>
           ),
         },
         {
           title:
-            'How is PayID compliant with international payment regulations?',
+            'How is PayString compliant with international payment regulations?',
           description: (
             <>
-              Rather than prescribing a single solution, PayID is flexible and
-              composable by design, which empowers transaction participants to
-              implement their own policies. PayID provides a simple extension
-              that helps businesses satisfy Travel Rule record-keeping required
-              in jurisdictions globally, including both current FinCEN rules and
-              FATF guidance, via native integration with the TRISA protocol.
-              PayID can also be used to improve other compliance solutions for
-              both users and services.
+              Rather than prescribing a single solution, PayString is flexible
+              and composable by design, which empowers transaction participants
+              to implement their own policies. PayString provides a simple
+              extension that helps businesses satisfy Travel Rule record-keeping
+              required in jurisdictions globally, including both current FinCEN
+              rules and FATF guidance, via native integration with the TRISA
+              protocol. PayString can also be used to improve other compliance
+              solutions for both users and services.
               <Link
                 to="/compliance-and-regulations"
                 className="block mt-6 text-orange-500 focus:underline hover:underline"
               >
-                Learn more about PayID and TRISA for Travel Rule
+                Learn more about PayString and TRISA for Travel Rule
               </Link>
             </>
           ),
         },
         {
-          title: 'How can I get started with PayID?',
+          title: 'How can I get started with PayString?',
           description: (
             <>
-              PayID is open source and easy to set up with just a few lines of
-              code. You can explore{' '}
+              PayString is open source and easy to set up with just a few lines
+              of code. You can explore{' '}
               <a
                 href={getDocsLocation()}
                 className="text-orange-500 focus:underline hover:underline"
@@ -76,13 +76,13 @@ const Introduction: React.FC = () => {
               </a>{' '}
               and{' '}
               <a
-                href="https://github.com/payid-org/payid"
+                href="https://github.com/paystring/paystring"
                 className="text-orange-500 focus:underline hover:underline"
                 target="_blank"
                 onClick={() =>
                   githubNavigation({
                     type: 'faq',
-                    url: 'https://github.com/payid-org/payid',
+                    url: 'https://github.com/paystring/paystring',
                     text: 'GitHub repository',
                   })
                 }
@@ -97,24 +97,25 @@ const Introduction: React.FC = () => {
         {
           title: 'Who developed this website?',
           description:
-            'The content on this website content was developed by Ripple, an early adopter of PayID, in collaboration with the Open Payments Coalition.',
+            'The content on this website content was developed by Ripple, an early adopter of PayString, in collaboration with the Open Payments Coalition.',
         },
         {
-          title: 'What payment networks does PayID support?',
+          title: 'What payment networks does PayString support?',
           description:
-            'PayID supports any payment network or payment processor. Companies may add any payment network or payment processor to a PayID header to send and receive money.',
+            'PayString supports any payment network or payment processor. Companies may add any payment network or payment processor to a PayString header to send and receive money.',
         },
         {
-          title: 'How is PayID different from payment networks and processors?',
+          title:
+            'How is PayString different from payment networks and processors?',
           description:
-            'PayID is an open standard for payment identifiers. This means that PayID is a naming convention for any payment ID —​ like a bank account number or a crypto address. Any payment network or payment processor can support PayID as an identifier.',
+            'PayString is an open standard for payment identifiers. This means that PayString is a naming convention for any payment ID —​ like a bank account number or a crypto address. Any payment network or payment processor can support PayString as an identifier.',
         },
         {
-          title: 'Where can I get a PayID?',
+          title: 'Where can I get a PayString?',
           description: (
             <>
               <p>
-                You can get a PayID in the following apps: PayMe+,{' '}
+                You can get a PayString in the following apps: PayMe+,{' '}
                 <a
                   href="http://coinfield.com/"
                   className="text-orange-500 focus:underline hover:underline"
@@ -158,37 +159,37 @@ const Introduction: React.FC = () => {
       ],
     },
     {
-      topic: 'Verifiable PayID',
+      topic: 'Verifiable PayString',
       contents: [
         {
-          title: 'What is Verifiable PayID?',
+          title: 'What is Verifiable PayString?',
           description: (
             <>
               <p>
-                In the default version of PayID, a receiver trusts their PayID
-                provider to not swap the mapping between PayID to payment
-                address. While this trust is sufficient with custodial wallets,
-                it may not be appropriate in some circumstances, such as with a
-                non-custodial wallet.
+                In the default version of PayString, a receiver trusts their
+                PayString provider to not swap the mapping between PayString to
+                payment address. While this trust is sufficient with custodial
+                wallets, it may not be appropriate in some circumstances, such
+                as with a non-custodial wallet.
               </p>
               <p className="mt-4">
-                PayID for Wallets removes this layer of trust by
+                PayString for Wallets removes this layer of trust by
                 cryptographically signing response messages with digital
-                identity keys. As a result, PayID providers cannot swap out
+                identity keys. As a result, PayString providers cannot swap out
                 payment addresses without the sender or receiver finding out.
               </p>
             </>
           ),
         },
         {
-          title: 'Is Verifiable PayID secure?',
+          title: 'Is Verifiable PayString secure?',
           description:
-            'Yes, it is. Default PayID uses tried-and-true security technologies that secure all internet services. PayID for Wallets adds another layer of security by including digital identity keys that cryptographically sign response messages, so participants in PayID transactions do not need to trust any counterparty.',
+            'Yes, it is. Default PayString uses tried-and-true security technologies that secure all internet services. PayString for Wallets adds another layer of security by including digital identity keys that cryptographically sign response messages, so participants in PayString transactions do not need to trust any counterparty.',
         },
         {
-          title: 'What does Verifiable PayID allow me to do?',
+          title: 'What does Verifiable PayString allow me to do?',
           description:
-            'Verifiable PayID adds several digital signature fields so you can link a PayID to one or more external digital identities, prove control of the payment rail address, and provide non-repudiable messaging.',
+            'Verifiable PayString adds several digital signature fields so you can link a PayString to one or more external digital identities, prove control of the payment rail address, and provide non-repudiable messaging.',
         },
       ],
     },
@@ -196,48 +197,48 @@ const Introduction: React.FC = () => {
       topic: 'Development and Implementation',
       contents: [
         {
-          title: 'How do I implement PayID?',
+          title: 'How do I implement PayString?',
           description: (
             <>
-              PayID is a free-to-use, fully open standard with an open source
-              implementation. Any company can start using PayID by integrating a
-              PayID server into their existing infrastructure using the
-              reference implementation on GitHub. The{' '}
+              PayString is a free-to-use, fully open standard with an open
+              source implementation. Any company can start using PayString by
+              integrating a PayString server into their existing infrastructure
+              using the reference implementation on GitHub. The{' '}
               <a
-                href={`${getDocsLocation()}/ripplex-dev-kit-payid`}
+                href={`${getDocsLocation()}/ripplex-dev-kit-paystring`}
                 className="text-orange-500 focus:underline hover:underline"
                 target="_blank"
                 rel="noreferrer"
               >
                 RippleX Dev Kit
               </a>{' '}
-              is the easiest way to enable “send to PayID” on your app.
+              is the easiest way to enable “send to PayString” on your app.
             </>
           ),
         },
         {
-          title: 'What tech is PayID built on?',
+          title: 'What tech is PayString built on?',
           description:
-            'PayID is a web-based protocol built on a simple HTTP API secured by the standard web security stack, including TLS.',
+            'PayString is a web-based protocol built on a simple HTTP API secured by the standard web security stack, including TLS.',
         },
         {
-          title: 'How does PayID handle security?',
+          title: 'How does PayString handle security?',
           description:
-            'PayID leverages tried-and-true security technologies that secure all internet services, including e-commerce and digital banking services. Additionally, PayID messages include cryptographic certificates and signatures that ensure participants in PayID transactions do not need to trust any counterparty.',
+            'PayString leverages tried-and-true security technologies that secure all internet services, including e-commerce and digital banking services. Additionally, PayString messages include cryptographic certificates and signatures that ensure participants in PayString transactions do not need to trust any counterparty.',
         },
         {
-          title: 'How do I deploy a PayID server?',
+          title: 'How do I deploy a PayString server?',
           description: (
             <>
               <p>
-                PayID is designed by devs for devs. You can deploy a PayID
-                server with just a few commands with existing web
+                PayString is designed by devs for devs. You can deploy a
+                PayString server with just a few commands with existing web
                 infrastructure, and then integrate it into an application or
                 account system with just a few lines of code.
               </p>
               <p className="mt-4">
-                When you want to experiment with or deploy a PayID server, you
-                have several options:
+                When you want to experiment with or deploy a PayString server,
+                you have several options:
               </p>
               <ul className="mt-4 list-inside">
                 <li className="list-disc hover:underline">
@@ -257,7 +258,7 @@ const Introduction: React.FC = () => {
                     className="text-orange-500 focus:underline hover:underline"
                     href={`${getDocsLocation()}/remote-deployment`}
                   >
-                    Deploy a PayID server on AWS with NGINX reverse proxy
+                    Deploy a PayString server on AWS with NGINX reverse proxy
                   </a>
                 </li>
                 <li className="list-disc hover:underline">
@@ -275,10 +276,10 @@ const Introduction: React.FC = () => {
           ),
         },
         {
-          title: 'Where can I learn more about building with PayID?',
+          title: 'Where can I learn more about building with PayString?',
           description: (
             <>
-              For other questions on PayID development and deployment, visit{' '}
+              For other questions on PayString development and deployment, visit{' '}
               <a
                 href={getDocsLocation()}
                 className="text-orange-500 focus:underline hover:underline"
@@ -292,7 +293,7 @@ const Introduction: React.FC = () => {
           ),
         },
         {
-          title: 'How can I try out a PayID server?',
+          title: 'How can I try out a PayString server?',
           description: (
             <>
               <p>
@@ -303,66 +304,66 @@ const Introduction: React.FC = () => {
                   rel="noreferrer"
                   href={`${getBaseURL()}/sandbox`}
                 >
-                  PayID Sandbox{' '}
+                  PayString Sandbox{' '}
                 </a>
-                lets you experiment with PayID in a test environment. To use
-                PayID Sandbox, log in with your GitHub account and follow the
-                prompts. You can quickly set up a virtual test server, and then
-                create users with simple PayID addresses that map to addresses
-                on various payment networks.
+                lets you experiment with PayString in a test environment. To use
+                PayString Sandbox, log in with your GitHub account and follow
+                the prompts. You can quickly set up a virtual test server, and
+                then create users with simple PayString addresses that map to
+                addresses on various payment networks.
               </p>
             </>
           ),
         },
         {
-          title: 'How does the PayID protocol work?',
+          title: 'How does the PayString protocol work?',
           description: (
             <>
               <p>
-                With PayID, you can use human-readable addresses to transmit
-                value in the currency of your choice. The PayID network allows
-                participants to reach one another through a standardized
+                With PayString, you can use human-readable addresses to transmit
+                value in the currency of your choice. The PayString network
+                allows participants to reach one another through a standardized
                 address. For example, alice$wallet.com maps to the corresponding
                 URL https://wallet.com/alice.
               </p>
               <p className="mt-4">
-                When you make an HTTP GET request that follows the PayID
+                When you make an HTTP GET request that follows the PayString
                 protocol, it resolves to an address on the underlying payment
-                network. PayID is a payment-network-agnostic protocol, capable
-                of sending payments to any payment network.
+                network. PayString is a payment-network-agnostic protocol,
+                capable of sending payments to any payment network.
               </p>
             </>
           ),
         },
         {
-          title: 'What is the PayID reference implementation?',
+          title: 'What is the PayString reference implementation?',
           description: (
             <>
               <p>
                 The Open Payments Coalition provides a reference implementation
-                of the PayID protocol. Anyone may use this reference
+                of the PayString protocol. Anyone may use this reference
                 implementation or make changes to it. Other implementations can
-                be created, as long as they follow the PayID protocol.
+                be created, as long as they follow the PayString protocol.
               </p>
               <p className="mt-4">
                 The reference implementation uses TypeScript, a Node.js HTTP
                 server, and a Postgres database. By default, the server hosts
-                the PayID Protocol implementation, or Public API, on port 8080.
-                It also hosts a second RESTful API on port 8081 for CRUD
-                operations of PayIDs and associated addresses.
+                the PayString Protocol implementation, or Public API, on port
+                8080. It also hosts a second RESTful API on port 8081 for CRUD
+                operations of PayStrings and associated addresses.
               </p>
             </>
           ),
         },
         {
-          title: 'What are the requirements to run a PayID server?',
+          title: 'What are the requirements to run a PayString server?',
           description: (
             <>
               <p>
-                To run a PayID server in a production environment, you should
-                give each component of the stack a vCPU and 500 MB of RAM, and
-                ensure there are at least two High-Availability replicas for
-                each component.
+                To run a PayString server in a production environment, you
+                should give each component of the stack a vCPU and 500 MB of
+                RAM, and ensure there are at least two High-Availability
+                replicas for each component.
               </p>
               <p className="mt-4">
                 Here&apos;s how the requirements would break down:
@@ -372,7 +373,7 @@ const Introduction: React.FC = () => {
                   1 vCPU + 500 MB RAM per nginx replica (2x)
                 </li>
                 <li className="list-disc">
-                  1 vCPU + 500 MB RAM per PayID Node.js server replica (2x)
+                  1 vCPU + 500 MB RAM per PayString Node.js server replica (2x)
                 </li>
                 <li className="list-disc">
                   1 vCPU + 500 MB RAM per Postgres replica (2x)
@@ -389,7 +390,7 @@ const Introduction: React.FC = () => {
     <Wave spacing="sm" waveClassNames="faq-bg">
       <div className="max-w-3xl pt-16 lg:pt-70">
         <h1 className="text-4xl font-bold sm:mb-10 mb-7 sm:text-h1 sm:leading-tighter">
-          Understanding and Using PayID
+          Understanding and Using PayString
         </h1>
       </div>
 

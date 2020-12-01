@@ -1,9 +1,9 @@
 export default [
   {
     logo: '/assets/home/integrate/payid-validator.svg',
-    name: 'PayID Validator',
+    name: 'PayString Validator',
     description:
-      'a tool for performing checks to validate PayID response headers.',
+      'a tool for performing checks to validate PayString response headers.',
     userImage: '/assets/home/integrate/users/payid-validator.svg',
     userName: 'Robert Swarthout',
     userPost: 'Founder',
@@ -21,7 +21,7 @@ export default [
   {
     logo: '/assets/home/integrate/unisend.svg',
     name: 'Unisend',
-    description: 'app to send money internationally for free using PayID.',
+    description: 'app to send money internationally for free using PayString.',
     userImage: '/assets/home/integrate/users/unisend.svg',
     userName: 'Drew Patel',
     userPost: 'Backend Developer',

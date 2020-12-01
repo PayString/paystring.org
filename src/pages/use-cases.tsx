@@ -10,7 +10,7 @@ const Companies: React.FC = () => {
     <Layout
       path="use-cases"
       title="Use Cases"
-      description="PayID has a plethora of use cases. Learn more about how PayID can improve your applications user experience."
+      description="PayString has a plethora of use cases. Learn more about how PayString can improve your applications user experience."
     >
       <Introduction />
       <Learn background="white" />

@@ -1,11 +1,11 @@
 export const getDocsLocation = (): string => {
   switch (process.env.GATSBY_RELEASE_ENV) {
     case 'dev':
-      return 'https://dev.docs.payid.org'
+      return 'https://dev.docs.paystring.org'
     case 'stage':
-      return 'https://stage.docs.payid.org'
+      return 'https://stage.docs.paystring.org'
     case 'prod':
-      return 'https://docs.payid.org'
+      return 'https://docs.paystring.org'
     default:
       return 'http://localhost:3000'
   }
@@ -14,11 +14,11 @@ export const getDocsLocation = (): string => {
 export const getBaseURL = (): string => {
   switch (process.env.GATSBY_RELEASE_ENV) {
     case 'dev':
-      return 'https://dev.payid.org'
+      return 'https://dev.paystring.org'
     case 'stage':
-      return 'https://stage.payid.org'
+      return 'https://stage.paystring.org'
     case 'prod':
-      return 'https://payid.org'
+      return 'https://paystring.org'
     default:
       return 'http://localhost:8000'
   }

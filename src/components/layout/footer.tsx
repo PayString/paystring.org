@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex flex-col mt-12 mb-12 text-xs font-semibold md:mb-4 md:mt-10 md:flex-row">
           <div>
-            This site is operated by Ripple on behalf of the PayID community
+            This site is operated by Ripple on behalf of the PayString community
           </div>
           <a
             href="/terms.pdf"

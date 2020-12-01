@@ -12,7 +12,7 @@ const Introduction: React.FC = () => {
     <Wave waveClassNames="vision-bg" spacing="sm">
       <div className="max-w-4xl pt-16 lg:pt-70">
         <h1 className="text-4xl font-bold md:text-h1 md:leading-tighter">
-          PayID is used in apps across a variety of payment use cases
+          PayString is used in apps across a variety of payment use cases
         </h1>
       </div>
 
@@ -25,10 +25,10 @@ const Introduction: React.FC = () => {
           <p className="mt-4 md:mt-6 md:text-xl">
             P2P app users can send and receive payments from people on other
             payment networks and in any currency by simply sharing their unique
-            PayID address.
+            PayString address.
           </p>
           <p className="mt-4 md:mt-6 md:text-xl">
-            Key benefit: PayID reduces friction in the payment experience,
+            Key benefit: PayString reduces friction in the payment experience,
             increasing conversion, and helping the company reach new users
             across a broader more connected network.
           </p>
@@ -56,10 +56,10 @@ const Introduction: React.FC = () => {
           </h2>
           <p className="mt-4 md:mt-6 md:text-xl">
             E-commerce customers can use any digital wallet to complete their
-            purchases when PayID is offered as a payment method.
+            purchases when PayString is offered as a payment method.
           </p>
           <p className="mt-4 md:mt-6 md:text-xl">
-            Key benefit: PayID helps shoppers check out faster and enhances
+            Key benefit: PayString helps shoppers check out faster and enhances
             transaction security.
           </p>
         </div>
@@ -72,11 +72,11 @@ const Introduction: React.FC = () => {
             Subscription Payment
           </h2>
           <p className="mt-4 md:mt-6 md:text-xl">
-            Companies can use PayID to request recurring payments from their
+            Companies can use PayString to request recurring payments from their
             subscribers’ digital and crypto wallets.
           </p>
           <p className="mt-4 md:mt-6 md:text-xl">
-            Key benefit: PayID offers customers a much easier, simple way to
+            Key benefit: PayString offers customers a much easier, simple way to
             renew their subscriptions, using any currency or wallet.
           </p>
         </div>
@@ -102,14 +102,14 @@ const Introduction: React.FC = () => {
             Invoice Payment
           </h2>
           <p className="mt-4 md:mt-6 md:text-xl">
-            Services can use PayID to send invoice requests directly to a
-            customer&apos;s PayID, and the payment transaction can be completed
-            in just a few clicks.
+            Services can use PayString to send invoice requests directly to a
+            customer&apos;s PayString, and the payment transaction can be
+            completed in just a few clicks.
           </p>
           <p className="mt-4 md:mt-6 md:text-xl">
             Key benefit: Streamlined experience for both client and provider
             that works for any payment method and any wallet that supports
-            PayID.
+            PayString.
           </p>
         </div>
       </div>

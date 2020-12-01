@@ -13,7 +13,7 @@ const Index: React.FC = () => {
     <Layout
       path=""
       title="Open Source, Universal Payment Identifier"
-      description="PayID provides a single ID for anyone needing to send or receive money. Learn about PayID's open-source protocol & how to connect users on any payment network."
+      description="PayString provides a single ID for anyone needing to send or receive money. Learn about PayString's open-source protocol & how to connect users on any payment network."
     >
       <Introduction />
       <Integrate />
