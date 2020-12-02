@@ -130,5 +130,16 @@
         "pullRequestUrl": "https://github.com/payid-org/payid.org/pull/95"
       }
     ]
+  },
+  "paystring": {
+    "apps": [
+      {
+        "name": "review-apps",
+        "headCommitId": "342a95f5b05b063830fadd9fa03cfa8d388f9f8f",
+        "updatedAt": "2020-12-02T00:19:41.722Z",
+        "href": "review-apps/paystring/342a95",
+        "pullRequestUrl": "https://github.com/payid-org/payid.org/pull/97"
+      }
+    ]
   }
 }
