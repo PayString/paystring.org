@@ -173,7 +173,7 @@ const Nav: React.FC<NavProps> = (props: NavProps) => {
           <div className="flex items-center justify-between">
             <Link to="/">
               <Logo
-                className="h-10-5"
+                className="h-9"
                 role="img"
                 aria-label="PayString: Unifying payments through a universal payment identifier to simplify sending and receiving payments"
               />
