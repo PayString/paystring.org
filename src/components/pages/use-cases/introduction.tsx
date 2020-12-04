@@ -36,7 +36,8 @@ const Introduction: React.FC = () => {
         <div className="w-full">
           <img
             src={withPrefix('/assets/use-cases/p2p.png')}
-            className="object-contain"
+            className="object-contain m-auto"
+            style={bgShadow}
           />
         </div>
       </div>
@@ -83,7 +84,8 @@ const Introduction: React.FC = () => {
         <div className="w-full">
           <img
             src={withPrefix('/assets/use-cases/subscription.png')}
-            className="object-contain"
+            className="object-contain m-auto"
+            style={bgShadow}
           />
         </div>
       </div>
