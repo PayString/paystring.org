@@ -135,9 +135,9 @@
     "apps": [
       {
         "name": "review-apps",
-        "headCommitId": "039403da0718ed07aba5b420b9e094117fa68d9e",
-        "updatedAt": "2020-12-04T05:06:29.208Z",
-        "href": "review-apps/paystring/039403",
+        "headCommitId": "f6060ecab4347d3bb700f169ebc76718b04847dc",
+        "updatedAt": "2020-12-07T21:09:05.348Z",
+        "href": "review-apps/paystring/f6060e",
         "pullRequestUrl": "https://github.com/payid-org/payid.org/pull/97"
       }
     ]
