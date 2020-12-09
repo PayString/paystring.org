@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
     {
       text: 'Press Kit',
       location:
-        'https://www.dropbox.com/sh/ghyjfo40zmhgl98/AABZTCuNjevhuk_6P3vg4jdXa?dl=0',
+        'https://drive.google.com/drive/folders/1SsH0yAHhOFYsI_GhJark_8vwOQq3YGg5',
     },
     {
       text: 'Contact Us',
