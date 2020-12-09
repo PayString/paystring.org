@@ -1,4 +1,3 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://paystring.org">
     <img alt="PayString" src="https://paystring.org/icons/icon-72x72.png" width="60" />
