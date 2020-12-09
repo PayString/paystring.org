@@ -6,6 +6,8 @@ export const getDocsLocation = (): string => {
       return 'https://stage.docs.paystring.org'
     case 'prod':
       return 'https://docs.paystring.org'
+    case 'psprod':
+      return 'https://docs.paystring.org'
     default:
       return 'http://localhost:3000'
   }
@@ -19,6 +21,8 @@ export const getBaseURL = (): string => {
       return 'https://stage.paystring.org'
     case 'prod':
       return 'https://paystring.org'
+    case 'psprod':
+      return 'https://paystring.org'
     default:
       return 'http://localhost:8000'
   }
@@ -31,6 +35,8 @@ export const getCharityAppURL = (): string => {
     case 'stage':
       return 'https://stage.ripplex.io/portal/donation'
     case 'prod':
+      return 'https://ripplex.io/portal/donation'
+    case 'psprod':
       return 'https://ripplex.io/portal/donation'
     default:
       return 'http://localhost:4000/donation'
