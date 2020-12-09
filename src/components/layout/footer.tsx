@@ -31,11 +31,6 @@ const Footer: React.FC = () => {
       location: '/universal-payment-identifier-faqs',
     },
     {
-      text: 'Press Kit',
-      location:
-        'https://drive.google.com/drive/folders/1SsH0yAHhOFYsI_GhJark_8vwOQq3YGg5',
-    },
-    {
       text: 'Contact Us',
       location: '/contact',
     },
