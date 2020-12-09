@@ -107,7 +107,7 @@ const Integrate: React.FC = () => {
     <Wave background="white" wave="gray" no-gutter>
       {/* Header */}
       <div className="flex justify-center">
-        <div className="flex flex-col self-center max-w-xl text-left md:items-center md:text-center z-10">
+        <div className="z-10 flex flex-col self-center max-w-xl text-left md:items-center md:text-center">
           <h2 className="mb-6 text-3xl font-bold md:mb-8 sm:text-5xl">
             Integrate Into Your App in Minutes
           </h2>
@@ -122,7 +122,7 @@ const Integrate: React.FC = () => {
         <div className="w-full mb-16 overflow-hidden md:mb-0 md:mr-20">
           <h3 className="text-2xl font-bold">Receive Money</h3>
           <p className="mt-4">
-            Set up a PayID server to provide your users PayIDs
+            Set up a PayString server to provide your users PayStrings
           </p>
           <div className="mt-10 md:mt-16">
             <p className="font-medium">Clone Repo</p>
@@ -136,10 +136,10 @@ const Integrate: React.FC = () => {
               <div className="px-8 py-6 whitespace-no-wrap">
                 <div>
                   <span className="text-blue-dark-300">git</span> clone
-                  git@github.com:payid-org/payid.git
+                  git@github.com:paystring/paystring.git
                 </div>
                 <div>
-                  <span className="text-orange-300">cd</span> payid
+                  <span className="text-orange-300">cd</span> paystring
                 </div>
               </div>
             </div>
@@ -163,7 +163,7 @@ const Integrate: React.FC = () => {
         </div>
         <div className="w-full overflow-hidden ">
           <h3 className="text-2xl font-bold">Send Money</h3>
-          <p className="mt-4">Enable your users to send to PayIDs</p>
+          <p className="mt-4">Enable your users to send to PayStrings</p>
           <div className="mt-10 md:mt-16">
             {panels.map((panel, panelIndex) => {
               return (
@@ -351,7 +351,7 @@ const Integrate: React.FC = () => {
                     >
                       RippleX Dev Kit
                     </a>
-                    . Use the provided classes to work directly with PayID.
+                    . Use the provided classes to work directly with PayString.
                   </p>
                 )}
                 {activeSubPanel === 'Swift' && (
@@ -387,7 +387,7 @@ const Integrate: React.FC = () => {
                     >
                       RippleX Dev Kit
                     </a>
-                    . Use the provided classes to work directly with PayID.
+                    . Use the provided classes to work directly with PayString.
                   </p>
                 )}
                 {activeSubPanel === 'Java' && (
@@ -423,7 +423,7 @@ const Integrate: React.FC = () => {
                     >
                       RippleX Dev Kit
                     </a>
-                    . Use the provided classes to work directly with PayID.
+                    . Use the provided classes to work directly with PayString.
                   </p>
                 )}
                 <div className="flex w-full p-4 overflow-x-auto rounded bg-blue-dark-800">
@@ -714,7 +714,10 @@ const Integrate: React.FC = () => {
                   target="_blank"
                   rel="noreferrer"
                   onClick={() =>
-                    githubNavigation({ type: `Integrate - ${activeSubPanel}` })
+                    githubNavigation({
+                      type: `Integrate - ${activeSubPanel}`,
+                      url: subPanelLink,
+                    })
                   }
                 >
                   <Button label="Run" />
@@ -787,7 +790,7 @@ const Integrate: React.FC = () => {
           <Button
             label="Join Discord"
             className="mt-10"
-            to="https://chat.payid.org/"
+            to="https://chat.paystring.org/"
           />
         </div>
         <div
@@ -799,7 +802,7 @@ const Integrate: React.FC = () => {
           <Button
             label="Join Discord"
             className="mt-10 mb-10"
-            to="https://chat.payid.org/"
+            to="https://chat.paystring.org/"
           />
         </div>
       </div>

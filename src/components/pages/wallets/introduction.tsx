@@ -39,13 +39,13 @@ const Introduction: React.FC = () => {
       title: 'Wallets',
       icon: WalletIcon,
       description:
-        'Users can move money with an easy to remember PayID that connects to any currency',
+        'Users can move money with an easy to remember PayString that connects to any currency',
     },
     {
       title: 'Exchanges',
       icon: ExchangesIcon,
       description:
-        'Users can use PayIDs to easily deposit any currency into an exchange',
+        'Users can use PayStrings to easily deposit any currency into an exchange',
     },
   ]
 
@@ -89,7 +89,7 @@ const Introduction: React.FC = () => {
         </div>
         <div className="flex flex-col w-full px-6 -mb-20 md:items-center lg:px-20 bg-blue-dark-800">
           <h2 className="max-w-3xl pt-16 mb-10 text-3xl font-bold text-left md:text-center sm:leading-tighter lg:pt-30 sm:text-5xl">
-            PayID in Numbers
+            PayString in Numbers
           </h2>
           <img
             className="hidden w-full lg:block"

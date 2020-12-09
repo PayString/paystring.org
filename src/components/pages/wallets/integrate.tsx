@@ -11,7 +11,7 @@ const Integrate: React.FC = () => {
       <div className="flex justify-center">
         <div className="flex flex-col self-center max-w-xl text-left md:items-center md:text-center">
           <h2 className="mb-6 text-3xl font-bold md:mb-8 sm:text-5xl">
-            PayID is Free, Easy and Simple to Implement
+            PayString is Free, Easy and Simple to Implement
           </h2>
           <p className="font-bold lg:text-2xl">
             Build on your choice of platform and programs.
@@ -38,15 +38,15 @@ const Integrate: React.FC = () => {
               <div className="px-8 py-6 whitespace-no-wrap">
                 <div className="hidden md:block">
                   <span className="text-blue-dark-300">git</span> clone
-                  git@github.com:payid-org/payid.git
+                  git@github.com:paystring/paystring.git
                 </div>
                 <div className="md:hidden">
                   <span className="text-blue-dark-300">git</span> clone
                 </div>
-                <div className="md:hidden">git@github.com:payid-org/pay</div>
-                <div className="md:hidden">id.git</div>
+                <div className="md:hidden">git@github.com:paystring/pay</div>
+                <div className="md:hidden">string.git</div>
                 <div>
-                  <span className="text-orange-300">cd</span> payid
+                  <span className="text-orange-300">cd</span> paystring
                 </div>
               </div>
             </div>

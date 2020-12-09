@@ -1,44 +1,44 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://payid.org">
-    <img alt="PayID" src="https://payid.org/icons/icon-72x72.png" width="60" />
+  <a href="https://paystring.org">
+    <img alt="PayString" src="https://paystring.org/icons/icon-72x72.png" width="60" />
   </a>
 </p>
 <h1 align="center">
-  PayID Marketing Site
+  PayString Marketing Site
 </h1>
 
-This repository powers the [PayID.org](https://payid.org) web application built using [Gatsby](https://gatsbyjs.org)
+This repository powers the [PayString.org](https://paystring.org) web application built using [Gatsby](https://gatsbyjs.org)
 
 ## 🚀 Quick start
 
-1.  **Clone the PayID.org repository.**
+1.  **Clone the PayString.org repository.**
 
-    Use git to pull down the PayID.org repository.
+    Use git to pull down the PayString.org repository.
 
     ```shell
-    git clone https://github.com/payid-org/payid.org.git
+    git clone https://github.com/paystring/paystring.org.git
     ```
 
 2.  **Start developing.**
 
-    Navigate into PayID.org's directory, install the packages, and start it up.
+    Navigate into PayString.org's directory, install the packages, and start it up.
 
     ```shell
-    cd payid.org/
+    cd paystring.org/
     npm i
     npm run start
     ```
 
 3.  **Start editing!**
 
-    PayID.org is now running at `http://localhost:8000`!
+    PayString.org is now running at `http://localhost:8000`!
 
     Save your changes and the browser will update in real time!
 
 ## 🧐 What's inside?
 
-A quick look at the top-level files and directories you'll see in the PayID.org repository.
+A quick look at the top-level files and directories you'll see in the PayString.org repository.
 
     .
     ├── .github
@@ -64,9 +64,9 @@ A quick look at the top-level files and directories you'll see in the PayID.org 
 
 3.  **`/node_modules`**: This directory contains all of the modules of code that our project depends on (npm packages) are automatically installed when using the `npm i` command.
 
-4.  **`/src`**: This directory contains all of the code related to what you will see on the front-end of PayID.org. `src` is a convention for “source code”.
+4.  **`/src`**: This directory contains all of the code related to what you will see on the front-end of PayString.org. `src` is a convention for “source code”.
 
-5.  **`/static`**: This directory contains any files or assets that will be accessible at the root of https://payid.org. For instance favicon.ico can be accessed at https://payid.org/favicon.ico.
+5.  **`/static`**: This directory contains any files or assets that will be accessible at the root of https://PayString.org. For instance favicon.ico can be accessed at https://PayString.org/favicon.ico.
 
 6.  **`.dockerignore`**: This is a configuration file for [Docker](https://docker.com/). Dockerignore tells our docker build to exclude certain directories from the docker container.
 
@@ -78,7 +78,7 @@ A quick look at the top-level files and directories you'll see in the PayID.org 
 
 10.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/). These allow customization/extension of default Gatsby settings affecting the browser.
 
-11.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. We specify information about PayID.org like the site title and description, which Gatsby plugins we include, etc. (Check out the [gatsby config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+11.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. We specify information about PayString.org like the site title and description, which Gatsby plugins we include, etc. (Check out the [gatsby config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
 
 12.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
@@ -86,7 +86,7 @@ A quick look at the top-level files and directories you'll see in the PayID.org 
 
 14.  **`README.md`** This the code that hosts the helpful content you are reading right now.
 
-15.  **`tailwind.config.js`**: This is the main css configuration file that holds all of our theming configuration. This is for the [CSS framework tailwind](https://tailwindcss.com/) which we use for PayID.org.
+15.  **`tailwind.config.js`**: This is the main css configuration file that holds all of our theming configuration. This is for the [CSS framework tailwind](https://tailwindcss.com/) which we use for PayString.org.
 
 16.  **`tsconfig.js`**: This is the configuration file for our typescript configuration. We use a strict configuration that doesn't allow any loose typings in order to maintain a high code quality.
 

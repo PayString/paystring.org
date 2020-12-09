@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
     <Layout
       path="conference"
       title="Conference"
-      description="Watch the PayID developer conference and learn more about the Open Payments Coalition"
+      description="Watch the PayString developer conference and learn more about the Open Payments Coalition"
     >
       <div
         className="pb-16 text-white bg-blue-dark-900 vision-bg xl:bg-cover lg:pb-70"

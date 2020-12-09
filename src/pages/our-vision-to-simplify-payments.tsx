@@ -11,7 +11,7 @@ const Vision: React.FC = () => {
     <Layout
       path="our-vision-to-simplify-payments"
       title="Our Vision for Simplifying Payments"
-      description="Simplify sending & receiving payments across any network with PayID. Our open-source platform is the next leap for accelerating growth in the payments industry."
+      description="Simplify sending & receiving payments across any network with PayString. Our open-source platform is the next leap for accelerating growth in the payments industry."
     >
       <Introduction />
       <Extensions />

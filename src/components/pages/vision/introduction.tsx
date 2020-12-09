@@ -24,7 +24,7 @@ const Introduction: React.FC = () => {
         'In the near future, a single, global payment network will enable anyone to easily pay any other person or business instantly. Everyone, everywhere will tap into the power of this network dozens of times a day, sending payments both large and small. Payments won’t run over fragmented networks using proprietary standards to complicated account numbers, but rather, will use a united network in which all payment companies participate and is built for today’s consumers and businesses.',
       ],
       quote:
-        '“An open payment network will play a key role in the next generation of games supported by community economics. By being free, open source, and easy to implement, PayID provides the games community with a frictionless solution that will benefit players and game developers around the world.”',
+        '“An open payment network will play a key role in the next generation of games supported by community economics. By being free, open source, and easy to implement, PayString provides the games community with a frictionless solution that will benefit players and game developers around the world.”',
       quoteAuthor: [
         'Chris Jimison',
         'Vice President of',
@@ -34,9 +34,9 @@ const Introduction: React.FC = () => {
       quoteBackground: `${withPrefix('/assets/vision/quote-background-2.svg')}`,
     },
     {
-      title: 'PayID is the Universal Payment Identifier',
+      title: 'PayString is the Universal Payment Identifier',
       descriptions: [
-        'PayID creates a common protocol that allows for interoperability between payment networks. PayID is a free and open standard, allowing for truly organic growth where no single company can control or set the terms for joining. This solution is built around people, replacing complex account numbers with simple names that are easy to understand, remember and even type.',
+        'PayString creates a common protocol that allows for interoperability between payment networks. PayString is a free and open standard, allowing for truly organic growth where no single company can control or set the terms for joining. This solution is built around people, replacing complex account numbers with simple names that are easy to understand, remember and even type.',
         <>
           Backed by{' '}
           <Link
@@ -45,13 +45,13 @@ const Introduction: React.FC = () => {
           >
             industry leaders
           </Link>{' '}
-          from technology and finance, PayID is just the beginning of the open
-          global payment network. It works across any payment network or
+          from technology and finance, PayString is just the beginning of the
+          open global payment network. It works across any payment network or
           currency—be it fiat or digital. A payment network that unites everyone
           around the globe is incredibly valuable for every participant. An open
           network built on open standards and open source enables innovation and
           growth for everyone. Just like the creation and widespread adoption of
-          the internet and mobile phones, PayID drives payments forward,
+          the internet and mobile phones, PayString drives payments forward,
           simplifying global payments for all and bringing us one step closer to
           a world where money moves as easily as information.
         </>,

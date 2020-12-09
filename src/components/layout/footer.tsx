@@ -45,9 +45,9 @@ const Footer: React.FC = () => {
     <footer className="flex justify-center px-6 text-white bg-blue-dark-900 lg:px-18">
       <div className="container py-4">
         <div className="flex flex-col xl:items-center xl:flex-row">
-          <div className="h-10-5">
+          <div className="h-9">
             <Link to="/" className="inline-block">
-              <Logo className="h-10-5" />
+              <Logo className="h-9" />
               <span className="sr-only">Home</span>
             </Link>
           </div>
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex flex-col mt-12 mb-12 text-xs font-semibold md:mb-4 md:mt-10 md:flex-row">
           <div>
-            This site is operated by Ripple on behalf of the PayID community
+            This site is operated by Ripple on behalf of the PayString community
           </div>
           <a
             href="/terms.pdf"

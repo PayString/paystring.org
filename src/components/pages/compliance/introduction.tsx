@@ -19,9 +19,9 @@ const Introduction: React.FC = () => {
           </h1>
           <div className="sm:text-xl">
             <p>
-              PayID is built to be a simple and flexible extension of existing
-              payment networks, making it best-in-class in compliance messaging
-              — such as Travel Rule and AML.
+              PayString is built to be a simple and flexible extension of
+              existing payment networks, making it best-in-class in compliance
+              messaging — such as Travel Rule and AML.
             </p>
             <p className="mt-8">
               <a

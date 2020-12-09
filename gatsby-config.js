@@ -2,20 +2,20 @@ require('dotenv/config')
 
 module.exports = {
   siteMetadata: {
-    title: 'PayID',
+    title: 'PayString',
     description:
       'The Universial Payment Identifier. A better way for your users to send and receive payments.',
-    siteUrl: 'https://payid.org/',
+    siteUrl: 'https://paystring.org/',
     social: {
-      twitter: 'payid_org',
+      twitter: 'pay_string',
     },
   },
   plugins: [
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'PayID',
-        short_name: 'PayID',
+        name: 'PayString',
+        short_name: 'PayString',
         start_url: '/',
         background_color: '#E5E5E5',
         theme_color: '#304659',

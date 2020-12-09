@@ -7,21 +7,21 @@ const Benefits: React.FC = () => {
     {
       title: 'Simplicity',
       description:
-        'PayID uses existing web standards and infrastructure that companies already run on.',
+        'PayString uses existing web standards and infrastructure that companies already run on.',
     },
     {
       title: 'Compatibility',
       description:
-        'PayID works across jurisdictions — without a patchwork of central registries.',
+        'PayString works across jurisdictions — without a patchwork of central registries.',
     },
     {
       title: 'Privacy and Security',
       description:
-        'PayID uses existing web security procedures, does not expose service addresses and allows for real-time management of addresses.',
+        'PayString uses existing web security procedures, does not expose service addresses and allows for real-time management of addresses.',
     },
     {
       title: 'Neutrality',
-      description: 'PayID is decentralized and agnostic to payment rail.',
+      description: 'PayString is decentralized and agnostic to payment rail.',
     },
   ]
 
@@ -29,7 +29,7 @@ const Benefits: React.FC = () => {
     <Wave background="white" wave="gray">
       <div className="flex justify-center">
         <h2 className="max-w-2xl text-3xl font-bold mb-14 sm:text-5xl sm:text-center md:mb-28">
-          Benefits of Using PayID for Travel Rule
+          Benefits of Using PayString for Travel Rule
         </h2>
       </div>
       <div className="grid grid-cols-1 gap-15 sm:gap-y-28 sm:gap-x-20 md:grid-cols-2">

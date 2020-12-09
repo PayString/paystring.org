@@ -14,7 +14,7 @@ const Compliance: React.FC = () => {
     <Layout
       path="compliance-and-regulations"
       title="Travel Rule Compliance & Payment Regulations"
-      description="PayID provides Travel Rule compliance and extensions to facilitate other regulations. Learn how our composable platform can expand to meet your regulatory needs."
+      description="PayString provides Travel Rule compliance and extensions to facilitate other regulations. Learn how our composable platform can expand to meet your regulatory needs."
     >
       <Introduction />
       <Benefits />

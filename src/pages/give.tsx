@@ -125,7 +125,7 @@ const Contact: React.FC = () => {
     <Layout
       path="give"
       title="Charity Giving"
-      description="Give to charities using PayID"
+      description="Give to charities using PayString"
     >
       <div
         className="text-white bg-blue-dark-900 faq-bg xl:bg-cover"
@@ -135,7 +135,7 @@ const Contact: React.FC = () => {
           <div className="container lg:px-17 lg:mt-0 mt-18">
             <div className="max-w-4xl pt-16 lg:pt-70">
               <h1 className="text-3xl font-bold sm:mb-10 mb-7 sm:text-h1 sm:leading-tighter">
-                Give to charities through PayID
+                Give to charities through PayString
               </h1>
               <div className="mb-13 sm:text-2xl">
                 Fill in your information to get funds to donate to a choice of
@@ -239,7 +239,7 @@ const Contact: React.FC = () => {
 
                 <div className="mb-6 text-sm">
                   <div className="mb-2">
-                    Do you plan to implement PayID within the next 6 months?
+                    Do you plan to implement PayString within the next 6 months?
                   </div>
                   <div className="flex items-center">
                     <input
