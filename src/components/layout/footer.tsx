@@ -34,10 +34,14 @@ const Footer: React.FC = () => {
       text: 'Contact Us',
       location: '/contact',
     },
+    {
+      text: 'Brand Kit',
+      location: '/brand-kit',
+    },
   ]
 
   return (
-    <footer className="flex justify-center px-6 text-white bg-blue-dark-900 lg:px-18">
+    <footer className="flex justify-center px-6 text-white bg-blue-dark-900 lg:px-16">
       <div className="container py-4">
         <div className="flex flex-col xl:items-center xl:flex-row">
           <div className="h-9">
