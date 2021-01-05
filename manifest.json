@@ -141,5 +141,16 @@
         "pullRequestUrl": "https://github.com/payid-org/payid.org/pull/97"
       }
     ]
+  },
+  "brand-kit": {
+    "apps": [
+      {
+        "name": "review-apps",
+        "headCommitId": "39b07119dd1725607fa5138131f26202ecadef42",
+        "updatedAt": "2021-01-05T17:00:51.918Z",
+        "href": "review-apps/brand-kit/39b071",
+        "pullRequestUrl": "https://github.com/PayString/paystring.org/pull/98"
+      }
+    ]
   }
 }
