@@ -146,9 +146,9 @@
     "apps": [
       {
         "name": "review-apps",
-        "headCommitId": "432063704e16bae0abccd55c0479a8841cdef921",
-        "updatedAt": "2021-01-06T21:22:56.381Z",
-        "href": "review-apps/brand-kit/432063",
+        "headCommitId": "cd133a18f73fb3a671c94007e30eb0751590c014",
+        "updatedAt": "2021-01-07T17:09:28.671Z",
+        "href": "review-apps/brand-kit/cd133a",
         "pullRequestUrl": "https://github.com/PayString/paystring.org/pull/98"
       }
     ]
