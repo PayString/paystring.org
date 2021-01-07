@@ -32,6 +32,13 @@
   @apply bg-no-repeat;
 }
 
+.brandkit-bg {
+  background-image: url('/assets/brand-kit/background.svg');
+  background-position: center top;
+
+  @apply bg-no-repeat;
+}
+
 .vision-quote {
   background-image: url('/assets/vision/quote_background.svg');
   background-position: left top;
