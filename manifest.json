@@ -157,9 +157,9 @@
     "apps": [
       {
         "name": "review-apps",
-        "headCommitId": "ae02735e9d41c88b0f96088bddcd2525862beb53",
-        "updatedAt": "2021-02-12T18:40:02.279Z",
-        "href": "review-apps/PressRelease/ae0273",
+        "headCommitId": "0e5f83212675b1af2f44dbfb9011295f6988df83",
+        "updatedAt": "2021-02-12T19:03:50.215Z",
+        "href": "review-apps/PressRelease/0e5f83",
         "pullRequestUrl": "https://github.com/PayString/paystring.org/pull/99"
       }
     ]
