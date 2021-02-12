@@ -38,10 +38,6 @@ const Footer: React.FC = () => {
       text: 'Brand Kit',
       location: '/brand-kit',
     },
-    {
-      text: 'Press Release',
-      location: '/PayString-pressrelease.pdf',
-    },
   ]
 
   return (
@@ -78,6 +74,13 @@ const Footer: React.FC = () => {
                 </a>
               )
             })}
+            <a
+              href="/PayString-pressrelease.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Press Release
+            </a>
           </div>
         </div>
         <div className="flex flex-col mt-12 mb-12 text-xs font-semibold md:mb-4 md:mt-10 md:flex-row">
