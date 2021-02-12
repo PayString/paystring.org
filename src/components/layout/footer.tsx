@@ -38,6 +38,10 @@ const Footer: React.FC = () => {
       text: 'Brand Kit',
       location: '/brand-kit',
     },
+    {
+      text: 'Press Release',
+      location: '/PayString-pressrelease.pdf',
+    },
   ]
 
   return (
