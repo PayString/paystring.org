@@ -1,4 +1,4 @@
-import { Link } from 'gatsby'
+import { Link, withPrefix } from 'gatsby'
 import React from 'react'
 
 import Logo from '../../assets/logo.svg'
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
               <span className="sr-only">Home</span>
             </Link>
           </div>
-          <div className="grid grid-flow-col grid-rows-4 mt-12 gap-y-8 gap-x-4 md:mt-10 xl:mt-0 sm:grid-rows-2 lg:grid-rows-1 lg:gap-x-12 xl:gap-x-14 xl:ml-14">
+          <div className="grid grid-flow-col grid-rows-5 mt-12 gap-y-8 gap-x-4 md:mt-10 xl:mt-0 sm:grid-rows-2 lg:grid-rows-1 lg:gap-x-12 xl:gap-x-14 xl:ml-14">
             {links.map((link) => {
               if (link.text !== 'Docs' && link.text !== 'Press Kit') {
                 return (
@@ -74,6 +74,13 @@ const Footer: React.FC = () => {
                 </a>
               )
             })}
+            <a
+              href={withPrefix('/PayString-pressrelease.pdf')}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Press Release
+            </a>
           </div>
         </div>
         <div className="flex flex-col mt-12 mb-12 text-xs font-semibold md:mb-4 md:mt-10 md:flex-row">
@@ -81,7 +88,7 @@ const Footer: React.FC = () => {
             This site is operated by Ripple on behalf of the PayString community
           </div>
           <a
-            href="/terms.pdf"
+            href={withPrefix('/terms.pdf')}
             target="_blank"
             rel="noreferrer"
             className="block mt-8 md:mt-0 md:ml-5 focus:text-orange-500 hover:text-orange-500 md:inline-block"
@@ -89,7 +96,7 @@ const Footer: React.FC = () => {
             Terms
           </a>
           <a
-            href="/privacy.pdf"
+            href={withPrefix('/privacy.pdf')}
             target="_blank"
             rel="noreferrer"
             className="block mt-8 md:mt-0 md:ml-5 focus:text-orange-500 hover:text-orange-500 md:inline-block"
