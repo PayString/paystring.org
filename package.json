@@ -11,7 +11,7 @@
     "ajv": "^6.12.6",
     "classnames": "^2.2.6",
     "dotenv": "^8.2.0",
-    "gatsby": "^2.24.74",
+    "gatsby": "^5.11.0",
     "gatsby-plugin-manifest": "^2.4.34",
     "gatsby-plugin-offline": "^3.2.31",
     "gatsby-plugin-postcss": "^3.0.1",
