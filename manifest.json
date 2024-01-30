@@ -168,10 +168,10 @@
     "apps": [
       {
         "name": "review-apps",
-        "headCommitId": "f01a27f9bff416ef263a8e4a01a7baedbe2e9dcd",
-        "updatedAt": "2024-01-30T19:28:54.211Z",
-        "href": "review-apps/update-privacy/f01a27",
-        "pullRequestUrl": "https://github.com/PayString/paystring.org/pull/111"
+        "headCommitId": "0d5b8a322f3afc262a6481f1cadd2fe49f3abe2b",
+        "updatedAt": "2024-01-30T20:20:55.208Z",
+        "href": "review-apps/update-privacy/0d5b8a",
+        "pullRequestUrl": "https://github.com/PayString/paystring.org/pull/113"
       }
     ]
   },
