@@ -174,5 +174,16 @@
         "pullRequestUrl": "https://github.com/PayString/paystring.org/pull/111"
       }
     ]
+  },
+  "fix-build": {
+    "apps": [
+      {
+        "name": "review-apps",
+        "headCommitId": "8c92292d855f27d07cedd759ea687ff6dc388d47",
+        "updatedAt": "2024-01-30T20:13:45.170Z",
+        "href": "review-apps/fix-build/8c9229",
+        "pullRequestUrl": "https://github.com/PayString/paystring.org/pull/112"
+      }
+    ]
   }
 }
