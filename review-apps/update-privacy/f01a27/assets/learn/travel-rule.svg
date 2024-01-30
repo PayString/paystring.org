@@ -1,0 +1,15 @@
+<svg viewBox="0 0 295 461" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#learnmore-travel-rule-clip0)">
+<rect width="294.034" height="461" rx="15" fill="#000E33"/>
+<path d="M171.736 26.2362L221.245 -58.5H319.755L369.264 26.2362L319.752 111.5H221.248L171.736 26.2362Z" stroke="#55DF20" stroke-width="3" stroke-linejoin="round"/>
+<path d="M52.0002 334L52 512" stroke="#0087FF" stroke-width="3"/>
+<circle cx="44.5" cy="69.5" r="7.5" stroke="#CCCCCD" stroke-width="3"/>
+<rect x="79" y="334" width="17" height="17" fill="#99EC79"/>
+<path d="M230 386L240.392 404H219.608L230 386Z" fill="#0087FF"/>
+</g>
+<defs>
+<clipPath id="learnmore-travel-rule-clip0">
+<rect width="294.034" height="461" rx="15" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -163,5 +163,16 @@
         "pullRequestUrl": "https://github.com/PayString/paystring.org/pull/99"
       }
     ]
+  },
+  "update-privacy": {
+    "apps": [
+      {
+        "name": "review-apps",
+        "headCommitId": "f01a27f9bff416ef263a8e4a01a7baedbe2e9dcd",
+        "updatedAt": "2024-01-30T19:28:54.211Z",
+        "href": "review-apps/update-privacy/f01a27",
+        "pullRequestUrl": "https://github.com/PayString/paystring.org/pull/111"
+      }
+    ]
   }
 }
