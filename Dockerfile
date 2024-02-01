@@ -5,7 +5,7 @@ ENV GATSBY_RELEASE_ENV=$GATSBY_RELEASE_ENV
 
 ADD . / paystringorg/
 
-RUN npm install gatsby-cli@2.12.107
+RUN npm install --cache .npm --no-audit --prefer-offline -g gatsby-cli@2.12.107
 RUN npm install --cache .npm --no-audit --prefer-offline --prefix ./paystringorg
 RUN (cd paystringorg/; gatsby build;)
 
