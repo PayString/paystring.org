@@ -1,11 +1,11 @@
-FROM node:12-alpine
+FROM node:16-alpine
 
 ARG GATSBY_RELEASE_ENV
 ENV GATSBY_RELEASE_ENV=$GATSBY_RELEASE_ENV
 
 ADD . / paystringorg/
 
-RUN npm install --cache .npm --no-audit --prefer-offline -g gatsby-cli@2.19.3
+RUN npm install --cache .npm --no-audit --prefer-offline -g gatsby-cli@2.12.107
 RUN npm install --cache .npm --no-audit --prefer-offline --prefix ./paystringorg
 RUN (cd paystringorg/; gatsby build;)
 
