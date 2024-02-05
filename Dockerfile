@@ -5,13 +5,13 @@ ENV GATSBY_RELEASE_ENV=$GATSBY_RELEASE_ENV
 
 ADD . / paystringorg/
 
+WORKDIR /paystringorg
+
 RUN npm i
 RUN npx --yes gatsby build
 #RUN npm install --cache .npm --no-audit --prefer-offline -g gatsby-cli@2.12.107
 #RUN npm install --cache .npm --no-audit --prefer-offline --prefix ./paystringorg
 #RUN (cd paystringorg/; gatsby build;)
-
-WORKDIR /paystringorg
 
 FROM nginx:1.17-alpine
 COPY --from=0 /paystringorg/public /usr/share/nginx/html
