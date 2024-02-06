@@ -3,11 +3,11 @@ FROM node:12-alpine
 ARG GATSBY_RELEASE_ENV
 ENV GATSBY_RELEASE_ENV=$GATSBY_RELEASE_ENV
 
-ADD ./ paystringorg/
+ADD . / paystringorg/
 
-RUN npm install --cache .npm --no-audit --prefer-offline -g gatsby-cli@2.12.107
+#RUN npm install --cache .npm --no-audit --prefer-offline -g gatsby-cli@2.12.107
 RUN npm install --cache .npm --no-audit --prefer-offline --prefix ./paystringorg
-RUN (cd paystringorg/; gatsby build;)
+RUN (cd paystringorg/; npx gatsby build;)
 WORKDIR /paystringorg
 
 FROM nginx:1.17-alpine
